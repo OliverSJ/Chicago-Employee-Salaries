@@ -18,6 +18,7 @@
 		8F4BCFB81C21DF81002674D1 /* BusinessTier.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F4BCFB71C21DF81002674D1 /* BusinessTier.m */; };
 		8F4BCFBB1C21DFAC002674D1 /* BusinessTierObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F4BCFBA1C21DFAC002674D1 /* BusinessTierObjects.m */; };
 		9D48C3D81C21E219002F9036 /* DataTier.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D48C3D71C21E219002F9036 /* DataTier.m */; };
+		9D48C3DA1C21E4A4002F9036 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D48C3D91C21E4A4002F9036 /* libsqlite3.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		8F4BCFBA1C21DFAC002674D1 /* BusinessTierObjects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusinessTierObjects.m; sourceTree = "<group>"; };
 		9D48C3D61C21E219002F9036 /* DataTier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataTier.h; sourceTree = "<group>"; };
 		9D48C3D71C21E219002F9036 /* DataTier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataTier.m; sourceTree = "<group>"; };
+		9D48C3D91C21E4A4002F9036 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D48C3DA1C21E4A4002F9036 /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +93,7 @@
 		8F4BCF771C21D503002674D1 = {
 			isa = PBXGroup;
 			children = (
+				9D48C3D91C21E4A4002F9036 /* libsqlite3.tbd */,
 				8F4BCF821C21D503002674D1 /* ChicagoEmployeeSalaries */,
 				8F4BCF9C1C21D503002674D1 /* ChicagoEmployeeSalariesTests */,
 				8F4BCFA71C21D503002674D1 /* ChicagoEmployeeSalariesUITests */,
@@ -115,6 +119,8 @@
 				8F4BCFB71C21DF81002674D1 /* BusinessTier.m */,
 				8F4BCFB91C21DFAC002674D1 /* BusinessTierObjects.h */,
 				8F4BCFBA1C21DFAC002674D1 /* BusinessTierObjects.m */,
+				9D48C3D61C21E219002F9036 /* DataTier.h */,
+				9D48C3D71C21E219002F9036 /* DataTier.m */,
 				8F4BCF871C21D503002674D1 /* AppDelegate.m */,
 				8F4BCF891C21D503002674D1 /* ViewController.h */,
 				8F4BCF8A1C21D503002674D1 /* ViewController.m */,
@@ -123,8 +129,6 @@
 				8F4BCF911C21D503002674D1 /* LaunchScreen.storyboard */,
 				8F4BCF941C21D503002674D1 /* Info.plist */,
 				8F4BCF831C21D503002674D1 /* Supporting Files */,
-				9D48C3D61C21E219002F9036 /* DataTier.h */,
-				9D48C3D71C21E219002F9036 /* DataTier.m */,
 			);
 			path = ChicagoEmployeeSalaries;
 			sourceTree = "<group>";

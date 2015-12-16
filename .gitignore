@@ -17,6 +17,13 @@ DerivedData
 *.ipa
 *.xcuserstate
 
+# old skool
+.svn
+
+# osx noise
+.DS_Store
+profile
+
 # CocoaPods
 #
 # We recommend against adding the Pods directory to your .gitignore. However

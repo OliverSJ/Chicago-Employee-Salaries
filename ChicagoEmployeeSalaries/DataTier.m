@@ -10,6 +10,20 @@
 
 @implementation DataTier
 
+-(void)executeQuery:(NSString *)query{
+    // Run the query and indicate that is executable.
+    [self runQuery:[query UTF8String] isQueryExecutable:YES];
+}
+
+-(NSArray *)loadDataFromDB:(NSString *)query{
+    // Run the query and indicate that is not executable.
+    // The query string is converted to a char* object.
+    [self runQuery:[query UTF8String] isQueryExecutable:NO];
+    
+    // Returned the loaded results.
+    return (NSArray *)self.arrResults;
+}
+
 -(void)runQuery:(const char *)query isQueryExecutable:(BOOL)queryExecutable{
     // Create a sqlite object.
     sqlite3 *sqlite3Database;

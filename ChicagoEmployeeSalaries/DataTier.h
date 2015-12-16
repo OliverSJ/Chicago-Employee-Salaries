@@ -23,4 +23,7 @@
 -(void)copyDatabaseIntoDocumentsDirectory;
 -(void)runQuery:(const char *)query isQueryExecutable:(BOOL)queryExecutable;
 
+-(NSArray *)loadDataFromDB:(NSString *)query;
+-(void)executeQuery:(NSString *)query;
+
 @end

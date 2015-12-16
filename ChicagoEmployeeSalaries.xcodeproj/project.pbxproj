@@ -15,6 +15,7 @@
 		8F4BCF931C21D503002674D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F4BCF911C21D503002674D1 /* LaunchScreen.storyboard */; };
 		8F4BCF9E1C21D503002674D1 /* ChicagoEmployeeSalariesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F4BCF9D1C21D503002674D1 /* ChicagoEmployeeSalariesTests.m */; };
 		8F4BCFA91C21D503002674D1 /* ChicagoEmployeeSalariesUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F4BCFA81C21D503002674D1 /* ChicagoEmployeeSalariesUITests.m */; };
+		9DF550881C21DF7D00AA75AB /* DataTier.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DF550871C21DF7D00AA75AB /* DataTier.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		8F4BCFA41C21D503002674D1 /* ChicagoEmployeeSalariesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChicagoEmployeeSalariesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F4BCFA81C21D503002674D1 /* ChicagoEmployeeSalariesUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChicagoEmployeeSalariesUITests.m; sourceTree = "<group>"; };
 		8F4BCFAA1C21D503002674D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9DF550861C21DF7D00AA75AB /* DataTier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataTier.h; path = ../DataTier.h; sourceTree = "<group>"; };
+		9DF550871C21DF7D00AA75AB /* DataTier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataTier.m; path = ../DataTier.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,8 @@
 		8F4BCF821C21D503002674D1 /* ChicagoEmployeeSalaries */ = {
 			isa = PBXGroup;
 			children = (
+				9DF550861C21DF7D00AA75AB /* DataTier.h */,
+				9DF550871C21DF7D00AA75AB /* DataTier.m */,
 				8F4BCF861C21D503002674D1 /* AppDelegate.h */,
 				8F4BCF871C21D503002674D1 /* AppDelegate.m */,
 				8F4BCF891C21D503002674D1 /* ViewController.h */,
@@ -276,6 +281,7 @@
 				8F4BCF8B1C21D503002674D1 /* ViewController.m in Sources */,
 				8F4BCF881C21D503002674D1 /* AppDelegate.m in Sources */,
 				8F4BCF851C21D503002674D1 /* main.m in Sources */,
+				9DF550881C21DF7D00AA75AB /* DataTier.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,6 +505,7 @@
 				8F4BCFAF1C21D503002674D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8F4BCFB01C21D503002674D1 /* Build configuration list for PBXNativeTarget "ChicagoEmployeeSalariesTests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +514,7 @@
 				8F4BCFB21C21D503002674D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8F4BCFB31C21D503002674D1 /* Build configuration list for PBXNativeTarget "ChicagoEmployeeSalariesUITests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +523,7 @@
 				8F4BCFB51C21D503002674D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

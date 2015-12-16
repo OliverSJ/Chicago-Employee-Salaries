@@ -19,7 +19,7 @@
 		8F4BCFBB1C21DFAC002674D1 /* BusinessTierObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F4BCFBA1C21DFAC002674D1 /* BusinessTierObjects.m */; };
 		9D48C3D81C21E219002F9036 /* DataTier.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D48C3D71C21E219002F9036 /* DataTier.m */; };
 		9D48C3DA1C21E4A4002F9036 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D48C3D91C21E4A4002F9036 /* libsqlite3.tbd */; };
-		9DC733641C21F4F100E31046 /* chicago_employee_salaries_db.sql in Resources */ = {isa = PBXBuildFile; fileRef = 9DC733631C21F4F100E31046 /* chicago_employee_salaries_db.sql */; };
+		9DC733681C21F88500E31046 /* chicago_employee_salaries_db.sql in Resources */ = {isa = PBXBuildFile; fileRef = 9DC733671C21F88500E31046 /* chicago_employee_salaries_db.sql */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,7 +63,7 @@
 		9D48C3D61C21E219002F9036 /* DataTier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataTier.h; sourceTree = "<group>"; };
 		9D48C3D71C21E219002F9036 /* DataTier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataTier.m; sourceTree = "<group>"; };
 		9D48C3D91C21E4A4002F9036 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		9DC733631C21F4F100E31046 /* chicago_employee_salaries_db.sql */ = {isa = PBXFileReference; lastKnownFileType = file; name = chicago_employee_salaries_db.sql; path = ../../../Desktop/chicago_employee_salaries_db.sql; sourceTree = "<group>"; };
+		9DC733671C21F88500E31046 /* chicago_employee_salaries_db.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = chicago_employee_salaries_db.sql; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +95,7 @@
 		8F4BCF771C21D503002674D1 = {
 			isa = PBXGroup;
 			children = (
+				9DC733671C21F88500E31046 /* chicago_employee_salaries_db.sql */,
 				9D48C3D91C21E4A4002F9036 /* libsqlite3.tbd */,
 				8F4BCF821C21D503002674D1 /* ChicagoEmployeeSalaries */,
 				8F4BCF9C1C21D503002674D1 /* ChicagoEmployeeSalariesTests */,
@@ -116,7 +117,6 @@
 		8F4BCF821C21D503002674D1 /* ChicagoEmployeeSalaries */ = {
 			isa = PBXGroup;
 			children = (
-				9DC733631C21F4F100E31046 /* chicago_employee_salaries_db.sql */,
 				8F4BCF861C21D503002674D1 /* AppDelegate.h */,
 				8F4BCFB61C21DF81002674D1 /* BusinessTier.h */,
 				8F4BCFB71C21DF81002674D1 /* BusinessTier.m */,
@@ -270,7 +270,7 @@
 			files = (
 				8F4BCF931C21D503002674D1 /* LaunchScreen.storyboard in Resources */,
 				8F4BCF901C21D503002674D1 /* Assets.xcassets in Resources */,
-				9DC733641C21F4F100E31046 /* chicago_employee_salaries_db.sql in Resources */,
+				9DC733681C21F88500E31046 /* chicago_employee_salaries_db.sql in Resources */,
 				8F4BCF8E1C21D503002674D1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

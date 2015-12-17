@@ -19,15 +19,15 @@
     return self;
 }
 
--(NSString*)queryToURL:(NSString *)query{
+-(NSString*)convertToHttpURL:(NSString *)query{
     
-    // replace all % signs with %25
+    // replace all percent signs with %25
     query = [query stringByReplacingOccurrencesOfString:@"%" withString:@"%25"];
     
-    // replace all spaces
+    // replace all spaces with %20
     query = [query stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
     
-    // replace all 's with %27
+    // replace all apostrophes with %27
     query = [query stringByReplacingOccurrencesOfString:@"'" withString:@"%27"];
     
     // init full url
@@ -39,7 +39,7 @@
 // Prepare the link that is going to be used on the GET request
 -(NSArray*)executeQuery:(NSString*)query{
     
-    NSString *url = [self queryToURL:query];
+    NSString *url = [self convertToHttpURL:query];
     
     // Make asynchronous request
     NSURLSession *session = [NSURLSession sharedSession];
@@ -52,8 +52,8 @@
                 
             }] resume];
     
-    //TODO Remove this line when used in iOS APP
-    [NSThread sleepForTimeInterval:5.0f]; // sleep for 1 second to allow for async response
+    //TODO Remove this line when used in iOS APP - Only used for DEBUGGING
+    //[NSThread sleepForTimeInterval:5.0f]; // sleep for 1 second to allow for async response
     
     return self.jsonArr;
 }
@@ -70,11 +70,6 @@
     }
     
     return jsonArray;
-}
-
--(NSArray*)searchByFirstName:(NSString *)firstName{
-    // do nothing yet
-    return nil;
 }
 
 @end

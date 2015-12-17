@@ -17,7 +17,6 @@
 
 -(NSArray*)executeQuery:(NSString*)url;
 -(NSArray*)parseData:(NSData *)responseData;
--(NSString*)queryToURL:(NSString*)query;
--(NSArray*)searchByFirstName:(NSString*)firstName;
+-(NSString*)convertToHttpURL:(NSString *)query;
 
 @end

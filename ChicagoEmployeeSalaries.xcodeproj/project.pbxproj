@@ -60,6 +60,7 @@
 		8F4BCFBA1C21DFAC002674D1 /* BusinessTierObjects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusinessTierObjects.m; sourceTree = "<group>"; };
 		9D48C3D61C21E219002F9036 /* DataTier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataTier.h; sourceTree = "<group>"; };
 		9D48C3D71C21E219002F9036 /* DataTier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataTier.m; sourceTree = "<group>"; };
+		9DC23E491C239F3A007122FD /* BusinessTierRules.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusinessTierRules.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +114,7 @@
 				8F4BCF861C21D503002674D1 /* AppDelegate.h */,
 				8F4BCFB61C21DF81002674D1 /* BusinessTier.h */,
 				8F4BCFB71C21DF81002674D1 /* BusinessTier.m */,
+				9DC23E491C239F3A007122FD /* BusinessTierRules.h */,
 				8F4BCFB91C21DFAC002674D1 /* BusinessTierObjects.h */,
 				8F4BCFBA1C21DFAC002674D1 /* BusinessTierObjects.m */,
 				9D48C3D61C21E219002F9036 /* DataTier.h */,

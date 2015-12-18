@@ -111,13 +111,13 @@
 			isa = PBXGroup;
 			children = (
 				8F4BCF861C21D503002674D1 /* AppDelegate.h */,
+				8F4BCF871C21D503002674D1 /* AppDelegate.m */,
 				8F4BCFB61C21DF81002674D1 /* BusinessTier.h */,
 				8F4BCFB71C21DF81002674D1 /* BusinessTier.m */,
 				8F4BCFB91C21DFAC002674D1 /* BusinessTierObjects.h */,
 				8F4BCFBA1C21DFAC002674D1 /* BusinessTierObjects.m */,
 				9D48C3D61C21E219002F9036 /* DataTier.h */,
 				9D48C3D71C21E219002F9036 /* DataTier.m */,
-				8F4BCF871C21D503002674D1 /* AppDelegate.m */,
 				8F4BCF891C21D503002674D1 /* ViewController.h */,
 				8F4BCF8A1C21D503002674D1 /* ViewController.m */,
 				8F4BCF8C1C21D503002674D1 /* Main.storyboard */,

@@ -18,6 +18,10 @@
 
 @implementation ViewController
 
+- (void) performSearch {
+    // TODO - search stuff here
+}
+
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     
     // user has pressed enter on the name text field
@@ -26,15 +30,17 @@
     }
     else {
         [textField resignFirstResponder];
+        [self performSearch]; // perform search
     }
-    // DO SEARCH HERE
-    
+
     return YES;
 }
 
-- (IBAction)performSearch:(id)sender {
+- (IBAction)searchClicked:(id)sender {
     [self.nameTextField resignFirstResponder];
     [self.departmentTextField resignFirstResponder];
+    
+    [self performSearch]; // perform search
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

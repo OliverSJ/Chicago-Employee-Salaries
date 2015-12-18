@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BusinessTierRules.h"
 
-@interface BusinessTier : NSObject
+@interface BusinessTier : NSObject <BusinessTierRules>
+
+
 
 @end

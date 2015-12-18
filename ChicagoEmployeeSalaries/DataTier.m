@@ -14,7 +14,7 @@
 {
     self = [super init];
     if (self) {
-        _baseUrl = url;
+        self.baseUrl = url;
     }
     return self;
 }

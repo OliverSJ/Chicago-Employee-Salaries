@@ -10,4 +10,13 @@
 
 @interface DataTier : NSObject
 
+@property NSString *baseUrl;
+@property NSArray *jsonArr;
+
+- (instancetype)initWithBaseUrl:(NSString*)url;
+
+-(NSArray*)executeQuery:(NSString*)url;
+-(NSArray*)parseData:(NSData *)responseData;
+-(NSString*)convertToHttpURL:(NSString *)query;
+
 @end

@@ -39,17 +39,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BZI-Ze-7rz">
-                                <rect key="frame" x="350" y="187" width="64" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="64" id="qhf-Vj-gh9"/>
-                                </constraints>
-                                <state key="normal" title="Search"/>
-                                <connections>
-                                    <action selector="searchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xpm-SX-EqO"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0jv-A3-Vrb">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0jv-A3-Vrb">
                                 <rect key="frame" x="184" y="251" width="54" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -147,11 +137,9 @@
                     <connections>
                         <outlet property="departmentLabel" destination="AtF-Ne-7KV" id="moT-Ed-gzn"/>
                         <outlet property="firstNameTextField" destination="hW0-PJ-ZgH" id="9J4-eE-KST"/>
-                        <outlet property="lastNameTextField" destination="KFE-vH-npo" id="BmG-aS-rf3"/>
                         <outlet property="nameLabel" destination="g71-Tq-63k" id="m7X-wm-9Se"/>
                         <outlet property="positionLabel" destination="H9c-qJ-GFB" id="2F5-0N-QoK"/>
                         <outlet property="salaryLabel" destination="gSU-ol-5ns" id="o1T-wr-gl1"/>
-
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

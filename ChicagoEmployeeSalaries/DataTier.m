@@ -10,6 +10,9 @@
 
 @implementation DataTier
 
+// Creates init method to instantiate a DataTier object with
+// a base url. This method must be used in place of
+// the standard init.
 - (instancetype)initWithBaseUrl:(NSString*)url
 {
     self = [super init];
@@ -19,6 +22,7 @@
     return self;
 }
 
+// Converts a standard SODA query URL to a HTTP friendly URL
 -(NSString*)convertToHttpURL:(NSString *)query{
     
     // replace all percent signs with %25
@@ -58,18 +62,21 @@
     return self.jsonArr;
 }
 
+// Parses the data and returns and array of deictionary
+// objects with key value pairs corresponding to the data
+// retrieved
 -(NSArray*)parseData:(NSData *)responseData
 {
     NSError *error = nil;
     
-    NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&error];
+    NSArray *dataArr = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&error];
     
     if (error != nil) {
         NSLog(@"Error parsing JSON.");
         return nil;
     }
     
-    return jsonArray;
+    return dataArr;
 }
 
 @end

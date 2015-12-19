@@ -22,10 +22,34 @@
 
 @implementation ViewController
 
+// check that only letters exist in text field
+- (BOOL)textIsValidValue:(NSString*)str{
+    NSCharacterSet *s = [NSCharacterSet characterSetWithCharactersInString:@"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"];
+    
+    s = [s invertedSet];
+    
+    NSRange r = [str rangeOfCharacterFromSet:s];
+    if (r.location != NSNotFound) {
+        return NO;
+    }
+    
+    return YES;
+}
+
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
     // prevent segue if user did not specify any search criteria
     if (self.nameTextField.text.length <= 0 && self.departmentTextField.text.length <= 0){
+        self.warningLabel.text = @"Please provide some search criteria.";
         self.warningLabel.hidden = NO;
+        self.nameTextField.backgroundColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:0.5];
+        self.departmentTextField.backgroundColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:0.5];
+        return NO;
+    }
+    
+    if ([self textIsValidValue:self.nameTextField.text] == NO) {
+        self.warningLabel.text = @"Name must contain only letters.";
+        self.warningLabel.hidden = NO;
+        self.nameTextField.backgroundColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:0.5];
         return NO;
     }
     
@@ -34,6 +58,8 @@
 
 - (IBAction)editTextField:(id)sender {
     self.warningLabel.hidden = YES;
+    self.nameTextField.backgroundColor = [UIColor whiteColor];
+    self.departmentTextField.backgroundColor = [UIColor whiteColor];
     
     // auto scroll
     UITextField *textField = (UITextField*)sender;
@@ -80,14 +106,14 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [self.view endEditing:YES]; // force all text fields to end editing
     // hide any warnings
-    self.warningLabel.hidden = YES;
+    //self.warningLabel.hidden = YES;
 }
 
 - (void)singleTapGestureCaptured:(UITapGestureRecognizer *)gesture
 {
     [self.view endEditing:YES]; // force all text fields to end editing
     // hide any warnings
-    self.warningLabel.hidden = YES;
+    //self.warningLabel.hidden = YES;
 }
 
 - (void)viewDidLoad {

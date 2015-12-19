@@ -10,4 +10,14 @@
 
 @interface EmployeeObject : NSObject
 
+@property NSString* name;
+@property NSString* position;
+@property NSString* department;
+@property NSString* annualSalary;
+
+-(instancetype) initWithValues: (NSString*) name
+                     aPosition: (NSString*) position
+                    aDepartment: (NSString*) department
+                       aSalary: (NSString*) annualSalary;
+
 @end

@@ -10,4 +10,22 @@
 
 @implementation EmployeeObject
 
+- (instancetype)initWithValues: (NSString*) name
+                     aPosition: (NSString*) position
+                   aDepartment: (NSString*) department
+                    aSalary: (NSString*) annualSalary
+{
+    self = [super init];
+    if (self) {
+        _name = name;
+        _position = position;
+        _department = department;
+        _annualSalary = annualSalary;
+        
+    }
+    return self;
+}
+
+
+
 @end

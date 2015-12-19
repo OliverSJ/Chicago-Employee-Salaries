@@ -8,9 +8,25 @@
 
 #import <Foundation/Foundation.h>
 #import "BusinessTierRules.h"
+#import "DataTier.h"
+#import "EmployeeObject.h"
 
 @interface BusinessTier : NSObject <BusinessTierRules>
 
+@property NSString* baseUrl;
+@property DataTier* dt;
+@property NSString* query;
+@property NSArray *jsonResponse;
+@property NSMutableArray *tempArray;
 
+@property NSString* name;
+@property NSString* department;
+@property NSString* position;
+@property NSString* annualSalary;
+
+@property EmployeeObject* employee;
+@property NSDictionary* departmentsWithCorrectSpelling;
+@property NSArray* departForFrontEnd;
+@property NSArray* departForBackEnd;
 
 @end

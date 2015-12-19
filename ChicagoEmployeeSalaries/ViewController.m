@@ -15,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *departmentTextField;
 @property (weak, nonatomic) IBOutlet UILabel *warningLabel;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *departmentLabel;
 
 @end
 
@@ -33,9 +35,15 @@
 - (IBAction)editTextField:(id)sender {
     self.warningLabel.hidden = YES;
     
-    // Place Scroll Code here
+    // auto scroll
     UITextField *textField = (UITextField*)sender;
-    [self.scrollView setContentOffset:CGPointMake(0,textField.frame.origin.y) animated:YES]; animated:YES;
+    
+    if (textField == self.nameTextField){
+        [self.scrollView setContentOffset:CGPointMake(0,self.nameLabel.frame.origin.y) animated:YES];
+    }
+    else if (textField == self.departmentTextField){
+        [self.scrollView setContentOffset:CGPointMake(0,self.departmentLabel.frame.origin.y) animated:YES];
+    }
 }
 
 - (IBAction)finishedEditingTextField:(id)sender {

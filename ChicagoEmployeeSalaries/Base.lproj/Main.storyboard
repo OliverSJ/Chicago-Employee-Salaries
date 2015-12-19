@@ -169,7 +169,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="VoF-wB-eim"/>
                     <connections>
+                        <outlet property="departmentLabel" destination="TuA-7s-iz1" id="Twt-Fb-cix"/>
                         <outlet property="departmentTextField" destination="Y1H-5K-Gvj" id="uhW-Rz-h34"/>
+                        <outlet property="nameLabel" destination="5a1-ay-Txi" id="61A-ZL-Ncz"/>
                         <outlet property="nameTextField" destination="hW0-PJ-ZgH" id="Nzd-GO-1ZK"/>
                         <outlet property="scrollView" destination="fZP-af-Oqt" id="a56-Wf-r6f"/>
                         <outlet property="warningLabel" destination="OIC-Ao-5bf" id="P2Q-gs-Acj"/>
@@ -188,7 +190,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="qe4-IU-2JV">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="qe4-IU-2JV">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qe4-IU-2JV" id="Zjg-QM-D19">

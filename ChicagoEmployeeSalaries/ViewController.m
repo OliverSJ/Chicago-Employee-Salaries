@@ -138,11 +138,16 @@
     [self.view endEditing:YES]; // force all text fields to end editing
 }
 
--(void)changeDepartmentFromTextField:(id)sender
+-(void)searchButtonPressed:(id)sender
 {
     [self.departmentTextField resignFirstResponder];
     
     if ([self shouldPerformSegueWithIdentifier:@"PerformSearch" sender:nil]) { [self performSegueWithIdentifier:@"PerformSearch" sender:nil]; }
+}
+
+-(void)cancelButtonPressed:(id)sender
+{
+    [self.departmentTextField resignFirstResponder];
 }
 
 - (void)viewDidLoad {
@@ -161,15 +166,26 @@
     self.departmentsPickerView.delegate = self;
     self.departmentTextField.inputView = self.departmentsPickerView;
     
-    // add button to picker view
+    // add search and x button's to picker view
     UIToolbar *toolBar= [[UIToolbar alloc] initWithFrame:CGRectMake(0,0,320,44)];
     [toolBar setBarStyle:UIBarStyleDefault];
-    UIBarButtonItem *barButtonDone = [[UIBarButtonItem alloc] initWithTitle:@"Search"
-                                                                      style:UIBarButtonItemStylePlain
+    
+    // middle space between search and cancel button
+    UIBarButtonItem *flex = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
+    
+    // search button
+    UIBarButtonItem *searchButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch
                                                                      target:self
-                                                                     action:@selector(changeDepartmentFromTextField:)];
-    toolBar.items = @[barButtonDone];
-    barButtonDone.tintColor=[UIColor blackColor];
+                                                                     action:@selector(searchButtonPressed:)];
+    
+    
+    // cancel button
+    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
+                                                                             target:self
+                                                                             action:@selector(cancelButtonPressed:)];
+                                
+                                
+    toolBar.items = @[searchButton, flex, cancelButton];
     self.departmentTextField.inputAccessoryView = toolBar;
     
 }

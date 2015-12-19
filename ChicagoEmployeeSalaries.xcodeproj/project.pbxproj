@@ -20,6 +20,10 @@
 		9D48C3D81C21E219002F9036 /* DataTier.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D48C3D71C21E219002F9036 /* DataTier.m */; };
 		9DC521AB1C250BFC0006E507 /* EmployeesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DC521AA1C250BFC0006E507 /* EmployeesTableViewController.m */; };
 		9DC521AE1C250C7D0006E507 /* EmployeeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DC521AD1C250C7D0006E507 /* EmployeeViewController.m */; };
+		9DC521B31C25FD350006E507 /* back_large.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DC521AF1C25FD350006E507 /* back_large.png */; };
+		9DC521B41C25FD350006E507 /* back_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DC521B01C25FD350006E507 /* back_small.png */; };
+		9DC521B51C25FD350006E507 /* next_large.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DC521B11C25FD350006E507 /* next_large.png */; };
+		9DC521B61C25FD350006E507 /* next_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DC521B21C25FD350006E507 /* next_small.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +70,10 @@
 		9DC521AA1C250BFC0006E507 /* EmployeesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmployeesTableViewController.m; sourceTree = "<group>"; };
 		9DC521AC1C250C7D0006E507 /* EmployeeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmployeeViewController.h; sourceTree = "<group>"; };
 		9DC521AD1C250C7D0006E507 /* EmployeeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmployeeViewController.m; sourceTree = "<group>"; };
+		9DC521AF1C25FD350006E507 /* back_large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_large.png; sourceTree = "<group>"; };
+		9DC521B01C25FD350006E507 /* back_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_small.png; sourceTree = "<group>"; };
+		9DC521B11C25FD350006E507 /* next_large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = next_large.png; sourceTree = "<group>"; };
+		9DC521B21C25FD350006E507 /* next_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = next_small.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +150,10 @@
 		8F4BCF831C21D503002674D1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9DC521AF1C25FD350006E507 /* back_large.png */,
+				9DC521B01C25FD350006E507 /* back_small.png */,
+				9DC521B11C25FD350006E507 /* next_large.png */,
+				9DC521B21C25FD350006E507 /* next_small.png */,
 				8F4BCF841C21D503002674D1 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -271,9 +283,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DC521B51C25FD350006E507 /* next_large.png in Resources */,
+				9DC521B31C25FD350006E507 /* back_large.png in Resources */,
 				8F4BCF931C21D503002674D1 /* LaunchScreen.storyboard in Resources */,
+				9DC521B61C25FD350006E507 /* next_small.png in Resources */,
 				8F4BCF901C21D503002674D1 /* Assets.xcassets in Resources */,
 				8F4BCF8E1C21D503002674D1 /* Main.storyboard in Resources */,
+				9DC521B41C25FD350006E507 /* back_small.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

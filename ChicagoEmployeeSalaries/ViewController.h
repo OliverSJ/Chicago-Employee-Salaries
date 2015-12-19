@@ -11,7 +11,5 @@
 @interface ViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 
 
-@property (strong, nonatomic) IBOutlet UITextField *firstNameTextField;
-
 @end
 

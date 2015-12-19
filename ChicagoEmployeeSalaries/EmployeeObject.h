@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface BusinessTierObjects : NSObject
+@interface EmployeeObject : NSObject
 
 @end

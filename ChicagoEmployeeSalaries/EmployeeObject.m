@@ -6,8 +6,8 @@
 //  Copyright © 2015 Oliver San Juan. All rights reserved.
 //
 
-#import "BusinessTierObjects.h"
+#import "EmployeeObject.h"
 
-@implementation BusinessTierObjects
+@implementation EmployeeObject
 
 @end

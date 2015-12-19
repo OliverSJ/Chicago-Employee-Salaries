@@ -8,9 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "BusinessTierRules.h"
+#import "DataTier.h"
 
 @interface BusinessTier : NSObject <BusinessTierRules>
 
-
+@property NSString* baseUrl;
+@property DataTier* dt;
+@property NSString* query;
+@property NSArray *jsonResponse;
 
 @end

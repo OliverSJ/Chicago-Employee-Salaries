@@ -11,6 +11,7 @@
 @interface ViewController ()
 
 @property NSArray *departments;
+@property UIPickerView *departmentsPickerView;
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *departmentTextField;
 @property (weak, nonatomic) IBOutlet UILabel *warningLabel;
@@ -21,6 +22,29 @@
 @end
 
 @implementation ViewController
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    return self.departments.count;
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    return self.departments[row];
+}
+
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    
+    // user has selected (leave blank)
+    if (row == 0) {
+        self.departmentTextField.text = @"";
+        return;
+    }
+    
+    self.departmentTextField.text = self.departments[row];
+}
 
 // check that only letters exist in text field
 - (BOOL)textIsValidValue:(NSString*)str{
@@ -112,8 +136,13 @@
 - (void)singleTapGestureCaptured:(UITapGestureRecognizer *)gesture
 {
     [self.view endEditing:YES]; // force all text fields to end editing
-    // hide any warnings
-    //self.warningLabel.hidden = YES;
+}
+
+-(void)changeDepartmentFromTextField:(id)sender
+{
+    [self.departmentTextField resignFirstResponder];
+    
+    if ([self shouldPerformSegueWithIdentifier:@"PerformSearch" sender:nil]) { [self performSegueWithIdentifier:@"PerformSearch" sender:nil]; }
 }
 
 - (void)viewDidLoad {
@@ -124,7 +153,24 @@
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapGestureCaptured:)];
     [self.scrollView addGestureRecognizer:singleTap];
     
-    self.departments = @[@"POLICE", @"MAYOR'S OFFICE", @"FONTANO'S", @"LAGUNITAS"];
+    self.departments = @[@"(LEAVE BLANK)", @"POLICE", @"MAYOR'S OFFICE", @"FONTANO'S", @"LAGUNITAS"];
+    
+    // create pickerview for departments
+    self.departmentsPickerView = [[UIPickerView alloc] init];
+    self.departmentsPickerView.dataSource = self;
+    self.departmentsPickerView.delegate = self;
+    self.departmentTextField.inputView = self.departmentsPickerView;
+    
+    // add button to picker view
+    UIToolbar *toolBar= [[UIToolbar alloc] initWithFrame:CGRectMake(0,0,320,44)];
+    [toolBar setBarStyle:UIBarStyleDefault];
+    UIBarButtonItem *barButtonDone = [[UIBarButtonItem alloc] initWithTitle:@"Search"
+                                                                      style:UIBarButtonItemStylePlain
+                                                                     target:self
+                                                                     action:@selector(changeDepartmentFromTextField:)];
+    toolBar.items = @[barButtonDone];
+    barButtonDone.tintColor=[UIColor blackColor];
+    self.departmentTextField.inputAccessoryView = toolBar;
     
 }
 

@@ -16,7 +16,7 @@
 		8F4BCF9E1C21D503002674D1 /* ChicagoEmployeeSalariesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F4BCF9D1C21D503002674D1 /* ChicagoEmployeeSalariesTests.m */; };
 		8F4BCFA91C21D503002674D1 /* ChicagoEmployeeSalariesUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F4BCFA81C21D503002674D1 /* ChicagoEmployeeSalariesUITests.m */; };
 		8F4BCFB81C21DF81002674D1 /* BusinessTier.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F4BCFB71C21DF81002674D1 /* BusinessTier.m */; };
-		8F4BCFBB1C21DFAC002674D1 /* BusinessTierObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F4BCFBA1C21DFAC002674D1 /* BusinessTierObjects.m */; };
+		8F4BCFBB1C21DFAC002674D1 /* EmployeeObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F4BCFBA1C21DFAC002674D1 /* EmployeeObject.m */; };
 		9D48C3D81C21E219002F9036 /* DataTier.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D48C3D71C21E219002F9036 /* DataTier.m */; };
 /* End PBXBuildFile section */
 
@@ -56,8 +56,9 @@
 		8F4BCFAA1C21D503002674D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8F4BCFB61C21DF81002674D1 /* BusinessTier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusinessTier.h; sourceTree = "<group>"; };
 		8F4BCFB71C21DF81002674D1 /* BusinessTier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusinessTier.m; sourceTree = "<group>"; };
-		8F4BCFB91C21DFAC002674D1 /* BusinessTierObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusinessTierObjects.h; sourceTree = "<group>"; };
-		8F4BCFBA1C21DFAC002674D1 /* BusinessTierObjects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusinessTierObjects.m; sourceTree = "<group>"; };
+		8F4BCFB91C21DFAC002674D1 /* EmployeeObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmployeeObject.h; sourceTree = "<group>"; };
+		8F4BCFBA1C21DFAC002674D1 /* EmployeeObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmployeeObject.m; sourceTree = "<group>"; };
+		8F92C12C1C24718C0091BF99 /* BusinessTierRules.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusinessTierRules.h; sourceTree = "<group>"; };
 		9D48C3D61C21E219002F9036 /* DataTier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataTier.h; sourceTree = "<group>"; };
 		9D48C3D71C21E219002F9036 /* DataTier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataTier.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -114,8 +115,9 @@
 				8F4BCF871C21D503002674D1 /* AppDelegate.m */,
 				8F4BCFB61C21DF81002674D1 /* BusinessTier.h */,
 				8F4BCFB71C21DF81002674D1 /* BusinessTier.m */,
-				8F4BCFB91C21DFAC002674D1 /* BusinessTierObjects.h */,
-				8F4BCFBA1C21DFAC002674D1 /* BusinessTierObjects.m */,
+				8F4BCFB91C21DFAC002674D1 /* EmployeeObject.h */,
+				8F4BCFBA1C21DFAC002674D1 /* EmployeeObject.m */,
+				8F92C12C1C24718C0091BF99 /* BusinessTierRules.h */,
 				9D48C3D61C21E219002F9036 /* DataTier.h */,
 				9D48C3D71C21E219002F9036 /* DataTier.m */,
 				8F4BCF891C21D503002674D1 /* ViewController.h */,
@@ -293,7 +295,7 @@
 				8F4BCF881C21D503002674D1 /* AppDelegate.m in Sources */,
 				9D48C3D81C21E219002F9036 /* DataTier.m in Sources */,
 				8F4BCF851C21D503002674D1 /* main.m in Sources */,
-				8F4BCFBB1C21DFAC002674D1 /* BusinessTierObjects.m in Sources */,
+				8F4BCFBB1C21DFAC002674D1 /* EmployeeObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

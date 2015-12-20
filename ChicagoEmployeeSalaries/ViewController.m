@@ -258,13 +258,13 @@
     // instantiate BusinessTierObject
     self.currentBT = [[BusinessTier alloc]init];
     
-    // set department names here
-    self.departments = [self.currentBT getDepartments];
     
-    NSLog(@"%lu", self.departments.count);
-    for (id d in self.departments){
-        NSLog(@"%@", d);
-    }
+    // Make asynchronous request for department names
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            self.departments = [self.currentBT getDepartments];
+        });
+    });
     
     // create pickerview for departments
     self.departmentsPickerView = [[UIPickerView alloc] init];

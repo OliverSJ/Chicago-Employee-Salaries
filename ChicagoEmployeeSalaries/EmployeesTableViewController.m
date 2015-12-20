@@ -12,7 +12,7 @@
 @interface EmployeesTableViewController()
 
 @property (nonatomic) NSArray *employees;
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (nonatomic) IBOutlet UIActivityIndicatorView *activityView;
 
 @end
 
@@ -34,23 +34,28 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // TODO set as size of dataset retreived from BusinessTier
-    return 1;
+    return 0;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     
-    cell.textLabel.text = @"Rahm Emanuel"; // array index of current values
-    cell.detailTextLabel.text = @"Mayor's Office"; // array index of details
+    //cell.textLabel.text = @"Rahm Emanuel"; // array index of current values
+    //cell.detailTextLabel.text = @"Mayor's Office"; // array index of details
+    cell.textLabel.text = @""; // array index of current values
+    cell.detailTextLabel.text = @""; // array index of details
     
     return cell;
 }
 
 -(void)viewDidLoad {
-    // do something here
-    // use currentBT to perform search
-    [self.activityIndicator startAnimating];
+    self.activityView = [[UIActivityIndicatorView alloc]
+                                             initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    
+    self.activityView.center=self.view.center;
+    [self.activityView startAnimating];
+    [self.view addSubview:self.activityView];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         // No explicit autorelease pool needed here.
@@ -62,9 +67,7 @@
             // This will be called on the main thread, so that
             // you can update the UI, for example.
             //[self longOperationDone];
-            //[
-            [NSThread sleepForTimeInterval:5.0f];
-            [self.activityIndicator stopAnimating];
+            [self.activityView stopAnimating];
             [self.tableView reloadData];
         });
     });

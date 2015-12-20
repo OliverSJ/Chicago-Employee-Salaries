@@ -157,6 +157,10 @@
     // set scrollview back to default position
     [self.scrollView setContentOffset:
      CGPointMake(0, -self.scrollView.contentInset.top) animated:YES];
+    
+    // reset pickerview to first position if empty
+    if (self.departmentTextField.text.length <= 0)
+        [self.departmentsPickerView selectRow:0 inComponent:0 animated:YES];
 }
 
 /**

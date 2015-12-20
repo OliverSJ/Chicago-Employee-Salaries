@@ -17,8 +17,8 @@
 		8F4BCFA91C21D503002674D1 /* ChicagoEmployeeSalariesUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F4BCFA81C21D503002674D1 /* ChicagoEmployeeSalariesUITests.m */; };
 		8F4BCFB81C21DF81002674D1 /* BusinessTier.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F4BCFB71C21DF81002674D1 /* BusinessTier.m */; };
 		9D48C3D81C21E219002F9036 /* DataTier.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D48C3D71C21E219002F9036 /* DataTier.m */; };
+		9DA07C421C2700AE0045B1ED /* EmployeeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA07C411C2700AE0045B1ED /* EmployeeTableViewController.m */; };
 		9DC521AB1C250BFC0006E507 /* EmployeesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DC521AA1C250BFC0006E507 /* EmployeesTableViewController.m */; };
-		9DC521AE1C250C7D0006E507 /* EmployeeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DC521AD1C250C7D0006E507 /* EmployeeViewController.m */; };
 		9DC521B31C25FD350006E507 /* back_large.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DC521AF1C25FD350006E507 /* back_large.png */; };
 		9DC521B41C25FD350006E507 /* back_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DC521B01C25FD350006E507 /* back_small.png */; };
 		9DC521B51C25FD350006E507 /* next_large.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DC521B11C25FD350006E507 /* next_large.png */; };
@@ -64,10 +64,10 @@
 		8F4BCFB71C21DF81002674D1 /* BusinessTier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusinessTier.m; sourceTree = "<group>"; };
 		9D48C3D61C21E219002F9036 /* DataTier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataTier.h; sourceTree = "<group>"; };
 		9D48C3D71C21E219002F9036 /* DataTier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataTier.m; sourceTree = "<group>"; };
+		9DA07C401C2700AE0045B1ED /* EmployeeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmployeeTableViewController.h; sourceTree = "<group>"; };
+		9DA07C411C2700AE0045B1ED /* EmployeeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmployeeTableViewController.m; sourceTree = "<group>"; };
 		9DC521A91C250BFC0006E507 /* EmployeesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmployeesTableViewController.h; sourceTree = "<group>"; };
 		9DC521AA1C250BFC0006E507 /* EmployeesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmployeesTableViewController.m; sourceTree = "<group>"; };
-		9DC521AC1C250C7D0006E507 /* EmployeeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmployeeViewController.h; sourceTree = "<group>"; };
-		9DC521AD1C250C7D0006E507 /* EmployeeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmployeeViewController.m; sourceTree = "<group>"; };
 		9DC521AF1C25FD350006E507 /* back_large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_large.png; sourceTree = "<group>"; };
 		9DC521B01C25FD350006E507 /* back_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_small.png; sourceTree = "<group>"; };
 		9DC521B11C25FD350006E507 /* next_large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = next_large.png; sourceTree = "<group>"; };
@@ -138,8 +138,8 @@
 				8F4BCF8A1C21D503002674D1 /* ViewController.m */,
 				9DC521A91C250BFC0006E507 /* EmployeesTableViewController.h */,
 				9DC521AA1C250BFC0006E507 /* EmployeesTableViewController.m */,
-				9DC521AC1C250C7D0006E507 /* EmployeeViewController.h */,
-				9DC521AD1C250C7D0006E507 /* EmployeeViewController.m */,
+				9DA07C401C2700AE0045B1ED /* EmployeeTableViewController.h */,
+				9DA07C411C2700AE0045B1ED /* EmployeeTableViewController.m */,
 				8F4BCF8C1C21D503002674D1 /* Main.storyboard */,
 				8F4BCF8F1C21D503002674D1 /* Assets.xcassets */,
 				8F4BCF911C21D503002674D1 /* LaunchScreen.storyboard */,
@@ -246,7 +246,7 @@
 				TargetAttributes = {
 					8F4BCF7F1C21D503002674D1 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 8BKCJS4473;
+						DevelopmentTeam = 4GT864NFJZ;
 					};
 					8F4BCF981C21D503002674D1 = {
 						CreatedOnToolsVersion = 7.2;
@@ -318,12 +318,12 @@
 			files = (
 				9DC521AB1C250BFC0006E507 /* EmployeesTableViewController.m in Sources */,
 				8F4BCF8B1C21D503002674D1 /* ViewController.m in Sources */,
-				9DC521AE1C250C7D0006E507 /* EmployeeViewController.m in Sources */,
 				8F4BCFB81C21DF81002674D1 /* BusinessTier.m in Sources */,
 				8F4BCF881C21D503002674D1 /* AppDelegate.m in Sources */,
 				9D48C3D81C21E219002F9036 /* DataTier.m in Sources */,
 				8F4BCF851C21D503002674D1 /* main.m in Sources */,
 				9DC521B91C2620730006E507 /* EmployeeObject.m in Sources */,
+				9DA07C421C2700AE0045B1ED /* EmployeeTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,10 +462,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ChicagoEmployeeSalaries/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.OliverSanJuan.ChicagoEmployeeSalaries;
+				PRODUCT_BUNDLE_IDENTIFIER = com.OliverSanJuan.ChicagoEmployeeSalaries.Bradley;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -473,10 +475,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ChicagoEmployeeSalaries/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.OliverSanJuan.ChicagoEmployeeSalaries;
+				PRODUCT_BUNDLE_IDENTIFIER = com.OliverSanJuan.ChicagoEmployeeSalaries.Bradley;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

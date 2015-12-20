@@ -63,6 +63,7 @@
             // you can update the UI, for example.
             //[self longOperationDone];
             //[
+            [NSThread sleepForTimeInterval:5.0f];
             [self.activityIndicator stopAnimating];
             [self.tableView reloadData];
         });

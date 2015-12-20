@@ -37,36 +37,47 @@
         
         _employee = nil;
         
-        
-        
         //Create the departmentsWithCorrectSpelling.  This is so that the department names look good on the GUI
-        
         _query = @"$select=department&$group=department";
         
         _jsonResponse = [_dt executeQuery: _query];
         
-        
         _departForBackEnd = [_jsonResponse valueForKey:@"department"];
         
-        _departForFrontEnd = @[@"Admin Hearing", @"Animal Control",
-                               @"Aviation", @"Board of Elections",
-                               @"Board of Ethics", @"Budget and Management",
-                               @"Buildings", @"Business Affairs",
-                               @"City Clerk", @"City Council",
-                               @"Community Development", @"Cultural Affairs",
-                               @"Disabilities", @"DoIT",
-                               @"Family and Support", @"Finance",
-                               @"Fire",@"General Services",
-                               @"Health",@"Human Relations",
-                               @"Human Resources", @"Inspector General",
-                               @"IPRA",@"Law",
-                               @"License Appl Comm",@"Mayor's Office",
-                               @"OEMC",@"Police",
-                               @"Police Board",@"Procurement",
-                               @"Public Library",@"Streets and Sanitation",
-                               @"Transportation",@"Treasurer",
-                               @"Water Management"];
         
+        //TODO: REMOVE THE NULL
+        
+        NSMutableArray* tempArray = [[NSMutableArray alloc]init];
+        [tempArray addObject:@"(LEAVE BLANK)"];
+        
+        for(NSString* tempString in _departForBackEnd)
+        {
+            if(![tempString isEqual:[NSNull null]])
+            {
+                if([tempString caseInsensitiveCompare:@"ANIMAL CONTRL"] == NSOrderedSame){
+                    [tempArray addObject: @"ANIMAL CONTROL"];
+                }
+                
+                else if([tempString caseInsensitiveCompare:@"TRANSPORTN"] == NSOrderedSame){
+                    [tempArray addObject:@"TRANSPORTATION"];
+                }
+                else if([tempString caseInsensitiveCompare:@"ADMIN HEARNG"] == NSOrderedSame){
+                    [tempArray addObject:@"ADMIN HEARING"];
+                }
+                else{
+                    [tempArray addObject:tempString];
+                }
+                
+                NSLog(@"%@", tempString);
+            }//end of outer if statement
+
+        }//end of for loop
+        
+        _departForFrontEnd = [NSArray arrayWithArray:tempArray];
+        
+        
+        //Create the NSDictionary
+        _departmentsWithCorrectSpelling = [[NSDictionary alloc] initWithObjects:_departForBackEnd forKeys:_departForFrontEnd];
         
         //init query string to nil
         _query = nil;
@@ -161,7 +172,6 @@
     //Iterate through returnArray, ensuring that only the first letter of each word is capitalized.
     
     return returnArray;
-     
      */
     
     return _departForFrontEnd;

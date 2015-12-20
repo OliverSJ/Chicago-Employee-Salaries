@@ -42,13 +42,31 @@
         
         _jsonResponse = [_dt executeQuery: _query];
         
-        _departForBackEnd = [_jsonResponse valueForKey:@"department"];
+        
+        //_departForBackEnd = [_jsonResponse valueForKey:@"department"];
         
         
-        //TODO: REMOVE THE NULL
+        //WORKS, but testing a different method
+        //NSMutableArray* tempArray = [[NSMutableArray alloc]init];
+        //tempArray = [_jsonResponse valueForKey:@"department"];
         
-        NSMutableArray* tempArray = [[NSMutableArray alloc]init];
-        [tempArray addObject:@"(LEAVE BLANK)"];
+        NSMutableArray* tempArray = [[NSMutableArray alloc] initWithArray:[_jsonResponse valueForKey:@"department"]];
+        
+        
+        NSLog(NSStringFromClass([tempArray class]));
+        
+        //The last object is nil.  Move it to the front so that the object will match up with an appropriate key
+        //In this case, nil will match up with "(Leave Blank)"
+        int size = ([tempArray count]-1);
+        [tempArray removeObjectAtIndex: 35];
+        [tempArray insertObject:@"(Leave Blank)" atIndex:0];
+        
+        
+        _departForBackEnd = [NSArray arrayWithArray:tempArray];
+        
+        //Reset the tempArray so that it can be reused for the _departForFrontEnd
+        tempArray = nil;
+        tempArray =[[NSMutableArray alloc]init];
         
         for(NSString* tempString in _departForBackEnd)
         {
@@ -68,16 +86,19 @@
                     [tempArray addObject:tempString];
                 }
                 
-                NSLog(@"%@", tempString);
+                //NSLog(@"%@", tempString);
             }//end of outer if statement
 
         }//end of for loop
         
         _departForFrontEnd = [NSArray arrayWithArray:tempArray];
         
+        //For Debugging purposes only
+//        NSLog(@"%lu", (unsigned long)[_departForFrontEnd count]);
+//        NSLog(@"%lu", (unsigned long)[_departForBackEnd count]);
         
         //Create the NSDictionary
-        //_departmentsWithCorrectSpelling = [[NSDictionary alloc] initWithObjects:_departForBackEnd forKeys:_departForFrontEnd];
+        _departmentsWithCorrectSpelling = [[NSDictionary alloc] initWithObjects:_departForBackEnd forKeys:_departForFrontEnd];
         
         //init query string to nil
         _query = nil;
@@ -90,31 +111,36 @@
 }
 
 
-// serach by name only
-- (NSArray*)getEmployeesByName:(NSString*)name {
-    
-    //TODO
-    
-    //FIX THIS:
-    return _jsonResponse;
-}
-
-// search by department only
-- (NSArray*)getEmployeesByDepartment:(NSString*)department{
-    
-    //TODO
-    
-    //FIX THIS:
-    return _jsonResponse;
-    
-}
- 
- 
-
 // search by name and department
-- (NSArray*)getEmployeesByNameAndDepartment:(NSString*)name department:(NSString*)department{
+- (NSArray*)getEmployees:(NSString*)name department:(NSString*)department{
     
-    _query = [NSString stringWithFormat:@"$where=name like '%%%@%%'&department=%@", name, department];
+    /*TODO:
+     
+     -Check to see what the GUI is giving me. Depending on the values, I'll then change the query
+     
+     
+     */
+    
+    if([name length] > 0 && [department length] > 0) {
+        
+        _query = [NSString stringWithFormat:@"$where=name like '%%%@%%'&department=%@", name, department];
+    }
+    else if([name length] > 0){
+        
+        _query = [NSString stringWithFormat:@"$where=name like '%%%@%%'", name];
+    }
+    else if([department length] > 0){
+        
+        //Use NSDictionary to get the proper department name
+        NSString *departmentQuery = [_departmentsWithCorrectSpelling objectForKey:department];
+        
+        _query = [NSString stringWithFormat:@"$where=department like '%%%@%%'", departmentQuery];
+    }
+    else{
+        NSLog(@"Something went wrong");
+        return nil;
+    }
+    
     
     _jsonResponse = [_dt executeQuery: _query];
     
@@ -160,19 +186,6 @@
 
 // get array of current departments
 - (NSArray*)getDepartments{
- 
-    /*
-    _query= nil;
-    _query = @"$select=department&$group=department";
-    
-    _jsonResponse = [_dt executeQuery: _query];
-    
-    NSArray* returnArray = [_jsonResponse valueForKey:@"department"];
-    
-    //Iterate through returnArray, ensuring that only the first letter of each word is capitalized.
-    
-    return returnArray;
-     */
     
     return _departForFrontEnd;
 

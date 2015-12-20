@@ -167,6 +167,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" id="nsZ-xR-yWd">
+                            <rect key="frame" x="0.0" y="136" width="600" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </activityIndicatorView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" textLabel="jEx-cN-7op" detailTextLabel="0lv-yp-moO" style="IBUITableViewCellStyleSubtitle" id="qe4-IU-2JV">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
@@ -201,6 +205,9 @@
                             <outlet property="delegate" destination="k0N-L8-Gw9" id="g6f-Ee-4Kk"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="activityIndicator" destination="nsZ-xR-yWd" id="PE3-aO-oYs"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cW8-p4-FGw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

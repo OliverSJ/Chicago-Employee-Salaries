@@ -31,7 +31,7 @@
 /** Performs a search */
 @property (weak, nonatomic) IBOutlet UIButton *searchButton;
 /** Class for holding all employee information and search results. */
-@property (weak, nonatomic) BusinessTier *currentBT;
+@property (nonatomic) BusinessTier *currentBT;
 
 /**
  @brief Checks for correct formatting of a string.
@@ -322,7 +322,7 @@
     nameToolBar.items = @[nameBackButton, nameNextButton, flex];
     self.nameTextField.inputAccessoryView = nameToolBar;
     
-    // TODO - INITIALIZE BusinessTier for passing through segue
+    self.currentBT = [[BusinessTier alloc]init];
     
 }
 

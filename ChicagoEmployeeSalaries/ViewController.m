@@ -254,8 +254,16 @@
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapGestureCaptured:)];
     [self.scrollView addGestureRecognizer:singleTap];
     
+    // instantiate BusinessTierObject
+    self.currentBT = [[BusinessTier alloc]init];
+    
     // set department names here
-    self.departments = @[@"(LEAVE BLANK)", @"POLICE", @"MAYOR'S OFFICE", @"FONTANO'S", @"LAGUNITAS"];
+    self.departments = [self.currentBT getDepartments];
+    
+    NSLog(@"%lu", self.departments.count);
+    for (id d in self.departments){
+        NSLog(@"%@", d);
+    }
     
     // create pickerview for departments
     self.departmentsPickerView = [[UIPickerView alloc] init];
@@ -321,8 +329,7 @@
     
     nameToolBar.items = @[nameBackButton, nameNextButton, flex];
     self.nameTextField.inputAccessoryView = nameToolBar;
-    
-    self.currentBT = [[BusinessTier alloc]init];
+
     
 }
 

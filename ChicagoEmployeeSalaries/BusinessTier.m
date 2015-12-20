@@ -77,7 +77,7 @@
         
         
         //Create the NSDictionary
-        _departmentsWithCorrectSpelling = [[NSDictionary alloc] initWithObjects:_departForBackEnd forKeys:_departForFrontEnd];
+        //_departmentsWithCorrectSpelling = [[NSDictionary alloc] initWithObjects:_departForBackEnd forKeys:_departForFrontEnd];
         
         //init query string to nil
         _query = nil;

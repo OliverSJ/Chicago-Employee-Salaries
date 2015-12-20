@@ -205,9 +205,6 @@
                             <outlet property="delegate" destination="k0N-L8-Gw9" id="g6f-Ee-4Kk"/>
                         </connections>
                     </tableView>
-                    <connections>
-                        <outlet property="activityIndicator" destination="nsZ-xR-yWd" id="PE3-aO-oYs"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cW8-p4-FGw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

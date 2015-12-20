@@ -45,22 +45,23 @@
     
     NSString *url = [self convertToHttpURL:query];
     
-    // Make asynchronous request
-    NSURLSession *session = [NSURLSession sharedSession];
-    [[session dataTaskWithURL:[NSURL URLWithString:url]
-            completionHandler:^(NSData *data,
-                                NSURLResponse *response,
-                                NSError *error) {
-                // handle response
-                self.jsonArr = [[self parseData:data] copy];
-                
-            }] resume];
+    // Send a synchronous request
+    NSURLRequest * urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
+    NSURLResponse * response = nil;
+    NSError * error = nil;
+    NSData * data = [NSURLConnection sendSynchronousRequest:urlRequest
+                                          returningResponse:&response
+                                                      error:&error];
+    // sets response arr
+    if (error == nil) {
+        self.jsonArr = [[self parseData:data] copy];
+        return self.jsonArr;
+    }
     
-    //TODO Remove this line when used in iOS APP - Only used for DEBUGGING
-    [NSThread sleepForTimeInterval:0.1f]; // sleep for 1 second to allow for async response
-    
-    //NSLog(@"Size of jsonArr: %lu", self.jsonArr.count);
-    return self.jsonArr;
+    // an error has occured, return nil
+    else {
+        return nil;
+    }
 }
 
 // Parses the data and returns and array of deictionary

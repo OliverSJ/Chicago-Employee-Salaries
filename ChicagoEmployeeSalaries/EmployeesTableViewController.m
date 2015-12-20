@@ -50,23 +50,22 @@
 }
 
 -(void)viewDidLoad {
+    
+    [super viewDidLoad];
+    
+    // create UIActivityIndicator
     self.activityView = [[UIActivityIndicatorView alloc]
                                              initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    
     self.activityView.center=self.view.center;
     [self.activityView startAnimating];
     [self.view addSubview:self.activityView];
     
+    // asnyc call for getEmployees
+    // shows ActivityIndicator while waiting for response
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        // No explicit autorelease pool needed here.
-        // The code runs in background, not strangling
-        // the main run loop.
-        //[self doSomeLongOperation];
         //employees = [self.currentBT getEmployees:self.currentBT.name byDepartment:self.currentBT.department]
         dispatch_sync(dispatch_get_main_queue(), ^{
-            // This will be called on the main thread, so that
-            // you can update the UI, for example.
-            //[self longOperationDone];
+            // getEmployees has finished
             [self.activityView stopAnimating];
             [self.tableView reloadData];
         });

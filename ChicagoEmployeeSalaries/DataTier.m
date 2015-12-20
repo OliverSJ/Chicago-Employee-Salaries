@@ -57,8 +57,9 @@
             }] resume];
     
     //TODO Remove this line when used in iOS APP - Only used for DEBUGGING
-    //[NSThread sleepForTimeInterval:5.0f]; // sleep for 1 second to allow for async response
+    [NSThread sleepForTimeInterval:0.1f]; // sleep for 1 second to allow for async response
     
+    //NSLog(@"Size of jsonArr: %lu", self.jsonArr.count);
     return self.jsonArr;
 }
 

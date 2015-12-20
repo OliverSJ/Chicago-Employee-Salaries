@@ -29,4 +29,9 @@
 @property NSArray* departForFrontEnd;
 @property NSArray* departForBackEnd;
 
+- (NSArray*)getEmployeesByName:(NSString*)name;
+- (NSArray*)getEmployeesByDepartment:(NSString*)department;
+- (NSArray*)getEmployeesByNameAndDepartment:(NSString*)name department:(NSString*)department;
+- (NSArray*)getDepartments;
+
 @end

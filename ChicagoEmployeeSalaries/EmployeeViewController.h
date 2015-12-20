@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EmployeeObject.h"
 
 @interface EmployeeViewController : UIViewController
+
+@property (nonatomic) EmployeeObject *currentEmployee;
 
 @end

@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BusinessTier.h"
 
 @interface EmployeesTableViewController : UITableViewController
+
+@property (nonatomic) BusinessTier *currentBT;
 
 @end

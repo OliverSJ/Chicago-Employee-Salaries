@@ -113,6 +113,8 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     EmployeesTableViewController *etvc = [segue destinationViewController];
+    self.currentBT.name = self.nameTextField.text;
+    self.currentBT.department = self.departmentTextField.text;
     etvc.currentBT = self.currentBT; // pass business tier to next view controller
 }
 

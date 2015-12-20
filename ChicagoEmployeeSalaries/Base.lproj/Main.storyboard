@@ -195,9 +195,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="bjW-63-6P3" kind="show" identifier="ViewEmployeeDetails" id="zJK-Cf-pNZ"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -209,24 +206,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cW8-p4-FGw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="721" y="-702"/>
-        </scene>
-        <!--Employee View Controller-->
-        <scene sceneID="2WG-BI-thD">
-            <objects>
-                <viewController id="bjW-63-6P3" customClass="EmployeeViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="FHZ-R8-u50"/>
-                        <viewControllerLayoutGuide type="bottom" id="cIb-uC-PJP"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="5qp-AF-vbs">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7MM-Yf-RBe" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1417" y="-702"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="P4Z-oc-TdA">

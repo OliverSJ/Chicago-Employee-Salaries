@@ -25,7 +25,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     EmployeeViewController *evc = [segue destinationViewController];
     NSIndexPath *path = [self.tableView indexPathForSelectedRow];
-    //evc.currentEmployee = employees[path.row];
+    evc.currentEmployee = self.employees[path.row];
 }
 
 /*************************************************
@@ -33,18 +33,21 @@
  *************************************************/
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    // TODO set as size of dataset retreived from BusinessTier
-    return 0;
+    return self.employees.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     
-    //cell.textLabel.text = @"Rahm Emanuel"; // array index of current values
-    //cell.detailTextLabel.text = @"Mayor's Office"; // array index of details
-    cell.textLabel.text = @""; // array index of current values
-    cell.detailTextLabel.text = @""; // array index of details
+    if (self.employees.count > 0) {
+        cell.textLabel.text = [self.employees[indexPath.row] name]; // array index of current values
+        cell.detailTextLabel.text = [self.employees[indexPath.row] department]; // array index of details
+    }
+    else {
+        cell.textLabel.text = @""; // array index of current values
+        cell.detailTextLabel.text = @""; // array index of details
+    }
     
     return cell;
 }
@@ -53,9 +56,11 @@
     
     [super viewDidLoad];
     
+    self.employees = [[NSArray alloc]init];
+    
     // create UIActivityIndicator
     self.activityView = [[UIActivityIndicatorView alloc]
-                                             initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+                         initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     self.activityView.center=self.view.center;
     [self.activityView startAnimating];
     [self.view addSubview:self.activityView];
@@ -63,7 +68,8 @@
     // asnyc call for getEmployees
     // shows ActivityIndicator while waiting for response
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        //employees = [self.currentBT getEmployees:self.currentBT.name byDepartment:self.currentBT.department]
+        // get deep copy array of employees
+        self.employees = [[self.currentBT getEmployees:self.currentBT.name department:self.currentBT.department] copy];
         dispatch_sync(dispatch_get_main_queue(), ^{
             // getEmployees has finished
             [self.activityView stopAnimating];

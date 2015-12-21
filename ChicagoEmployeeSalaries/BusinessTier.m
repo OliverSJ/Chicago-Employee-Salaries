@@ -37,23 +37,19 @@
         
         _employee = nil;
         
+        _nameSearch = NO;
+        _departmentSearch = NO;
+        _nameAndDepartmentSearch = NO;
+        _salarySearch = NO;
+        
         //Create the departmentsWithCorrectSpelling.  This is so that the department names look good on the GUI
         _query = @"$select=department&$group=department";
         
         _jsonResponse = [_dt executeQuery: _query];
         
         
-        //_departForBackEnd = [_jsonResponse valueForKey:@"department"];
-        
-        
-        //WORKS, but testing a different method
-        //NSMutableArray* tempArray = [[NSMutableArray alloc]init];
-        //tempArray = [_jsonResponse valueForKey:@"department"];
-        
         NSMutableArray* tempArray = [[NSMutableArray alloc] initWithArray:[_jsonResponse valueForKey:@"department"]];
         
-        
-        //NSLog(NSStringFromClass([tempArray class]));
         
         //The last object is nil.  Move it to the front so that the object will match up with an appropriate key
         //In this case, nil will match up with "(Leave Blank)"
@@ -86,16 +82,11 @@
                     [tempArray addObject:tempString];
                 }
                 
-                //NSLog(@"%@", tempString);
             }//end of outer if statement
 
         }//end of for loop
         
         _departForFrontEnd = [NSArray arrayWithArray:tempArray];
-        
-        //For Debugging purposes only
-//        NSLog(@"%lu", (unsigned long)[_departForFrontEnd count]);
-//        NSLog(@"%lu", (unsigned long)[_departForBackEnd count]);
         
         //Create the NSDictionary
         _departmentsWithCorrectSpelling = [[NSDictionary alloc] initWithObjects:_departForBackEnd forKeys:_departForFrontEnd];
@@ -206,5 +197,7 @@
     return _departForFrontEnd;
 
 }
+
+
 
 @end

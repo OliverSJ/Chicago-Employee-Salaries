@@ -86,6 +86,8 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="search"/>
                                         <connections>
                                             <action selector="searchButtonPressed:" destination="5Ja-eI-A0M" eventType="primaryActionTriggered" id="Fe5-eg-sxH"/>
+                                            <action selector="textFieldDidBeginEditing:" destination="5Ja-eI-A0M" eventType="editingDidBegin" id="ONy-7M-iCW"/>
+                                            <action selector="textFieldDidEndEditing:" destination="5Ja-eI-A0M" eventType="editingDidEnd" id="vgD-Kt-Xaz"/>
                                             <action selector="textFieldValueDidChange:" destination="5Ja-eI-A0M" eventType="editingChanged" id="ztN-ME-5lU"/>
                                         </connections>
                                     </textField>
@@ -250,6 +252,8 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                         <connections>
                                             <action selector="nextButtonPressed:" destination="9Iz-75-5AJ" eventType="primaryActionTriggered" id="zq9-7t-KEz"/>
+                                            <action selector="textFieldDidBeginEditing:" destination="9Iz-75-5AJ" eventType="editingDidBegin" id="U2P-Qr-otZ"/>
+                                            <action selector="textFieldDidEndEditing:" destination="9Iz-75-5AJ" eventType="editingDidEnd" id="87l-JR-afR"/>
                                             <action selector="textFieldValueDidChange:" destination="9Iz-75-5AJ" eventType="editingChanged" id="WKd-wm-YpX"/>
                                         </connections>
                                     </textField>
@@ -265,6 +269,8 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" returnKeyType="search"/>
                                         <connections>
                                             <action selector="searchButtonPressed:" destination="9Iz-75-5AJ" eventType="primaryActionTriggered" id="4NO-B6-zlA"/>
+                                            <action selector="textFieldDidBeginEditing:" destination="9Iz-75-5AJ" eventType="editingDidBegin" id="XZv-gt-p1I"/>
+                                            <action selector="textFieldDidEndEditing:" destination="9Iz-75-5AJ" eventType="editingDidEnd" id="IdO-hY-0U9"/>
                                         </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rme-YO-Z34">
@@ -378,6 +384,10 @@
                                         <rect key="frame" x="0.0" y="27" width="163" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="search"/>
+                                        <connections>
+                                            <action selector="textFieldDidBeginEditing:" destination="dzJ-6T-HCq" eventType="editingDidBegin" id="Z64-Jd-kVo"/>
+                                            <action selector="textFieldDidEndEditing:" destination="dzJ-6T-HCq" eventType="editingDidEnd" id="5u7-Xg-Hgb"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Isg-HE-mBh">
                                         <rect key="frame" x="0.0" y="63" width="163" height="30"/>
@@ -407,6 +417,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="EJa-2m-7A5"/>
+        <segue reference="T7L-ho-K5q"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -41,7 +41,7 @@
 {
     
     CGRect theFrame = view.frame;
-    float y = theFrame.origin.y + 100;
+    float y = theFrame.origin.y + 150;
     y -= (y/1.7);
     [self scrollToY:-y];
 }

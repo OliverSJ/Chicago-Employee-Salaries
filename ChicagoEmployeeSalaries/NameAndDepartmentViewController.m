@@ -9,6 +9,7 @@
 #import "NameAndDepartmentViewController.h"
 #import "EmployeesTableViewController.h"
 #import "BusinessTier.h"
+#import "UIView+FormScroll.h"
 
 @interface NameAndDepartmentViewController ()
 
@@ -47,6 +48,22 @@
 @implementation NameAndDepartmentViewController
 
 /*************************************************
+ SCROLLER
+ *************************************************/
+
+- (IBAction)textFieldDidBeginEditing:(id)sender {
+    
+    UITextField *textField = (UITextField*)sender;
+    
+    [self.view scrollToView:textField];
+}
+
+- (IBAction)textFieldDidEndEditing:(id)sender {
+    
+    [self.view scrollToY:0];
+}
+
+/*************************************************
  PICKER VIEW
  *************************************************/
 
@@ -57,15 +74,12 @@
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
     
-    return self.departments.count-1;
+    return self.departments.count;
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     
-    if (row != self.departments.count) {
-        return self.departments[row+1];
-    }
-    return nil;
+    return self.departments[row];
 }
 
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
@@ -74,7 +88,15 @@
         self.departmentTextField.backgroundColor = [UIColor whiteColor];
     }
     
-    self.departmentTextField.text = self.departments[row+1];
+    // user has selected (leave blank), "blank out" departmentsTextField
+    if (row == 0) {
+        self.departmentTextField.text = @"";
+        return;
+    }
+    // user selected department
+    else {
+        self.departmentTextField.text = self.departments[row];
+    }
 }
 /*************************************************
  TABLE VIEW
@@ -174,12 +196,9 @@
  */
 - (IBAction)searchButtonPressed:(id)sender {
     
-    // close keyboard
-    [self.nameTextField resignFirstResponder];
-    [self.departmentTextField resignFirstResponder];
-    
     BOOL doReturn = NO;
     
+    // 3 possible cases where user doesn't provide input
     if (self.nameTextField.text.length <= 0 &&
         self.departmentTextField.text.length > 0) {
         self.nameTextField.backgroundColor = [UIColor colorWithRed:1.0 green:0 blue:0 alpha:0.5];
@@ -202,6 +221,9 @@
     if (doReturn) {
         return;
     }
+    
+    // close keyboard
+    [self.view.window endEditing:YES];
     
     // check if segue can be performed
     [self performSegueWithIdentifier:@"NameAndDepartmentResults" sender:nil];

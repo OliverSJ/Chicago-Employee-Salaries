@@ -10,6 +10,7 @@
 #import "UIView+FormScroll.h"
 #import "BusinessTier.h"
 #import "EmployeesTableViewController.h"
+#import "UIView+FormScroll.h"
 
 @interface NameViewController ()
 
@@ -20,6 +21,22 @@
 @end
 
 @implementation NameViewController
+
+/*************************************************
+ SCROLLER
+ *************************************************/
+
+- (IBAction)textFieldDidBeginEditing:(id)sender {
+    
+    UITextField *textField = (UITextField*)sender;
+    
+    [self.view scrollToView:textField];
+}
+
+- (IBAction)textFieldDidEndEditing:(id)sender {
+    
+    [self.view scrollToY:0];
+}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
@@ -39,6 +56,9 @@
         self.nameTextField.backgroundColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:0.5];
         return;
     }
+    
+    // close keyboard
+    [self.view.window endEditing:YES];
     
     [self performSegueWithIdentifier:@"NameResults" sender:sender];
 }

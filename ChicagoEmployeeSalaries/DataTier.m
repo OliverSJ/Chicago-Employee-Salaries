@@ -34,6 +34,7 @@
     // replace all apostrophes with %27
     query = [query stringByReplacingOccurrencesOfString:@"'" withString:@"%27"];
     
+    query = [query stringByReplacingOccurrencesOfString:@"AND&" withString:@"%26"];
     // init full url
     NSString *fullUrl = [NSString stringWithFormat:@"%@%@", self.baseUrl, query];
     

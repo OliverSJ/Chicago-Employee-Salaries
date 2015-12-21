@@ -53,12 +53,12 @@
         NSMutableArray* tempArray = [[NSMutableArray alloc] initWithArray:[_jsonResponse valueForKey:@"department"]];
         
         
-        NSLog(NSStringFromClass([tempArray class]));
+        //NSLog(NSStringFromClass([tempArray class]));
         
         //The last object is nil.  Move it to the front so that the object will match up with an appropriate key
         //In this case, nil will match up with "(Leave Blank)"
         int size = ([tempArray count]-1);
-        [tempArray removeObjectAtIndex: 35];
+        [tempArray removeObjectAtIndex: size];
         [tempArray insertObject:@"(Leave Blank)" atIndex:0];
         
         
@@ -128,13 +128,20 @@
     else if([name length] > 0){
         
         _query = [NSString stringWithFormat:@"$where=name like '%%%@%%'", name];
+        
     }
     else if([department length] > 0){
         
         //Use NSDictionary to get the proper department name
         NSString *departmentQuery = [_departmentsWithCorrectSpelling objectForKey:department];
         
-        _query = [NSString stringWithFormat:@"$where=department like '%%%@%%'", departmentQuery];
+        //Replace any ampersands
+        NSString *finalQuery = [departmentQuery stringByReplacingOccurrencesOfString:@"&" withString:@"AND&"];
+        
+        
+        //_query = [NSString stringWithFormat:@"$where=department like '%%%@%%'", departmentQuery];
+        _query = [NSString stringWithFormat:@"department=%@", finalQuery];
+        
     }
     else{
         NSLog(@"Something went wrong");
@@ -179,8 +186,17 @@
        
     }
     
+    //Sort the Array alphabetically by name and by department
+    //https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/SortDescriptors/Articles/Creating.html
+    
+    NSSortDescriptor *nameDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+    NSSortDescriptor *departmentDescriptor = [[NSSortDescriptor alloc] initWithKey:@"department" ascending:YES];
+    NSArray *descriptors = @[nameDescriptor, departmentDescriptor];
+    NSArray* returnArray = [_tempArray sortedArrayUsingDescriptors:descriptors];
+    
+    
     //Return the NSMutableArray as an immutable NSArray
-    return [NSArray arrayWithArray:_tempArray];
+    return returnArray;
     
 }
 

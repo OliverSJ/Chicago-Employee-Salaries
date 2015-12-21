@@ -32,4 +32,10 @@
 - (NSArray*)getEmployees:(NSString*)name department:(NSString*)department;
 - (NSArray*)getDepartments;
 
+@property BOOL nameSearch;
+@property BOOL departmentSearch;
+@property BOOL nameAndDepartmentSearch;
+@property BOOL salarySearch;
+
+
 @end

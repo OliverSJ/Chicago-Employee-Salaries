@@ -28,12 +28,8 @@
         return [self.employees[index] annualSalary];
     }
     
-    else if (self.currentBT.nameAndDepartmentSearch) {
-        return [self.employees[index] job_position];
-    }
-    
-    else if (self.currentBT.departmentSearch) {
-        return [self.employees[index] job_position];
+    else {
+        return [self.employees[index] jobPosition];
     }
 }
 

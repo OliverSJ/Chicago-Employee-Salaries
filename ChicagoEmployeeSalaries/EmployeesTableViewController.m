@@ -19,6 +19,24 @@
 
 @implementation EmployeesTableViewController
 
+- (NSString*) setDetailTextLabel:(int)index {
+    if (self.currentBT.nameSearch) {
+        return [self.employees[index] department];
+    }
+    
+    else if (self.currentBT.salarySearch) {
+        return [self.employees[index] annualSalary];
+    }
+    
+    else if (self.currentBT.nameAndDepartmentSearch) {
+        return [self.employees[index] job_position];
+    }
+    
+    else if (self.currentBT.departmentSearch) {
+        return [self.employees[index] job_position];
+    }
+}
+
 /*************************************************
  SEGUES
  *************************************************/

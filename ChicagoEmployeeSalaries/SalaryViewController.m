@@ -84,6 +84,7 @@
 //    EmployeesTableViewController *etvc = [segue destinationViewController];
 //    self.currentBT.minSalary = self.minSalaryTextField.text;
 //    self.currentBT.maxSalary = self.maxSalaryTextField.text;
+//    self.currentBT.salarySearch = YES;
 //    etvc.currentBT = self.currentBT; // pass business tier to next view controller
 }
 

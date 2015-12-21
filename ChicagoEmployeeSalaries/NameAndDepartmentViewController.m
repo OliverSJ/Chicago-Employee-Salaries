@@ -162,6 +162,7 @@
     EmployeesTableViewController *etvc = [segue destinationViewController];
     self.currentBT.name = self.nameTextField.text;
     self.currentBT.department = self.departmentTextField.text;
+    self.currentBT.nameAndDepartmentSearch = YES;
     etvc.currentBT = self.currentBT; // pass business tier to next view controller
 }
 

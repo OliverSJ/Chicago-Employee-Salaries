@@ -11,7 +11,7 @@
 @interface EmployeeObject : NSObject
 
 @property NSString* name;
-@property NSString* position;
+@property NSString* jobPosition;
 @property NSString* department;
 @property NSString* annualSalary;
 

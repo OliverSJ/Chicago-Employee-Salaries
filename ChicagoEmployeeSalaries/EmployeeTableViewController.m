@@ -81,7 +81,7 @@
     // build array for table view
     self.employeeDetails = [[NSMutableArray alloc]init];
     [self.employeeDetails addObject:self.currentEmployee.name];
-    [self.employeeDetails addObject:self.currentEmployee.position];
+    [self.employeeDetails addObject:self.currentEmployee.jobPosition];
     [self.employeeDetails addObject:self.currentEmployee.department];
     [self.employeeDetails addObject:formattedString];
 }

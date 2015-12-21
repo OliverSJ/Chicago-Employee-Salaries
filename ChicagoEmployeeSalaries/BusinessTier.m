@@ -39,7 +39,6 @@
         _nameAndDepartmentSearch = NO;
         _salarySearch = NO;
         
-        //Create the departmentsWithCorrectSpelling.  This is so that the department names look good on the GUI
         _query = @"$select=department&$group=department";
         
         //Query the database for the list of departments
@@ -64,7 +63,7 @@
         
         /* @discussion: The Chicago database misspells some department names (see below for examples).  
                         Directly using the names in the database for the front end would look bad, so
-                        I identified the misspelled names and will replace them in the dictionary
+                        I identified the misspelled names and replaced them in the NSDictionary
          
          */
         for(NSString* tempString in _departForBackEnd)

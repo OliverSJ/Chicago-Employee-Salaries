@@ -10,13 +10,9 @@
 
 @protocol BusinessTierRules
 
-// serach by name only
-//- (NSArray*)getEmployeesByName:(NSString*)name;
 
-// search by department only
-//- (NSArray*)getEmployeesByDepartment:(NSString*)department;
 
-// search by name and department
+//Get list of employees.
 - (NSArray*)getEmployees:(NSString*)name department:(NSString*)department;
 
 // get array of current departments

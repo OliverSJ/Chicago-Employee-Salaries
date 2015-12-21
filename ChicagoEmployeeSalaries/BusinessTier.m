@@ -12,7 +12,6 @@
 
 @implementation BusinessTier
 
-//Class constructor
 - (instancetype)init
 {
     self = [super init];
@@ -27,16 +26,14 @@
         //init the tempArray
         _tempArray = [[NSMutableArray alloc] init];
         
+        //Set class variables that are reused to nil
         _name = nil;
-        
         _department = nil;
-        
         _annualSalary = nil;
-        
-        _position = nil;
-        
+        _jobPosition = nil;
         _employee = nil;
         
+        //Set BOOL values to NO as default
         _nameSearch = NO;
         _departmentSearch = NO;
         _nameAndDepartmentSearch = NO;
@@ -45,9 +42,10 @@
         //Create the departmentsWithCorrectSpelling.  This is so that the department names look good on the GUI
         _query = @"$select=department&$group=department";
         
+        //Query the database for the list of departments
         _jsonResponse = [_dt executeQuery: _query];
         
-        
+        /** Store just the department strings in tempArray from _jsonResponse (which is an NSArray of NSDictionaries) */
         NSMutableArray* tempArray = [[NSMutableArray alloc] initWithArray:[_jsonResponse valueForKey:@"department"]];
         
         
@@ -64,6 +62,11 @@
         tempArray = nil;
         tempArray =[[NSMutableArray alloc]init];
         
+        /* @discussion: The Chicago database misspells some department names (see below for examples).  
+                        Directly using the names in the database for the front end would look bad, so
+                        I identified the misspelled names and will replace them in the dictionary
+         
+         */
         for(NSString* tempString in _departForBackEnd)
         {
             if(![tempString isEqual:[NSNull null]])
@@ -105,12 +108,6 @@
 // search by name and department
 - (NSArray*)getEmployees:(NSString*)name department:(NSString*)department{
     
-    /*TODO:
-     
-     -Check to see what the GUI is giving me. Depending on the values, I'll then change the query
-     
-     
-     */
     
     if([name length] > 0 && [department length] > 0) {
         
@@ -160,7 +157,7 @@
                 _annualSalary = [dictionary objectForKey:key];
             }
             else if([key caseInsensitiveCompare:@"job_titles"] == NSOrderedSame) {
-                _position = [dictionary objectForKey:key];
+                _jobPosition = [dictionary objectForKey:key];
             }
             else {
                 _name = [dictionary objectForKey:key];
@@ -169,7 +166,7 @@
         }//end of for loop
         
         //Make the object
-        _employee = [[EmployeeObject alloc] initWithValues:_name aPosition:_position aDepartment:_department aSalary:_annualSalary];
+        _employee = [[EmployeeObject alloc] initWithValues:_name aPosition:_jobPosition aDepartment:_department aSalary:_annualSalary];
         
         //Add the object to the mutable array
         [_tempArray addObject:_employee];
@@ -178,8 +175,6 @@
     }
     
     //Sort the Array alphabetically by name and by department
-    //https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/SortDescriptors/Articles/Creating.html
-    
     NSSortDescriptor *nameDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
     NSSortDescriptor *departmentDescriptor = [[NSSortDescriptor alloc] initWithKey:@"department" ascending:YES];
     NSArray *descriptors = @[nameDescriptor, departmentDescriptor];

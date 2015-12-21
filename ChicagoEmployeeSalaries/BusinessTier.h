@@ -21,7 +21,7 @@
 
 @property NSString* name;
 @property NSString* department;
-@property NSString* position;
+@property NSString* jobPosition;
 @property NSString* annualSalary;
 
 @property EmployeeObject* employee;

@@ -103,16 +103,50 @@
     return self;
 }
 
+-(NSString*)parseName:(NSString *)name{
+    
+    NSString* fullName;
+    NSString* firstName = [name componentsSeparatedByString:@" "][0];
+    NSString* lastName;
+    
+    @try{
+        
+        lastName = [name componentsSeparatedByString:@" "][1];
+        
+        fullName = [NSString stringWithFormat:@"%@,  %@", lastName, firstName];
+        
+    }
+    @catch(NSException *exception){
+        
+        lastName = nil;
+        
+        fullName = firstName;
+    }
+    
+    return fullName;
+    
+}
 
-// search by name and department
+
+/** @brief: This method will query the database based on user input for employee name and department
+    @param: (NSString*) name: Can be nil or blank
+    @param: (NSString*) department: Can be nil or blank
+ 
+    @return: Returns an NSArray of EmployeeObject
+ 
+ */
 - (NSArray*)getEmployees:(NSString*)name department:(NSString*)department{
     
     
     if([name length] > 0 && [department length] > 0) {
         
+        name = [self parseName:name];
+        
         _query = [NSString stringWithFormat:@"$where=name like '%%%@%%'&department=%@", name, department];
     }
     else if([name length] > 0){
+        
+        name = [self parseName:name];
         
         _query = [NSString stringWithFormat:@"$where=name like '%%%@%%'", name];
         
@@ -185,7 +219,7 @@
     
 }
 
-// get array of current departments
+/** @brief: This method returns the list of departments with correct spelling*/
 - (NSArray*)getDepartments{
     
     return _departForFrontEnd;

@@ -37,5 +37,7 @@
 @property BOOL nameAndDepartmentSearch;
 @property BOOL salarySearch;
 
+-(NSString*)parseName: (NSString*) name;
+
 
 @end

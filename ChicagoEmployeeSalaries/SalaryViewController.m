@@ -44,6 +44,22 @@
 @implementation SalaryViewController
 
 /*************************************************
+ HELPER FUNCTIONS
+ *************************************************/
+- (BOOL)textIsValidValue:(NSString*)value{
+    NSError *error = NULL;
+    NSRegularExpression *regex = [NSRegularExpression
+                                  regularExpressionWithPattern:@"^[$]?[0-9]+([.][0-9]{2})?$"
+                                  options:NSRegularExpressionCaseInsensitive
+                                  error:&error];
+    if ([regex numberOfMatchesInString:value options:0 range:NSMakeRange(0, value.length)]) {
+        NSLog(@"Success");
+    }
+    
+    return YES;
+}
+
+/*************************************************
  SCROLLER
  *************************************************/
 
@@ -147,6 +163,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self textIsValidValue:@"$100.00"];
     
     // instantiate BusinessTierObject
     self.currentBT = [[BusinessTier alloc]init];

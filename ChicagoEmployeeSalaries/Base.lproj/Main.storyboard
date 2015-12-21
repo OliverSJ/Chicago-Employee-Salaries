@@ -8,7 +8,6 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ch9-3c-ZJd"/>
@@ -26,7 +25,7 @@
                                         <rect key="frame" x="0.0" y="65" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hi3-ha-cVd" id="XWb-a9-As7">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -56,6 +55,7 @@
                         <segue destination="dzJ-6T-HCq" kind="show" identifier="SearchByDepartment" id="36J-zj-sxb"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="10" y="-740"/>
         </scene>
@@ -86,6 +86,8 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="search"/>
                                         <connections>
                                             <action selector="searchButtonPressed:" destination="5Ja-eI-A0M" eventType="primaryActionTriggered" id="Fe5-eg-sxH"/>
+                                            <action selector="textFieldDidBeginEditing:" destination="5Ja-eI-A0M" eventType="editingDidBegin" id="ONy-7M-iCW"/>
+                                            <action selector="textFieldDidEndEditing:" destination="5Ja-eI-A0M" eventType="editingDidEnd" id="vgD-Kt-Xaz"/>
                                             <action selector="textFieldValueDidChange:" destination="5Ja-eI-A0M" eventType="editingChanged" id="ztN-ME-5lU"/>
                                         </connections>
                                     </textField>
@@ -132,18 +134,18 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qe4-IU-2JV" id="Zjg-QM-D19">
-                                    <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jEx-cN-7op">
-                                            <rect key="frame" x="15" y="5" width="32" height="20"/>
+                                            <rect key="frame" x="15" y="6" width="31.5" height="19.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0lv-yp-moO">
-                                            <rect key="frame" x="15" y="25" width="31" height="14"/>
+                                            <rect key="frame" x="15" y="25.5" width="30.5" height="13.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -250,6 +252,8 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                         <connections>
                                             <action selector="nextButtonPressed:" destination="9Iz-75-5AJ" eventType="primaryActionTriggered" id="zq9-7t-KEz"/>
+                                            <action selector="textFieldDidBeginEditing:" destination="9Iz-75-5AJ" eventType="editingDidBegin" id="U2P-Qr-otZ"/>
+                                            <action selector="textFieldDidEndEditing:" destination="9Iz-75-5AJ" eventType="editingDidEnd" id="87l-JR-afR"/>
                                             <action selector="textFieldValueDidChange:" destination="9Iz-75-5AJ" eventType="editingChanged" id="WKd-wm-YpX"/>
                                         </connections>
                                     </textField>
@@ -265,6 +269,8 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" returnKeyType="search"/>
                                         <connections>
                                             <action selector="searchButtonPressed:" destination="9Iz-75-5AJ" eventType="primaryActionTriggered" id="4NO-B6-zlA"/>
+                                            <action selector="textFieldDidBeginEditing:" destination="9Iz-75-5AJ" eventType="editingDidBegin" id="XZv-gt-p1I"/>
+                                            <action selector="textFieldDidEndEditing:" destination="9Iz-75-5AJ" eventType="editingDidEnd" id="IdO-hY-0U9"/>
                                         </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rme-YO-Z34">
@@ -297,7 +303,6 @@
         <!--Salary View Controller-->
         <scene sceneID="Hqi-BN-fCO">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8D5-mq-j4r" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="TEb-lI-teo" customClass="SalaryViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BqE-Tn-Dwz"/>
@@ -319,7 +324,13 @@
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="i.e. 10,000" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HMb-j7-WF6">
                                         <rect key="frame" x="0.0" y="27" width="189" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation" returnKeyType="next"/>
+                                        <connections>
+                                            <action selector="searchButtonPressed:" destination="TEb-lI-teo" eventType="primaryActionTriggered" id="0KE-dI-OHD"/>
+                                            <action selector="textFieldDidBeginEditing:" destination="TEb-lI-teo" eventType="editingDidBegin" id="NVg-Sv-Stj"/>
+                                            <action selector="textFieldDidEndEditing:" destination="TEb-lI-teo" eventType="editingDidEnd" id="96Y-DC-PvS"/>
+                                            <action selector="textFieldValueDidChange:" destination="TEb-lI-teo" eventType="editingChanged" id="9nM-Ej-lbr"/>
+                                        </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a Maximum Salary:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ar-uq-oOb">
                                         <rect key="frame" x="0.0" y="63" width="189" height="21"/>
@@ -327,14 +338,23 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="i.e. 250,000" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vNb-bV-mmG">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="i.e. 250,000" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="vNb-bV-mmG">
                                         <rect key="frame" x="0.0" y="89" width="189" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation" returnKeyType="search"/>
+                                        <connections>
+                                            <action selector="searchButtonPressed:" destination="TEb-lI-teo" eventType="primaryActionTriggered" id="B9R-74-v70"/>
+                                            <action selector="textFieldDidBeginEditing:" destination="TEb-lI-teo" eventType="editingDidBegin" id="h6i-PU-C0w"/>
+                                            <action selector="textFieldDidEndEditing:" destination="TEb-lI-teo" eventType="editingDidEnd" id="2B5-4l-gK0"/>
+                                            <action selector="textFieldValueDidChange:" destination="TEb-lI-teo" eventType="editingChanged" id="X1x-p0-TnB"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FoN-ua-N8n">
                                         <rect key="frame" x="0.0" y="125" width="189" height="30"/>
                                         <state key="normal" title="Search"/>
+                                        <connections>
+                                            <action selector="searchButtonPressed:" destination="TEb-lI-teo" eventType="touchUpInside" id="WRH-Oi-RP2"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -347,9 +367,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="GI9-Hz-3sb"/>
                     <connections>
+                        <outlet property="maxSalaryTextField" destination="vNb-bV-mmG" id="WV3-H4-tYB"/>
+                        <outlet property="minSalaryTextField" destination="HMb-j7-WF6" id="8MG-8B-gQJ"/>
                         <segue destination="k0N-L8-Gw9" kind="show" identifier="SalaryResults" id="EJa-2m-7A5"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8D5-mq-j4r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="736" y="-1748"/>
         </scene>
@@ -378,6 +401,10 @@
                                         <rect key="frame" x="0.0" y="27" width="163" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="search"/>
+                                        <connections>
+                                            <action selector="textFieldDidBeginEditing:" destination="dzJ-6T-HCq" eventType="editingDidBegin" id="Z64-Jd-kVo"/>
+                                            <action selector="textFieldDidEndEditing:" destination="dzJ-6T-HCq" eventType="editingDidEnd" id="5u7-Xg-Hgb"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Isg-HE-mBh">
                                         <rect key="frame" x="0.0" y="63" width="163" height="30"/>

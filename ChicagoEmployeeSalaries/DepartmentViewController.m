@@ -23,6 +23,22 @@
 @implementation DepartmentViewController
 
 /*************************************************
+ SCROLLER
+ *************************************************/
+
+- (IBAction)textFieldDidBeginEditing:(id)sender {
+
+    UITextField *textField = (UITextField*)sender;
+
+    [self.view scrollToView:textField];
+}
+
+- (IBAction)textFieldDidEndEditing:(id)sender {
+
+    [self.view scrollToY:0];
+}
+
+/*************************************************
  PICKER VIEW
  *************************************************/
 
@@ -33,15 +49,12 @@
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
     
-    return self.departments.count-1;
+    return self.departments.count;
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     
-    if (row != self.departments.count) {
-        return self.departments[row+1];
-    }
-    return nil;
+    return self.departments[row];
 }
 
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
@@ -49,8 +62,16 @@
     if (self.departmentTextField.text.length <= 0) {
         self.departmentTextField.backgroundColor = [UIColor whiteColor];
     }
-
-    self.departmentTextField.text = self.departments[row+1];
+    
+    // user has selected (leave blank), "blank out" departmentsTextField
+    if (row == 0) {
+        self.departmentTextField.text = @"";
+        return;
+    }
+    // user selected department
+    else {
+        self.departmentTextField.text = self.departments[row];
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -62,11 +83,15 @@
 
 - (IBAction)searchButtonPressed:(id)sender {
     
+    // check the that user made a selection
     if (self.departmentTextField.text.length <= 0) {
         self.departmentTextField.backgroundColor = [UIColor colorWithRed:1.0 green:0 blue:0 alpha:0.5];
         
         return;
     }
+    
+    // close all search windows
+    [self.view.window endEditing:YES];
     
     [self performSegueWithIdentifier:@"DepartmentResults" sender:sender];
 }

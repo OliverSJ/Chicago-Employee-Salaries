@@ -18,7 +18,7 @@
     self = [super init];
     if (self) {
         _name = name;
-        _position = position;
+        _jobPosition = position;
         _department = department;
         _annualSalary = annualSalary;
         

@@ -1,16 +1,16 @@
 //
-//  ViewController.m
+//  NameAndDepartmentViewController.m
 //  ChicagoEmployeeSalaries
 //
-//  Created by Oliver San Juan on 12/16/15.
+//  Created by Bradley Golden on 12/20/15.
 //  Copyright © 2015 Oliver San Juan. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "NameAndDepartmentViewController.h"
 #import "EmployeesTableViewController.h"
 #import "BusinessTier.h"
 
-@interface ViewController ()
+@interface NameAndDepartmentViewController ()
 
 /** City of chicago's current departments. */
 @property NSArray *departments;
@@ -38,23 +38,16 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 /**
- @brief Checks for correct formatting of a string.
- @param string String to be checked.
- @returns BOOL YES if string is the in correct format. NO otherwise.
- */
-- (BOOL)textIsValidValue:(NSString*)string;
-
-/**
  @details Event called when a search button is pressed.
  */
 -(void)searchButtonPressed:(id)sender;
 
 @end
 
-@implementation ViewController
+@implementation NameAndDepartmentViewController
 
 /*************************************************
- PICKER VIEW 
+ PICKER VIEW
  *************************************************/
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
@@ -64,31 +57,30 @@
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
     
-    return self.departments.count;
+    return self.departments.count-1;
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     
-    return self.departments[row];
+    if (row != self.departments.count) {
+        return self.departments[row+1];
+    }
+    return nil;
 }
 
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     
-    // user has selected (leave blank), "blank out" departmentsTextField
-    if (row == 0) {
-        self.departmentTextField.text = @"";
-        return;
+    if (self.departmentTextField.text.length <= 0) {
+        self.departmentTextField.backgroundColor = [UIColor whiteColor];
     }
-    // user selected department
-    else {
-        self.departmentTextField.text = self.departments[row];
-    }
+    
+    self.departmentTextField.text = self.departments[row+1];
 }
 /*************************************************
  TABLE VIEW
  *************************************************/
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
+    
     return self.tableViewCells.count;
 }
 
@@ -143,67 +135,22 @@
  SEGUE
  *************************************************/
 
-- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
-    
-    // prevent segue if user did not specify any search criteria
-    if (self.nameTextField.text.length <= 0 && self.departmentTextField.text.length <= 0){
-        self.warningLabel.text = @"Please provide some search criteria.";
-        self.warningLabel.hidden = NO;
-        self.nameTextField.backgroundColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:0.5];
-        self.departmentTextField.backgroundColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:0.5];
-        return NO;
-    }
-    
-    // prevent segue if user did not provide valid search strings
-    else if ([self textIsValidValue:self.nameTextField.text] == NO) {
-        self.warningLabel.text = @"Name must be blank or contain only letters.";
-        self.warningLabel.hidden = NO;
-        self.nameTextField.backgroundColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:0.5];
-        return NO;
-    }
-    
-    // user provided valid input, ready to segue
-    else {
-        return YES;
-    }
-}
-
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-    //EmployeesTableViewController *etvc = [segue destinationViewController];
-    //self.currentBT.name = self.nameTextField.text;
-    //self.currentBT.department = self.departmentTextField.text;
-    //etvc.currentBT = self.currentBT; // pass business tier to next view controller
+    EmployeesTableViewController *etvc = [segue destinationViewController];
+    self.currentBT.name = self.nameTextField.text;
+    self.currentBT.department = self.departmentTextField.text;
+    etvc.currentBT = self.currentBT; // pass business tier to next view controller
 }
 
 /*************************************************
  EVENTS
  *************************************************/
 
-/**
- @brief Triggered upon editing a text field.
- @param sender UITextField object
- */
-- (IBAction)editTextField:(id)sender {
-    
-    // capture the sender
+- (IBAction)textFieldValueDidChange:(id)sender {
     UITextField *textField = (UITextField*)sender;
     
-    // reset text fields
-    self.warningLabel.hidden = YES;
-    self.nameTextField.backgroundColor = [UIColor whiteColor];
-    self.departmentTextField.backgroundColor = [UIColor whiteColor];
-    
-    // auto scroll to allow space for keyboard
-    // scroll to top of nameTextField
-    if (textField == self.nameTextField){
-        [self.scrollView setContentOffset:CGPointMake(0,self.nameLabel.frame.origin.y) animated:YES];
-    }
-    
-    // scroll to top of departmentTextField
-    else if (textField == self.departmentTextField){
-        [self.scrollView setContentOffset:CGPointMake(0,self.departmentLabel.frame.origin.y) animated:YES];
-    }
+    textField.backgroundColor = [UIColor whiteColor];
 }
 
 /**
@@ -231,54 +178,45 @@
     [self.nameTextField resignFirstResponder];
     [self.departmentTextField resignFirstResponder];
     
-    // no need to check if segue can be performed
-    // it's called automatically this UIBUtton object
-    if (sender == self.searchButton) {
+    BOOL doReturn = NO;
+    
+    if (self.nameTextField.text.length <= 0 &&
+        self.departmentTextField.text.length > 0) {
+        self.nameTextField.backgroundColor = [UIColor colorWithRed:1.0 green:0 blue:0 alpha:0.5];
+        doReturn = YES;
+    }
+    
+    if (self.departmentTextField.text.length <= 0 &&
+        self.nameTextField.text.length > 0) {
+        self.departmentTextField.backgroundColor = [UIColor colorWithRed:1.0 green:0 blue:0 alpha:0.5];
+        doReturn = YES;
+    }
+    
+    if (self.departmentTextField.text.length <= 0 &&
+             self.nameTextField.text.length <= 0) {
+        self.nameTextField.backgroundColor = [UIColor colorWithRed:1.0 green:0 blue:0 alpha:0.5];
+        self.departmentTextField.backgroundColor = [UIColor colorWithRed:1.0 green:0 blue:0 alpha:0.5];
+        doReturn = YES;
+    }
+    
+    if (doReturn) {
         return;
     }
     
     // check if segue can be performed
-    if ([self shouldPerformSegueWithIdentifier:@"PerformSearch" sender:nil]) { [self performSegueWithIdentifier:@"PerformSearch" sender:nil]; }
+    [self performSegueWithIdentifier:@"NameAndDepartmentResults" sender:nil];
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+- (IBAction)nextButtonPressed:(id)sender {
     
-    // user has pressed "next" on the name text field
-    if (textField == self.nameTextField) {
-        [self.departmentTextField becomeFirstResponder];
-    }
-    // user has pressed search on the name of the text field
-    else if (textField == self.departmentTextField) {
-        [textField resignFirstResponder];
-        
-        // segue to table view controller
-        // first check if user inputted data in either
-        // text field
-        if ([self shouldPerformSegueWithIdentifier:@"PerformSearch" sender:nil]) { [self performSegueWithIdentifier:@"PerformSearch" sender:nil]; }
-    }
+    [self.nameTextField resignFirstResponder];
     
-    return YES;
+    [self.departmentTextField becomeFirstResponder];
 }
 
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [self.view endEditing:YES]; // force all text fields to end editing
-    // hide any warnings
-    //self.warningLabel.hidden = YES;
-}
-
-/**
- @brief Called when the user performs a single tap in the GUI interface.
- */
-- (void)singleTapGestureCaptured:(UITapGestureRecognizer *)gesture
-{
-    [self.view endEditing:YES]; // force all text fields to end editing
-}
-
-- (void)nextButtonPressed:(id)sender {
-    [self.nameTextField resignFirstResponder];
-    
-    [self.departmentTextField becomeFirstResponder];
 }
 
 /**
@@ -291,38 +229,11 @@
 }
 
 /*************************************************
- HELPER FUNCTIONS
- *************************************************/
-- (BOOL)textIsValidValue:(NSString*)string{
-    NSCharacterSet *s = [NSCharacterSet characterSetWithCharactersInString:@"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "];
-    
-    s = [s invertedSet];
-    
-    NSRange r = [string rangeOfCharacterFromSet:s];
-    if (r.location != NSNotFound) {
-        return NO;
-    }
-    
-    return YES;
-}
-
-
-/*************************************************
  DEFAULT FUNCTIONS
  *************************************************/
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Do any additional setup after loading the view, typically from a nib.
-    self.tableViewCells = @[@"Chicago Employee Salaries", @"Select a Search Method", @"By Name", @"By Department", @"By Name and Department", @"By Salary"];
-    
-    // helps hide separators in certain cells, see cellForRowAtIndexPath in tableView for more
-    self.tableView.separatorColor = [UIColor clearColor];
-    
-    // setup touch recognizer for scrollView
-    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapGestureCaptured:)];
-    [self.scrollView addGestureRecognizer:singleTap];
     
     // instantiate BusinessTierObject
     self.currentBT = [[BusinessTier alloc]init];
@@ -347,17 +258,17 @@
     
     // previous button
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc]
-                                       initWithImage:[UIImage imageNamed:@"BackIcon"]
-                                                                       style:UIBarButtonItemStylePlain
-                                                                                  target:self
-                                                                                  action:@selector(backButtonPressed:)];
+                                   initWithImage:[UIImage imageNamed:@"BackIcon"]
+                                   style:UIBarButtonItemStylePlain
+                                   target:self
+                                   action:@selector(backButtonPressed:)];
     
     // next button
     UIBarButtonItem *nextButton = [[UIBarButtonItem alloc]
-                                       initWithImage:[UIImage imageNamed:@"NextIcon"]
-                                       style:UIBarButtonItemStylePlain
-                                       target:self
-                                       action:@selector(nextButtonPressed:)];
+                                   initWithImage:[UIImage imageNamed:@"NextIcon"]
+                                   style:UIBarButtonItemStylePlain
+                                   target:self
+                                   action:@selector(nextButtonPressed:)];
     
     // don't allow to press next button
     nextButton.enabled = NO;
@@ -367,8 +278,8 @@
     
     // search button
     UIBarButtonItem *searchButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch
-                                                                     target:self
-                                                                     action:@selector(searchButtonPressed:)];
+                                                                                  target:self
+                                                                                  action:@selector(searchButtonPressed:)];
     
     toolBar.items = @[backButton, nextButton, flex, searchButton];
     self.departmentTextField.inputAccessoryView = toolBar;
@@ -379,17 +290,17 @@
     
     // previous button
     UIBarButtonItem *nameBackButton = [[UIBarButtonItem alloc]
-                                   initWithImage:[UIImage imageNamed:@"BackIcon"]
-                                   style:UIBarButtonItemStylePlain
-                                   target:self
-                                   action:@selector(backButtonPressed:)];
+                                       initWithImage:[UIImage imageNamed:@"BackIcon"]
+                                       style:UIBarButtonItemStylePlain
+                                       target:self
+                                       action:@selector(backButtonPressed:)];
     
     // next button
     UIBarButtonItem *nameNextButton = [[UIBarButtonItem alloc]
-                                   initWithImage:[UIImage imageNamed:@"NextIcon"]
-                                   style:UIBarButtonItemStylePlain
-                                   target:self
-                                   action:@selector(nextButtonPressed:)];
+                                       initWithImage:[UIImage imageNamed:@"NextIcon"]
+                                       style:UIBarButtonItemStylePlain
+                                       target:self
+                                       action:@selector(nextButtonPressed:)];
     
     // allow user to press next button
     nameNextButton.enabled = YES;

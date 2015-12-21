@@ -78,6 +78,7 @@
     
     EmployeesTableViewController *etvc = [segue destinationViewController];
     self.currentBT.department = [self.departmentTextField.text copy];
+    self.currentBT.departmentSearch = YES;
     etvc.currentBT = self.currentBT;
 }
 

@@ -7,7 +7,7 @@
 //
 
 #import "EmployeesTableViewController.h"
-#import "EmployeeViewController.h"
+#import "EmployeeTableViewController.h"
 
 @interface EmployeesTableViewController()
 
@@ -23,9 +23,9 @@
  *************************************************/
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    EmployeeViewController *evc = [segue destinationViewController];
+    EmployeeTableViewController *etvc = [segue destinationViewController];
     NSIndexPath *path = [self.tableView indexPathForSelectedRow];
-    evc.currentEmployee = self.employees[path.row];
+    etvc.currentEmployee = self.employees[path.row];
 }
 
 /*************************************************

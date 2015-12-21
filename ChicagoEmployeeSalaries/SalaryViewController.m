@@ -44,22 +44,6 @@
 @implementation SalaryViewController
 
 /*************************************************
- HELPER FUNCTIONS
- *************************************************/
-- (BOOL)textIsValidValue:(NSString*)value{
-    NSError *error = NULL;
-    NSRegularExpression *regex = [NSRegularExpression
-                                  regularExpressionWithPattern:@"^[$]?[0-9]+([.][0-9]{2})?$"
-                                  options:NSRegularExpressionCaseInsensitive
-                                  error:&error];
-    if ([regex numberOfMatchesInString:value options:0 range:NSMakeRange(0, value.length)]) {
-        NSLog(@"Success");
-    }
-    
-    return YES;
-}
-
-/*************************************************
  SCROLLER
  *************************************************/
 
@@ -84,6 +68,9 @@
 //    EmployeesTableViewController *etvc = [segue destinationViewController];
 //    self.currentBT.minSalary = self.minSalaryTextField.text;
 //    self.currentBT.maxSalary = self.maxSalaryTextField.text;
+//    self.currentBT.nameAndDepartmentSearch = NO;
+//    self.currentBT.nameSearch = NO;
+//    self.currentBT.departmentSearch = NO;
 //    self.currentBT.salarySearch = YES;
 //    etvc.currentBT = self.currentBT; // pass business tier to next view controller
 }
@@ -164,8 +151,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self textIsValidValue:@"$100.00"];
     
     // instantiate BusinessTierObject
     self.currentBT = [[BusinessTier alloc]init];

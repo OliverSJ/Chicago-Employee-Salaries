@@ -163,6 +163,9 @@
     self.currentBT.name = self.nameTextField.text;
     self.currentBT.department = self.departmentTextField.text;
     self.currentBT.nameAndDepartmentSearch = YES;
+    self.currentBT.nameSearch = NO;
+    self.currentBT.departmentSearch = NO;
+    self.currentBT.salarySearch = NO;
     etvc.currentBT = self.currentBT; // pass business tier to next view controller
 }
 

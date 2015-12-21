@@ -19,6 +19,16 @@
 
 @implementation EmployeesTableViewController
 
+/**
+ @brief Sets the detail text label of a table cell to the 
+ appropriate stirng value.
+ 
+ @description This method is smart in the sense that it
+ chooses which label to display depending on the 
+ user's search query.
+ 
+ @param index The index where the given employee exists.
+ */
 - (NSString*) setDetailTextLabel:(int)index {
     if (self.currentBT.nameSearch) {
         return [self.employees[index] department];
@@ -63,7 +73,7 @@
     
     if (self.employees.count > 0) {
         cell.textLabel.text = [self.employees[indexPath.row] name]; // array index of current values
-        cell.detailTextLabel.text = [self.employees[indexPath.row] department]; // array index of details
+        cell.detailTextLabel.text = [self setDetailTextLabel:(int)indexPath.row]; // array index of details
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator; // add arrow
         cell.selectionStyle = UITableViewCellSelectionStyleDefault; // make appearance clickable
         cell.userInteractionEnabled = YES; // enable user interaction

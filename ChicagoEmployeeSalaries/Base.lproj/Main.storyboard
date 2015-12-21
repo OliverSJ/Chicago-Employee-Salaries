@@ -321,10 +321,10 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="i.e. 10,000" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="HMb-j7-WF6">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="i.e. 10000" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="HMb-j7-WF6">
                                         <rect key="frame" x="0.0" y="27" width="189" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation" returnKeyType="next"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next"/>
                                         <connections>
                                             <action selector="searchButtonPressed:" destination="TEb-lI-teo" eventType="primaryActionTriggered" id="0KE-dI-OHD"/>
                                             <action selector="textFieldDidBeginEditing:" destination="TEb-lI-teo" eventType="editingDidBegin" id="NVg-Sv-Stj"/>
@@ -338,10 +338,10 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="i.e. 250,000" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="vNb-bV-mmG">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="i.e. 250000" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="vNb-bV-mmG">
                                         <rect key="frame" x="0.0" y="89" width="189" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation" returnKeyType="search"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="search"/>
                                         <connections>
                                             <action selector="searchButtonPressed:" destination="TEb-lI-teo" eventType="primaryActionTriggered" id="B9R-74-v70"/>
                                             <action selector="textFieldDidBeginEditing:" destination="TEb-lI-teo" eventType="editingDidBegin" id="h6i-PU-C0w"/>
@@ -434,6 +434,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="T7L-ho-K5q"/>
+        <segue reference="EJa-2m-7A5"/>
     </inferredMetricsTieBreakers>
 </document>

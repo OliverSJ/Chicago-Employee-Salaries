@@ -42,7 +42,10 @@
     
     EmployeesTableViewController *etvc = [segue destinationViewController];
     self.currentBT.name = [self.nameTextField.text copy];
+    self.currentBT.nameAndDepartmentSearch = NO;
     self.currentBT.nameSearch = YES;
+    self.currentBT.departmentSearch = NO;
+    self.currentBT.salarySearch = NO;
     etvc.currentBT = self.currentBT;
 }
 

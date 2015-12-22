@@ -259,6 +259,10 @@
  DEFAULT FUNCTIONS
  *************************************************/
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self viewDidLoad];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -268,7 +272,7 @@
     self.centerView.layer.opacity = 0.97f;
     
     // add image to backround
-    UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"chicago_1.png"]];
+    UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"chicago_1.jpg"]];
     [self.view addSubview:backgroundView];
     [self.view sendSubviewToBack:backgroundView];
     

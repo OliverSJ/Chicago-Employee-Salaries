@@ -105,6 +105,10 @@
     [self.view endEditing:YES]; // force all text fields to end editing
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self viewDidLoad];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -114,7 +118,7 @@
     self.centerView.layer.opacity = 0.97f;
     
     // add image to backround
-    UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"chicago_3.png"]];
+    UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"chicago_3.jpg"]];
     [self.view addSubview:backgroundView];
     [self.view sendSubviewToBack:backgroundView];
     

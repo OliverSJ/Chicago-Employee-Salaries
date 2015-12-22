@@ -16,6 +16,23 @@
 		8F4BCF9E1C21D503002674D1 /* ChicagoEmployeeSalariesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F4BCF9D1C21D503002674D1 /* ChicagoEmployeeSalariesTests.m */; };
 		8F4BCFA91C21D503002674D1 /* ChicagoEmployeeSalariesUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F4BCFA81C21D503002674D1 /* ChicagoEmployeeSalariesUITests.m */; };
 		8F4BCFB81C21DF81002674D1 /* BusinessTier.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F4BCFB71C21DF81002674D1 /* BusinessTier.m */; };
+		8F92C13E1C29CACC0091BF99 /* app_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F92C13A1C29CACC0091BF99 /* app_icon@3x.png */; };
+		8F92C13F1C29CACC0091BF99 /* app_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F92C13B1C29CACC0091BF99 /* app_image.png */; };
+		8F92C1401C29CACC0091BF99 /* app_image@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F92C13C1C29CACC0091BF99 /* app_image@1x.png */; };
+		8F92C1411C29CACC0091BF99 /* app_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F92C13D1C29CACC0091BF99 /* app_image@2x.png */; };
+		8F92C1471C29CAD90091BF99 /* chicago_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F92C1421C29CAD90091BF99 /* chicago_1.jpg */; };
+		8F92C1481C29CAD90091BF99 /* chicago_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F92C1431C29CAD90091BF99 /* chicago_2.png */; };
+		8F92C1491C29CAD90091BF99 /* chicago_3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F92C1441C29CAD90091BF99 /* chicago_3.jpg */; };
+		8F92C14A1C29CAD90091BF99 /* chicago_4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F92C1451C29CAD90091BF99 /* chicago_4.jpg */; };
+		8F92C14B1C29CAD90091BF99 /* chicago_flag_signs.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F92C1461C29CAD90091BF99 /* chicago_flag_signs.png */; };
+		8F92C1511C29CAE40091BF99 /* dollar_circle_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F92C14C1C29CAE40091BF99 /* dollar_circle_1.png */; };
+		8F92C1521C29CAE40091BF99 /* dollar_circle_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F92C14D1C29CAE40091BF99 /* dollar_circle_2.png */; };
+		8F92C1531C29CAE40091BF99 /* dollar_circle_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F92C14E1C29CAE40091BF99 /* dollar_circle_3.png */; };
+		8F92C1541C29CAE40091BF99 /* dollar_circle_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F92C14F1C29CAE40091BF99 /* dollar_circle_4.png */; };
+		8F92C1551C29CAE40091BF99 /* dollar_sign_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F92C1501C29CAE40091BF99 /* dollar_sign_red.png */; };
+		8F92C1591C29CAF20091BF99 /* flag.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F92C1561C29CAF20091BF99 /* flag.png */; };
+		8F92C15A1C29CAF20091BF99 /* sears_tower.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F92C1571C29CAF20091BF99 /* sears_tower.jpg */; };
+		8F92C15B1C29CAF20091BF99 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F92C1581C29CAF20091BF99 /* star.png */; };
 		9D1ABE031C276074009F0013 /* DepartmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1ABE021C276074009F0013 /* DepartmentViewController.m */; };
 		9D1ABE061C276B2A009F0013 /* UIView+FormScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1ABE051C276B2A009F0013 /* UIView+FormScroll.m */; };
 		9D1ABE091C27B215009F0013 /* NameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1ABE081C27B215009F0013 /* NameViewController.m */; };
@@ -67,6 +84,23 @@
 		8F4BCFAA1C21D503002674D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8F4BCFB61C21DF81002674D1 /* BusinessTier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusinessTier.h; sourceTree = "<group>"; };
 		8F4BCFB71C21DF81002674D1 /* BusinessTier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusinessTier.m; sourceTree = "<group>"; };
+		8F92C13A1C29CACC0091BF99 /* app_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_icon@3x.png"; sourceTree = "<group>"; };
+		8F92C13B1C29CACC0091BF99 /* app_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_image.png; sourceTree = "<group>"; };
+		8F92C13C1C29CACC0091BF99 /* app_image@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_image@1x.png"; sourceTree = "<group>"; };
+		8F92C13D1C29CACC0091BF99 /* app_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_image@2x.png"; sourceTree = "<group>"; };
+		8F92C1421C29CAD90091BF99 /* chicago_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chicago_1.jpg; sourceTree = "<group>"; };
+		8F92C1431C29CAD90091BF99 /* chicago_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chicago_2.png; sourceTree = "<group>"; };
+		8F92C1441C29CAD90091BF99 /* chicago_3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chicago_3.jpg; sourceTree = "<group>"; };
+		8F92C1451C29CAD90091BF99 /* chicago_4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chicago_4.jpg; sourceTree = "<group>"; };
+		8F92C1461C29CAD90091BF99 /* chicago_flag_signs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chicago_flag_signs.png; sourceTree = "<group>"; };
+		8F92C14C1C29CAE40091BF99 /* dollar_circle_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dollar_circle_1.png; sourceTree = "<group>"; };
+		8F92C14D1C29CAE40091BF99 /* dollar_circle_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dollar_circle_2.png; sourceTree = "<group>"; };
+		8F92C14E1C29CAE40091BF99 /* dollar_circle_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dollar_circle_3.png; sourceTree = "<group>"; };
+		8F92C14F1C29CAE40091BF99 /* dollar_circle_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dollar_circle_4.png; sourceTree = "<group>"; };
+		8F92C1501C29CAE40091BF99 /* dollar_sign_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dollar_sign_red.png; sourceTree = "<group>"; };
+		8F92C1561C29CAF20091BF99 /* flag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flag.png; sourceTree = "<group>"; };
+		8F92C1571C29CAF20091BF99 /* sears_tower.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sears_tower.jpg; sourceTree = "<group>"; };
+		8F92C1581C29CAF20091BF99 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 		9D1ABE011C276074009F0013 /* DepartmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DepartmentViewController.h; sourceTree = "<group>"; };
 		9D1ABE021C276074009F0013 /* DepartmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DepartmentViewController.m; sourceTree = "<group>"; };
 		9D1ABE041C276B2A009F0013 /* UIView+FormScroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FormScroll.h"; sourceTree = "<group>"; };
@@ -177,6 +211,23 @@
 		8F4BCF831C21D503002674D1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8F92C1561C29CAF20091BF99 /* flag.png */,
+				8F92C1571C29CAF20091BF99 /* sears_tower.jpg */,
+				8F92C1581C29CAF20091BF99 /* star.png */,
+				8F92C14C1C29CAE40091BF99 /* dollar_circle_1.png */,
+				8F92C14D1C29CAE40091BF99 /* dollar_circle_2.png */,
+				8F92C14E1C29CAE40091BF99 /* dollar_circle_3.png */,
+				8F92C14F1C29CAE40091BF99 /* dollar_circle_4.png */,
+				8F92C1501C29CAE40091BF99 /* dollar_sign_red.png */,
+				8F92C1421C29CAD90091BF99 /* chicago_1.jpg */,
+				8F92C1431C29CAD90091BF99 /* chicago_2.png */,
+				8F92C1441C29CAD90091BF99 /* chicago_3.jpg */,
+				8F92C1451C29CAD90091BF99 /* chicago_4.jpg */,
+				8F92C1461C29CAD90091BF99 /* chicago_flag_signs.png */,
+				8F92C13A1C29CACC0091BF99 /* app_icon@3x.png */,
+				8F92C13B1C29CACC0091BF99 /* app_image.png */,
+				8F92C13C1C29CACC0091BF99 /* app_image@1x.png */,
+				8F92C13D1C29CACC0091BF99 /* app_image@2x.png */,
 				9DC521AF1C25FD350006E507 /* back_large.png */,
 				9DC521B01C25FD350006E507 /* back_small.png */,
 				9DC521B11C25FD350006E507 /* next_large.png */,
@@ -310,13 +361,30 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F92C1491C29CAD90091BF99 /* chicago_3.jpg in Resources */,
 				9DC521B51C25FD350006E507 /* next_large.png in Resources */,
+				8F92C1481C29CAD90091BF99 /* chicago_2.png in Resources */,
+				8F92C14B1C29CAD90091BF99 /* chicago_flag_signs.png in Resources */,
+				8F92C1541C29CAE40091BF99 /* dollar_circle_4.png in Resources */,
+				8F92C15B1C29CAF20091BF99 /* star.png in Resources */,
+				8F92C15A1C29CAF20091BF99 /* sears_tower.jpg in Resources */,
 				9DC521B31C25FD350006E507 /* back_large.png in Resources */,
+				8F92C1471C29CAD90091BF99 /* chicago_1.jpg in Resources */,
+				8F92C1521C29CAE40091BF99 /* dollar_circle_2.png in Resources */,
 				8F4BCF931C21D503002674D1 /* LaunchScreen.storyboard in Resources */,
+				8F92C1401C29CACC0091BF99 /* app_image@1x.png in Resources */,
 				9DC521B61C25FD350006E507 /* next_small.png in Resources */,
+				8F92C14A1C29CAD90091BF99 /* chicago_4.jpg in Resources */,
+				8F92C1511C29CAE40091BF99 /* dollar_circle_1.png in Resources */,
 				8F4BCF901C21D503002674D1 /* Assets.xcassets in Resources */,
+				8F92C13F1C29CACC0091BF99 /* app_image.png in Resources */,
+				8F92C1551C29CAE40091BF99 /* dollar_sign_red.png in Resources */,
+				8F92C1531C29CAE40091BF99 /* dollar_circle_3.png in Resources */,
 				8F4BCF8E1C21D503002674D1 /* Main.storyboard in Resources */,
+				8F92C13E1C29CACC0091BF99 /* app_icon@3x.png in Resources */,
+				8F92C1411C29CACC0091BF99 /* app_image@2x.png in Resources */,
 				9DC521B41C25FD350006E507 /* back_small.png in Resources */,
+				8F92C1591C29CAF20091BF99 /* flag.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

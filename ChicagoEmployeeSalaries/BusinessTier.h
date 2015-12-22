@@ -45,7 +45,7 @@
 @property BOOL salarySearch;
 
 -(NSString*)parseName: (NSString*) name;
--(NSArray*)createEmployeeObjectsArray: (NSArray*) jsonResponse;
+-(NSArray*)createEmployeeObjectsArray;
 
 
 @end

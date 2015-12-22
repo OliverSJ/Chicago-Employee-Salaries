@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -25,7 +26,7 @@
                                         <rect key="frame" x="0.0" y="65" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hi3-ha-cVd" id="XWb-a9-As7">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -71,44 +72,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Pg3-T3-aDb">
-                                <rect key="frame" x="223" y="253" width="155" height="93"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w6A-Wb-nh5">
+                                <rect key="frame" x="203" y="234" width="195" height="132"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a Name:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xXL-UY-euQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="155" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="i.e. RAHM EMANUEL" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="g3H-I1-Iz2">
-                                        <rect key="frame" x="0.0" y="27" width="155" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" returnKeyType="search"/>
-                                        <connections>
-                                            <action selector="searchButtonPressed:" destination="5Ja-eI-A0M" eventType="primaryActionTriggered" id="Fe5-eg-sxH"/>
-                                            <action selector="textFieldDidBeginEditing:" destination="5Ja-eI-A0M" eventType="editingDidBegin" id="ONy-7M-iCW"/>
-                                            <action selector="textFieldDidEndEditing:" destination="5Ja-eI-A0M" eventType="editingDidEnd" id="vgD-Kt-Xaz"/>
-                                            <action selector="textFieldValueDidChange:" destination="5Ja-eI-A0M" eventType="editingChanged" id="ztN-ME-5lU"/>
-                                        </connections>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cHZ-ms-p8L">
-                                        <rect key="frame" x="0.0" y="63" width="155" height="30"/>
-                                        <state key="normal" title="Search"/>
-                                        <connections>
-                                            <action selector="searchButtonPressed:" destination="5Ja-eI-A0M" eventType="touchUpInside" id="dpH-8F-CPv"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Pg3-T3-aDb">
+                                        <rect key="frame" x="20" y="19" width="155" height="93"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a Name:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xXL-UY-euQ">
+                                                <rect key="frame" x="0.0" y="0.0" width="155" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="i.e. RAHM EMANUEL" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="g3H-I1-Iz2">
+                                                <rect key="frame" x="0.0" y="27" width="155" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" returnKeyType="search"/>
+                                                <connections>
+                                                    <action selector="searchButtonPressed:" destination="5Ja-eI-A0M" eventType="primaryActionTriggered" id="Fe5-eg-sxH"/>
+                                                    <action selector="textFieldDidBeginEditing:" destination="5Ja-eI-A0M" eventType="editingDidBegin" id="ONy-7M-iCW"/>
+                                                    <action selector="textFieldDidEndEditing:" destination="5Ja-eI-A0M" eventType="editingDidEnd" id="vgD-Kt-Xaz"/>
+                                                    <action selector="textFieldValueDidChange:" destination="5Ja-eI-A0M" eventType="editingChanged" id="ztN-ME-5lU"/>
+                                                </connections>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cHZ-ms-p8L">
+                                                <rect key="frame" x="0.0" y="63" width="155" height="30"/>
+                                                <state key="normal" title="Search"/>
+                                                <connections>
+                                                    <action selector="searchButtonPressed:" destination="5Ja-eI-A0M" eventType="touchUpInside" id="dpH-8F-CPv"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
-                            </stackView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Pg3-T3-aDb" firstAttribute="leading" secondItem="w6A-Wb-nh5" secondAttribute="leading" constant="20" id="LWd-WV-lKP"/>
+                                    <constraint firstItem="Pg3-T3-aDb" firstAttribute="top" secondItem="w6A-Wb-nh5" secondAttribute="top" constant="19" id="iDY-4f-dcC"/>
+                                    <constraint firstAttribute="trailing" secondItem="Pg3-T3-aDb" secondAttribute="trailing" constant="20" id="vD3-MK-tdi"/>
+                                    <constraint firstAttribute="bottom" secondItem="Pg3-T3-aDb" secondAttribute="bottom" constant="20" id="yTd-B7-unu"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Pg3-T3-aDb" firstAttribute="centerX" secondItem="Htx-a2-l4x" secondAttribute="centerX" id="NTD-uv-EFQ"/>
-                            <constraint firstItem="Pg3-T3-aDb" firstAttribute="centerY" secondItem="Htx-a2-l4x" secondAttribute="centerY" id="pfH-jm-OiG"/>
+                            <constraint firstItem="w6A-Wb-nh5" firstAttribute="centerY" secondItem="Htx-a2-l4x" secondAttribute="centerY" id="Loa-ma-GxI"/>
+                            <constraint firstItem="w6A-Wb-nh5" firstAttribute="centerX" secondItem="Htx-a2-l4x" secondAttribute="centerX" id="ueP-kK-hbN"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cyh-Ph-Xc5"/>
                     <connections>
+                        <outlet property="centerView" destination="w6A-Wb-nh5" id="ciZ-tl-QU8"/>
                         <outlet property="nameTextField" destination="g3H-I1-Iz2" id="g7p-ra-dI2"/>
                         <segue destination="k0N-L8-Gw9" kind="show" identifier="NameResults" id="T7L-ho-K5q"/>
                     </connections>
@@ -134,18 +148,18 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qe4-IU-2JV" id="Zjg-QM-D19">
-                                    <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jEx-cN-7op">
-                                            <rect key="frame" x="15" y="5" width="32" height="20"/>
+                                            <rect key="frame" x="15" y="6" width="31.5" height="19.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0lv-yp-moO">
-                                            <rect key="frame" x="15" y="25" width="31" height="14"/>
+                                            <rect key="frame" x="15" y="25.5" width="30.5" height="13.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -237,60 +251,73 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="lrh-gH-3lC">
-                                <rect key="frame" x="219" y="222" width="163" height="156"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XUJ-5l-7ZM">
+                                <rect key="frame" x="199" y="202" width="203" height="195"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a Name:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q3c-UR-tBJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="163" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="i.e. RAHM EMANUEL" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="KZg-7m-4y1">
-                                        <rect key="frame" x="0.0" y="27" width="163" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
-                                        <connections>
-                                            <action selector="nextButtonPressed:" destination="9Iz-75-5AJ" eventType="primaryActionTriggered" id="zq9-7t-KEz"/>
-                                            <action selector="textFieldDidBeginEditing:" destination="9Iz-75-5AJ" eventType="editingDidBegin" id="U2P-Qr-otZ"/>
-                                            <action selector="textFieldDidEndEditing:" destination="9Iz-75-5AJ" eventType="editingDidEnd" id="87l-JR-afR"/>
-                                            <action selector="textFieldValueDidChange:" destination="9Iz-75-5AJ" eventType="editingChanged" id="WKd-wm-YpX"/>
-                                        </connections>
-                                    </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a Department:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oV7-y8-ECo">
-                                        <rect key="frame" x="0.0" y="63" width="163" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="i.e. MAYOR'S OFFICE" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Gyt-ue-1dg">
-                                        <rect key="frame" x="0.0" y="90" width="163" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" returnKeyType="search"/>
-                                        <connections>
-                                            <action selector="searchButtonPressed:" destination="9Iz-75-5AJ" eventType="primaryActionTriggered" id="4NO-B6-zlA"/>
-                                            <action selector="textFieldDidBeginEditing:" destination="9Iz-75-5AJ" eventType="editingDidBegin" id="XZv-gt-p1I"/>
-                                            <action selector="textFieldDidEndEditing:" destination="9Iz-75-5AJ" eventType="editingDidEnd" id="IdO-hY-0U9"/>
-                                        </connections>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rme-YO-Z34">
-                                        <rect key="frame" x="0.0" y="126" width="163" height="30"/>
-                                        <state key="normal" title="Search"/>
-                                        <connections>
-                                            <action selector="searchButtonPressed:" destination="9Iz-75-5AJ" eventType="touchUpInside" id="lpE-oO-MHc"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="lrh-gH-3lC">
+                                        <rect key="frame" x="20" y="20" width="163" height="155"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a Name:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q3c-UR-tBJ">
+                                                <rect key="frame" x="0.0" y="0.0" width="163" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="i.e. RAHM EMANUEL" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="KZg-7m-4y1">
+                                                <rect key="frame" x="0.0" y="27" width="163" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                                <connections>
+                                                    <action selector="nextButtonPressed:" destination="9Iz-75-5AJ" eventType="primaryActionTriggered" id="zq9-7t-KEz"/>
+                                                    <action selector="textFieldDidBeginEditing:" destination="9Iz-75-5AJ" eventType="editingDidBegin" id="U2P-Qr-otZ"/>
+                                                    <action selector="textFieldDidEndEditing:" destination="9Iz-75-5AJ" eventType="editingDidEnd" id="87l-JR-afR"/>
+                                                    <action selector="textFieldValueDidChange:" destination="9Iz-75-5AJ" eventType="editingChanged" id="WKd-wm-YpX"/>
+                                                </connections>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a Department:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oV7-y8-ECo">
+                                                <rect key="frame" x="0.0" y="63" width="163" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="i.e. MAYOR'S OFFICE" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Gyt-ue-1dg">
+                                                <rect key="frame" x="0.0" y="89" width="163" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" returnKeyType="search"/>
+                                                <connections>
+                                                    <action selector="searchButtonPressed:" destination="9Iz-75-5AJ" eventType="primaryActionTriggered" id="4NO-B6-zlA"/>
+                                                    <action selector="textFieldDidBeginEditing:" destination="9Iz-75-5AJ" eventType="editingDidBegin" id="XZv-gt-p1I"/>
+                                                    <action selector="textFieldDidEndEditing:" destination="9Iz-75-5AJ" eventType="editingDidEnd" id="IdO-hY-0U9"/>
+                                                </connections>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rme-YO-Z34">
+                                                <rect key="frame" x="0.0" y="125" width="163" height="30"/>
+                                                <state key="normal" title="Search"/>
+                                                <connections>
+                                                    <action selector="searchButtonPressed:" destination="9Iz-75-5AJ" eventType="touchUpInside" id="lpE-oO-MHc"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
-                            </stackView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="lrh-gH-3lC" firstAttribute="leading" secondItem="XUJ-5l-7ZM" secondAttribute="leading" constant="20" id="Rcm-79-bPu"/>
+                                    <constraint firstItem="lrh-gH-3lC" firstAttribute="top" secondItem="XUJ-5l-7ZM" secondAttribute="top" constant="20" id="ggG-mf-TQC"/>
+                                    <constraint firstAttribute="trailing" secondItem="lrh-gH-3lC" secondAttribute="trailing" constant="20" id="nc3-05-s4h"/>
+                                    <constraint firstAttribute="bottom" secondItem="lrh-gH-3lC" secondAttribute="bottom" constant="20" id="vPX-UJ-ykv"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="lrh-gH-3lC" firstAttribute="centerY" secondItem="bXd-nB-8DA" secondAttribute="centerY" id="3lV-77-rXD"/>
-                            <constraint firstItem="lrh-gH-3lC" firstAttribute="centerX" secondItem="bXd-nB-8DA" secondAttribute="centerX" id="QIV-bn-eGm"/>
+                            <constraint firstItem="XUJ-5l-7ZM" firstAttribute="centerY" secondItem="bXd-nB-8DA" secondAttribute="centerY" id="fBg-u8-cYG"/>
+                            <constraint firstItem="XUJ-5l-7ZM" firstAttribute="centerX" secondItem="bXd-nB-8DA" secondAttribute="centerX" id="q5A-up-VGX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="KNk-Bf-WkQ"/>
                     <connections>
+                        <outlet property="centerView" destination="XUJ-5l-7ZM" id="tH6-qe-Fru"/>
                         <outlet property="departmentTextField" destination="Gyt-ue-1dg" id="4Al-ua-6Ry"/>
                         <outlet property="nameTextField" destination="KZg-7m-4y1" id="Fn7-fP-2rn"/>
                         <segue destination="k0N-L8-Gw9" kind="show" identifier="NameAndDepartmentResults" id="US6-ZG-dB1"/>
@@ -298,7 +325,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mWQ-Lp-RAA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="736" y="-369.99999999999994"/>
+            <point key="canvasLocation" x="736" y="-370"/>
         </scene>
         <!--Salary View Controller-->
         <scene sceneID="Hqi-BN-fCO">
@@ -312,61 +339,73 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="ayk-jT-s9d">
-                                <rect key="frame" x="206" y="222" width="189" height="156"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rcc-MY-4Os">
+                                <rect key="frame" x="193" y="205" width="214" height="189"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a Minimum Salary:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nBb-Wa-2t1">
-                                        <rect key="frame" x="0.0" y="0.0" width="189" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="i.e. 10000" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="HMb-j7-WF6">
-                                        <rect key="frame" x="0.0" y="27" width="189" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next"/>
-                                        <connections>
-                                            <action selector="searchButtonPressed:" destination="TEb-lI-teo" eventType="primaryActionTriggered" id="0KE-dI-OHD"/>
-                                            <action selector="textFieldDidBeginEditing:" destination="TEb-lI-teo" eventType="editingDidBegin" id="NVg-Sv-Stj"/>
-                                            <action selector="textFieldDidEndEditing:" destination="TEb-lI-teo" eventType="editingDidEnd" id="96Y-DC-PvS"/>
-                                            <action selector="textFieldValueDidChange:" destination="TEb-lI-teo" eventType="editingChanged" id="9nM-Ej-lbr"/>
-                                        </connections>
-                                    </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a Maximum Salary:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ar-uq-oOb">
-                                        <rect key="frame" x="0.0" y="63" width="189" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="i.e. 250000" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="vNb-bV-mmG">
-                                        <rect key="frame" x="0.0" y="89" width="189" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="search"/>
-                                        <connections>
-                                            <action selector="searchButtonPressed:" destination="TEb-lI-teo" eventType="primaryActionTriggered" id="B9R-74-v70"/>
-                                            <action selector="textFieldDidBeginEditing:" destination="TEb-lI-teo" eventType="editingDidBegin" id="h6i-PU-C0w"/>
-                                            <action selector="textFieldDidEndEditing:" destination="TEb-lI-teo" eventType="editingDidEnd" id="2B5-4l-gK0"/>
-                                            <action selector="textFieldValueDidChange:" destination="TEb-lI-teo" eventType="editingChanged" id="X1x-p0-TnB"/>
-                                        </connections>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FoN-ua-N8n">
-                                        <rect key="frame" x="0.0" y="126" width="189" height="30"/>
-                                        <state key="normal" title="Search"/>
-                                        <connections>
-                                            <action selector="searchButtonPressed:" destination="TEb-lI-teo" eventType="touchUpInside" id="WRH-Oi-RP2"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="50" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="ayk-jT-s9d">
+                                        <rect key="frame" x="12" y="17" width="189" height="155"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a Minimum Salary:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nBb-Wa-2t1">
+                                                <rect key="frame" x="0.0" y="0.0" width="189" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="i.e. 10000" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="HMb-j7-WF6">
+                                                <rect key="frame" x="0.0" y="26.5" width="189" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next"/>
+                                                <connections>
+                                                    <action selector="searchButtonPressed:" destination="TEb-lI-teo" eventType="primaryActionTriggered" id="0KE-dI-OHD"/>
+                                                    <action selector="textFieldDidBeginEditing:" destination="TEb-lI-teo" eventType="editingDidBegin" id="NVg-Sv-Stj"/>
+                                                    <action selector="textFieldDidEndEditing:" destination="TEb-lI-teo" eventType="editingDidEnd" id="96Y-DC-PvS"/>
+                                                    <action selector="textFieldValueDidChange:" destination="TEb-lI-teo" eventType="editingChanged" id="9nM-Ej-lbr"/>
+                                                </connections>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a Maximum Salary:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ar-uq-oOb">
+                                                <rect key="frame" x="0.0" y="62.5" width="189" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="i.e. 250000" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="vNb-bV-mmG">
+                                                <rect key="frame" x="0.0" y="89" width="189" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="search"/>
+                                                <connections>
+                                                    <action selector="searchButtonPressed:" destination="TEb-lI-teo" eventType="primaryActionTriggered" id="B9R-74-v70"/>
+                                                    <action selector="textFieldDidBeginEditing:" destination="TEb-lI-teo" eventType="editingDidBegin" id="h6i-PU-C0w"/>
+                                                    <action selector="textFieldDidEndEditing:" destination="TEb-lI-teo" eventType="editingDidEnd" id="2B5-4l-gK0"/>
+                                                    <action selector="textFieldValueDidChange:" destination="TEb-lI-teo" eventType="editingChanged" id="X1x-p0-TnB"/>
+                                                </connections>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FoN-ua-N8n">
+                                                <rect key="frame" x="0.0" y="125" width="189" height="30"/>
+                                                <state key="normal" title="Search"/>
+                                                <connections>
+                                                    <action selector="searchButtonPressed:" destination="TEb-lI-teo" eventType="touchUpInside" id="WRH-Oi-RP2"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
-                            </stackView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="ayk-jT-s9d" firstAttribute="top" secondItem="rcc-MY-4Os" secondAttribute="topMargin" constant="9" id="2B0-cp-a8t"/>
+                                    <constraint firstItem="ayk-jT-s9d" firstAttribute="leading" secondItem="rcc-MY-4Os" secondAttribute="leadingMargin" constant="4" id="eGE-l9-9Do"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="ayk-jT-s9d" secondAttribute="bottom" constant="9" id="gAG-A3-TWw"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="ayk-jT-s9d" secondAttribute="trailing" constant="5" id="v2G-3t-oQ3"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ayk-jT-s9d" firstAttribute="centerY" secondItem="7s7-Pn-vJN" secondAttribute="centerY" id="Qei-wU-gtC"/>
-                            <constraint firstItem="ayk-jT-s9d" firstAttribute="centerX" secondItem="7s7-Pn-vJN" secondAttribute="centerX" id="bqa-QX-N7d"/>
+                            <constraint firstItem="rcc-MY-4Os" firstAttribute="centerY" secondItem="7s7-Pn-vJN" secondAttribute="centerY" id="qlt-ht-foR"/>
+                            <constraint firstItem="rcc-MY-4Os" firstAttribute="centerX" secondItem="7s7-Pn-vJN" secondAttribute="centerX" id="vQf-8Z-FCf"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="GI9-Hz-3sb"/>
                     <connections>
+                        <outlet property="centerView" destination="rcc-MY-4Os" id="vpP-6t-obR"/>
                         <outlet property="maxSalaryTextField" destination="vNb-bV-mmG" id="WV3-H4-tYB"/>
                         <outlet property="minSalaryTextField" destination="HMb-j7-WF6" id="8MG-8B-gQJ"/>
                         <segue destination="k0N-L8-Gw9" kind="show" identifier="SalaryResults" id="EJa-2m-7A5"/>
@@ -388,42 +427,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="HWC-Oy-T7a">
-                                <rect key="frame" x="219" y="253" width="163" height="93"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nc9-cI-btp">
+                                <rect key="frame" x="198" y="234" width="203" height="133"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a Department:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jsT-P8-l5l">
-                                        <rect key="frame" x="0.0" y="0.0" width="163" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="i.e. MAYOR'S OFFICE" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="QRv-v8-FkK">
-                                        <rect key="frame" x="0.0" y="27" width="163" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="search"/>
-                                        <connections>
-                                            <action selector="textFieldDidBeginEditing:" destination="dzJ-6T-HCq" eventType="editingDidBegin" id="Z64-Jd-kVo"/>
-                                            <action selector="textFieldDidEndEditing:" destination="dzJ-6T-HCq" eventType="editingDidEnd" id="5u7-Xg-Hgb"/>
-                                        </connections>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Isg-HE-mBh">
-                                        <rect key="frame" x="0.0" y="63" width="163" height="30"/>
-                                        <state key="normal" title="Search"/>
-                                        <connections>
-                                            <action selector="searchButtonPressed:" destination="dzJ-6T-HCq" eventType="touchUpInside" id="LVZ-dQ-Enu"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="HWC-Oy-T7a">
+                                        <rect key="frame" x="20" y="16" width="163" height="102"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a Department:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jsT-P8-l5l">
+                                                <rect key="frame" x="0.0" y="0.0" width="163" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="163" id="0M0-Mj-tAG"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="i.e. MAYOR'S OFFICE" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="QRv-v8-FkK">
+                                                <rect key="frame" x="0.0" y="36" width="163" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="search"/>
+                                                <connections>
+                                                    <action selector="textFieldDidBeginEditing:" destination="dzJ-6T-HCq" eventType="editingDidBegin" id="Z64-Jd-kVo"/>
+                                                    <action selector="textFieldDidEndEditing:" destination="dzJ-6T-HCq" eventType="editingDidEnd" id="5u7-Xg-Hgb"/>
+                                                </connections>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Isg-HE-mBh">
+                                                <rect key="frame" x="0.0" y="72" width="163" height="30"/>
+                                                <state key="normal" title="Search"/>
+                                                <connections>
+                                                    <action selector="searchButtonPressed:" destination="dzJ-6T-HCq" eventType="touchUpInside" id="LVZ-dQ-Enu"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
-                            </stackView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="HWC-Oy-T7a" firstAttribute="leading" secondItem="nc9-cI-btp" secondAttribute="leadingMargin" constant="12" id="Cds-J3-PlX"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="HWC-Oy-T7a" secondAttribute="trailing" constant="12" id="H6j-pA-orR"/>
+                                    <constraint firstItem="HWC-Oy-T7a" firstAttribute="top" secondItem="nc9-cI-btp" secondAttribute="topMargin" constant="8" id="fsx-u9-fpV"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="HWC-Oy-T7a" secondAttribute="bottom" constant="7" id="pgL-qJ-XxP"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="HWC-Oy-T7a" firstAttribute="centerY" secondItem="B5X-R5-Qg8" secondAttribute="centerY" id="Qrf-NP-6Yj"/>
-                            <constraint firstItem="HWC-Oy-T7a" firstAttribute="centerX" secondItem="B5X-R5-Qg8" secondAttribute="centerX" id="Yiu-Hf-W26"/>
+                            <constraint firstItem="nc9-cI-btp" firstAttribute="centerY" secondItem="B5X-R5-Qg8" secondAttribute="centerY" id="3X8-7D-oVs"/>
+                            <constraint firstItem="nc9-cI-btp" firstAttribute="centerX" secondItem="B5X-R5-Qg8" secondAttribute="centerX" id="nQd-Wj-Naf"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hEF-Rh-nPf"/>
                     <connections>
+                        <outlet property="centerView" destination="nc9-cI-btp" id="c9l-eG-g1O"/>
                         <outlet property="departmentTextField" destination="QRv-v8-FkK" id="ogl-eJ-wsh"/>
                         <segue destination="k0N-L8-Gw9" kind="show" identifier="DepartmentResults" id="doQ-QQ-Z5X"/>
                     </connections>
@@ -434,6 +489,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="EJa-2m-7A5"/>
+        <segue reference="T7L-ho-K5q"/>
     </inferredMetricsTieBreakers>
 </document>

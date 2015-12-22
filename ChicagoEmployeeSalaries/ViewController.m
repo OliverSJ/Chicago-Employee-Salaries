@@ -10,6 +10,13 @@
 #import "EmployeesTableViewController.h"
 #import "BusinessTier.h"
 
+// allow for hex input color
+#define UIColorFromRGB(rgbValue) \
+[UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+green:((float)((rgbValue & 0x00FF00) >>  8))/255.0 \
+blue:((float)((rgbValue & 0x0000FF) >>  0))/255.0 \
+alpha:1.0]
+
 @interface ViewController ()
 
 /** City of chicago's current departments. */
@@ -98,6 +105,7 @@
     
     cell.textLabel.text = self.tableViewCells[indexPath.row];
     cell.textLabel.adjustsFontSizeToFitWidth = YES;
+    cell.backgroundColor = [UIColor clearColor];
     
     switch (indexPath.row) {
             
@@ -114,6 +122,9 @@
             
         default:
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            cell.selectedBackgroundView = [UIView new];
+            cell.selectedBackgroundView.backgroundColor = UIColorFromRGB(0xB3DDF2);
+            cell.imageView.image = [UIImage imageNamed:@"star.png"];
             break;
     }
     

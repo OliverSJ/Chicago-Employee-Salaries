@@ -17,6 +17,7 @@
 @property (nonatomic) BusinessTier *currentBT;
 @property (nonatomic) NSArray *departments;
 @property (weak, nonatomic) IBOutlet UITextField *departmentTextField;
+@property (weak, nonatomic) IBOutlet UIView *centerView;
 
 @end
 
@@ -100,12 +101,22 @@
     [self performSegueWithIdentifier:@"DepartmentResults" sender:sender];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [self viewDidLoad];
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.view endEditing:YES]; // force all text fields to end editing
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // round center view
+    self.centerView.layer.cornerRadius = 20;
+    self.centerView.layer.masksToBounds = YES;
+    self.centerView.layer.opacity = 0.95f;
+    
+    // add image to backround
+    UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"chicago_3.png"]];
+    [self.view addSubview:backgroundView];
+    [self.view sendSubviewToBack:backgroundView];
     
     // instantiate BusinessTierObject
     self.currentBT = [[BusinessTier alloc]init];

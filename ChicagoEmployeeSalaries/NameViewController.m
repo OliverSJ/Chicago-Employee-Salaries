@@ -17,6 +17,7 @@
 @property (nonatomic) UIPickerView *departmentsPickerView;
 @property (nonatomic) BusinessTier *currentBT;
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
+@property (weak, nonatomic) IBOutlet UIView *centerView;
 
 @end
 
@@ -78,6 +79,16 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    
+    // round center view
+    self.centerView.layer.cornerRadius = 20;
+    self.centerView.layer.masksToBounds = YES;
+    self.centerView.layer.opacity = 0.95f;
+    
+    // add image to backround
+    UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"chicago_4.jpg"]];
+    [self.view addSubview:backgroundView];
+    [self.view sendSubviewToBack:backgroundView];
     
     // instantiate BusinessTierObject
     self.currentBT = [[BusinessTier alloc]init];

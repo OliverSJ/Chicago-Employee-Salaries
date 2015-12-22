@@ -40,7 +40,7 @@
 		9D6788A91C29B2C800465940 /* dollar_circle_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D6788A51C29B2C800465940 /* dollar_circle_3.png */; };
 		9D6788AA1C29B2C800465940 /* dollar_circle_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D6788A61C29B2C800465940 /* dollar_circle_4.png */; };
 		9D6788AC1C29D09400465940 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D6788AB1C29D09400465940 /* libsqlite3.tbd */; };
-		9D6788AE1C29D0DC00465940 /* chicago_employee_salaries_db.sql in Resources */ = {isa = PBXBuildFile; fileRef = 9D6788AD1C29D0DC00465940 /* chicago_employee_salaries_db.sql */; };
+		9D6788B01C29D79A00465940 /* chicago_employee_salaries_db.sql in Resources */ = {isa = PBXBuildFile; fileRef = 9D6788AF1C29D79A00465940 /* chicago_employee_salaries_db.sql */; };
 		9DA07C421C2700AE0045B1ED /* EmployeeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA07C411C2700AE0045B1ED /* EmployeeTableViewController.m */; };
 		9DC521AB1C250BFC0006E507 /* EmployeesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DC521AA1C250BFC0006E507 /* EmployeesTableViewController.m */; };
 		9DC521B31C25FD350006E507 /* back_large.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DC521AF1C25FD350006E507 /* back_large.png */; };
@@ -116,7 +116,7 @@
 		9D6788A51C29B2C800465940 /* dollar_circle_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dollar_circle_3.png; sourceTree = "<group>"; };
 		9D6788A61C29B2C800465940 /* dollar_circle_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dollar_circle_4.png; sourceTree = "<group>"; };
 		9D6788AB1C29D09400465940 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		9D6788AD1C29D0DC00465940 /* chicago_employee_salaries_db.sql */ = {isa = PBXFileReference; lastKnownFileType = file; name = chicago_employee_salaries_db.sql; path = ../../DatabaseManager/chicago_employee_salaries_db.sql; sourceTree = "<group>"; };
+		9D6788AF1C29D79A00465940 /* chicago_employee_salaries_db.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = chicago_employee_salaries_db.sql; sourceTree = "<group>"; };
 		9DA07C401C2700AE0045B1ED /* EmployeeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmployeeTableViewController.h; sourceTree = "<group>"; };
 		9DA07C411C2700AE0045B1ED /* EmployeeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmployeeTableViewController.m; sourceTree = "<group>"; };
 		9DC521A91C250BFC0006E507 /* EmployeesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmployeesTableViewController.h; sourceTree = "<group>"; };
@@ -217,7 +217,7 @@
 		8F4BCF831C21D503002674D1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9D6788AD1C29D0DC00465940 /* chicago_employee_salaries_db.sql */,
+				9D6788AF1C29D79A00465940 /* chicago_employee_salaries_db.sql */,
 				9D6788A31C29B2C800465940 /* dollar_circle_1.png */,
 				9D6788A41C29B2C800465940 /* dollar_circle_2.png */,
 				9D6788A51C29B2C800465940 /* dollar_circle_3.png */,
@@ -383,7 +383,7 @@
 				9D67888E1C294BE100465940 /* chicago_4.jpg in Resources */,
 				9D6788A81C29B2C800465940 /* dollar_circle_2.png in Resources */,
 				8F4BCF901C21D503002674D1 /* Assets.xcassets in Resources */,
-				9D6788AE1C29D0DC00465940 /* chicago_employee_salaries_db.sql in Resources */,
+				9D6788B01C29D79A00465940 /* chicago_employee_salaries_db.sql in Resources */,
 				9D6788981C2952CC00465940 /* star.png in Resources */,
 				9D6788901C294D2F00465940 /* chicago_flag_signs.png in Resources */,
 				9D67887C1C292BEE00465940 /* app_image.png in Resources */,

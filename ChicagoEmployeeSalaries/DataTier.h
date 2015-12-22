@@ -7,16 +7,23 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <sqlite3.h>
 
 @interface DataTier : NSObject
 
-@property NSString *baseUrl;
-@property NSArray *jsonArr;
+@property (nonatomic, strong) NSString *documentsDirectory;
+@property (nonatomic, strong) NSString *databaseFilename;
+@property (nonatomic, strong) NSMutableArray *arrResults;
 
-- (instancetype)initWithBaseUrl:(NSString*)url;
+@property (nonatomic, strong) NSMutableArray *arrColumnNames;
+@property (nonatomic) int affectedRows;
+@property (nonatomic) long long lastInsertedRowID;
 
--(NSArray*)executeQuery:(NSString*)url;
--(NSArray*)parseData:(NSData *)responseData;
--(NSString*)convertToHttpURL:(NSString *)query;
+-(instancetype)initWithDatabaseFilename:(NSString*)dbFilename;
+-(void)copyDatabaseIntoDocumentsDirectory;
+-(void)runQuery:(const char *)query isQueryExecutable:(BOOL)queryExecutable;
+
+-(NSArray *)loadDataFromDB:(NSString *)query;
+-(void)executeQuery:(NSString *)query;
 
 @end

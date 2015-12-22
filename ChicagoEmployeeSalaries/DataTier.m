@@ -32,8 +32,8 @@
     NSFileManager *fileManager = [[NSFileManager alloc]init];
     
     // Set the database file path to current directory
-    //NSString *databasePath = [self.documentsDirectory stringByAppendingPathComponent:self.databaseFilename];
-    NSString *databasePath = [[fileManager currentDirectoryPath] stringByAppendingPathComponent:self.databaseFilename];
+    NSString *databasePath = [self.documentsDirectory stringByAppendingPathComponent:self.databaseFilename];
+    //NSString *databasePath = [[fileManager currentDirectoryPath] stringByAppendingPathComponent:self.databaseFilename];
     
     // Initialize the results array.
     if (self.arrResults != nil) {
@@ -52,9 +52,9 @@
     
     // Open the database.
     
-     NSString *sourcePath = [[NSBundle mainBundle] pathForResource:@"chicago_employees_salaries_db" ofType:@"sql"];
+    //NSString *sourcePath = [[NSBundle mainBundle] pathForResource:@"chicago_employees_salaries_db" ofType:@"sql"];
     //[self dbFileName] ??? Needs to know where the database file
-    int openDatabaseResult = sqlite3_open([sourcePath UTF8String], &sqlite3Database);
+    int openDatabaseResult = sqlite3_open([databasePath UTF8String], &sqlite3Database);
     if(openDatabaseResult == SQLITE_OK) {
         
         NSLog(@"The database file has been opened");
@@ -136,18 +136,21 @@
 }
 
 -(void)copyDatabaseIntoDocumentsDirectory{
-    // Check if the database file exists in the documents directory.
-    NSString *destinationPath = [self.documentsDirectory stringByAppendingPathComponent:self.databaseFilename];
-    if (![[NSFileManager defaultManager] fileExistsAtPath:destinationPath]) {
-        // The database file does not exist in the documents directory, so copy it from the main bundle now.
-        NSString *sourcePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:self.databaseFilename];
-        NSError *error;
-        [[NSFileManager defaultManager] copyItemAtPath:sourcePath toPath:destinationPath error:&error];
-        
-        // Check if any error occurred during copying and display it.
-        if (error != nil) {
-            NSLog(@"%@", [error localizedDescription]);
-        }
+    // First, test for existence.
+    BOOL success;
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSError *error;
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *writableDBPath = [documentsDirectory stringByAppendingPathComponent:self.databaseFilename];
+    success = [fileManager fileExistsAtPath:writableDBPath];
+    if (success)
+        return;
+    // The writable database does not exist, so copy the default to the appropriate location.
+    NSString *defaultDBPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:self.databaseFilename];
+    success = [fileManager copyItemAtPath:defaultDBPath toPath:writableDBPath error:&error];
+    if (!success) {
+        NSAssert1(0, @"Failed to create writable database file with message '%@'.", [error localizedDescription]);
     }
 }
 
@@ -155,14 +158,14 @@
     self = [super init];
     if (self) {
         // Set the documents directory path to the documentsDirectory property.
-        // NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-        //self.documentsDirectory = [paths objectAtIndex:0];
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        self.documentsDirectory = [paths objectAtIndex:0];
         
         // Keep the database filename.
         self.databaseFilename = dbFilename;
         
         // Copy the database file into the documents directory if necessary.
-        //[self copyDatabaseIntoDocumentsDirectory];
+        [self copyDatabaseIntoDocumentsDirectory];
     }
     return self;
 }

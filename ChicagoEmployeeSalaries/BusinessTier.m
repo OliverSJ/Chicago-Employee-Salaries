@@ -47,7 +47,7 @@
         //[_dt executeQuery:@"SELECT name FROM sqlite_master WHERE type='table';"];
         //[_dt executeQuery:@"SELECT * FROM Employees;"];
         
-        NSArray* results = [[NSArray alloc] initWithArray:[_dt loadDataFromDB:@"SELECT * FROM sqlite_master WHERE type='table';"]];
+        NSArray* results = [[NSArray alloc] initWithArray:[_dt loadDataFromDB:@"SELECT * FROM Employees;"]];
         
         NSLog(@"%@", [NSString stringWithFormat:@"Data: %@", [[results objectAtIndex:0]objectAtIndex:0]]);
         

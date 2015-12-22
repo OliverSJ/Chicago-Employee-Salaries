@@ -39,6 +39,8 @@
 		9D1ABE0C1C27C098009F0013 /* NameAndDepartmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1ABE0B1C27C098009F0013 /* NameAndDepartmentViewController.m */; };
 		9D1ABE0F1C27C92F009F0013 /* SalaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1ABE0E1C27C92F009F0013 /* SalaryViewController.m */; };
 		9D48C3D81C21E219002F9036 /* DataTier.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D48C3D71C21E219002F9036 /* DataTier.m */; };
+		9D6788B21C29E50C00465940 /* chicago_employee_salaries_db.sql in Resources */ = {isa = PBXBuildFile; fileRef = 9D6788B11C29E50C00465940 /* chicago_employee_salaries_db.sql */; };
+		9D6788B41C29E53100465940 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D6788B31C29E53100465940 /* libsqlite3.tbd */; };
 		9DA07C421C2700AE0045B1ED /* EmployeeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA07C411C2700AE0045B1ED /* EmployeeTableViewController.m */; };
 		9DC521AB1C250BFC0006E507 /* EmployeesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DC521AA1C250BFC0006E507 /* EmployeesTableViewController.m */; };
 		9DC521B31C25FD350006E507 /* back_large.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DC521AF1C25FD350006E507 /* back_large.png */; };
@@ -113,6 +115,8 @@
 		9D1ABE0E1C27C92F009F0013 /* SalaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SalaryViewController.m; sourceTree = "<group>"; };
 		9D48C3D61C21E219002F9036 /* DataTier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataTier.h; sourceTree = "<group>"; };
 		9D48C3D71C21E219002F9036 /* DataTier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataTier.m; sourceTree = "<group>"; };
+		9D6788B11C29E50C00465940 /* chicago_employee_salaries_db.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = chicago_employee_salaries_db.sql; sourceTree = "<group>"; };
+		9D6788B31C29E53100465940 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		9DA07C401C2700AE0045B1ED /* EmployeeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmployeeTableViewController.h; sourceTree = "<group>"; };
 		9DA07C411C2700AE0045B1ED /* EmployeeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmployeeTableViewController.m; sourceTree = "<group>"; };
 		9DC521A91C250BFC0006E507 /* EmployeesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmployeesTableViewController.h; sourceTree = "<group>"; };
@@ -131,6 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D6788B41C29E53100465940 /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +159,7 @@
 		8F4BCF771C21D503002674D1 = {
 			isa = PBXGroup;
 			children = (
+				9D6788B31C29E53100465940 /* libsqlite3.tbd */,
 				8F4BCF821C21D503002674D1 /* ChicagoEmployeeSalaries */,
 				8F4BCF9C1C21D503002674D1 /* ChicagoEmployeeSalariesTests */,
 				8F4BCFA71C21D503002674D1 /* ChicagoEmployeeSalariesUITests */,
@@ -211,6 +217,7 @@
 		8F4BCF831C21D503002674D1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9D6788B11C29E50C00465940 /* chicago_employee_salaries_db.sql */,
 				8F92C1561C29CAF20091BF99 /* flag.png */,
 				8F92C1571C29CAF20091BF99 /* sears_tower.jpg */,
 				8F92C1581C29CAF20091BF99 /* star.png */,
@@ -376,6 +383,7 @@
 				9DC521B61C25FD350006E507 /* next_small.png in Resources */,
 				8F92C14A1C29CAD90091BF99 /* chicago_4.jpg in Resources */,
 				8F92C1511C29CAE40091BF99 /* dollar_circle_1.png in Resources */,
+				9D6788B21C29E50C00465940 /* chicago_employee_salaries_db.sql in Resources */,
 				8F4BCF901C21D503002674D1 /* Assets.xcassets in Resources */,
 				8F92C13F1C29CACC0091BF99 /* app_image.png in Resources */,
 				8F92C1551C29CAE40091BF99 /* dollar_sign_red.png in Resources */,

@@ -51,8 +51,13 @@
     
     
     // Open the database.
-    int openDatabaseResult = sqlite3_open([databasePath UTF8String], &sqlite3Database);
+    
+     NSString *sourcePath = [[NSBundle mainBundle] pathForResource:@"chicago_employees_salaries_db" ofType:@"sql"];
+    //[self dbFileName] ??? Needs to know where the database file
+    int openDatabaseResult = sqlite3_open([sourcePath UTF8String], &sqlite3Database);
     if(openDatabaseResult == SQLITE_OK) {
+        
+        NSLog(@"The database file has been opened");
         // Declare a sqlite3_stmt object in which will be stored the query after having been compiled into a SQLite statement.
         sqlite3_stmt *compiledStatement;
         

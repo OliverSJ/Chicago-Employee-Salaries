@@ -21,7 +21,8 @@
         _baseUrl = @"https://data.cityofchicago.org/resource/tt4n-kn4t.json?";
         
         // init json manager with base url for json database
-        _dt = [[DataTier alloc]initWithBaseUrl:_baseUrl];
+        //_dt = [[DataTier alloc]initWithBaseUrl:_baseUrl];
+        _dt = [[DataTier alloc] initWithDatabaseFilename:@"chicago_employee_salaries_db.sql"];
         
         //init the tempArray
         _tempArray = [[NSMutableArray alloc] init];
@@ -42,7 +43,13 @@
         _query = @"$select=department&$group=department";
         
         //Query the database for the list of departments
-        _jsonResponse = [_dt executeQuery: _query];
+        //_jsonResponse = [_dt executeQuery: _query];
+        //[_dt executeQuery:@"SELECT name FROM sqlite_master WHERE type='table';"];
+        //[_dt executeQuery:@"SELECT * FROM Employees;"];
+        
+        NSArray* results = [[NSArray alloc] initWithArray:[_dt loadDataFromDB:@"SELECT * FROM sqlite_master WHERE type='table';"]];
+        
+        NSLog(@"%@", [NSString stringWithFormat:@"Data: %@", [[results objectAtIndex:0]objectAtIndex:0]]);
         
         /** Store just the department strings in tempArray from _jsonResponse (which is an NSArray of NSDictionaries) */
         NSMutableArray* tempArray = [[NSMutableArray alloc] initWithArray:[_jsonResponse valueForKey:@"department"]];
@@ -228,7 +235,7 @@
     }
     
     //Query the database
-    _jsonResponse = [_dt executeQuery: _query];
+    //_jsonResponse = [_dt executeQuery: _query];
     
     
     return [self createEmployeeObjectsArray];
@@ -238,7 +245,7 @@
     
     _query = [NSString stringWithFormat:@"$where=employee_annual_salary>=%@ AND employee_annual_salary<=%@", minSalary,maxSalary];
     
-    _jsonResponse = [_dt executeQuery:_query];
+    //_jsonResponse = [_dt executeQuery:_query];
     
     return [self createEmployeeObjectsArray];
 }

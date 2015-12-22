@@ -9,6 +9,13 @@
 #import "EmployeesTableViewController.h"
 #import "EmployeeTableViewController.h"
 
+// allow for hex input color
+#define UIColorFromRGB(rgbValue) \
+[UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+green:((float)((rgbValue & 0x00FF00) >>  8))/255.0 \
+blue:((float)((rgbValue & 0x0000FF) >>  0))/255.0 \
+alpha:1.0]
+
 @interface EmployeesTableViewController()
 
 @property (nonatomic) NSArray *employees;
@@ -77,6 +84,24 @@
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator; // add arrow
         cell.selectionStyle = UITableViewCellSelectionStyleDefault; // make appearance clickable
         cell.userInteractionEnabled = YES; // enable user interaction
+        cell.selectedBackgroundView = [UIView new]; // create new view in cell
+        cell.selectedBackgroundView.backgroundColor = UIColorFromRGB(0xB3DDF2); // color selection chicago blue
+        
+        // select image to give user information about the employees salary
+        if ([[self.employees[indexPath.row] annualSalary] integerValue] < 60000) {
+            cell.imageView.image = [UIImage imageNamed:@"dollar_circle_1.png"]; // add image to each cell
+        }
+        else if ([[self.employees[indexPath.row] annualSalary] integerValue] < 90000) {
+            cell.imageView.image = [UIImage imageNamed:@"dollar_circle_2.png"]; // add image to each cell
+        }
+        else if ([[self.employees[indexPath.row] annualSalary] integerValue] < 150000) {
+            cell.imageView.image = [UIImage imageNamed:@"dollar_circle_3.png"]; // add image to each cell
+        }
+        else {
+            cell.imageView.image = [UIImage imageNamed:@"dollar_circle_4.png"]; // add image to each cell
+        }
+        
+        
     }
     else if (self.noResultsFound){
         cell.textLabel.text = @"No Results Found"; // array index of current values
@@ -115,7 +140,14 @@
     // shows ActivityIndicator while waiting for response
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         // get deep copy array of employees
-        self.employees = [[self.currentBT getEmployees:self.currentBT.name department:self.currentBT.department] copy];
+//        // search by salary
+//        if (self.currentBT.salarySearch)
+//            self.employees = [[self.currentBT getEmployeesBySalary:self.currentBT.minSalary maxSalary:self.currentBT.maxSalary] copy];
+//        
+        // search by name and/or department
+//        else {
+            self.employees = [[self.currentBT getEmployees:self.currentBT.name department:self.currentBT.department] copy];
+//        }
         if (self.employees.count <= 0) {
             self.noResultsFound = YES;
         }

@@ -6,6 +6,8 @@
 //  Copyright © 2015 Oliver San Juan. All rights reserved.
 //
 
+
+#import <QuartzCore/QuartzCore.h>
 #import "SalaryViewController.h"
 #import "EmployeesTableViewController.h"
 #import "BusinessTier.h"
@@ -33,6 +35,7 @@
 @property (nonatomic) NSArray *tableViewCells;
 /** Table view for displaying contents.*/
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIView *centerView;
 
 /**
  @details Event called when a search button is pressed.
@@ -151,6 +154,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // round center view
+    self.centerView.layer.cornerRadius = 20;
+    self.centerView.layer.masksToBounds = YES;
+    self.centerView.layer.opacity = 0.97f;
+    
+    // add image to backround
+    UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"chicago_2.png"]];
+    [self.view addSubview:backgroundView];
+    [self.view sendSubviewToBack:backgroundView];
     
     // instantiate BusinessTierObject
     self.currentBT = [[BusinessTier alloc]init];

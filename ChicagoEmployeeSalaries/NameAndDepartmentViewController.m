@@ -265,7 +265,7 @@
     // round center view
     self.centerView.layer.cornerRadius = 20;
     self.centerView.layer.masksToBounds = YES;
-    self.centerView.layer.opacity = 0.95f;
+    self.centerView.layer.opacity = 0.97f;
     
     // add image to backround
     UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"chicago_1.png"]];

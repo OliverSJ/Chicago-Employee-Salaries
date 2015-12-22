@@ -34,6 +34,11 @@
 		9D6788921C294E3E00465940 /* flag.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D6788911C294E3E00465940 /* flag.png */; };
 		9D6788941C2950CC00465940 /* sears_tower.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9D6788931C2950CC00465940 /* sears_tower.jpg */; };
 		9D6788981C2952CC00465940 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D6788971C2952CB00465940 /* star.png */; };
+		9D67889A1C295CD400465940 /* dollar_sign_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D6788991C295CD400465940 /* dollar_sign_red.png */; };
+		9D6788A71C29B2C800465940 /* dollar_circle_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D6788A31C29B2C800465940 /* dollar_circle_1.png */; };
+		9D6788A81C29B2C800465940 /* dollar_circle_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D6788A41C29B2C800465940 /* dollar_circle_2.png */; };
+		9D6788A91C29B2C800465940 /* dollar_circle_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D6788A51C29B2C800465940 /* dollar_circle_3.png */; };
+		9D6788AA1C29B2C800465940 /* dollar_circle_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D6788A61C29B2C800465940 /* dollar_circle_4.png */; };
 		9DA07C421C2700AE0045B1ED /* EmployeeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA07C411C2700AE0045B1ED /* EmployeeTableViewController.m */; };
 		9DC521AB1C250BFC0006E507 /* EmployeesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DC521AA1C250BFC0006E507 /* EmployeesTableViewController.m */; };
 		9DC521B31C25FD350006E507 /* back_large.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DC521AF1C25FD350006E507 /* back_large.png */; };
@@ -103,6 +108,11 @@
 		9D6788911C294E3E00465940 /* flag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flag.png; sourceTree = "<group>"; };
 		9D6788931C2950CC00465940 /* sears_tower.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sears_tower.jpg; sourceTree = "<group>"; };
 		9D6788971C2952CB00465940 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
+		9D6788991C295CD400465940 /* dollar_sign_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dollar_sign_red.png; sourceTree = "<group>"; };
+		9D6788A31C29B2C800465940 /* dollar_circle_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dollar_circle_1.png; sourceTree = "<group>"; };
+		9D6788A41C29B2C800465940 /* dollar_circle_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dollar_circle_2.png; sourceTree = "<group>"; };
+		9D6788A51C29B2C800465940 /* dollar_circle_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dollar_circle_3.png; sourceTree = "<group>"; };
+		9D6788A61C29B2C800465940 /* dollar_circle_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dollar_circle_4.png; sourceTree = "<group>"; };
 		9DA07C401C2700AE0045B1ED /* EmployeeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmployeeTableViewController.h; sourceTree = "<group>"; };
 		9DA07C411C2700AE0045B1ED /* EmployeeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmployeeTableViewController.m; sourceTree = "<group>"; };
 		9DC521A91C250BFC0006E507 /* EmployeesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmployeesTableViewController.h; sourceTree = "<group>"; };
@@ -201,6 +211,11 @@
 		8F4BCF831C21D503002674D1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9D6788A31C29B2C800465940 /* dollar_circle_1.png */,
+				9D6788A41C29B2C800465940 /* dollar_circle_2.png */,
+				9D6788A51C29B2C800465940 /* dollar_circle_3.png */,
+				9D6788A61C29B2C800465940 /* dollar_circle_4.png */,
+				9D6788991C295CD400465940 /* dollar_sign_red.png */,
 				9D6788971C2952CB00465940 /* star.png */,
 				9D6788931C2950CC00465940 /* sears_tower.jpg */,
 				9D6788911C294E3E00465940 /* flag.png */,
@@ -346,6 +361,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D6788AA1C29B2C800465940 /* dollar_circle_4.png in Resources */,
 				9D6788881C29422E00465940 /* chicago_3.jpg in Resources */,
 				9DC521B51C25FD350006E507 /* next_large.png in Resources */,
 				9D6788921C294E3E00465940 /* flag.png in Resources */,
@@ -355,8 +371,10 @@
 				9D6788801C29313100465940 /* chicago_1.jpg in Resources */,
 				8F4BCF931C21D503002674D1 /* LaunchScreen.storyboard in Resources */,
 				9D67887D1C292BEE00465940 /* app_image@1x.png in Resources */,
+				9D6788A71C29B2C800465940 /* dollar_circle_1.png in Resources */,
 				9DC521B61C25FD350006E507 /* next_small.png in Resources */,
 				9D67888E1C294BE100465940 /* chicago_4.jpg in Resources */,
+				9D6788A81C29B2C800465940 /* dollar_circle_2.png in Resources */,
 				8F4BCF901C21D503002674D1 /* Assets.xcassets in Resources */,
 				9D6788981C2952CC00465940 /* star.png in Resources */,
 				9D6788901C294D2F00465940 /* chicago_flag_signs.png in Resources */,
@@ -364,7 +382,9 @@
 				8F4BCF8E1C21D503002674D1 /* Main.storyboard in Resources */,
 				9D67887B1C292BEE00465940 /* app_icon@3x.png in Resources */,
 				9D67887E1C292BEE00465940 /* app_image@2x.png in Resources */,
+				9D67889A1C295CD400465940 /* dollar_sign_red.png in Resources */,
 				9DC521B41C25FD350006E507 /* back_small.png in Resources */,
+				9D6788A91C29B2C800465940 /* dollar_circle_3.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

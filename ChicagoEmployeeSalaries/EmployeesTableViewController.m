@@ -86,6 +86,22 @@ alpha:1.0]
         cell.userInteractionEnabled = YES; // enable user interaction
         cell.selectedBackgroundView = [UIView new]; // create new view in cell
         cell.selectedBackgroundView.backgroundColor = UIColorFromRGB(0xB3DDF2); // color selection chicago blue
+        
+        // select image to give user information about the employees salary
+        if ([[self.employees[indexPath.row] annualSalary] integerValue] < 60000) {
+            cell.imageView.image = [UIImage imageNamed:@"dollar_circle_1.png"]; // add image to each cell
+        }
+        else if ([[self.employees[indexPath.row] annualSalary] integerValue] < 90000) {
+            cell.imageView.image = [UIImage imageNamed:@"dollar_circle_2.png"]; // add image to each cell
+        }
+        else if ([[self.employees[indexPath.row] annualSalary] integerValue] < 150000) {
+            cell.imageView.image = [UIImage imageNamed:@"dollar_circle_3.png"]; // add image to each cell
+        }
+        else {
+            cell.imageView.image = [UIImage imageNamed:@"dollar_circle_4.png"]; // add image to each cell
+        }
+        
+        
     }
     else if (self.noResultsFound){
         cell.textLabel.text = @"No Results Found"; // array index of current values

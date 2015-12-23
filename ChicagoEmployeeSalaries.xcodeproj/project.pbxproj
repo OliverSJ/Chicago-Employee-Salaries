@@ -33,6 +33,7 @@
 		8F92C1591C29CAF20091BF99 /* flag.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F92C1561C29CAF20091BF99 /* flag.png */; };
 		8F92C15A1C29CAF20091BF99 /* sears_tower.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F92C1571C29CAF20091BF99 /* sears_tower.jpg */; };
 		8F92C15B1C29CAF20091BF99 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F92C1581C29CAF20091BF99 /* star.png */; };
+		8F92C1611C2B37BF0091BF99 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F92C1601C2B37BF0091BF99 /* libsqlite3.tbd */; };
 		9D1ABE031C276074009F0013 /* DepartmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1ABE021C276074009F0013 /* DepartmentViewController.m */; };
 		9D1ABE061C276B2A009F0013 /* UIView+FormScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1ABE051C276B2A009F0013 /* UIView+FormScroll.m */; };
 		9D1ABE091C27B215009F0013 /* NameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1ABE081C27B215009F0013 /* NameViewController.m */; };
@@ -101,6 +102,7 @@
 		8F92C1561C29CAF20091BF99 /* flag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flag.png; sourceTree = "<group>"; };
 		8F92C1571C29CAF20091BF99 /* sears_tower.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sears_tower.jpg; sourceTree = "<group>"; };
 		8F92C1581C29CAF20091BF99 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
+		8F92C1601C2B37BF0091BF99 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		9D1ABE011C276074009F0013 /* DepartmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DepartmentViewController.h; sourceTree = "<group>"; };
 		9D1ABE021C276074009F0013 /* DepartmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DepartmentViewController.m; sourceTree = "<group>"; };
 		9D1ABE041C276B2A009F0013 /* UIView+FormScroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FormScroll.h"; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F92C1611C2B37BF0091BF99 /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +157,7 @@
 		8F4BCF771C21D503002674D1 = {
 			isa = PBXGroup;
 			children = (
+				8F92C1601C2B37BF0091BF99 /* libsqlite3.tbd */,
 				8F4BCF821C21D503002674D1 /* ChicagoEmployeeSalaries */,
 				8F4BCF9C1C21D503002674D1 /* ChicagoEmployeeSalariesTests */,
 				8F4BCFA71C21D503002674D1 /* ChicagoEmployeeSalariesUITests */,

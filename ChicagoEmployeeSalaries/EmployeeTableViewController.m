@@ -19,6 +19,7 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    cell.backgroundColor = [UIColor clearColor];
     
     cell.textLabel.adjustsFontSizeToFitWidth = YES;
     
@@ -62,6 +63,11 @@
     
     self.tableView.estimatedRowHeight = 89;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
+    
+    // add image to backround
+    UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"paper.png"]];
+    [self.view addSubview:backgroundView];
+    [self.view sendSubviewToBack:backgroundView];
     
     // convert string to decimal
     NSNumberFormatter *f = [[NSNumberFormatter alloc] init];

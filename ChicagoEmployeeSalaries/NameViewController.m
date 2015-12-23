@@ -80,13 +80,16 @@
     
     [super viewDidLoad];
     
+    // reset text fields
+    self.nameTextField.text = @"";
+    
     // round center view
     self.centerView.layer.cornerRadius = 20;
     self.centerView.layer.masksToBounds = YES;
     self.centerView.layer.opacity = 0.97f;
     
     // add image to backround
-    UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"chicago_4.jpg"]];
+    UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"chicago_4.png"]];
     [self.view addSubview:backgroundView];
     [self.view sendSubviewToBack:backgroundView];
     

@@ -259,8 +259,16 @@
  DEFAULT FUNCTIONS
  *************************************************/
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self viewDidLoad];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // reset text fields
+    self.nameTextField.text = @"";
+    self.departmentTextField.text = @"";
     
     // round center view
     self.centerView.layer.cornerRadius = 20;
@@ -269,6 +277,8 @@
     
     // add image to backround
     UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"chicago_1.png"]];
+    //backgroundView.contentMode = UIViewContentModeScaleAspectFill;
+    //backgroundView.center = self.view.center;
     [self.view addSubview:backgroundView];
     [self.view sendSubviewToBack:backgroundView];
     

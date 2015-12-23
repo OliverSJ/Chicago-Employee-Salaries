@@ -18,37 +18,74 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="1ic-5X-bCH">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chicago_5.png" translatesAutoresizingMaskIntoConstraints="NO" id="aF8-vq-mYk">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nJ3-tg-rFo" userLabel="Center View">
+                                <rect key="frame" x="20" y="84" width="560" height="508"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="fZE-Ox-ceo">
+                                        <rect key="frame" x="17" y="34" width="527" height="440"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chicago Employee Salaries" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdb-O1-4fg">
+                                                <rect key="frame" x="0.0" y="0.0" width="527" height="21"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search by:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kiX-p4-It0">
+                                                <rect key="frame" x="0.0" y="27" width="527" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="1ic-5X-bCH">
+                                                <rect key="frame" x="0.0" y="53" width="527" height="387"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <prototypes>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="hi3-ha-cVd">
+                                                        <rect key="frame" x="0.0" y="1" width="527" height="44"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hi3-ha-cVd" id="XWb-a9-As7">
+                                                            <rect key="frame" x="0.0" y="0.0" width="527" height="43.5"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                        </tableViewCellContentView>
+                                                    </tableViewCell>
+                                                </prototypes>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="k8N-D0-9og"/>
+                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="vo1-PR-L16"/>
+                                                </connections>
+                                            </tableView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="hi3-ha-cVd">
-                                        <rect key="frame" x="0.0" y="65" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hi3-ha-cVd" id="XWb-a9-As7">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="k8N-D0-9og"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="vo1-PR-L16"/>
-                                </connections>
-                            </tableView>
+                                <constraints>
+                                    <constraint firstItem="fZE-Ox-ceo" firstAttribute="top" secondItem="nJ3-tg-rFo" secondAttribute="top" constant="34" id="B6c-O2-LYx"/>
+                                    <constraint firstAttribute="bottom" secondItem="fZE-Ox-ceo" secondAttribute="bottom" constant="34" id="Lku-z4-mix"/>
+                                    <constraint firstAttribute="trailing" secondItem="fZE-Ox-ceo" secondAttribute="trailing" constant="16" id="Rhn-Fd-3Zp"/>
+                                    <constraint firstItem="fZE-Ox-ceo" firstAttribute="leading" secondItem="nJ3-tg-rFo" secondAttribute="leading" constant="17" id="iZM-fZ-y3c"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="1ic-5X-bCH" secondAttribute="trailing" id="Gue-GG-nSU"/>
-                            <constraint firstItem="1ic-5X-bCH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="SSQ-oR-NtP"/>
-                            <constraint firstItem="1ic-5X-bCH" firstAttribute="bottom" secondItem="8sb-Hc-8CH" secondAttribute="top" id="eXB-Ib-Rt9"/>
-                            <constraint firstItem="1ic-5X-bCH" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="iA9-gm-pVl"/>
+                            <constraint firstItem="aF8-vq-mYk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="FZh-Nr-5me"/>
+                            <constraint firstItem="nJ3-tg-rFo" firstAttribute="top" secondItem="Ch9-3c-ZJd" secondAttribute="bottom" constant="20" id="RWk-UT-p8h"/>
+                            <constraint firstItem="8sb-Hc-8CH" firstAttribute="top" secondItem="nJ3-tg-rFo" secondAttribute="bottom" constant="8" id="TIR-Jo-0fz"/>
+                            <constraint firstItem="aF8-vq-mYk" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="b36-vI-Ogd"/>
+                            <constraint firstItem="aF8-vq-mYk" firstAttribute="centerX" secondItem="nJ3-tg-rFo" secondAttribute="centerX" id="jlV-yt-mmu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nJ3-tg-rFo" secondAttribute="trailing" id="oaL-7K-lEL"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="nJ3-tg-rFo" secondAttribute="leading" id="rZp-79-XHK"/>
+                            <constraint firstItem="aF8-vq-mYk" firstAttribute="bottom" secondItem="8sb-Hc-8CH" secondAttribute="top" id="rjA-PT-s9f"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="VoF-wB-eim"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="600"/>
                     <connections>
+                        <outlet property="centerView" destination="nJ3-tg-rFo" id="Jr4-Ip-Vnk"/>
                         <outlet property="tableView" destination="1ic-5X-bCH" id="sJQ-oJ-g0O"/>
                         <segue destination="9Iz-75-5AJ" kind="show" identifier="SearchByNameAndDepartment" id="eEC-au-2hD"/>
                         <segue destination="TEb-lI-teo" kind="show" identifier="SearchBySalary" id="ihO-GX-QTb"/>
@@ -488,7 +525,10 @@
             <point key="canvasLocation" x="736" y="-1046"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="chicago_5.png" width="996" height="1024"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="T7L-ho-K5q"/>
+        <segue reference="US6-ZG-dB1"/>
     </inferredMetricsTieBreakers>
 </document>

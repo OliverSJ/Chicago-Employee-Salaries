@@ -43,6 +43,7 @@ alpha:1.0]
 @property (nonatomic) NSArray *tableViewCells;
 /** Table view for displaying contents.*/
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIView *centerView;
 
 /**
  @brief Checks for correct formatting of a string.
@@ -109,19 +110,20 @@ alpha:1.0]
     
     switch (indexPath.row) {
             
-        case 0:
-            cell.textLabel.font = [UIFont fontWithName:@"Arial Rounded MT Bold" size:20];
-            cell.textLabel.textAlignment = NSTextAlignmentCenter;
-            cell.selectionStyle = UITableViewCellSelectionStyleNone;
-            break;
-            
-        case 1:
-            cell.textLabel.textAlignment = NSTextAlignmentCenter;
-            cell.selectionStyle = UITableViewCellSelectionStyleNone;
-            break;
+//        case 0:
+//            cell.textLabel.font = [UIFont fontWithName:@"Arial Rounded MT Bold" size:20];
+//            cell.textLabel.textAlignment = NSTextAlignmentCenter;
+//            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//            break;
+//            
+//        case 1:
+//            cell.textLabel.textAlignment = NSTextAlignmentCenter;
+//            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//            break;
             
         default:
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            cell.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.5f];
             cell.selectedBackgroundView = [UIView new];
             cell.selectedBackgroundView.backgroundColor = UIColorFromRGB(0xB3DDF2);
             cell.imageView.image = [UIImage imageNamed:@"star.png"];
@@ -134,19 +136,22 @@ alpha:1.0]
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     switch (indexPath.row) {
-        case 2:
+        case 0:
             [self performSegueWithIdentifier:@"SearchByName" sender:self];
             break;
-        case 3:
+        case 1:
             [self performSegueWithIdentifier:@"SearchByDepartment" sender:self];
             break;
-        case 4:
+        case 2:
             [self performSegueWithIdentifier:@"SearchByNameAndDepartment" sender:self];
             break;
-        case 5:
+        case 3:
             [self performSegueWithIdentifier:@"SearchBySalary" sender:self];
             break;
     }
+    
+    //Change the selected background view of the cell.
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
 }
 
@@ -325,8 +330,18 @@ alpha:1.0]
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // round center view
+    self.centerView.layer.cornerRadius = 20;
+    self.centerView.layer.masksToBounds = YES;
+    self.centerView.layer.opacity = 0.9f;
+    
+    // add image to backround
+    UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"chicago_5.png"]];
+    [self.view addSubview:backgroundView];
+    [self.view sendSubviewToBack:backgroundView];
+    
     // Do any additional setup after loading the view, typically from a nib.
-    self.tableViewCells = @[@"Chicago Employee Salaries", @"Select a Search Method", @"By Name", @"By Department", @"By Name and Department", @"By Salary"];
+    self.tableViewCells = @[@"Name", @"Department", @"Name and Department", @"Salary"];
     
     // helps hide separators in certain cells, see cellForRowAtIndexPath in tableView for more
     self.tableView.separatorColor = [UIColor clearColor];

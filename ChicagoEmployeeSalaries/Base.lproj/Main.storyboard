@@ -588,11 +588,82 @@
             </objects>
             <point key="canvasLocation" x="736" y="-1046"/>
         </scene>
+        <!--Single Text Field View Controller-->
+        <scene sceneID="gQb-GW-uP8">
+            <objects>
+                <viewController id="tOD-NH-B3s" customClass="SingleTextFieldViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kM5-I3-umo"/>
+                        <viewControllerLayoutGuide type="bottom" id="bh4-yY-TYS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="B2x-us-neG">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EYz-uu-0h6">
+                                <rect key="frame" x="198" y="234" width="203" height="133"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="P6A-T8-Kbs">
+                                        <rect key="frame" x="20" y="16" width="163" height="102"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5iX-OC-1w8">
+                                                <rect key="frame" x="0.0" y="0.0" width="163" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="163" id="nAP-Kg-fvm"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Text" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="V1v-Ec-3VC">
+                                                <rect key="frame" x="0.0" y="36" width="163" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="search"/>
+                                                <connections>
+                                                    <action selector="textFieldDidBeginEditing:" destination="tOD-NH-B3s" eventType="editingDidBegin" id="eZi-lb-79H"/>
+                                                    <action selector="textFieldDidEndEditing:" destination="tOD-NH-B3s" eventType="editingDidEnd" id="BR8-Rq-2Ys"/>
+                                                </connections>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tly-KE-eQZ">
+                                                <rect key="frame" x="0.0" y="72" width="163" height="30"/>
+                                                <state key="normal" title="Search"/>
+                                                <connections>
+                                                    <action selector="searchButtonPressed:" destination="tOD-NH-B3s" eventType="touchUpInside" id="1i7-cV-o1n"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="P6A-T8-Kbs" firstAttribute="leading" secondItem="EYz-uu-0h6" secondAttribute="leadingMargin" constant="12" id="7FI-v6-vcQ"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="P6A-T8-Kbs" secondAttribute="trailing" constant="12" id="Ef8-zi-dX0"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="P6A-T8-Kbs" secondAttribute="bottom" constant="7" id="exZ-bt-uIX"/>
+                                    <constraint firstItem="P6A-T8-Kbs" firstAttribute="top" secondItem="EYz-uu-0h6" secondAttribute="topMargin" constant="8" id="tvW-G2-Irg"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="EYz-uu-0h6" firstAttribute="centerX" secondItem="B2x-us-neG" secondAttribute="centerX" id="hOb-le-Y04"/>
+                            <constraint firstItem="EYz-uu-0h6" firstAttribute="centerY" secondItem="B2x-us-neG" secondAttribute="centerY" id="tD9-X6-GrC"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="5vM-aO-KUc"/>
+                    <connections>
+                        <outlet property="centerView" destination="EYz-uu-0h6" id="cSK-ay-Lif"/>
+                        <outlet property="departmentTextField" destination="V1v-Ec-3VC" id="25r-xD-QKP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fCN-dQ-3f3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-662" y="-1642"/>
+        </scene>
     </scenes>
     <resources>
         <image name="chicago_5.png" width="996" height="1024"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="US6-ZG-dB1"/>
+        <segue reference="doQ-QQ-Z5X"/>
     </inferredMetricsTieBreakers>
 </document>

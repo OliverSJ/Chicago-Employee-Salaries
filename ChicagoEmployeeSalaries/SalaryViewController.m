@@ -163,10 +163,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // reset text fields
-    self.minSalaryTextField.text = @"";
-    self.maxSalaryTextField.text = @"";
-    
     // round center view
     self.centerView.layer.cornerRadius = 20;
     self.centerView.layer.masksToBounds = YES;

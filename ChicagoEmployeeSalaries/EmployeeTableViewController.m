@@ -10,8 +10,9 @@
 
 @interface EmployeeTableViewController()
 
-/** Represent a single instance of an employee in array form */
-@property (nonatomic) NSMutableArray *employeeDetails;
+@property (weak, nonatomic) IBOutlet UITableViewCell *salaryCell;
+@property (weak, nonatomic) IBOutlet UITableViewCell *positionCell;
+@property (weak, nonatomic) IBOutlet UITableViewCell *departmentCell;
 
 @end
 
@@ -23,47 +24,49 @@
 
 #pragma mark - Table View Methods
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
-return self.employeeDetails.count;
-}
-
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    cell.backgroundColor = [UIColor clearColor];
-    
-    cell.textLabel.adjustsFontSizeToFitWidth = YES;
-    
-    switch (indexPath.row) {
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    switch (section) {
         case 0:
-            cell.textLabel.textAlignment = NSTextAlignmentCenter;
-            cell.textLabel.text = @"";
-            cell.textLabel.text = [cell.textLabel.text stringByAppendingString:self.employeeDetails[0]];
-            cell.textLabel.font  = [ UIFont fontWithName: @"Arial" size: 18.0 ];
-            break;
-            
-        case 1:
-            cell.textLabel.text = @"POSITION: ";
-            cell.textLabel.text = [cell.textLabel.text stringByAppendingString:self.employeeDetails[1]];
-            break;
-            
-        case 2:
-            cell.textLabel.text = @"DEPARTMENT: ";
-            cell.textLabel.text = [cell.textLabel.text stringByAppendingString:self.employeeDetails[2]];
-            break;
-            
-        case 3:
-            cell.textLabel.text = @"ANNUAL SALARY: ";
-            
-            cell.textLabel.text = [cell.textLabel.text stringByAppendingString:self.employeeDetails[3]];
+            return self.currentEmployee.name;
             break;
             
         default:
             break;
     }
+    return nil;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    NSString *sectionTitle = [self tableView:tableView titleForHeaderInSection:section];
+    if (sectionTitle == nil) {
+        return nil;
+    }
     
-    return cell;
+    // Create label with section title
+    UILabel *label = [[UILabel alloc] init];
+    label.backgroundColor = [UIColor clearColor];
+    label.textColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1];
+    label.shadowColor = [UIColor whiteColor];
+    label.shadowOffset = CGSizeMake(0.0, 1.0);
+    label.font = [UIFont boldSystemFontOfSize:16];
+    label.text = sectionTitle;
+    
+    
+    // Get the length of the current section in pixels
+    CGSize textSize = [[label text] sizeWithAttributes:@{NSFontAttributeName:[label font]}];
+    CGFloat strikeWidth = textSize.width;
+    
+    // Set size of label dynamically
+    label.frame = CGRectMake(20, 6, strikeWidth, 30);
+
+    
+    // Create header view and add label as a subview
+    CGRect frame = CGRectMake(0, 0, tableView.bounds.size.width, UITableViewAutomaticDimension);
+    frame.origin.x = 100;
+    UIView *view = [[UIView alloc]initWithFrame:frame];
+    [view addSubview:label];
+    
+    return view;
 }
 
 /*************************************************
@@ -74,15 +77,7 @@ return self.employeeDetails.count;
 
 -(void)viewDidLoad {
     
-    self.tableView.estimatedRowHeight = 89;
-    self.tableView.rowHeight = UITableViewAutomaticDimension;
-    
-    // add image to backround
-    UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"paper.png"]];
-    [self.view addSubview:backgroundView];
-    [self.view sendSubviewToBack:backgroundView];
-    
-    // convert string to decimal
+    //convert string to decimal
     NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
     f.numberStyle = NSNumberFormatterDecimalStyle;
     NSNumber *salary = [f numberFromString:self.currentEmployee.annualSalary];
@@ -98,12 +93,10 @@ return self.employeeDetails.count;
     [formatter setUsesGroupingSeparator:YES];
     NSString *formattedString = [formatter stringFromNumber:salary];
     
-    // build array for table view
-    self.employeeDetails = [[NSMutableArray alloc]init];
-    [self.employeeDetails addObject:self.currentEmployee.name];
-    [self.employeeDetails addObject:self.currentEmployee.jobPosition];
-    [self.employeeDetails addObject:self.currentEmployee.department];
-    [self.employeeDetails addObject:formattedString];
+    // fill cell contents with employee details
+    self.salaryCell.detailTextLabel.text = formattedString;
+    self.positionCell.detailTextLabel.text = self.currentEmployee.jobPosition;
+    self.departmentCell.detailTextLabel.text = self.currentEmployee.department;
 }
 
 @end

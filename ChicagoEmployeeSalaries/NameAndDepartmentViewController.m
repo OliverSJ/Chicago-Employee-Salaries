@@ -265,10 +265,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // reset text fields
-    self.nameTextField.text = @"";
-    self.departmentTextField.text = @"";
-    
     // round center view
     self.centerView.layer.cornerRadius = 20;
     self.centerView.layer.masksToBounds = YES;

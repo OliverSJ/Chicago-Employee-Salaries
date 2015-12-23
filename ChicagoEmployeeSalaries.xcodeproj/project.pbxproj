@@ -184,31 +184,11 @@
 		8F4BCF821C21D503002674D1 /* ChicagoEmployeeSalaries */ = {
 			isa = PBXGroup;
 			children = (
+				9D10B2CF1C2B08F3006D942E /* Front End Views */,
+				9D10B2D01C2B0968006D942E /* BusinessTier */,
+				9D10B2D11C2B097A006D942E /* DataTier */,
 				8F4BCF861C21D503002674D1 /* AppDelegate.h */,
 				8F4BCF871C21D503002674D1 /* AppDelegate.m */,
-				9DC521BA1C2620E90006E507 /* BusinessTierRules.h */,
-				8F4BCFB61C21DF81002674D1 /* BusinessTier.h */,
-				8F4BCFB71C21DF81002674D1 /* BusinessTier.m */,
-				9DC521B71C2620730006E507 /* EmployeeObject.h */,
-				9DC521B81C2620730006E507 /* EmployeeObject.m */,
-				9D48C3D61C21E219002F9036 /* DataTier.h */,
-				9D48C3D71C21E219002F9036 /* DataTier.m */,
-				8F4BCF891C21D503002674D1 /* ViewController.h */,
-				8F4BCF8A1C21D503002674D1 /* ViewController.m */,
-				9D1ABE011C276074009F0013 /* DepartmentViewController.h */,
-				9D1ABE021C276074009F0013 /* DepartmentViewController.m */,
-				9D1ABE0A1C27C098009F0013 /* NameAndDepartmentViewController.h */,
-				9D1ABE0B1C27C098009F0013 /* NameAndDepartmentViewController.m */,
-				9D1ABE071C27B215009F0013 /* NameViewController.h */,
-				9D1ABE081C27B215009F0013 /* NameViewController.m */,
-				9D1ABE041C276B2A009F0013 /* UIView+FormScroll.h */,
-				9D1ABE051C276B2A009F0013 /* UIView+FormScroll.m */,
-				9DC521A91C250BFC0006E507 /* EmployeesTableViewController.h */,
-				9DC521AA1C250BFC0006E507 /* EmployeesTableViewController.m */,
-				9DA07C401C2700AE0045B1ED /* EmployeeTableViewController.h */,
-				9DA07C411C2700AE0045B1ED /* EmployeeTableViewController.m */,
-				9D1ABE0D1C27C92F009F0013 /* SalaryViewController.h */,
-				9D1ABE0E1C27C92F009F0013 /* SalaryViewController.m */,
 				8F4BCF8C1C21D503002674D1 /* Main.storyboard */,
 				8F4BCF8F1C21D503002674D1 /* Assets.xcassets */,
 				8F4BCF911C21D503002674D1 /* LaunchScreen.storyboard */,
@@ -268,6 +248,58 @@
 				8F4BCFAA1C21D503002674D1 /* Info.plist */,
 			);
 			path = ChicagoEmployeeSalariesUITests;
+			sourceTree = "<group>";
+		};
+		9D10B2CF1C2B08F3006D942E /* Front End Views */ = {
+			isa = PBXGroup;
+			children = (
+				9D10B2D21C2B09C6006D942E /* Headers */,
+				8F4BCF8A1C21D503002674D1 /* ViewController.m */,
+				9D1ABE021C276074009F0013 /* DepartmentViewController.m */,
+				9D1ABE0B1C27C098009F0013 /* NameAndDepartmentViewController.m */,
+				9D1ABE081C27B215009F0013 /* NameViewController.m */,
+				9D1ABE0E1C27C92F009F0013 /* SalaryViewController.m */,
+				9DC521AA1C250BFC0006E507 /* EmployeesTableViewController.m */,
+				9DA07C411C2700AE0045B1ED /* EmployeeTableViewController.m */,
+				9D1ABE051C276B2A009F0013 /* UIView+FormScroll.m */,
+			);
+			name = "Front End Views";
+			sourceTree = "<group>";
+		};
+		9D10B2D01C2B0968006D942E /* BusinessTier */ = {
+			isa = PBXGroup;
+			children = (
+				9DC521BA1C2620E90006E507 /* BusinessTierRules.h */,
+				8F4BCFB61C21DF81002674D1 /* BusinessTier.h */,
+				8F4BCFB71C21DF81002674D1 /* BusinessTier.m */,
+				9DC521B71C2620730006E507 /* EmployeeObject.h */,
+				9DC521B81C2620730006E507 /* EmployeeObject.m */,
+			);
+			name = BusinessTier;
+			sourceTree = "<group>";
+		};
+		9D10B2D11C2B097A006D942E /* DataTier */ = {
+			isa = PBXGroup;
+			children = (
+				9D48C3D61C21E219002F9036 /* DataTier.h */,
+				9D48C3D71C21E219002F9036 /* DataTier.m */,
+			);
+			name = DataTier;
+			sourceTree = "<group>";
+		};
+		9D10B2D21C2B09C6006D942E /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				9D1ABE011C276074009F0013 /* DepartmentViewController.h */,
+				9D1ABE0A1C27C098009F0013 /* NameAndDepartmentViewController.h */,
+				9D1ABE071C27B215009F0013 /* NameViewController.h */,
+				9D1ABE0D1C27C92F009F0013 /* SalaryViewController.h */,
+				9DC521A91C250BFC0006E507 /* EmployeesTableViewController.h */,
+				9DA07C401C2700AE0045B1ED /* EmployeeTableViewController.h */,
+				8F4BCF891C21D503002674D1 /* ViewController.h */,
+				9D1ABE041C276B2A009F0013 /* UIView+FormScroll.h */,
+			);
+			name = Headers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

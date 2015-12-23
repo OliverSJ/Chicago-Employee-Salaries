@@ -91,6 +91,10 @@ alpha:1.0]
 
 #pragma mark - View Methods
 
+-(void)viewDidAppear:(BOOL)animated {
+    [self.tableView flashScrollIndicators];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -105,7 +109,7 @@ alpha:1.0]
     [self.view sendSubviewToBack:backgroundView];
     
     // Do any additional setup after loading the view, typically from a nib.
-    self.tableViewCells = @[@"Name", @"Department", @"Name and Department", @"Salary"];
+    self.tableViewCells = @[@"Name", @"Department", @"Name and Department", @"Salary", @"Salary and Department", @"Postition", @"Position and Deparment"];
     
     // helps hide separators in certain cells, see cellForRowAtIndexPath in tableView for more
     self.tableView.separatorColor = [UIColor clearColor];

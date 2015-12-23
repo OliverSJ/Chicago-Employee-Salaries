@@ -16,6 +16,7 @@
 		8F4BCF9E1C21D503002674D1 /* ChicagoEmployeeSalariesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F4BCF9D1C21D503002674D1 /* ChicagoEmployeeSalariesTests.m */; };
 		8F4BCFA91C21D503002674D1 /* ChicagoEmployeeSalariesUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F4BCFA81C21D503002674D1 /* ChicagoEmployeeSalariesUITests.m */; };
 		8F4BCFB81C21DF81002674D1 /* BusinessTier.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F4BCFB71C21DF81002674D1 /* BusinessTier.m */; };
+		9D10B2D51C2B0DBF006D942E /* chicago_flag.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D10B2D41C2B0DBF006D942E /* chicago_flag.png */; };
 		9D1ABE031C276074009F0013 /* DepartmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1ABE021C276074009F0013 /* DepartmentViewController.m */; };
 		9D1ABE061C276B2A009F0013 /* UIView+FormScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1ABE051C276B2A009F0013 /* UIView+FormScroll.m */; };
 		9D1ABE091C27B215009F0013 /* NameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1ABE081C27B215009F0013 /* NameViewController.m */; };
@@ -89,6 +90,7 @@
 		8F4BCFAA1C21D503002674D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8F4BCFB61C21DF81002674D1 /* BusinessTier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusinessTier.h; sourceTree = "<group>"; };
 		8F4BCFB71C21DF81002674D1 /* BusinessTier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusinessTier.m; sourceTree = "<group>"; };
+		9D10B2D41C2B0DBF006D942E /* chicago_flag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chicago_flag.png; sourceTree = "<group>"; };
 		9D1ABE011C276074009F0013 /* DepartmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DepartmentViewController.h; sourceTree = "<group>"; };
 		9D1ABE021C276074009F0013 /* DepartmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DepartmentViewController.m; sourceTree = "<group>"; };
 		9D1ABE041C276B2A009F0013 /* UIView+FormScroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FormScroll.h"; sourceTree = "<group>"; };
@@ -184,7 +186,7 @@
 		8F4BCF821C21D503002674D1 /* ChicagoEmployeeSalaries */ = {
 			isa = PBXGroup;
 			children = (
-				9D10B2CF1C2B08F3006D942E /* Front End Views */,
+				9D10B2CF1C2B08F3006D942E /* GUI */,
 				9D10B2D01C2B0968006D942E /* BusinessTier */,
 				9D10B2D11C2B097A006D942E /* DataTier */,
 				8F4BCF861C21D503002674D1 /* AppDelegate.h */,
@@ -201,6 +203,7 @@
 		8F4BCF831C21D503002674D1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9D10B2D41C2B0DBF006D942E /* chicago_flag.png */,
 				9DF1C6711C2A239900BFE7FA /* spotlight_icon_2@2x.png */,
 				9DF1C66F1C2A233800BFE7FA /* spotlight_icon_2@3x.png */,
 				9DF1C66B1C2A227500BFE7FA /* spotlight_image@2x.png */,
@@ -250,9 +253,10 @@
 			path = ChicagoEmployeeSalariesUITests;
 			sourceTree = "<group>";
 		};
-		9D10B2CF1C2B08F3006D942E /* Front End Views */ = {
+		9D10B2CF1C2B08F3006D942E /* GUI */ = {
 			isa = PBXGroup;
 			children = (
+				9D10B2D31C2B0A7C006D942E /* Helpers */,
 				9D10B2D21C2B09C6006D942E /* Headers */,
 				8F4BCF8A1C21D503002674D1 /* ViewController.m */,
 				9D1ABE021C276074009F0013 /* DepartmentViewController.m */,
@@ -261,9 +265,8 @@
 				9D1ABE0E1C27C92F009F0013 /* SalaryViewController.m */,
 				9DC521AA1C250BFC0006E507 /* EmployeesTableViewController.m */,
 				9DA07C411C2700AE0045B1ED /* EmployeeTableViewController.m */,
-				9D1ABE051C276B2A009F0013 /* UIView+FormScroll.m */,
 			);
-			name = "Front End Views";
+			name = GUI;
 			sourceTree = "<group>";
 		};
 		9D10B2D01C2B0968006D942E /* BusinessTier */ = {
@@ -300,6 +303,14 @@
 				9D1ABE041C276B2A009F0013 /* UIView+FormScroll.h */,
 			);
 			name = Headers;
+			sourceTree = "<group>";
+		};
+		9D10B2D31C2B0A7C006D942E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				9D1ABE051C276B2A009F0013 /* UIView+FormScroll.m */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -414,6 +425,7 @@
 				9DC521B51C25FD350006E507 /* next_large.png in Resources */,
 				9D6788921C294E3E00465940 /* flag.png in Resources */,
 				9D6788941C2950CC00465940 /* sears_tower.jpg in Resources */,
+				9D10B2D51C2B0DBF006D942E /* chicago_flag.png in Resources */,
 				9DC521B31C25FD350006E507 /* back_large.png in Resources */,
 				8F4BCF931C21D503002674D1 /* LaunchScreen.storyboard in Resources */,
 				9DF1C6681C2A21A800BFE7FA /* app_image@2x.png in Resources */,

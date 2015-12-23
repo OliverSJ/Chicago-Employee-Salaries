@@ -10,6 +10,8 @@
 
 @implementation DataTier
 
+#pragma mark - Wrapper Methods for Client Use
+
 -(void)executeQuery:(NSString *)query{
     // Run the query and indicate that is executable.
     [self runQuery:[query UTF8String] isQueryExecutable:YES];
@@ -24,16 +26,14 @@
     return (NSArray *)self.arrResults;
 }
 
+#pragma mark - Backend Methods
+
 -(void)runQuery:(const char *)query isQueryExecutable:(BOOL)queryExecutable{
     // Create a sqlite object.
     sqlite3 *sqlite3Database;
     
-    // Create file manager object
-    NSFileManager *fileManager = [[NSFileManager alloc]init];
-    
     // Set the database file path to current directory
     NSString *databasePath = [self.documentsDirectory stringByAppendingPathComponent:self.databaseFilename];
-    //NSString *databasePath = [[fileManager currentDirectoryPath] stringByAppendingPathComponent:self.databaseFilename];
     
     // Initialize the results array.
     if (self.arrResults != nil) {
@@ -49,15 +49,9 @@
     }
     self.arrColumnNames = [[NSMutableArray alloc] init];
     
-    
-    // Open the database.
-    
-    //NSString *sourcePath = [[NSBundle mainBundle] pathForResource:@"chicago_employees_salaries_db" ofType:@"sql"];
-    //[self dbFileName] ??? Needs to know where the database file
     int openDatabaseResult = sqlite3_open([databasePath UTF8String], &sqlite3Database);
     if(openDatabaseResult == SQLITE_OK) {
         
-        NSLog(@"The database file has been opened");
         // Declare a sqlite3_stmt object in which will be stored the query after having been compiled into a SQLite statement.
         sqlite3_stmt *compiledStatement;
         
@@ -71,6 +65,9 @@
                 // Declare an array to keep the data for each fetched row.
                 NSMutableArray *arrDataRow;
                 
+                // Delcare a dictionary to keep the data for each fetched row.
+                NSMutableDictionary *arrDataDict;
+                
                 // Loop through the results and add them to the results array row by row.
                 while(sqlite3_step(compiledStatement) == SQLITE_ROW) {
                     // Initialize the mutable array that will contain the data of a fetched row.
@@ -79,27 +76,30 @@
                     // Get the total number of columns.
                     int totalColumns = sqlite3_column_count(compiledStatement);
                     
+                    // Initialize the dictionary object that will contain the data of a fetched row (number of columns)
+                    arrDataDict = [[NSMutableDictionary alloc]initWithCapacity:totalColumns];
+                    
                     // Go through all columns and fetch each column data.
                     for (int i=0; i<totalColumns; i++){
                         // Convert the column data to text (characters).
                         char *dbDataAsChars = (char *)sqlite3_column_text(compiledStatement, i);
                         
-                        // If there are contents in the currenct column (field) then add them to the current row array.
-                        if (dbDataAsChars != NULL) {
-                            // Convert the characters to string.
-                            [arrDataRow addObject:[NSString  stringWithUTF8String:dbDataAsChars]];
-                        }
-                        
                         // Keep the current column name.
                         if (self.arrColumnNames.count != totalColumns) {
-                            dbDataAsChars = (char *)sqlite3_column_name(compiledStatement, i);
-                            [self.arrColumnNames addObject:[NSString stringWithUTF8String:dbDataAsChars]];
+                            char *dbColAsChars = (char *)sqlite3_column_name(compiledStatement, i);
+                            [self.arrColumnNames addObject:[NSString stringWithUTF8String:dbColAsChars]];
+                        }
+                        
+                        // If there are contents in the currenct column (field) then add them to the current row array.
+                        if (dbDataAsChars != NULL) {
+                            // Add key value pair to dictionary
+                            [arrDataDict setObject:[NSString  stringWithUTF8String:dbDataAsChars] forKey:[self.arrColumnNames objectAtIndex:i]];
                         }
                     }
                     
                     // Store each fetched data row in the results array, but first check if there is actually data.
-                    if (arrDataRow.count > 0) {
-                        [self.arrResults addObject:arrDataRow];
+                    if (arrDataDict.count > 0) {
+                        [self.arrResults addObject:arrDataDict];
                     }
                 }
             }
@@ -153,6 +153,8 @@
         NSAssert1(0, @"Failed to create writable database file with message '%@'.", [error localizedDescription]);
     }
 }
+
+#pragma mark - Init Methods
 
 -(instancetype)initWithDatabaseFilename:(NSString *)dbFilename{
     self = [super init];

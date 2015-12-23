@@ -49,7 +49,9 @@
         
         NSArray* results = [[NSArray alloc] initWithArray:[_dt loadDataFromDB:@"SELECT * FROM Employees;"]];
         
-        NSLog(@"%@", [NSString stringWithFormat:@"Data: %@", [[results objectAtIndex:0]objectAtIndex:0]]);
+        //NSLog(@"%@", [NSString stringWithFormat:@"Data: %@", [[results objectAtIndex:0]objectAtIndex:0]]);
+        
+        //NSLog(@"%@", [NSString stringWithFormat:@"Data: %@", [[results objectAtIndex:0] objectForInfoDictionaryKey:@"First Name"]]);
         
         /** Store just the department strings in tempArray from _jsonResponse (which is an NSArray of NSDictionaries) */
         NSMutableArray* tempArray = [[NSMutableArray alloc] initWithArray:[_jsonResponse valueForKey:@"department"]];

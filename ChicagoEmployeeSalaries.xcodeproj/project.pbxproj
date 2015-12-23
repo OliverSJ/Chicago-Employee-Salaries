@@ -103,6 +103,7 @@
 		8F92C1571C29CAF20091BF99 /* sears_tower.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sears_tower.jpg; sourceTree = "<group>"; };
 		8F92C1581C29CAF20091BF99 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 		8F92C1601C2B37BF0091BF99 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		8F92C1BF1C2B399F0091BF99 /* DataTier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataTier.h; sourceTree = "<group>"; };
 		9D1ABE011C276074009F0013 /* DepartmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DepartmentViewController.h; sourceTree = "<group>"; };
 		9D1ABE021C276074009F0013 /* DepartmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DepartmentViewController.m; sourceTree = "<group>"; };
 		9D1ABE041C276B2A009F0013 /* UIView+FormScroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FormScroll.h"; sourceTree = "<group>"; };
@@ -113,7 +114,6 @@
 		9D1ABE0B1C27C098009F0013 /* NameAndDepartmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NameAndDepartmentViewController.m; sourceTree = "<group>"; };
 		9D1ABE0D1C27C92F009F0013 /* SalaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SalaryViewController.h; sourceTree = "<group>"; };
 		9D1ABE0E1C27C92F009F0013 /* SalaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SalaryViewController.m; sourceTree = "<group>"; };
-		9D48C3D61C21E219002F9036 /* DataTier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataTier.h; sourceTree = "<group>"; };
 		9D48C3D71C21E219002F9036 /* DataTier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataTier.m; sourceTree = "<group>"; };
 		9DA07C401C2700AE0045B1ED /* EmployeeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmployeeTableViewController.h; sourceTree = "<group>"; };
 		9DA07C411C2700AE0045B1ED /* EmployeeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmployeeTableViewController.m; sourceTree = "<group>"; };
@@ -185,8 +185,8 @@
 				8F4BCFB71C21DF81002674D1 /* BusinessTier.m */,
 				9DC521B71C2620730006E507 /* EmployeeObject.h */,
 				9DC521B81C2620730006E507 /* EmployeeObject.m */,
-				9D48C3D61C21E219002F9036 /* DataTier.h */,
 				9D48C3D71C21E219002F9036 /* DataTier.m */,
+				8F92C1BF1C2B399F0091BF99 /* DataTier.h */,
 				8F4BCF891C21D503002674D1 /* ViewController.h */,
 				8F4BCF8A1C21D503002674D1 /* ViewController.m */,
 				9D1ABE011C276074009F0013 /* DepartmentViewController.h */,

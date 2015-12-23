@@ -127,6 +127,64 @@
     
 }
 
+/** @brief: This method returns the list of departments with correct spelling*/
+- (NSArray*)getDepartments{
+    
+    return _departForFrontEnd;
+    
+}
+
+#pragma mark Getting and creating Employee Objects
+
+-(NSArray*)createEmployeeObjectsArray{
+    
+    //Reset the tempArray
+    _tempArray = nil;
+    _tempArray = [[NSMutableArray alloc] init];
+    
+    //loop through the jsonResponse array, create a new Employee object, and add it to the NSMutableArray
+    for(NSDictionary* dictionary in _jsonResponse)
+    {
+        //Iterate through the dictionary and grab all of the values associated with each key
+        //We can't assume which order the keys will be in the dictionary, so double check
+        for(id key in dictionary)
+        {
+            if([key caseInsensitiveCompare:@"department"] == NSOrderedSame) {
+                _department = [dictionary objectForKey:key];
+            }
+            else if([key caseInsensitiveCompare:@"employee_annual_salary"] == NSOrderedSame) {
+                _annualSalary = [dictionary objectForKey:key];
+            }
+            else if([key caseInsensitiveCompare:@"job_titles"] == NSOrderedSame) {
+                _jobPosition = [dictionary objectForKey:key];
+            }
+            else {
+                _name = [dictionary objectForKey:key];
+            }
+            
+        }//end of for loop
+        
+        //Make the object
+        _employee = [[EmployeeObject alloc] initWithValues:_name aPosition:_jobPosition aDepartment:_department aSalary:_annualSalary];
+        
+        //Add the object to the mutable array
+        [_tempArray addObject:_employee];
+        
+        
+    }
+    
+    //Sort the Array alphabetically by name and by department
+    NSSortDescriptor *nameDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+    NSSortDescriptor *departmentDescriptor = [[NSSortDescriptor alloc] initWithKey:@"department" ascending:YES];
+    NSArray *descriptors = @[nameDescriptor, departmentDescriptor];
+    NSArray* returnArray = [_tempArray sortedArrayUsingDescriptors:descriptors];
+    
+    
+    //Return the NSMutableArray as an immutable NSArray
+    return returnArray;
+
+}
+
 
 /** @brief: This method will query the database based on user input for employee name and department
     @param: (NSString*) name: Can be nil or blank
@@ -169,61 +227,20 @@
         return nil;
     }
     
-    
+    //Query the database
     _jsonResponse = [_dt executeQuery: _query];
     
-    //Reset the tempArray
-    _tempArray = nil;
-    _tempArray = [[NSMutableArray alloc] init];
     
-    //loop through the jsonResponse array, create a new Employee object, and add it to the NSMutableArray
-    for(NSDictionary* dictionary in _jsonResponse)
-    {
-        //Iterate through the dictionary and grab all of the values associated with each key
-        //We can't assume which order the keys will be in the dictionary, so double check
-        for(id key in dictionary)
-        {
-            if([key caseInsensitiveCompare:@"department"] == NSOrderedSame) {
-                _department = [dictionary objectForKey:key];
-            }
-            else if([key caseInsensitiveCompare:@"employee_annual_salary"] == NSOrderedSame) {
-                _annualSalary = [dictionary objectForKey:key];
-            }
-            else if([key caseInsensitiveCompare:@"job_titles"] == NSOrderedSame) {
-                _jobPosition = [dictionary objectForKey:key];
-            }
-            else {
-                _name = [dictionary objectForKey:key];
-            }
-            
-        }//end of for loop
-        
-        //Make the object
-        _employee = [[EmployeeObject alloc] initWithValues:_name aPosition:_jobPosition aDepartment:_department aSalary:_annualSalary];
-        
-        //Add the object to the mutable array
-        [_tempArray addObject:_employee];
-        
-       
-    }
-    
-    //Sort the Array alphabetically by name and by department
-    NSSortDescriptor *nameDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
-    NSSortDescriptor *departmentDescriptor = [[NSSortDescriptor alloc] initWithKey:@"department" ascending:YES];
-    NSArray *descriptors = @[nameDescriptor, departmentDescriptor];
-    NSArray* returnArray = [_tempArray sortedArrayUsingDescriptors:descriptors];
-    
-    
-    //Return the NSMutableArray as an immutable NSArray
-    return returnArray;
-    
+    return [self createEmployeeObjectsArray];
 }
 
-/** @brief: This method returns the list of departments with correct spelling*/
-- (NSArray*)getDepartments{
+-(NSArray*)getEmployeesBySalary: (NSString*) minSalary maximumRange: (NSString*) maxSalary{
     
-    return _departForFrontEnd;
-
+    _query = [NSString stringWithFormat:@"$where=employee_annual_salary>=%@ AND employee_annual_salary<=%@", minSalary,maxSalary];
+    
+    _jsonResponse = [_dt executeQuery:_query];
+    
+    return [self createEmployeeObjectsArray];
 }
 
 

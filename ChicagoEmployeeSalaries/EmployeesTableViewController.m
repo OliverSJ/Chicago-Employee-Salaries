@@ -18,13 +18,21 @@ alpha:1.0]
 
 @interface EmployeesTableViewController()
 
+/** Contains EmployeeObjects */
 @property (nonatomic) NSArray *employees;
+/** Indicate to user that content is loading */
 @property (nonatomic) IBOutlet UIActivityIndicatorView *activityView;
 @property (nonatomic) BOOL noResultsFound;
 
 @end
 
 @implementation EmployeesTableViewController
+
+/*************************************************
+ TEXT LABELS
+ *************************************************/
+
+#pragma mark - Text Label Methods
 
 /**
  @brief Sets the detail text label of a table cell to the 
@@ -54,6 +62,8 @@ alpha:1.0]
  SEGUES
  *************************************************/
 
+#pragma mark - Segue Methods
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     EmployeeTableViewController *etvc = [segue destinationViewController];
     NSIndexPath *path = [self.tableView indexPathForSelectedRow];
@@ -61,8 +71,10 @@ alpha:1.0]
 }
 
 /*************************************************
- EVENTS
+ TALBE VIEW
  *************************************************/
+
+#pragma mark - Table View Methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
@@ -121,6 +133,12 @@ alpha:1.0]
     
     return cell;
 }
+
+/*************************************************
+ VIEWS
+ *************************************************/
+
+#pragma mark - View Methods
 
 -(void)viewDidLoad {
     

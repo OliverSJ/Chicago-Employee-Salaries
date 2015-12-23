@@ -14,9 +14,13 @@
 
 @interface NameViewController ()
 
+/** Displays departments */
 @property (nonatomic) UIPickerView *departmentsPickerView;
+/** Businsess tier class */
 @property (nonatomic) BusinessTier *currentBT;
+/** Name value used in query */
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
+/** Holds text fields in center of the screen */
 @property (weak, nonatomic) IBOutlet UIView *centerView;
 
 @end
@@ -24,8 +28,10 @@
 @implementation NameViewController
 
 /*************************************************
- SCROLLER
+ TEXT FIELDS
  *************************************************/
+
+#pragma mark - Text Field Methods
 
 - (IBAction)textFieldDidBeginEditing:(id)sender {
     
@@ -39,6 +45,14 @@
     [self.view scrollToY:0];
 }
 
+- (IBAction)textFieldValueDidChange:(id)sender {
+    self.nameTextField.backgroundColor = [UIColor whiteColor];
+}
+
+/*************************************************
+ SEGUE
+ *************************************************/
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     EmployeesTableViewController *etvc = [segue destinationViewController];
@@ -50,10 +64,11 @@
     etvc.currentBT = self.currentBT;
 }
 
-- (IBAction)textFieldValueDidChange:(id)sender {
-    self.nameTextField.backgroundColor = [UIColor whiteColor];
-}
+/*************************************************
+ BUTTONS
+ *************************************************/
 
+#pragma mark - Button Methods
 
 - (IBAction)searchButtonPressed:(id)sender {
     
@@ -68,12 +83,18 @@
     [self performSegueWithIdentifier:@"NameResults" sender:sender];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [self viewDidLoad];
-}
-
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [self.view endEditing:YES]; // force all text fields to end editing
+}
+
+/*************************************************
+ VIEWS
+ *************************************************/
+
+#pragma mark - View Methods
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self viewDidLoad];
 }
 
 - (void)viewDidLoad {

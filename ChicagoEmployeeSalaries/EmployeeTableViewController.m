@@ -10,11 +10,23 @@
 
 @interface EmployeeTableViewController()
 
+/** Represent a single instance of an employee in array form */
 @property (nonatomic) NSMutableArray *employeeDetails;
 
 @end
 
 @implementation EmployeeTableViewController
+
+/*************************************************
+ TABLE VIEW
+ *************************************************/
+
+#pragma mark - Table View Methods
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+
+return self.employeeDetails.count;
+}
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -54,10 +66,11 @@
     return cell;
 }
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
-    return self.employeeDetails.count;
-}
+/*************************************************
+ VIEWS
+ *************************************************/
+
+#pragma mark - View Methods
 
 -(void)viewDidLoad {
     

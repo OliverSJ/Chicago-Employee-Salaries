@@ -37,20 +37,18 @@
 @property (nonatomic) NSArray *tableViewCells;
 /** Table view for displaying contents.*/
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+/** View that holds text fields in the center of the screen */
 @property (weak, nonatomic) IBOutlet UIView *centerView;
-
-/**
- @details Event called when a search button is pressed.
- */
--(void)searchButtonPressed:(id)sender;
 
 @end
 
 @implementation NameAndDepartmentViewController
 
 /*************************************************
- SCROLLER
+ TEXT FIELD
  *************************************************/
+
+#pragma mark - Text Field Methods
 
 - (IBAction)textFieldDidBeginEditing:(id)sender {
     
@@ -64,9 +62,28 @@
     [self.view scrollToY:0];
 }
 
+- (IBAction)textFieldValueDidChange:(id)sender {
+    UITextField *textField = (UITextField*)sender;
+    
+    textField.backgroundColor = [UIColor whiteColor];
+}
+
+- (IBAction)finishedEditingTextField:(id)sender {
+    
+    // set scrollview back to default position
+    [self.scrollView setContentOffset:
+     CGPointMake(0, -self.scrollView.contentInset.top) animated:YES];
+    
+    // reset pickerview to first position if empty
+    if (self.departmentTextField.text.length <= 0)
+        [self.departmentsPickerView selectRow:0 inComponent:0 animated:YES];
+}
+
 /*************************************************
  PICKER VIEW
  *************************************************/
+
+#pragma mark - Picker View Methods
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
     
@@ -102,6 +119,9 @@
 /*************************************************
  TABLE VIEW
  *************************************************/
+
+#pragma mark - Table View Methods
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     return self.tableViewCells.count;
@@ -158,6 +178,8 @@
  SEGUE
  *************************************************/
 
+#pragma mark - Segue Methods
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     EmployeesTableViewController *etvc = [segue destinationViewController];
@@ -170,31 +192,7 @@
     etvc.currentBT = self.currentBT; // pass business tier to next view controller
 }
 
-/*************************************************
- EVENTS
- *************************************************/
-
-- (IBAction)textFieldValueDidChange:(id)sender {
-    UITextField *textField = (UITextField*)sender;
-    
-    textField.backgroundColor = [UIColor whiteColor];
-}
-
-/**
- @brief Triggered upon completion of editing a text field.
- @param sender UITextField object
- */
-- (IBAction)finishedEditingTextField:(id)sender {
-    
-    // set scrollview back to default position
-    [self.scrollView setContentOffset:
-     CGPointMake(0, -self.scrollView.contentInset.top) animated:YES];
-    
-    // reset pickerview to first position if empty
-    if (self.departmentTextField.text.length <= 0)
-        [self.departmentsPickerView selectRow:0 inComponent:0 animated:YES];
-}
-
+#pragma mark - Button Methods
 /**
  @brief Triggered upon completion of pressing the search button
  @sender "Search" on keyboard or "Search" UIButton
@@ -241,11 +239,6 @@
     [self.departmentTextField becomeFirstResponder];
 }
 
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self.view endEditing:YES]; // force all text fields to end editing
-}
-
 /**
  @brief Sends user to previous textFiedl
  */
@@ -255,9 +248,15 @@
     [self.nameTextField becomeFirstResponder];
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.view endEditing:YES]; // force all text fields to end editing
+}
+
 /*************************************************
- DEFAULT FUNCTIONS
+ View Methods
  *************************************************/
+
+#pragma mark - View Methods
 
 - (void)viewWillAppear:(BOOL)animated {
     [self viewDidLoad];
@@ -359,6 +358,8 @@
     self.nameTextField.inputAccessoryView = nameToolBar;
     
 }
+
+#pragma mark - Memory Methods
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

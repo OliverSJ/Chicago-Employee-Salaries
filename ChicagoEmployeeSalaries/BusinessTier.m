@@ -16,12 +16,9 @@
 {
     self = [super init];
     if (self) {
-        
-        // init base url
-        _baseUrl = @"https://data.cityofchicago.org/resource/tt4n-kn4t.json?";
-        
-        // init json manager with base url for json database
-        _dt = [[DataTier alloc]initWithBaseUrl:_baseUrl];
+                
+        // init dataTier with base url for sqlite database
+        _dt = [[DataTier alloc] initWithDatabaseFilename:@"chicago_employee_salaries_db.sql"];
         
         //init the tempArray
         _tempArray = [[NSMutableArray alloc] init];
@@ -42,28 +39,27 @@
         _query = @"$select=department&$group=department";
         
         //Query the database for the list of departments
-        _jsonResponse = [_dt executeQuery: _query];
+        _results = [[NSArray alloc] initWithArray:[_dt loadDataFromDB:@"SELECT DISTINCT(Department) FROM Employees ORDER BY Department ASC;"]];
         
-        /** Store just the department strings in tempArray from _jsonResponse (which is an NSArray of NSDictionaries) */
-        NSMutableArray* tempArray = [[NSMutableArray alloc] initWithArray:[_jsonResponse valueForKey:@"department"]];
+        NSArray* results = [[NSArray alloc] initWithArray:[_dt loadDataFromDB:@"SELECT* FROM Employees;"]];
+        
+        /** Store just the department strings in tempArray from results (which is an NSArray of NSDictionaries) */
+        NSMutableArray* tempArray = [[NSMutableArray alloc] initWithArray:[_results valueForKey:@"Department"]];
         
         
-        //The last object is nil.  Move it to the front so that the object will match up with an appropriate key
-        //In this case, nil will match up with "(Leave Blank)"
-        int size = ([tempArray count]-1);
-        [tempArray removeObjectAtIndex: size];
+        //First option for selecting a department will be "(Leave Blank)"
         [tempArray insertObject:@"(Leave Blank)" atIndex:0];
         
         
         _departForBackEnd = [NSArray arrayWithArray:tempArray];
         
-        //Reset the tempArray so that it can be reused for the _departForFrontEnd
+        //Reset tempArray so that it can be reused to build the NSArray for the front end
         tempArray = nil;
-        tempArray =[[NSMutableArray alloc]init];
+        tempArray = [[NSMutableArray alloc]init];
         
         /* @discussion: The Chicago database misspells some department names (see below for examples).  
                         Directly using the names in the database for the front end would look bad, so
-                        I identified the misspelled names and replaced them in the NSDictionary
+                        I identified the misspelled names and replaced them in the NSDictionary.
          
          */
         for(NSString* tempString in _departForBackEnd)
@@ -88,44 +84,43 @@
 
         }//end of for loop
         
+        // This variable will be accessed by the front end. Convert it to an immutable NSArray
         _departForFrontEnd = [NSArray arrayWithArray:tempArray];
         
-        //Create the NSDictionary
+        //Create the NSDictionary that will be used to as a reference between the front end and the back end
         _departmentsWithCorrectSpelling = [[NSDictionary alloc] initWithObjects:_departForBackEnd forKeys:_departForFrontEnd];
         
         //init query string to nil
         _query = nil;
         
-        //init array to nil
-        _jsonResponse = nil;
 
     }
     return self;
 }
 
--(NSString*)parseName:(NSString *)name{
-    
-    NSString* fullName;
-    NSString* firstName = [name componentsSeparatedByString:@" "][0];
-    NSString* lastName;
-    
-    @try{
-        
-        lastName = [name componentsSeparatedByString:@" "][1];
-        
-        fullName = [NSString stringWithFormat:@"%@,  %@", lastName, firstName];
-        
-    }
-    @catch(NSException *exception){
-        
-        lastName = nil;
-        
-        fullName = firstName;
-    }
-    
-    return fullName;
-    
-}
+//-(NSString*)parseName:(NSString *)name{
+//    
+//    NSString* fullName;
+//    NSString* firstName = [name componentsSeparatedByString:@" "][0];
+//    NSString* lastName;
+//    
+//    @try{
+//        
+//        lastName = [name componentsSeparatedByString:@" "][1];
+//        
+//        fullName = [NSString stringWithFormat:@"%@,  %@", lastName, firstName];
+//        
+//    }
+//    @catch(NSException *exception){
+//        
+//        lastName = nil;
+//        
+//        fullName = firstName;
+//    }
+//    
+//    return fullName;
+//    
+//}
 
 /** @brief: This method returns the list of departments with correct spelling*/
 - (NSArray*)getDepartments{
@@ -142,30 +137,47 @@
     _tempArray = nil;
     _tempArray = [[NSMutableArray alloc] init];
     
+    NSString* firstName;
+    NSString* lastName;
+    
     //loop through the jsonResponse array, create a new Employee object, and add it to the NSMutableArray
-    for(NSDictionary* dictionary in _jsonResponse)
+    for(NSDictionary* dictionary in _results)
     {
         //Iterate through the dictionary and grab all of the values associated with each key
         //We can't assume which order the keys will be in the dictionary, so double check
         for(id key in dictionary)
         {
-            if([key caseInsensitiveCompare:@"department"] == NSOrderedSame) {
+            if([key caseInsensitiveCompare:@"Department"] == NSOrderedSame) {
                 _department = [dictionary objectForKey:key];
             }
-            else if([key caseInsensitiveCompare:@"employee_annual_salary"] == NSOrderedSame) {
+            else if([key caseInsensitiveCompare:@"EmployeeAnnualSalary"] == NSOrderedSame) {
                 _annualSalary = [dictionary objectForKey:key];
             }
-            else if([key caseInsensitiveCompare:@"job_titles"] == NSOrderedSame) {
+            else if([key caseInsensitiveCompare:@"PositionTitle"] == NSOrderedSame) {
                 _jobPosition = [dictionary objectForKey:key];
             }
-            else {
-                _name = [dictionary objectForKey:key];
+            else if([key caseInsensitiveCompare:@"FirstName"] == NSOrderedSame) {
+                firstName = [dictionary objectForKey:key];
+            }
+            else if([key caseInsensitiveCompare:@"LastName"] == NSOrderedSame) {
+                lastName = [dictionary objectForKey:key];
+                
+                //Concatenate the names:
+                _name = [NSString stringWithFormat:@"%@,  %@", lastName, firstName];
+                
             }
             
-        }//end of for loop
+        }//end of inner for loop
         
         //Make the object
         _employee = [[EmployeeObject alloc] initWithValues:_name aPosition:_jobPosition aDepartment:_department aSalary:_annualSalary];
+        
+        //For debugging purposes
+//        NSLog(@"%@", [_employee name]);
+//        NSLog(@"Department: %@", [_employee department]);
+//        NSLog(@"Job Position: %@", [_employee jobPosition]);
+//        NSLog(@"Annual Salary: %@", [_employee annualSalary]);
+        
         
         //Add the object to the mutable array
         [_tempArray addObject:_employee];
@@ -178,6 +190,17 @@
     NSSortDescriptor *departmentDescriptor = [[NSSortDescriptor alloc] initWithKey:@"department" ascending:YES];
     NSArray *descriptors = @[nameDescriptor, departmentDescriptor];
     NSArray* returnArray = [_tempArray sortedArrayUsingDescriptors:descriptors];
+    
+    //For Debugging purposes
+//    for(EmployeeObject* employee in returnArray)
+//    {
+//        NSLog(@"Name:%@", [employee name]);
+//        NSLog(@"Department: %@", [employee department]);
+//        NSLog(@"Job Position: %@", [employee jobPosition]);
+//        NSLog(@"Annual Salary: %@", [employee annualSalary]);
+//        
+//    }
+    
     
     
     //Return the NSMutableArray as an immutable NSArray
@@ -196,20 +219,78 @@
 - (NSArray*)getEmployees:(NSString*)name department:(NSString*)department{
     
     
+    //TODO: Fix all of the if statements to have the correct queries
+    
+    
     if([name length] > 0 && [department length] > 0) {
         
-        name = [self parseName:name];
+        //TODO: Fix this
         
-        _query = [NSString stringWithFormat:@"$where=name like '%%%@%%'&department=%@", name, department];
+        _results = nil;
+        
+        NSString* firstName = [name componentsSeparatedByString:@" "][0];
+        NSString* lastName;
+        
+        //Check to see if there is a last name provided
+        @try{
+            
+            lastName = [name componentsSeparatedByString:@" "][1];
+            
+        }
+        @catch(NSException *exception){
+            
+            lastName = nil;
+            
+        }
+        
+        //Query the database based on user input
+        if([firstName length] > 0 && [lastName length] > 0)
+        {
+            _query = [NSString stringWithFormat:@"SELECT* FROM Employees WHERE Department= '%@' AND FirstName LIKE '%%%@%%' AND LastName LIKE '%%%@%%'",department, firstName, lastName];
+        }
+        
+        //_query = [NSString stringWithFormat:@"SELECT* FROM Employees WHERE Department= '%@' ",department];
+        
+        
+        
+        //Grab the results from the database based on the query
+        _results = [[NSArray alloc] initWithArray:[_dt loadDataFromDB:_query]];
     }
     else if([name length] > 0){
         
-        name = [self parseName:name];
+        //FIX THIS
         
-        _query = [NSString stringWithFormat:@"$where=name like '%%%@%%'", name];
+        NSString* firstName = [name componentsSeparatedByString:@" "][0];
+        NSString* lastName;
+        
+        //Check to see if there is a last name provided
+        @try{
+            
+            lastName = [name componentsSeparatedByString:@" "][1];
+            
+        }
+        @catch(NSException *exception){
+            
+            lastName = nil;
+            
+        }
+        
+        //Query the database based on user input
+        if([firstName length] > 0 && [lastName length] > 0)
+        {
+            _query = [NSString stringWithFormat:@"SELECT* FROM Employees WHERE FirstName LIKE '%%%@%%' AND LastName='%@';",firstName, lastName];
+//            NSLog(@"First Name: %@",firstName);
+//            NSLog(@"Last Name: %@", lastName);
+//            NSLog(_query);
+        }
+        
+        //Grab the results from the database based on the query
+        _results = [[NSArray alloc] initWithArray:[_dt loadDataFromDB:_query]];
         
     }
     else if([department length] > 0){
+        
+        //FIX THIS
         
         //Use NSDictionary to get the proper department name
         NSString *departmentQuery = [_departmentsWithCorrectSpelling objectForKey:department];
@@ -218,7 +299,6 @@
         NSString *finalQuery = [departmentQuery stringByReplacingOccurrencesOfString:@"&" withString:@"AND&"];
         
         
-        //_query = [NSString stringWithFormat:@"$where=department like '%%%@%%'", departmentQuery];
         _query = [NSString stringWithFormat:@"department=%@", finalQuery];
         
     }
@@ -227,10 +307,7 @@
         return nil;
     }
     
-    //Query the database
-    _jsonResponse = [_dt executeQuery: _query];
-    
-    
+
     return [self createEmployeeObjectsArray];
 }
 
@@ -238,7 +315,6 @@
     
     _query = [NSString stringWithFormat:@"$where=employee_annual_salary>=%@ AND employee_annual_salary<=%@", minSalary,maxSalary];
     
-    _jsonResponse = [_dt executeQuery:_query];
     
     return [self createEmployeeObjectsArray];
 }

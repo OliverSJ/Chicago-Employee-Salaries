@@ -13,10 +13,15 @@
 
 @interface DepartmentViewController ()
 
+/** Displays departments */
 @property (nonatomic) UIPickerView *departmentsPickerView;
+/** Business Tier class */
 @property (nonatomic) BusinessTier *currentBT;
+/** Array of departments as NSStrings */
 @property (nonatomic) NSArray *departments;
+/** Department value used in query */
 @property (weak, nonatomic) IBOutlet UITextField *departmentTextField;
+/** View that holds text fields in the center of the screenr  */
 @property (weak, nonatomic) IBOutlet UIView *centerView;
 
 @end
@@ -24,13 +29,15 @@
 @implementation DepartmentViewController
 
 /*************************************************
- SCROLLER
+ TEXT FIELD
  *************************************************/
 
+#pragma mark - Text Field Methods
+
 - (IBAction)textFieldDidBeginEditing:(id)sender {
-
+    
     UITextField *textField = (UITextField*)sender;
-
+    
     [self.view scrollToView:textField];
 }
 
@@ -42,6 +49,8 @@
 /*************************************************
  PICKER VIEW
  *************************************************/
+
+#pragma mark - Picker View Methods
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
     
@@ -75,6 +84,12 @@
     }
 }
 
+/*************************************************
+ SEGUE
+ *************************************************/
+
+#pragma mark - Segue Methods
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     EmployeesTableViewController *etvc = [segue destinationViewController];
@@ -85,6 +100,12 @@
     self.currentBT.salarySearch = NO;
     etvc.currentBT = self.currentBT;
 }
+
+/*************************************************
+ BUTTONS
+ *************************************************/
+
+#pragma mark - Button Methods
 
 - (IBAction)searchButtonPressed:(id)sender {
     
@@ -103,6 +124,16 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [self.view endEditing:YES]; // force all text fields to end editing
+}
+
+/*************************************************
+ VIEWS
+ *************************************************/
+
+#pragma mark - View Methods
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self viewDidLoad];
 }
 
 - (void)viewDidLoad {

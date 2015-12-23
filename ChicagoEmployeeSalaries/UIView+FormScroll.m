@@ -6,6 +6,8 @@
 //  Copyright © 2015 Oliver San Juan. All rights reserved.
 //
 
+/** This method is used to scroll the window without having to use
+ the UIScrollBar object */
 #import "UIView+FormScroll.h"
 
 @implementation UIView (FormScroll)

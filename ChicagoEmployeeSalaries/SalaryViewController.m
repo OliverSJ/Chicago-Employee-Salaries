@@ -47,8 +47,15 @@
 @implementation SalaryViewController
 
 /*************************************************
- SCROLLER
+ TEXT FIELD
  *************************************************/
+
+#pragma mark - Text Field Methods
+
+- (IBAction)textFieldDidEndEditing:(id)sender {
+    
+    [self.view scrollToY:0];
+}
 
 - (IBAction)textFieldDidBeginEditing:(id)sender {
     
@@ -57,14 +64,17 @@
     [self.view scrollToView:textField];
 }
 
-- (IBAction)textFieldDidEndEditing:(id)sender {
+- (IBAction)textFieldValueDidChange:(id)sender {
+    UITextField *textField = (UITextField*)sender;
     
-    [self.view scrollToY:0];
+    textField.backgroundColor = [UIColor whiteColor];
 }
 
 /*************************************************
  SEGUE
  *************************************************/
+
+#pragma mark - Segue Methods
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
@@ -79,14 +89,10 @@
 }
 
 /*************************************************
- EVENTS
+ BUTTONS
  *************************************************/
 
-- (IBAction)textFieldValueDidChange:(id)sender {
-    UITextField *textField = (UITextField*)sender;
-    
-    textField.backgroundColor = [UIColor whiteColor];
-}
+#pragma mark - Button Methods
 
 /**
  @brief Triggered upon completion of pressing the search button
@@ -134,23 +140,25 @@
     [self.maxSalaryTextField becomeFirstResponder];
 }
 
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self.view endEditing:YES]; // force all text fields to end editing
-}
-
-/**
- @brief Sends user to previous textField
- */
 - (void)backButtonPressed:(id)sender {
     [self.maxSalaryTextField resignFirstResponder];
     
     [self.minSalaryTextField becomeFirstResponder];
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.view endEditing:YES]; // force all text fields to end editing
+}
+
 /*************************************************
- DEFAULT FUNCTIONS
+ VIEWS
  *************************************************/
+
+#pragma mark - View Methods
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self viewDidLoad];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -228,6 +236,8 @@
     self.minSalaryTextField.inputAccessoryView = nameToolBar;
     
 }
+
+#pragma mark - Memory Methods
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

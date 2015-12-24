@@ -45,14 +45,18 @@ alpha:1.0]
  @param index The index where the given employee exists.
  */
 - (NSString*) setDetailTextLabel:(int)index {
-    if (self.currentBT.nameSearch) {
+    
+    // display department in cell details
+    if (self.currentBT.searchType == BTSearchByName) {
         return [self.employees[index] department];
     }
     
-    else if (self.currentBT.salarySearch) {
+    // display salary in cell details
+    else if (self.currentBT.searchType == BTSearchBySalary) {
         return [self.employees[index] annualSalary];
     }
     
+    // display job position in cell details
     else {
         return [self.employees[index] jobPosition];
     }
@@ -157,15 +161,7 @@ alpha:1.0]
     // asnyc call for getEmployees
     // shows ActivityIndicator while waiting for response
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        // get deep copy array of employees
-//        // search by salary
-//        if (self.currentBT.salarySearch)
-//            self.employees = [[self.currentBT getEmployeesBySalary:self.currentBT.minSalary maxSalary:self.currentBT.maxSalary] copy];
-//        
-        // search by name and/or department
-//        else {
-            self.employees = [[self.currentBT getEmployees:self.currentBT.name department:self.currentBT.department] copy];
-//        }
+        self.employees = [[self.currentBT getEmployees] copy];
         if (self.employees.count <= 0) {
             self.noResultsFound = YES;
         }

@@ -6,28 +6,18 @@
 //  Copyright © 2015 Oliver San Juan. All rights reserved.
 //
 
-#import "SingleTextFieldViewController.h"
+#import "DoubleTextFieldViewController.h"
 #import "UIView+FormScroll.h"
+#import "PrevNextSearchToolbarView.h"
 
-@interface SingleTextFieldViewController()
+@interface DoubleTextFieldViewController()
 
 /** Holds text fields in center of the screen */
 @property (weak, nonatomic) IBOutlet UIView *centerView;
 
 @end
 
-@implementation SingleTextFieldViewController
-
-- (instancetype)initWithBackgroundAndSegue:(NSString*)imageName segueIdentifier:(NSString*)identifier
-{
-    self = [super init];
-    if (self) {
-        self.backgroundImageName = imageName;
-        self.segueID = identifier;
-    }
-    self.thisView = self;
-    return self;
-}
+@implementation DoubleTextFieldViewController
 
 /*************************************************
  TEXT FIELDS
@@ -48,7 +38,9 @@
 }
 
 - (IBAction)textFieldValueDidChange:(id)sender {
-    self.textField.backgroundColor = [UIColor whiteColor];
+    
+    UITextField *tempTextField = (UITextField*)sender;
+    tempTextField.backgroundColor = [UIColor whiteColor];
 }
 
 /*************************************************
@@ -57,12 +49,12 @@
 
 #pragma mark - Picker View Methods
 
--(void)addPickerView {
+-(void)addPickerView:(UITextField*)selectedTextField {
     // create pickerview
     self.pickerView = [[UIPickerView alloc] init];
     self.pickerView.dataSource = self;
     self.pickerView.delegate = self;
-    self.textField.inputView = self.pickerView;
+    selectedTextField.inputView = self.pickerView;
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
@@ -82,18 +74,18 @@
 
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     
-    if (self.textField.text.length <= 0) {
-        self.textField.backgroundColor = [UIColor whiteColor];
+    if (self.textFieldTwo.text.length <= 0) {
+        self.textFieldTwo.backgroundColor = [UIColor whiteColor];
     }
     
     // user has selected (leave blank), "blank out" departmentsTextField
     if (row == 0) {
-        self.textField.text = @"";
+        self.textFieldTwo.text = @"";
         return;
     }
-    // user selected department
+    // user selected pickerview
     else {
-        self.textField.text = self.pickerViewContents[row];
+        self.textFieldTwo.text = self.pickerViewContents[row];
     }
 }
 
@@ -106,8 +98,29 @@
 
 - (IBAction)buttonPressed:(id)sender {
     
-    if (self.textField.text.length <= 0) {
-        self.textField.backgroundColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:0.5];
+    BOOL doReturn = NO;
+    
+    // 3 possible cases where user doesn't provide input
+    if (self.textField.text.length <= 0 &&
+        self.textFieldTwo.text.length > 0) {
+        self.textField.backgroundColor = [UIColor colorWithRed:1.0 green:0 blue:0 alpha:0.5];
+        doReturn = YES;
+    }
+    
+    if (self.textFieldTwo.text.length <= 0 &&
+        self.textField.text.length > 0) {
+        self.textFieldTwo.backgroundColor = [UIColor colorWithRed:1.0 green:0 blue:0 alpha:0.5];
+        doReturn = YES;
+    }
+    
+    if (self.textFieldTwo.text.length <= 0 &&
+        self.textField.text.length <= 0) {
+        self.textField.backgroundColor = [UIColor colorWithRed:1.0 green:0 blue:0 alpha:0.5];
+        self.textFieldTwo.backgroundColor = [UIColor colorWithRed:1.0 green:0 blue:0 alpha:0.5];
+        doReturn = YES;
+    }
+    
+    if (doReturn) {
         return;
     }
     
@@ -122,6 +135,19 @@
     }
 }
 
+- (IBAction)nextButtonPressed:(id)sender {
+    
+    [self.textField resignFirstResponder];
+    
+    [self.textFieldTwo becomeFirstResponder];
+}
+
+- (void)prevButtonPressed:(id)sender {
+    [self.textFieldTwo resignFirstResponder];
+    
+    [self.textField becomeFirstResponder];
+}
+
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [self.view endEditing:YES]; // force all text fields to end editing
 }
@@ -131,6 +157,19 @@
  *************************************************/
 
 #pragma mark - View Methods
+
+- (void)addToolbars {
+    // configure toolbar for picker view
+    // add toolbar to min salary keyboard
+    PrevNextSearchToolbarView *firstToolbar = [[PrevNextSearchToolbarView alloc]initWithSelectors:@selector(prevButtonPressed:) nextSelector:@selector(nextButtonPressed:) searchSelector:nil];
+    firstToolbar.items[0].enabled = NO; // disable prev button
+    self.textField.inputAccessoryView = firstToolbar;
+    
+    // add toolbar to max salary keyboard
+    PrevNextSearchToolbarView *secondToolbar = [[PrevNextSearchToolbarView alloc]initWithSelectors:@selector(prevButtonPressed:) nextSelector:@selector(nextButtonPressed:) searchSelector:@selector(buttonPressed:)];
+    secondToolbar.items[1].enabled = NO; // disable next button
+    self.textFieldTwo.inputAccessoryView = secondToolbar;
+}
 
 -(void)configureView {
     // round center view
@@ -146,8 +185,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self configureView];
 }
 
 @end

@@ -2,188 +2,61 @@
 //  DepartmentViewController.m
 //  ChicagoEmployeeSalaries
 //
-//  Created by Bradley Golden on 12/20/15.
+//  Created by Bradley Golden on 12/23/15.
 //  Copyright © 2015 Oliver San Juan. All rights reserved.
 //
 
 #import "DepartmentViewController.h"
-#import "UIView+FormScroll.h"
 #import "BusinessTier.h"
 #import "EmployeesTableViewController.h"
+#import "PrevNextSearchToolbarView.h"
 
 @interface DepartmentViewController ()
 
-/** Displays departments */
-@property (nonatomic) UIPickerView *departmentsPickerView;
-/** Business Tier class */
-@property (nonatomic) BusinessTier *currentBT;
-/** Array of departments as NSStrings */
-@property (nonatomic) NSArray *departments;
-/** Department value used in query */
-@property (weak, nonatomic) IBOutlet UITextField *departmentTextField;
-/** View that holds text fields in the center of the screenr  */
-@property (weak, nonatomic) IBOutlet UIView *centerView;
+@property (strong, nonatomic) BusinessTier *bt;
 
 @end
 
 @implementation DepartmentViewController
 
-/*************************************************
- TEXT FIELD
- *************************************************/
-
-#pragma mark - Text Field Methods
-
-- (IBAction)textFieldDidBeginEditing:(id)sender {
+- (void)initDataTier {
     
-    UITextField *textField = (UITextField*)sender;
-    
-    [self.view scrollToView:textField];
+    self.bt = [[BusinessTier alloc]init];
 }
 
-- (IBAction)textFieldDidEndEditing:(id)sender {
-
-    [self.view scrollToY:0];
+- (void)configureView {
+    
+    [self initDataTier];
+    
+    self.segueID = @"DepartmentResults";
+    self.label.text = @"Search by Department";
+    self.textField.placeholder = @"i.e. MAYOR'S OFFICE";
+    self.backgroundImageName = @"chicago_3.png";
+    self.pickerViewContents = [self.bt getDepartments];
+    
+    // configure toolbar for picker view
+    PrevNextSearchToolbarView *toolBar = [[PrevNextSearchToolbarView alloc]initWithSelectors:nil nextSelector:nil searchSelector:@selector(buttonPressed:)];
+    
+    self.textField.inputAccessoryView = toolBar;
+    
+    [super addPickerView];
+    [super configureView];
 }
-
-/*************************************************
- PICKER VIEW
- *************************************************/
-
-#pragma mark - Picker View Methods
-
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
-    
-    return 1;
-}
-
-- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    
-    return self.departments.count;
-}
-
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    
-    return self.departments[row];
-}
-
--(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    
-    if (self.departmentTextField.text.length <= 0) {
-        self.departmentTextField.backgroundColor = [UIColor whiteColor];
-    }
-    
-    // user has selected (leave blank), "blank out" departmentsTextField
-    if (row == 0) {
-        self.departmentTextField.text = @"";
-        return;
-    }
-    // user selected department
-    else {
-        self.departmentTextField.text = self.departments[row];
-    }
-}
-
-/*************************************************
- SEGUE
- *************************************************/
-
-#pragma mark - Segue Methods
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
-    EmployeesTableViewController *etvc = [segue destinationViewController];
-    self.currentBT.department = [self.departmentTextField.text copy];
-    self.currentBT.nameAndDepartmentSearch = NO;
-    self.currentBT.nameSearch = NO;
-    self.currentBT.departmentSearch = YES;
-    self.currentBT.salarySearch = NO;
-    etvc.currentBT = self.currentBT;
-}
-
-/*************************************************
- BUTTONS
- *************************************************/
-
-#pragma mark - Button Methods
-
-- (IBAction)searchButtonPressed:(id)sender {
-    
-    // check the that user made a selection
-    if (self.departmentTextField.text.length <= 0) {
-        self.departmentTextField.backgroundColor = [UIColor colorWithRed:1.0 green:0 blue:0 alpha:0.5];
-        
-        return;
-    }
-    
-    // close all search windows
-    [self.view.window endEditing:YES];
-    
-    [self performSegueWithIdentifier:@"DepartmentResults" sender:sender];
-}
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self.view endEditing:YES]; // force all text fields to end editing
-}
-
-/*************************************************
- VIEWS
- *************************************************/
-
-#pragma mark - View Methods
 
 - (void)viewWillAppear:(BOOL)animated {
-    [self viewDidLoad];
+    
+    [self initDataTier];
 }
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
-    
-    // round center view
-    self.centerView.layer.cornerRadius = 20;
-    self.centerView.layer.masksToBounds = YES;
-    self.centerView.layer.opacity = 0.97f;
-    
-    // add image to backround
-    UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"chicago_3.png"]];
-    [self.view addSubview:backgroundView];
-    [self.view sendSubviewToBack:backgroundView];
-    
-    // instantiate BusinessTierObject
-    self.currentBT = [[BusinessTier alloc]init];
-    
-    
-    // Make asynchronous request for department names
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        dispatch_sync(dispatch_get_main_queue(), ^{
-            self.departments = [self.currentBT getDepartments];
-        });
-    });
-    
-    // create pickerview for departments
-    self.departmentsPickerView = [[UIPickerView alloc] init];
-    self.departmentsPickerView.dataSource = self;
-    self.departmentsPickerView.delegate = self;
-    self.departmentTextField.inputView = self.departmentsPickerView;
-    
-    // add toolbar to hold search button
-    UIToolbar *toolBar= [[UIToolbar alloc] initWithFrame:CGRectMake(0,0,320,44)];
-    [toolBar setBarStyle:UIBarStyleDefault];
-    
-    // middle space between left and right buttons
-    UIBarButtonItem *flex = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
-    
-    // search button
-    UIBarButtonItem *searchButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch
-                                                                                  target:self
-                                                                                  action:@selector(searchButtonPressed:)];
-    
-    toolBar.items = @[flex, searchButton];
-    self.departmentTextField.inputAccessoryView = toolBar;
-    
-    // add search button to nameTextField keyboard
-    UIToolbar *nameToolBar= [[UIToolbar alloc] initWithFrame:CGRectMake(0,0,320,44)];
-    [nameToolBar setBarStyle:UIBarStyleDefault];
+    [self configureView];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 @end

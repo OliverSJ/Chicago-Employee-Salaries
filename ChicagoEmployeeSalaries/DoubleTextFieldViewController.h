@@ -8,19 +8,23 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SingleTextFieldViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
+@interface DoubleTextFieldViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 
 @property (strong, nonatomic) NSString *segueID;
 @property UIViewController *thisView;
 @property (strong, nonatomic) IBOutlet UITextField *textField;
+@property (strong, nonatomic) IBOutlet UITextField *textFieldTwo;
 @property (strong, nonatomic) IBOutlet UILabel *label;
+@property (strong, nonatomic) IBOutlet UILabel *labelTwo;
 @property (strong, nonatomic) NSString *backgroundImageName;
 @property (strong, nonatomic) NSArray *pickerViewContents;
 @property (nonatomic) IBOutlet UIPickerView *pickerView;
 
-- (instancetype)initWithBackgroundAndSegue:(NSString*)imageName segueIdentifier:(NSString*)identifier;
+- (void)addToolbars;
 - (IBAction)buttonPressed:(id)sender;
-- (void)addPickerView;
+- (IBAction)nextButtonPressed:(id)sender;
+- (IBAction)prevButtonPressed:(id)sender;
+- (void)addPickerView:(UITextField*)selectedTextField;
 - (void)configureView;
 
 @end

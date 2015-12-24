@@ -1,5 +1,5 @@
 //
-//  NameAndDepartmentViewController.h
+//  PositionViewController.h
 //  ChicagoEmployeeSalaries
 //
 //  Created by Bradley Golden on 12/24/15.
@@ -8,6 +8,6 @@
 
 #import "DoubleTextFieldViewController.h"
 
-@interface NameAndDepartmentViewController : DoubleTextFieldViewController
+@interface PositionViewController : DoubleTextFieldViewController
 
 @end

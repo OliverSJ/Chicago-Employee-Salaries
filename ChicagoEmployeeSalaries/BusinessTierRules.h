@@ -10,12 +10,24 @@
 
 @protocol BusinessTierRules
 
+// Specify the type of search performed by using this set of enums.
+typedef NS_ENUM(NSInteger, SearchType)
+{
+    BTSearchByName,
+    BTSearchByDepartment,
+    BTSearchBySalary,
+    BTSearchByPosition,
+    BTSearchByNameAndDepartment,
+    BTSearchByPositionAndDepartment,
+    BTSearchBySalaryAndDepartment,
+    BTSearchBySalaryAndPosition
+    //add more search enums here..
+};
 
+// Get list of employees.
+- (NSArray*)getEmployees;
 
-//Get list of employees.
-- (NSArray*)getEmployees:(NSString*)name department:(NSString*)department;
-
-// get array of current departments
+// Get array of current departments
 - (NSArray*)getDepartments;
 
 @end

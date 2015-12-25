@@ -98,29 +98,6 @@
     return self;
 }
 
-//-(NSString*)parseName:(NSString *)name{
-//    
-//    NSString* fullName;
-//    NSString* firstName = [name componentsSeparatedByString:@" "][0];
-//    NSString* lastName;
-//    
-//    @try{
-//        
-//        lastName = [name componentsSeparatedByString:@" "][1];
-//        
-//        fullName = [NSString stringWithFormat:@"%@,  %@", lastName, firstName];
-//        
-//    }
-//    @catch(NSException *exception){
-//        
-//        lastName = nil;
-//        
-//        fullName = firstName;
-//    }
-//    
-//    return fullName;
-//    
-//}
 
 /** @brief: This method returns the list of departments with correct spelling*/
 - (NSArray*)getDepartments{
@@ -219,17 +196,13 @@
 - (NSArray*)getEmployees:(NSString*)name department:(NSString*)department{
     
     
-    //TODO: Fix all of the if statements to have the correct queries
-    
-    
     if([name length] > 0 && [department length] > 0) {
-        
-        //TODO: Fix this
         
         _results = nil;
         
         NSString* firstName = [name componentsSeparatedByString:@" "][0];
         NSString* lastName;
+        NSString* departmentForQuery;
         
         //Check to see if there is a last name provided
         @try{
@@ -243,22 +216,29 @@
             
         }
         
+        //GRAB THE APPROPRIATE DEPARTMENT NAME
+        departmentForQuery = [_departmentsWithCorrectSpelling objectForKey:department];
+        //NSLog(departmentForQuery);
+        
+        //Replace any apostrophes with a double apostrophe to ensure a working query
+        departmentForQuery = [departmentForQuery stringByReplacingOccurrencesOfString:@"'" withString:@"''"];
+        
         //Query the database based on user input
         if([firstName length] > 0 && [lastName length] > 0)
         {
-            _query = [NSString stringWithFormat:@"SELECT* FROM Employees WHERE Department= '%@' AND FirstName LIKE '%%%@%%' AND LastName LIKE '%%%@%%'",department, firstName, lastName];
+            _query = [NSString stringWithFormat:@"SELECT * FROM Employees WHERE Department= '%@' AND FirstName LIKE '%%%@%%' AND LastName LIKE '%%%@%%'",departmentForQuery, firstName, lastName];
         }
-        
-        //_query = [NSString stringWithFormat:@"SELECT* FROM Employees WHERE Department= '%@' ",department];
-        
-        
+        //Query the database with the "first" name acting as both the first and last names in order to get
+        // a more complete list
+        else
+        {
+            _query = [NSString stringWithFormat:@"SELECT * FROM Employees WHERE Department= '%@' AND (FirstName LIKE '%%%@%%' OR LastName LIKE '%%%@%%')",departmentForQuery, firstName, firstName];
+        }
         
         //Grab the results from the database based on the query
         _results = [[NSArray alloc] initWithArray:[_dt loadDataFromDB:_query]];
     }
     else if([name length] > 0){
-        
-        //FIX THIS
         
         NSString* firstName = [name componentsSeparatedByString:@" "][0];
         NSString* lastName;
@@ -279,9 +259,13 @@
         if([firstName length] > 0 && [lastName length] > 0)
         {
             _query = [NSString stringWithFormat:@"SELECT* FROM Employees WHERE FirstName LIKE '%%%@%%' AND LastName='%@';",firstName, lastName];
-//            NSLog(@"First Name: %@",firstName);
-//            NSLog(@"Last Name: %@", lastName);
-//            NSLog(_query);
+
+        }
+        //Query the database with the "first" name acting as both the first and last names in order to get
+        // a more complete list
+        else
+        {
+            _query = [NSString stringWithFormat:@"SELECT* FROM Employees WHERE FirstName LIKE '%%%@%%' OR LastName LIKE '%%%@%%'",firstName, firstName];
         }
         
         //Grab the results from the database based on the query
@@ -290,16 +274,16 @@
     }
     else if([department length] > 0){
         
-        //FIX THIS
-        
         //Use NSDictionary to get the proper department name
         NSString *departmentQuery = [_departmentsWithCorrectSpelling objectForKey:department];
         
-        //Replace any ampersands
-        NSString *finalQuery = [departmentQuery stringByReplacingOccurrencesOfString:@"&" withString:@"AND&"];
+        //Replace any single apostrophes
+        NSString *finalQuery = [departmentQuery stringByReplacingOccurrencesOfString:@"'" withString:@"''"];
         
+        _query = [NSString stringWithFormat:@"SELECT * FROM Employees WHERE Department='%@'", finalQuery];
         
-        _query = [NSString stringWithFormat:@"department=%@", finalQuery];
+        //Grab the results from the database based on the query
+        _results = [[NSArray alloc] initWithArray:[_dt loadDataFromDB:_query]];
         
     }
     else{

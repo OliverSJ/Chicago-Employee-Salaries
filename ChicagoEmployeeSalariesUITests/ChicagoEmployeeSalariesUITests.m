@@ -37,6 +37,10 @@
 
 - (void) testSearchByName {
     
+    /****************************************************************************************
+     TEST ALL SEARCH BUTTONS WITH PERFECT INPUT
+     ****************************************************************************************/
+    
     // select search by name
     XCUIApplication *app = [[XCUIApplication alloc] init];
     XCUIElementQuery *tablesQuery = app.tables;

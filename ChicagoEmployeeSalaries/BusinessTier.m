@@ -29,6 +29,7 @@
     NSArray* departForBackEnd;
     NSArray* departForFrontEnd;
     
+    
 
 }
 
@@ -37,12 +38,21 @@
     self = [super init];
     if (self) {
         
+        //TESTING SEARCH TYPES:
+        //_searchType = searchBySalary;
+        //_searchType = searchByDepartment;         //WORKS
+        //_searchType = searchByNameAndDepartment;
+        
         // init dataTier with base url for sqlite database
         dt = [[DataTier alloc] initWithDatabaseFilename:@"chicago_employee_salaries_db.sql"];
         
-        //Set class variables that are reused to nil
+        //Set public variables that are reused to nil
         _name = nil;
         _department = nil;
+        _minSalary = nil;
+        _maxSalary = nil;
+        _positionTitle = nil;
+        
         
         departmentQuery = nil;
         
@@ -116,7 +126,6 @@
     
 }
 
-
 -(void)createDepartmentQuery: (NSString*) department{
     
     //Clear the previous query
@@ -127,6 +136,16 @@
     
     //Replace any apostrophes with a double apostrophe to ensure a working query
     departmentQuery = [departmentQuery stringByReplacingOccurrencesOfString:@"'" withString:@"''"];
+}
+
+-(void)convertSalariesForQuery{
+    
+    int minimumSalary = ([_minSalary intValue] / 1000);
+    int maximumSalary = ([_maxSalary intValue] /1000);
+    
+    _minSalary = [NSString stringWithFormat:@"%i", minimumSalary];
+    _maxSalary = [NSString stringWithFormat:@"%i", maximumSalary];
+    
 }
 
 #pragma mark Getting and creating Employee Objects
@@ -207,7 +226,8 @@
 - (NSArray*)getEmployees{
     
     
-    if([_name length] > 0 && [_department length] > 0) {
+    //if([_name length] > 0 && [_department length] > 0)
+    if(_searchType == searchByNameAndDepartment){
         
         results = nil;
         
@@ -233,19 +253,20 @@
         //Query the database based on user input
         if([firstName length] > 0 && [lastName length] > 0)
         {
-            query = [NSString stringWithFormat:@"SELECT * FROM Employees WHERE Department= '%@' AND FirstName LIKE '%%%@%%' AND LastName LIKE '%%%@%%'",departmentQuery, firstName, lastName];
+            query = [NSString stringWithFormat:@"SELECT * FROM Employees WHERE Department= '%@' AND FirstName LIKE '%%%@%%' AND LastName LIKE '%%%@%%';",departmentQuery, firstName, lastName];
         }
         //Query the database with the "first" name acting as both the first and last names in order to get
         // a more complete list
         else
         {
-            query = [NSString stringWithFormat:@"SELECT * FROM Employees WHERE Department= '%@' AND (FirstName LIKE '%%%@%%' OR LastName LIKE '%%%@%%')",departmentQuery, firstName, firstName];
+            query = [NSString stringWithFormat:@"SELECT * FROM Employees WHERE Department= '%@' AND (FirstName LIKE '%%%@%%' OR LastName LIKE '%%%@%%');",departmentQuery, firstName, firstName];
         }
         
         //Grab the results from the database based on the query
-        results = [[NSArray alloc] initWithArray:[dt loadDataFromDB:query]];
+        //results = [[NSArray alloc] initWithArray:[dt loadDataFromDB:query]];
+        
     }
-    else if([_name length] > 0){
+    else if(_searchType == searchByName){
         
         NSString* firstName = [_name componentsSeparatedByString:@" "][0];
         NSString* lastName;
@@ -272,36 +293,81 @@
         // a more complete list
         else
         {
-            query = [NSString stringWithFormat:@"SELECT* FROM Employees WHERE FirstName LIKE '%%%@%%' OR LastName LIKE '%%%@%%'",firstName, firstName];
+            query = [NSString stringWithFormat:@"SELECT* FROM Employees WHERE FirstName LIKE '%%%@%%' OR LastName LIKE '%%%@%%';",firstName, firstName];
         }
         
         //Grab the results from the database based on the query
-        results = [[NSArray alloc] initWithArray:[dt loadDataFromDB:query]];
+        //results = [[NSArray alloc] initWithArray:[dt loadDataFromDB:query]];
         
     }
-    else if([_department length] > 0){
+    //else if([_department length] > 0)
+    else if(_searchType == searchByDepartment)
+    {
         
        //Create the appropriate department query
         [self createDepartmentQuery:_department];
         
-        query = [NSString stringWithFormat:@"SELECT * FROM Employees WHERE Department='%@'", departmentQuery];
+        query = [NSString stringWithFormat:@"SELECT * FROM Employees WHERE Department='%@';", departmentQuery];
         
         //Grab the results from the database based on the query
-        results = [[NSArray alloc] initWithArray:[dt loadDataFromDB:query]];
+        //results = [[NSArray alloc] initWithArray:[dt loadDataFromDB:query]];
         
     }
+    else if(_searchType == searchBySalary){
+        
+        //SELECT CAST(substr(EmployeeAnnualSalary,2) as INTEGER) FROM Employees;
+        //SELECT * FROM Employees WHERE CAST(substr(EmployeeAnnualSalary,2) as INTEGER)>20 AND CAST(substr(EmployeeAnnualSalary,2) as INTEGER)<100;
+        //SELECT * FROM Employees WHERE EmployeeAnnualSalary<'$100,000';
+        
+        /** @discussion
+         
+            The database has values stored as a string.  In order to compare the values, we will have to cast the substring as
+            an int.  Doing so means that the database will drop any values after the comma for annual salaries over $1,000.
+            Before you ask, yes, there is someone that makes less than that. He makes $0.96/year according to the database. I hope that data entry is wrong.  If not, that poor soul.
+         
+         */
+        //Convert the salaries to one that will work with the query
+        [self convertSalariesForQuery];
+        
+        //TESTING:
+//        _minSalary = @"200";
+//        _maxSalary = @"300";
+
+        
+        query = [NSString stringWithFormat:@"SELECT * FROM Employees WHERE CAST(substr(EmployeeAnnualSalary,2) as INTEGER)>='%@' AND CAST(substr(EmployeeAnnualSalary,2) as INTEGER)<='%@';", _minSalary,_maxSalary];
+ 
+        
+    }
+    else if(_searchType == searchBySalaryAndDepartment){
+        
+        [self convertSalariesForQuery];
+        
+        query = [NSString stringWithFormat:@"SELECT * FROM Employees WHERE Department='%@' AND CAST(substr(EmployeeAnnualSalary,2) as INTEGER)>='%@' AND CAST(substr(EmployeeAnnualSalary,2) as INTEGER)<='%@';", _department,_minSalary,_maxSalary];
+        
+    }
+    else if(_searchType == searchBySalaryAndPosition){
+        
+        [self convertSalariesForQuery];
+        
+        query = [NSString stringWithFormat:@"SELECT * FROM Employees WHERE PositionTitle='%@' AND CAST(substr(EmployeeAnnualSalary,2) as INTEGER)>='%@' AND CAST(substr(EmployeeAnnualSalary,2) as INTEGER)<='%@';", _positionTitle,_minSalary,_maxSalary];
+        
+    }
+    else if(_searchType == searchByPosition){
+        
+        query = [NSString stringWithFormat:@"SELECT * FROM Employees WHERE PositionTitle='%@';", _positionTitle];
+    }
+    else if(_searchType == searchByPositionAndDepartment){
+        
+        query = [NSString stringWithFormat:@"SELECT * FROM Employees WHERE PositionTitle='%@' AND Department='%@';", _positionTitle, _department];
+    }
+    
     else{
         NSLog(@"Something went wrong");
         return nil;
     }
     
 
-    return [self createEmployeeObjectsArray];
-}
-
--(NSArray*)getEmployeesBySalary: (NSString*) minSalary maximumRange: (NSString*) maxSalary{
-    
-    query = [NSString stringWithFormat:@"$where=employee_annual_salary>=%@ AND employee_annual_salary<=%@", minSalary,maxSalary];
+    results = [[NSArray alloc] initWithArray:[dt loadDataFromDB:query]];
     
     return [self createEmployeeObjectsArray];
 }

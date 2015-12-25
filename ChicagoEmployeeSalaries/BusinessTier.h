@@ -16,10 +16,12 @@
 //Used by the front end to set the name and department
 @property NSString* name;
 @property NSString* department;
+@property NSString* minSalary;
+@property NSString* maxSalary;
+@property NSString* positionTitle;
 
 
 - (NSArray*)getEmployees;
--(NSArray*)getEmployeesBySalary:(NSString*) minSalary maximumRange: (NSString*) maxSalary;
 - (NSArray*)getDepartments;
 
 
@@ -28,6 +30,7 @@
 @property BOOL nameAndDepartmentSearch;
 @property BOOL salarySearch;
 
+@property searchType searchType;
 
 
 

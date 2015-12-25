@@ -31,13 +31,12 @@
     
     EmployeesTableViewController *etvc = [segue destinationViewController];
     self.bt.name = [self.textField.text copy];
-//    self.bt.searchType = BTSearchByName; // <--Enum used to differentiate which type of search I want. This will allow us to wrap the "getEmployees" method by using a series of conditionals that check which enum I specified.
+    self.bt.searchType = searchByName; // <--Enum used to differentiate which type of search I want. This will allow us to wrap the "getEmployees" method by using a series of conditionals that check which enum I specified.
     /* For example, the body of getEmployees may look something like this:
         if (self.searchType == BTSearchByName)
             [self searchByName]
         else if (self.searchType == BTSearchByDepartment)
-            [self searchByDepartment]
-     */
+            [self searchByDepartment] */
     etvc.currentBT = self.bt;
 }
 

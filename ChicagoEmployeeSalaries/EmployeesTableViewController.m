@@ -47,19 +47,19 @@ alpha:1.0]
 - (NSString*) setDetailTextLabel:(int)index {
     
 //    // display department in cell details
-//    if (self.currentBT.searchType == BTSearchByName) {
-//        return [self.employees[index] department];
-//    }
-//    
-//    // display salary in cell details
-//    else if (self.currentBT.searchType == BTSearchBySalary) {
-//        return [self.employees[index] annualSalary];
-//    }
-//    
-//    // display job position in cell details
-//    else {
-//        return [self.employees[index] jobPosition];
-//    }
+    if (self.currentBT.searchType == searchByName) {
+        return [self.employees[index] department];
+    }
+    
+    // display salary in cell details
+    else if (self.currentBT.searchType == searchBySalary) {
+        return [self.employees[index] annualSalary];
+    }
+    
+    // display job position in cell details
+    else {
+        return [self.employees[index] jobPosition];
+    }
     return nil;
 }
 

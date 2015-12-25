@@ -41,7 +41,6 @@
         dt = [[DataTier alloc] initWithDatabaseFilename:@"chicago_employee_salaries_db.sql"];
         
         //Set class variables that are reused to nil
-        //employee = nil;
         _name = nil;
         _department = nil;
         
@@ -110,7 +109,7 @@
 }
 
 
-/** @brief: This method returns the list of departments with correct spelling*/
+/** @brief This method returns the list of departments with correct spelling*/
 - (NSArray*)getDepartments{
     
     return departForFrontEnd;
@@ -198,27 +197,27 @@
 }
 
 
-/** @brief: This method will query the database based on user input for employee name and department
-    @param: (NSString*) name: Can be nil or blank
-    @param: (NSString*) department: Can be nil or blank
+/** @brief This method will query the database based on user input for employee name and department
+    @param name: Can be nil or blank
+    @param department: Can be nil or blank
  
     @return: Returns an NSArray of EmployeeObject
  
  */
-- (NSArray*)getEmployees:(NSString*)name department:(NSString*)department{
+- (NSArray*)getEmployees{
     
     
-    if([name length] > 0 && [department length] > 0) {
+    if([_name length] > 0 && [_department length] > 0) {
         
         results = nil;
         
-        NSString* firstName = [name componentsSeparatedByString:@" "][0];
+        NSString* firstName = [_name componentsSeparatedByString:@" "][0];
         NSString* lastName;
         
         //Check to see if there is a last name provided
         @try{
             
-            lastName = [name componentsSeparatedByString:@" "][1];
+            lastName = [_name componentsSeparatedByString:@" "][1];
             
         }
         @catch(NSException *exception){
@@ -229,7 +228,7 @@
         
         //Get the appropriate department name
         //This method will change the class variable departmentQuery
-        [self createDepartmentQuery:department];
+        [self createDepartmentQuery:_department];
         
         //Query the database based on user input
         if([firstName length] > 0 && [lastName length] > 0)
@@ -246,15 +245,15 @@
         //Grab the results from the database based on the query
         results = [[NSArray alloc] initWithArray:[dt loadDataFromDB:query]];
     }
-    else if([name length] > 0){
+    else if([_name length] > 0){
         
-        NSString* firstName = [name componentsSeparatedByString:@" "][0];
+        NSString* firstName = [_name componentsSeparatedByString:@" "][0];
         NSString* lastName;
         
         //Check to see if there is a last name provided
         @try{
             
-            lastName = [name componentsSeparatedByString:@" "][1];
+            lastName = [_name componentsSeparatedByString:@" "][1];
             
         }
         @catch(NSException *exception){
@@ -280,10 +279,10 @@
         results = [[NSArray alloc] initWithArray:[dt loadDataFromDB:query]];
         
     }
-    else if([department length] > 0){
+    else if([_department length] > 0){
         
        //Create the appropriate department query
-        [self createDepartmentQuery:department];
+        [self createDepartmentQuery:_department];
         
         query = [NSString stringWithFormat:@"SELECT * FROM Employees WHERE Department='%@'", departmentQuery];
         

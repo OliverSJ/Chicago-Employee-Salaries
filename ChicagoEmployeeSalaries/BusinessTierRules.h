@@ -10,10 +10,21 @@
 
 @protocol BusinessTierRules
 
-
+typedef NS_ENUM(NSInteger, searchType){
+    
+    searchByName = 0,
+    searchByDepartment,
+    searchByNameAndDepartment,
+    searchBySalary,
+    searchBySalaryAndDepartment,
+    searchBySalaryAndPosition,
+    searchByPosition,
+    searchByPositionAndDepartment
+    
+};
 
 //Get list of employees.
-- (NSArray*)getEmployees:(NSString*)name department:(NSString*)department;
+- (NSArray*)getEmployees;
 
 // get array of current departments
 - (NSArray*)getDepartments;

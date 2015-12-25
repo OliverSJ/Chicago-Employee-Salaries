@@ -18,7 +18,7 @@
 @property NSString* department;
 
 
-- (NSArray*)getEmployees:(NSString*)name department:(NSString*)department;
+- (NSArray*)getEmployees;
 -(NSArray*)getEmployeesBySalary:(NSString*) minSalary maximumRange: (NSString*) maxSalary;
 - (NSArray*)getDepartments;
 

@@ -164,7 +164,7 @@ alpha:1.0]
 //        
         // search by name and/or department
 //        else {
-            self.employees = [[self.currentBT getEmployees:self.currentBT.name department:self.currentBT.department] copy];
+            self.employees = [[self.currentBT getEmployees] copy];
 //        }
         if (self.employees.count <= 0) {
             self.noResultsFound = YES;

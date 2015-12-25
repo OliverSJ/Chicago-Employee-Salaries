@@ -547,6 +547,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="659-tc-ob5">
                                                 <rect key="frame" x="0.0" y="125" width="48.5" height="30"/>
                                                 <state key="normal" title="Search"/>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="gv2-eY-eXI" eventType="touchUpInside" id="qpL-gV-GMe"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -634,6 +637,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QxT-PE-Om9">
                                                 <rect key="frame" x="0.0" y="125" width="48.5" height="30"/>
                                                 <state key="normal" title="Search"/>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="4J9-aO-p2p" eventType="touchUpInside" id="uhB-1K-7mI"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -832,6 +838,6 @@
         <image name="chicago_5.png" width="996" height="1024"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="h5g-6G-f0r"/>
+        <segue reference="NQG-pM-bh0"/>
     </inferredMetricsTieBreakers>
 </document>

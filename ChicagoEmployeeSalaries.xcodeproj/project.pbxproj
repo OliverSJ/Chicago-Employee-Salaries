@@ -54,7 +54,6 @@
 		9DDB51121C2C50930004C76E /* DoubleTextFieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DDB51111C2C50930004C76E /* DoubleTextFieldViewController.m */; };
 		9DDB51151C2C52860004C76E /* NameAndDepartmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DDB51141C2C52860004C76E /* NameAndDepartmentViewController.m */; };
 		9DDB51181C2C62620004C76E /* SalaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DDB51171C2C62620004C76E /* SalaryViewController.m */; };
-		9DDB511B1C2C662F0004C76E /* PositionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DDB511A1C2C662F0004C76E /* PositionViewController.m */; };
 		9DDB511D1C2C676A0004C76E /* chicago_6.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DDB511C1C2C676A0004C76E /* chicago_6.png */; };
 		9DDB51211C2C6ED00004C76E /* chicago_7.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DDB51201C2C6ED00004C76E /* chicago_7.png */; };
 /* End PBXBuildFile section */
@@ -148,7 +147,6 @@
 		9DDB51161C2C62620004C76E /* SalaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SalaryViewController.h; sourceTree = "<group>"; };
 		9DDB51171C2C62620004C76E /* SalaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SalaryViewController.m; sourceTree = "<group>"; };
 		9DDB51191C2C662F0004C76E /* PositionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PositionViewController.h; sourceTree = "<group>"; };
-		9DDB511A1C2C662F0004C76E /* PositionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PositionViewController.m; sourceTree = "<group>"; };
 		9DDB511C1C2C676A0004C76E /* chicago_6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chicago_6.png; sourceTree = "<group>"; };
 		9DDB51201C2C6ED00004C76E /* chicago_7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chicago_7.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -292,8 +290,6 @@
 				9DDB510A1C2BD7430004C76E /* DepartmentViewController.m */,
 				9DDB51141C2C52860004C76E /* NameAndDepartmentViewController.m */,
 				9DDB51171C2C62620004C76E /* SalaryViewController.m */,
-				9DDB51191C2C662F0004C76E /* PositionViewController.h */,
-				9DDB511A1C2C662F0004C76E /* PositionViewController.m */,
 				9DC521AA1C250BFC0006E507 /* EmployeesTableViewController.m */,
 				9DA07C411C2700AE0045B1ED /* EmployeeTableViewController.m */,
 			);
@@ -335,6 +331,7 @@
 		9DDB50FE1C2BB6010004C76E /* Headers */ = {
 			isa = PBXGroup;
 			children = (
+				9DDB51191C2C662F0004C76E /* PositionViewController.h */,
 				9DDB51161C2C62620004C76E /* SalaryViewController.h */,
 				9DDB51131C2C52860004C76E /* NameAndDepartmentViewController.h */,
 				9DDB51091C2BD7430004C76E /* DepartmentViewController.h */,
@@ -547,7 +544,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DDB511B1C2C662F0004C76E /* PositionViewController.m in Sources */,
 				9DC521AB1C250BFC0006E507 /* EmployeesTableViewController.m in Sources */,
 				8F4BCF8B1C21D503002674D1 /* ViewController.m in Sources */,
 				8F4BCFB81C21DF81002674D1 /* BusinessTier.m in Sources */,

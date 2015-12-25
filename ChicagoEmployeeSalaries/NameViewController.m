@@ -19,25 +19,19 @@
 
 @implementation NameViewController
 
-- (void)initDataTier {
-    
-    self.bt = [[BusinessTier alloc]init];
-}
-
-
 #pragma mark - Segue
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     EmployeesTableViewController *etvc = [segue destinationViewController];
-    self.bt.name = [self.textField.text copy];
-    self.bt.searchType = searchByName; // <--Enum used to differentiate which type of search I want. This will allow us to wrap the "getEmployees" method by using a series of conditionals that check which enum I specified.
-    /* For example, the body of getEmployees may look something like this:
-        if (self.searchType == BTSearchByName)
-            [self searchByName]
-        else if (self.searchType == BTSearchByDepartment)
-            [self searchByDepartment] */
+    self.bt.name = self.textField.text;
+    self.bt.searchType = searchByName;
     etvc.currentBT = self.bt;
+}
+
+- (void)initDataTier {
+    
+    self.bt = [[BusinessTier alloc]init];
 }
 
 - (void)configureView {

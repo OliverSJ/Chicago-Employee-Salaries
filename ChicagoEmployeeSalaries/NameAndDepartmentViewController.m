@@ -19,6 +19,17 @@
 
 @implementation NameAndDepartmentViewController
 
+#pragma mark - Segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    EmployeesTableViewController *etvc = [segue destinationViewController];
+    self.bt.name = self.textField.text;
+    self.bt.department = self.textFieldTwo.text;
+    self.bt.searchType = searchByNameAndDepartment;
+    etvc.currentBT = self.bt;
+}
+
 - (void)initDataTier {
     
     self.bt = [[BusinessTier alloc]init];

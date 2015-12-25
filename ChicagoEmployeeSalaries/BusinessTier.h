@@ -30,7 +30,7 @@
 @property BOOL nameAndDepartmentSearch;
 @property BOOL salarySearch;
 
-@property NSInteger searchType;
+@property searchType searchType;
 
 
 

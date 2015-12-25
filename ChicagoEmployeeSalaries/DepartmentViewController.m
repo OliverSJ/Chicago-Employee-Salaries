@@ -24,6 +24,16 @@
     self.bt = [[BusinessTier alloc]init];
 }
 
+#pragma mark - Segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    EmployeesTableViewController *etvc = [segue destinationViewController];
+    self.bt.department = self.textField.text;
+    self.bt.searchType = searchByDepartment;
+    etvc.currentBT = self.bt;
+}
+
 - (void)configureView {
     
     [self initDataTier];

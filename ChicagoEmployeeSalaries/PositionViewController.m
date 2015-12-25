@@ -9,6 +9,7 @@
 #import "PositionViewController.h"
 #import "BusinessTier.h"
 #import "PrevNextSearchToolbarView.h"
+#import "EmployeesTableViewController.m"
 
 @interface PositionViewController ()
 
@@ -17,6 +18,16 @@
 @end
 
 @implementation PositionViewController
+
+//#pragma mark - Segue
+//
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//    
+//    EmployeesTableViewController *etvc = [segue destinationViewController];
+//    self.bt.positionTitle = self.textField.text;
+//    self.bt.searchType = searchByPosition;
+//    etvc.currentBT = self.bt;
+//}
 
 - (void)initDataTier {
     

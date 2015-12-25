@@ -19,6 +19,17 @@
 
 @implementation SalaryViewController
 
+#pragma mark - Segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    EmployeesTableViewController *etvc = [segue destinationViewController];
+    self.bt.minSalary = self.textField.text;
+    self.bt.maxSalary = self.textFieldTwo.text;
+    self.bt.searchType = searchBySalary;
+    etvc.currentBT = self.bt;
+}
+
 - (void)initDataTier {
     
     self.bt = [[BusinessTier alloc]init];

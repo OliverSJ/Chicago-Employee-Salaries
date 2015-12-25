@@ -13,37 +13,23 @@
 
 @interface BusinessTier : NSObject <BusinessTierRules>
 
-
-/** This DataTier object will hold the methods used to execute the database queries.*/
-@property DataTier* dt;
-
-/** Class variable that is used to store the query string */
-@property NSString* query;
-
-@property NSArray *results;
-@property NSMutableArray *tempArray;
-
+//Used by the front end to set the name and department
 @property NSString* name;
 @property NSString* department;
-@property NSString* jobPosition;
-@property NSString* annualSalary;
 
-@property EmployeeObject* employee;
-@property NSDictionary* departmentsWithCorrectSpelling;
-@property NSArray* departForFrontEnd;
-@property NSArray* departForBackEnd;
 
-- (NSArray*)getEmployees:(NSString*)name department:(NSString*)department;
+- (NSArray*)getEmployees;
 -(NSArray*)getEmployeesBySalary:(NSString*) minSalary maximumRange: (NSString*) maxSalary;
 - (NSArray*)getDepartments;
+
 
 @property BOOL nameSearch;
 @property BOOL departmentSearch;
 @property BOOL nameAndDepartmentSearch;
 @property BOOL salarySearch;
 
-//-(NSString*)parseName: (NSString*) name;
--(NSArray*)createEmployeeObjectsArray;
+
+
 
 
 @end

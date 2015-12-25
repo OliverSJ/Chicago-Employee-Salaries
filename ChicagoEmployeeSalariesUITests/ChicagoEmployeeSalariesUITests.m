@@ -7,8 +7,11 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "DepartmentViewController.h"
 
 @interface ChicagoEmployeeSalariesUITests : XCTestCase
+
+@property DepartmentViewController* pickerViewContents;
 
 @end
 
@@ -32,9 +35,16 @@
     [super tearDown];
 }
 
-- (void)testExample {
-    // Use recording to get started writing UI tests.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+- (void)testGetDepartments {
+    
+    XCUIApplication *app = [[XCUIApplication alloc] init];
+    [app.tables.staticTexts[@"Department"] tap];
+    [app.textFields[@"i.e. MAYOR'S OFFICE"] tap];
+    [app.pickers.pickerWheels[@"(Leave Blank)"] tap];
+    
+    
+    
+    
 }
 
 @end

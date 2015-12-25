@@ -62,8 +62,37 @@
     [app.toolbars.buttons[@"Search"] tap];
     
     // view employee details
-    [app.tables.staticTexts[@"MAYOR'S OFFICE"] tap];
+    [tablesQuery.staticTexts[@"EMANUEL,  RAHM"] tap];
     
+    // navigate back to search window
+    [[[[app.navigationBars[@"EmployeeTableView"] childrenMatchingType:XCUIElementTypeButton] matchingIdentifier:@"Back"] elementBoundByIndex:0] tap];
+    [[[[app.navigationBars[@"EmployeesTableView"] childrenMatchingType:XCUIElementTypeButton] matchingIdentifier:@"Back"] elementBoundByIndex:0] tap];
+    
+    // search by button in text field
+    [app.textFields[@"i.e. RAHM EMANUEL"] tap];
+    [app.keyboards.buttons[@"Search"] tap];
+    
+    // view employee details
+    [tablesQuery.staticTexts[@"EMANUEL,  RAHM"] tap];
+    
+    /****************************************************************************************
+     TEST FOR LOWER CASE USER INPUT
+     ****************************************************************************************/
+    
+    // navigate back to search window
+    [[[[app.navigationBars[@"EmployeeTableView"] childrenMatchingType:XCUIElementTypeButton] matchingIdentifier:@"Back"] elementBoundByIndex:0] tap];
+    [[[[app.navigationBars[@"EmployeesTableView"] childrenMatchingType:XCUIElementTypeButton] matchingIdentifier:@"Back"] elementBoundByIndex:0] tap];
+    
+    // select name field and type name with lower case
+    [app.textFields[@"i.e. RAHM EMANUEL"] tap];
+    [app.buttons[@"Clear text"] tap];
+    [iERahmEmanuelTextField typeText:@"rahm emanuel"];
+    
+    // search
+    [app.toolbars.buttons[@"Search"] tap];
+    
+    // view employee details
+    [tablesQuery.staticTexts[@"EMANUEL,  RAHM"] tap];
 }
 
 - (void) testSearchByDepartment {
@@ -88,7 +117,7 @@
     [[[[app.navigationBars[@"EmployeeTableView"] childrenMatchingType:XCUIElementTypeButton] matchingIdentifier:@"Back"] elementBoundByIndex:0] tap];
     [[[[app.navigationBars[@"EmployeesTableView"] childrenMatchingType:XCUIElementTypeButton] matchingIdentifier:@"Back"] elementBoundByIndex:0] tap];
     
-    // search by clicking toolbar search
+    // touch toolbar search
     [app.textFields[@"i.e. MAYOR'S OFFICE"] tap];
     [app.toolbars.buttons[@"Search"] tap];
     
@@ -134,9 +163,13 @@
     
     // view employee details again
     [abdullahLakenyaNStaticText tap];
-    
 }
+
 - (void) testSearchByNameAndDepartment {
+    
+    /****************************************************************************************
+     TEST ALL SEARCH BUTTONS WITH PERFECT INPUT
+     ****************************************************************************************/
     
     // select search by name and department
     XCUIApplication *app = [[XCUIApplication alloc] init];
@@ -151,6 +184,8 @@
     // use next toolbar button to select department
     XCUIElementQuery *toolbarsQuery = app.toolbars;
     [toolbarsQuery.buttons[@"NextIcon"] tap];
+    
+    // select mayors office from picker wheel
     [app.pickerWheels[@"(Leave Blank)"] tap];
     [app.pickers.pickerWheels.element adjustToPickerWheelValue:@"MAYOR'S OFFICE"];
     
@@ -164,21 +199,215 @@
     [[[[app.navigationBars[@"EmployeeTableView"] childrenMatchingType:XCUIElementTypeButton] matchingIdentifier:@"Back"] elementBoundByIndex:0] tap];
     [[[[app.navigationBars[@"EmployeesTableView"] childrenMatchingType:XCUIElementTypeButton] matchingIdentifier:@"Back"] elementBoundByIndex:0] tap];
     
-    // click search button
+    // tap search button
     [[app.otherElements containingType:XCUIElementTypeNavigationBar identifier:@"NameAndDepartmentView"].buttons[@"Search"] tap];
     
     // view employee details
     [tablesQuery.staticTexts[@"EMANUEL,  RAHM"] tap];
-
     
+    /****************************************************************************************
+     TEST WITH LOWERCASE INPUT
+     ****************************************************************************************/
+    
+    // navigate back to search window
+    [[[[app.navigationBars[@"EmployeeTableView"] childrenMatchingType:XCUIElementTypeButton] matchingIdentifier:@"Back"] elementBoundByIndex:0] tap];
+    [[[[app.navigationBars[@"EmployeesTableView"] childrenMatchingType:XCUIElementTypeButton] matchingIdentifier:@"Back"] elementBoundByIndex:0] tap];
+    
+    // select name field and type name with lower case
+    [app.textFields[@"i.e. RAHM EMANUEL"] tap];
+    [app.buttons[@"Clear text"] tap];
+    [iERahmEmanuelTextField typeText:@"rahm emanuel"];
+    
+    // tap search button
+    [[app.otherElements containingType:XCUIElementTypeNavigationBar identifier:@"NameAndDepartmentView"].buttons[@"Search"] tap];
+    
+    // view employee details
+    [tablesQuery.staticTexts[@"EMANUEL,  RAHM"] tap];
+    
+    /****************************************************************************************
+     TEST WITH PARTIAL AND LOWERCASE INPUT
+     ****************************************************************************************/
+    
+    // navigate back to search window
+    [[[[app.navigationBars[@"EmployeeTableView"] childrenMatchingType:XCUIElementTypeButton] matchingIdentifier:@"Back"] elementBoundByIndex:0] tap];
+    [[[[app.navigationBars[@"EmployeesTableView"] childrenMatchingType:XCUIElementTypeButton] matchingIdentifier:@"Back"] elementBoundByIndex:0] tap];
+    
+    // select name field and type name with lower case
+    [app.textFields[@"i.e. RAHM EMANUEL"] tap];
+    [app.buttons[@"Clear text"] tap];
+    [iERahmEmanuelTextField typeText:@"rahm"];
+    
+    // tap search button
+    [[app.otherElements containingType:XCUIElementTypeNavigationBar identifier:@"NameAndDepartmentView"].buttons[@"Search"] tap];
+    
+    // view employee details
+    [tablesQuery.staticTexts[@"EMANUEL,  RAHM"] tap];
 }
 
 - (void) testSearchByPosition {
+    
+    /****************************************************************************************
+     TEST ALL SEARCH BUTTONS WITH PERFECT INPUT
+     ****************************************************************************************/
+    
+    // select search by position
+    XCUIApplication *app = [[XCUIApplication alloc] init];
+    [app.tables.staticTexts[@"Postition"] tap];
+    
+    // select text field and enter rahm emanuel
+    XCUIElement *iEMayorTextField = app.textFields[@"i.e. MAYOR"];
+    [iEMayorTextField tap];
+    [iEMayorTextField typeText:@"MAYOR"];
+    
+    // search by button
+    [[app.otherElements containingType:XCUIElementTypeNavigationBar identifier:@"PositionView"].buttons[@"Search"] tap];
+    
+    // select rahm from results
+    [app.tables.staticTexts[@"EMANUEL,  RAHM"] tap];
+
+    // navigate back
+    XCUIElement *backButton2 = [[[app.navigationBars[@"EmployeeTableView"] childrenMatchingType:XCUIElementTypeButton] matchingIdentifier:@"Back"] elementBoundByIndex:0];
+    [backButton2 tap];
+    XCUIElement *backButton = [[[app.navigationBars[@"EmployeesTableView"] childrenMatchingType:XCUIElementTypeButton] matchingIdentifier:@"Back"] elementBoundByIndex:0];
+    [backButton tap];
+
+    // search by button in toolbar
+    [iEMayorTextField tap];
+    [app.toolbars.buttons[@"Search"] tap];
+    
+    // select rahm from results
+    [app.tables.staticTexts[@"EMANUEL,  RAHM"] tap];
+    
+    // navigate back
+    [backButton2 tap];
+    [backButton tap];
+    
+    // search by button in text field
+    [iEMayorTextField tap];
+    [app.keyboards.buttons[@"Search"] tap];
+    
+    // select rahm from results
+    [app.tables.staticTexts[@"EMANUEL,  RAHM"] tap];
+    
+    /****************************************************************************************
+     TEST WITH LOWERCASE USER INPUT
+     ****************************************************************************************/
+    
+    // navigate back to search window
+    [[[[app.navigationBars[@"EmployeeTableView"] childrenMatchingType:XCUIElementTypeButton] matchingIdentifier:@"Back"] elementBoundByIndex:0] tap];
+    [[[[app.navigationBars[@"EmployeesTableView"] childrenMatchingType:XCUIElementTypeButton] matchingIdentifier:@"Back"] elementBoundByIndex:0] tap];
+    
+    // select name field and type name with lower case
+    [app.textFields[@"i.e. MAYOR"] tap];
+    [app.buttons[@"Clear text"] tap];
+    [iEMayorTextField typeText:@"mayor"];
+    
+    // tap search button
+    [app.toolbars.buttons[@"Search"] tap];
+    
+    // view employee details
+    [app.tables.staticTexts[@"EMANUEL,  RAHM"] tap];
+    
+    /****************************************************************************************
+     TEST WITH PARTIAL AND LOWERCASE INPUT
+     ****************************************************************************************/
+    
+    // navigate back to search window
+    [[[[app.navigationBars[@"EmployeeTableView"] childrenMatchingType:XCUIElementTypeButton] matchingIdentifier:@"Back"] elementBoundByIndex:0] tap];
+    [[[[app.navigationBars[@"EmployeesTableView"] childrenMatchingType:XCUIElementTypeButton] matchingIdentifier:@"Back"] elementBoundByIndex:0] tap];
+    
+    // select name field and type name with lower case
+    [app.textFields[@"i.e. MAYOR"] tap];
+    [app.buttons[@"Clear text"] tap];
+    [iEMayorTextField typeText:@"may"];
+    
+    // tap search button
+    [app.toolbars.buttons[@"Search"] tap];
+    
+    // view employee details
+    [app.tables.staticTexts[@"EMANUEL,  RAHM"] tap];
 
 }
 
 - (void) testSearchByPositionAndDeparment {
     
+    /****************************************************************************************
+     TEST ALL SEARCH BUTTONS WITH PERFECT INPUT
+     ****************************************************************************************/
+    
+    // select search by position and department
+    XCUIApplication *app = [[XCUIApplication alloc] init];
+    [app.tables.staticTexts[@"Position and Department"] tap];
+    
+    // enter mayor for position
+    XCUIElement *iEMayorTextField = app.textFields[@"i.e. MAYOR"];
+    [iEMayorTextField tap];
+    [iEMayorTextField typeText:@"MAYOR"];
+    
+    // use next icon and select mayors office from pickerwheel
+    XCUIElementQuery *toolbarsQuery = app.toolbars;
+    [toolbarsQuery.buttons[@"NextIcon"] tap];
+    [app.pickerWheels[@"(Leave Blank)"] tap];
+    [app.pickers.pickerWheels.element adjustToPickerWheelValue:@"MAYOR'S OFFICE"];
+    
+    // touch search button
+    XCUIElement *searchButton = [app.otherElements containingType:XCUIElementTypeNavigationBar identifier:@"PositionAndDepartmentResultsView"].buttons[@"Search"];
+    [searchButton tap];
+    
+    // select rahm from results
+    [app.tables.staticTexts[@"EMANUEL,  RAHM"] tap];
+    
+    // navigate back
+    XCUIElement *backButton = [[[app.navigationBars[@"EmployeesTableView"] childrenMatchingType:XCUIElementTypeButton] matchingIdentifier:@"Back"] elementBoundByIndex:0];
+    [backButton tap];
+    [backButton tap];
+    
+    // search by toolbar
+    XCUIElement *iEMayorSOfficeTextField = app.textFields[@"i.e. MAYOR'S OFFICE"];
+    [iEMayorSOfficeTextField tap];
+    [toolbarsQuery.buttons[@"Search"] tap];
+    
+    // select rahm from results
+    [app.tables.staticTexts[@"EMANUEL,  RAHM"] tap];
+    
+    /****************************************************************************************
+     TEST WITH LOWERCASE USER INPUT
+     ****************************************************************************************/
+    
+    // navigate back to search window
+    [[[[app.navigationBars[@"EmployeeTableView"] childrenMatchingType:XCUIElementTypeButton] matchingIdentifier:@"Back"] elementBoundByIndex:0] tap];
+    [[[[app.navigationBars[@"EmployeesTableView"] childrenMatchingType:XCUIElementTypeButton] matchingIdentifier:@"Back"] elementBoundByIndex:0] tap];
+    
+    // select name field and type name with lower case
+    [app.textFields[@"i.e. MAYOR"] tap];
+    [app.buttons[@"Clear text"] tap];
+    [iEMayorTextField typeText:@"mayor"];
+    
+    // tap search button
+    [app.toolbars.buttons[@"Search"] tap];
+    
+    // view employee details
+    [app.tables.staticTexts[@"EMANUEL,  RAHM"] tap];
+    
+    /****************************************************************************************
+     TEST WITH PARTIAL AND LOWERCASE INPUT
+     ****************************************************************************************/
+    
+    // navigate back to search window
+    [[[[app.navigationBars[@"EmployeeTableView"] childrenMatchingType:XCUIElementTypeButton] matchingIdentifier:@"Back"] elementBoundByIndex:0] tap];
+    [[[[app.navigationBars[@"EmployeesTableView"] childrenMatchingType:XCUIElementTypeButton] matchingIdentifier:@"Back"] elementBoundByIndex:0] tap];
+    
+    // select name field and type name with lower case
+    [app.textFields[@"i.e. MAYOR"] tap];
+    [app.buttons[@"Clear text"] tap];
+    [iEMayorTextField typeText:@"may"];
+    
+    // tap search button
+    [app.toolbars.buttons[@"Search"] tap];
+    
+    // view employee details
+    [app.tables.staticTexts[@"EMANUEL,  RAHM"] tap];
+
 }
 
 - (void) testSearchBySalaryAndDeparment {

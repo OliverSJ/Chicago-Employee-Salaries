@@ -41,6 +41,9 @@
 		9D1ABE061C276B2A009F0013 /* UIView+FormScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1ABE051C276B2A009F0013 /* UIView+FormScroll.m */; };
 		9D1ABE091C27B215009F0013 /* NameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1ABE081C27B215009F0013 /* NameViewController.m */; };
 		9D48C3D81C21E219002F9036 /* DataTier.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D48C3D71C21E219002F9036 /* DataTier.m */; };
+		9D6823EE1C2DAA20001DBFC1 /* PositionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D6823ED1C2DAA20001DBFC1 /* PositionViewController.m */; };
+		9D6823F11C2DAE87001DBFC1 /* PositionAndDepartmentResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D6823F01C2DAE87001DBFC1 /* PositionAndDepartmentResultsViewController.m */; };
+		9D6823F31C2DB055001DBFC1 /* chicago_8.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D6823F21C2DB055001DBFC1 /* chicago_8.png */; };
 		9DA07C421C2700AE0045B1ED /* EmployeeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA07C411C2700AE0045B1ED /* EmployeeTableViewController.m */; };
 		9DC521AB1C250BFC0006E507 /* EmployeesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DC521AA1C250BFC0006E507 /* EmployeesTableViewController.m */; };
 		9DC521B31C25FD350006E507 /* back_large.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DC521AF1C25FD350006E507 /* back_large.png */; };
@@ -123,6 +126,11 @@
 		9D1ABE081C27B215009F0013 /* NameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NameViewController.m; sourceTree = "<group>"; };
 		9D1ABE0A1C27C098009F0013 /* NameAndDepartmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NameAndDepartmentViewController.h; sourceTree = "<group>"; };
 		9D48C3D71C21E219002F9036 /* DataTier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataTier.m; sourceTree = "<group>"; };
+		9D6823EC1C2DAA20001DBFC1 /* PositionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PositionViewController.h; sourceTree = "<group>"; };
+		9D6823ED1C2DAA20001DBFC1 /* PositionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PositionViewController.m; sourceTree = "<group>"; };
+		9D6823EF1C2DAE87001DBFC1 /* PositionAndDepartmentResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PositionAndDepartmentResultsViewController.h; sourceTree = "<group>"; };
+		9D6823F01C2DAE87001DBFC1 /* PositionAndDepartmentResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PositionAndDepartmentResultsViewController.m; sourceTree = "<group>"; };
+		9D6823F21C2DB055001DBFC1 /* chicago_8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chicago_8.png; sourceTree = "<group>"; };
 		9DA07C401C2700AE0045B1ED /* EmployeeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmployeeTableViewController.h; sourceTree = "<group>"; };
 		9DA07C411C2700AE0045B1ED /* EmployeeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmployeeTableViewController.m; sourceTree = "<group>"; };
 		9DC521A91C250BFC0006E507 /* EmployeesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmployeesTableViewController.h; sourceTree = "<group>"; };
@@ -292,6 +300,8 @@
 				9DDB51171C2C62620004C76E /* SalaryViewController.m */,
 				9DC521AA1C250BFC0006E507 /* EmployeesTableViewController.m */,
 				9DA07C411C2700AE0045B1ED /* EmployeeTableViewController.m */,
+				9D6823ED1C2DAA20001DBFC1 /* PositionViewController.m */,
+				9D6823F01C2DAE87001DBFC1 /* PositionAndDepartmentResultsViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -331,10 +341,12 @@
 		9DDB50FE1C2BB6010004C76E /* Headers */ = {
 			isa = PBXGroup;
 			children = (
+				9D6823EF1C2DAE87001DBFC1 /* PositionAndDepartmentResultsViewController.h */,
 				9DDB51191C2C662F0004C76E /* PositionViewController.h */,
 				9DDB51161C2C62620004C76E /* SalaryViewController.h */,
 				9DDB51131C2C52860004C76E /* NameAndDepartmentViewController.h */,
 				9DDB51091C2BD7430004C76E /* DepartmentViewController.h */,
+				9D6823EC1C2DAA20001DBFC1 /* PositionViewController.h */,
 				8F4BCF891C21D503002674D1 /* ViewController.h */,
 				9D1ABE0A1C27C098009F0013 /* NameAndDepartmentViewController.h */,
 				9D1ABE071C27B215009F0013 /* NameViewController.h */,
@@ -358,6 +370,7 @@
 		9DDB511F1C2C6D880004C76E /* Backgrounds */ = {
 			isa = PBXGroup;
 			children = (
+				9D6823F21C2DB055001DBFC1 /* chicago_8.png */,
 				8F92C1C41C2B3AA00091BF99 /* chicago_flag.png */,
 				8F92C1C01C2B3AA00091BF99 /* chicago_1.png */,
 				8F92C1431C29CAD90091BF99 /* chicago_2.png */,
@@ -503,6 +516,7 @@
 				8F92C1521C29CAE40091BF99 /* dollar_circle_2.png in Resources */,
 				8F4BCF931C21D503002674D1 /* LaunchScreen.storyboard in Resources */,
 				9DC521B61C25FD350006E507 /* next_small.png in Resources */,
+				9D6823F31C2DB055001DBFC1 /* chicago_8.png in Resources */,
 				8F92C1511C29CAE40091BF99 /* dollar_circle_1.png in Resources */,
 				8F4BCF901C21D503002674D1 /* Assets.xcassets in Resources */,
 				8F92C13F1C29CACC0091BF99 /* app_image.png in Resources */,
@@ -544,6 +558,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D6823EE1C2DAA20001DBFC1 /* PositionViewController.m in Sources */,
 				9DC521AB1C250BFC0006E507 /* EmployeesTableViewController.m in Sources */,
 				8F4BCF8B1C21D503002674D1 /* ViewController.m in Sources */,
 				8F4BCFB81C21DF81002674D1 /* BusinessTier.m in Sources */,
@@ -553,6 +568,7 @@
 				8F4BCF851C21D503002674D1 /* main.m in Sources */,
 				9DDB510B1C2BD7430004C76E /* DepartmentViewController.m in Sources */,
 				9DDB51151C2C52860004C76E /* NameAndDepartmentViewController.m in Sources */,
+				9D6823F11C2DAE87001DBFC1 /* PositionAndDepartmentResultsViewController.m in Sources */,
 				9DC521B91C2620730006E507 /* EmployeeObject.m in Sources */,
 				9DA07C421C2700AE0045B1ED /* EmployeeTableViewController.m in Sources */,
 				9DDB51121C2C50930004C76E /* DoubleTextFieldViewController.m in Sources */,

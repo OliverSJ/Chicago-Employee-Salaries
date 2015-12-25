@@ -6,18 +6,18 @@
 //  Copyright © 2015 Oliver San Juan. All rights reserved.
 //
 
-#import "PositionViewController.h"
+#import "PositionAndDepartmentResultsViewController.h"
 #import "BusinessTier.h"
 #import "EmployeesTableViewController.h"
 #import "PrevNextSearchToolbarView.h"
 
-@interface PositionViewController ()
+@interface PositionAndDepartmentResultsViewController ()
 
 @property (strong, nonatomic) BusinessTier *bt;
 
 @end
 
-@implementation PositionViewController
+@implementation PositionAndDepartmentResultsViewController
 
 #pragma mark - Segue
 
@@ -25,7 +25,8 @@
     
     EmployeesTableViewController *etvc = [segue destinationViewController];
     self.bt.positionTitle = self.textField.text;
-    self.bt.searchType = searchByPosition;
+    self.bt.department = self.textFieldTwo.text;
+    self.bt.searchType = searchByPositionAndDepartment;
     etvc.currentBT = self.bt;
 }
 
@@ -38,16 +39,16 @@
     
     [self initDataTier];
     
-    self.segueID = @"PositionResults";
-    self.label.text = @"Search by Position";
+    self.segueID = @"PositionAndDepartmentResults";
+    self.label.text = @"Enter a Position";
+    self.labelTwo.text = @"Select a Department";
     self.textField.placeholder = @"i.e. MAYOR";
-    self.backgroundImageName = @"chicago_7.png";
+    self.textFieldTwo.placeholder = @"i.e. MAYOR'S OFFICE";
+    self.backgroundImageName = @"chicago_8.png";
+    self.pickerViewContents = [self.bt getDepartments];
     
-    // configure toolbar
-    PrevNextSearchToolbarView *toolBar = [[PrevNextSearchToolbarView alloc]initWithSelectors:nil nextSelector:nil searchSelector:@selector(buttonPressed:)];
-    
-    self.textField.inputAccessoryView = toolBar;
-    
+    [super addPickerView:self.textFieldTwo]; // add picker view to the second text field
+    [super addToolbars]; // add toolbars to both text fields
     [super configureView];
 }
 
@@ -58,7 +59,7 @@
 
 - (void)viewDidLoad {
     
-    //[super viewDidLoad];
+    [super viewDidLoad];
     [self configureView];
 }
 

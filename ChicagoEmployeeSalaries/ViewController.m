@@ -76,10 +76,15 @@ alpha:1.0]
             [self performSegueWithIdentifier:@"SearchBySalary" sender:self];
             break;
         case 3:
-            //[self performSegueWithIdentifier:@"SearchByPosition" sender:self];
+            [self performSegueWithIdentifier:@"SearchByPosition" sender:self];
             break;
         case 4:
             [self performSegueWithIdentifier:@"SearchByNameAndDepartment" sender:self];
+            break;
+        case 5:
+            [self performSegueWithIdentifier:@"SearchByPositionAndDepartment" sender:self];
+            break;
+        default:
             break;
     }
     

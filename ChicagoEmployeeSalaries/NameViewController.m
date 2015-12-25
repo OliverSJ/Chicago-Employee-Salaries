@@ -43,7 +43,7 @@
     self.textField.placeholder = @"i.e. RAHM EMANUEL";
     self.backgroundImageName = @"chicago_4.png";
     
-    // configure toolbar for picker view
+    // configure toolbar
     PrevNextSearchToolbarView *toolBar = [[PrevNextSearchToolbarView alloc]initWithSelectors:nil nextSelector:nil searchSelector:@selector(buttonPressed:)];
     
     self.textField.inputAccessoryView = toolBar;

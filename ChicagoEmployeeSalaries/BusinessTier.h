@@ -13,15 +13,28 @@
 
 @interface BusinessTier : NSObject <BusinessTierRules>
 
-//Used by the front end to set the name and department
+
 @property NSString* name;
 @property NSString* department;
 @property NSString* minSalary;
 @property NSString* maxSalary;
 @property NSString* positionTitle;
 
-
+/**
+    @brief This method will query the database based on user input for employee name and department
+    @param name: Can be nil or blank
+    @param department: Can be nil or blank
+ 
+    @return Returns an NSArray of EmployeeObject
+ 
+ */
 - (NSArray*)getEmployees;
+
+/**
+    @brief This method returns the list of departments with correct spelling
+    @return NSArray of Strings
+ 
+ */
 - (NSArray*)getDepartments;
 
 
@@ -30,6 +43,7 @@
 @property BOOL nameAndDepartmentSearch;
 @property BOOL salarySearch;
 
+/** @brief Variable set by the front end to tell the back end what query should be made*/
 @property searchType searchType;
 
 

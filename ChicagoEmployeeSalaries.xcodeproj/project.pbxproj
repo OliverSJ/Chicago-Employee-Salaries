@@ -224,12 +224,6 @@
 		8F4BCF821C21D503002674D1 /* ChicagoEmployeeSalaries */ = {
 			isa = PBXGroup;
 			children = (
-				8F92C1F01C2F1A9B0091BF99 /* SalaryAndDepartmentViewController.h */,
-				8F92C1F11C2F1A9B0091BF99 /* SalaryAndDepartmentViewController.m */,
-				8F92C1F21C2F1A9B0091BF99 /* SalaryAndPositionViewController.h */,
-				8F92C1F31C2F1A9B0091BF99 /* SalaryAndPositionViewController.m */,
-				8F92C1F41C2F1A9B0091BF99 /* TripleTextFieldViewController.h */,
-				8F92C1F51C2F1A9B0091BF99 /* TripleTextFieldViewController.m */,
 				8F4BCF861C21D503002674D1 /* AppDelegate.h */,
 				8F4BCF871C21D503002674D1 /* AppDelegate.m */,
 				9DC521BA1C2620E90006E507 /* BusinessTierRules.h */,
@@ -266,6 +260,12 @@
 				8F92C1E31C2E5A260091BF99 /* SingleTextFieldViewController.h */,
 				8F92C1E41C2E5A260091BF99 /* SingleTextFieldViewController.m */,
 				9D1ABE0E1C27C92F009F0013 /* SalaryViewController.m */,
+				8F92C1F01C2F1A9B0091BF99 /* SalaryAndDepartmentViewController.h */,
+				8F92C1F11C2F1A9B0091BF99 /* SalaryAndDepartmentViewController.m */,
+				8F92C1F21C2F1A9B0091BF99 /* SalaryAndPositionViewController.h */,
+				8F92C1F31C2F1A9B0091BF99 /* SalaryAndPositionViewController.m */,
+				8F92C1F41C2F1A9B0091BF99 /* TripleTextFieldViewController.h */,
+				8F92C1F51C2F1A9B0091BF99 /* TripleTextFieldViewController.m */,
 				8F4BCF8C1C21D503002674D1 /* Main.storyboard */,
 				8F4BCF8F1C21D503002674D1 /* Assets.xcassets */,
 				8F4BCF911C21D503002674D1 /* LaunchScreen.storyboard */,

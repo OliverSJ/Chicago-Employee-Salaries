@@ -6,8 +6,8 @@
 //  Copyright © 2015 Oliver San Juan. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "SingleTextFieldViewController.h"
 
-@interface NameViewController : UIViewController
+@interface NameViewController : SingleTextFieldViewController
 
 @end

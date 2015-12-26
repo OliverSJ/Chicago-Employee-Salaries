@@ -6,27 +6,26 @@
 //  Copyright © 2015 Oliver San Juan. All rights reserved.
 //
 
-#import "SalaryViewController.h"
+#import "PositionViewController.h"
 #import "BusinessTier.h"
 #import "EmployeesTableViewController.h"
 #import "PrevNextSearchToolbarView.h"
 
-@interface SalaryViewController ()
+@interface PositionViewController ()
 
 @property (strong, nonatomic) BusinessTier *bt;
 
 @end
 
-@implementation SalaryViewController
+@implementation PositionViewController
 
 #pragma mark - Segue
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     EmployeesTableViewController *etvc = [segue destinationViewController];
-    self.bt.minSalary = self.textField.text;
-    self.bt.maxSalary = self.textFieldTwo.text;
-    self.bt.searchType = searchBySalary;
+    self.bt.positionTitle = self.textField.text;
+    self.bt.searchType = searchByPosition;
     etvc.currentBT = self.bt;
 }
 
@@ -39,16 +38,16 @@
     
     [self initDataTier];
     
-    self.segueID = @"SalaryResults";
-    self.label.text = @"Enter a Minimum Salary";
-    self.labelTwo.text = @"Enter a Maximum Salary";
-    self.textField.placeholder = @"i.e. 100000";
-    self.textField.keyboardType = UIKeyboardTypeNumberPad;
-    self.textFieldTwo.placeholder = @"i.e. 120000";
-    self.textFieldTwo.keyboardType = UIKeyboardTypeNumberPad;
-    self.backgroundImageName = @"chicago_2.png";
+    self.segueID = @"PositionResults";
+    self.label.text = @"Search by Position";
+    self.textField.placeholder = @"i.e. MAYOR";
+    self.backgroundImageName = @"chicago_7.png";
     
-    [super addToolbars]; // add toolbars to both text fields
+    // configure toolbar
+    PrevNextSearchToolbarView *toolBar = [[PrevNextSearchToolbarView alloc]initWithSelectors:nil nextSelector:nil searchSelector:@selector(buttonPressed:)];
+    
+    self.textField.inputAccessoryView = toolBar;
+    
     [super configureView];
 }
 
@@ -59,7 +58,7 @@
 
 - (void)viewDidLoad {
     
-    [super viewDidLoad];
+    //[super viewDidLoad];
     [self configureView];
 }
 

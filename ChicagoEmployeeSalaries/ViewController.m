@@ -73,10 +73,18 @@ alpha:1.0]
             [self performSegueWithIdentifier:@"SearchByDepartment" sender:self];
             break;
         case 2:
-            [self performSegueWithIdentifier:@"SearchByNameAndDepartment" sender:self];
+            [self performSegueWithIdentifier:@"SearchBySalary" sender:self];
             break;
         case 3:
-            [self performSegueWithIdentifier:@"SearchBySalary" sender:self];
+            [self performSegueWithIdentifier:@"SearchByPosition" sender:self];
+            break;
+        case 4:
+            [self performSegueWithIdentifier:@"SearchByNameAndDepartment" sender:self];
+            break;
+        case 5:
+            [self performSegueWithIdentifier:@"SearchByPositionAndDepartment" sender:self];
+            break;
+        default:
             break;
     }
     
@@ -86,18 +94,12 @@ alpha:1.0]
 }
 
 /*************************************************
- VIEWS
+ VIEW METHODS
  *************************************************/
 
 #pragma mark - View Methods
 
--(void)viewDidAppear:(BOOL)animated {
-    [self.tableView flashScrollIndicators];
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
+-(void)configureView {
     // round center view
     self.centerView.layer.cornerRadius = 20;
     self.centerView.layer.masksToBounds = YES;
@@ -109,10 +111,20 @@ alpha:1.0]
     [self.view sendSubviewToBack:backgroundView];
     
     // Do any additional setup after loading the view, typically from a nib.
-    self.tableViewCells = @[@"Name", @"Department", @"Name and Department", @"Salary", @"Salary and Department", @"Salary and Position", @"Postition", @"Position and Deparment"];
+    self.tableViewCells = @[@"Name", @"Department", @"Salary", @"Postition", @"Name and Department", @"Position and Department", @"Salary and Department", @"Salary and Position"];
     
     // helps hide separators in certain cells, see cellForRowAtIndexPath in tableView for more
     self.tableView.separatorColor = [UIColor clearColor];
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    [self.tableView flashScrollIndicators];
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [self configureView];
 }
 
 #pragma mark - Memory Methods

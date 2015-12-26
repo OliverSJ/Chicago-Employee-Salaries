@@ -7,12 +7,6 @@
 //
 
 #import "EmployeeTableViewController.h"
-// allow for hex input color
-#define UIColorFromRGB(rgbValue) \
-[UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
-green:((float)((rgbValue & 0x00FF00) >>  8))/255.0 \
-blue:((float)((rgbValue & 0x0000FF) >>  0))/255.0 \
-alpha:1.0]
 
 @interface EmployeeTableViewController()
 
@@ -57,14 +51,12 @@ alpha:1.0]
     label.font = [UIFont boldSystemFontOfSize:16];
     label.text = sectionTitle;
     
-    
     // Get the length of the current section in pixels
     CGSize textSize = [[label text] sizeWithAttributes:@{NSFontAttributeName:[label font]}];
     CGFloat strikeWidth = textSize.width;
     
     // Set size of label dynamically
     label.frame = CGRectMake(20, 6, strikeWidth, 30);
-
     
     // Create header view and add label as a subview
     CGRect frame = CGRectMake(0, 0, tableView.bounds.size.width, UITableViewAutomaticDimension);
@@ -136,24 +128,8 @@ alpha:1.0]
     [self.view addSubview:backgroundView];
     [self.view sendSubviewToBack:backgroundView];
     
-    //convert string to decimal
-    NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
-    f.numberStyle = NSNumberFormatterDecimalStyle;
-    NSNumber *salary = [f numberFromString:self.currentEmployee.annualSalary];
-    
-    // convert decimal string to currency string
-    // i.e. 1535.00 -> $1,535
-    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-    [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
-    NSString *groupingSeparator = [[NSLocale currentLocale] objectForKey:NSLocaleGroupingSeparator];
-    [formatter setGroupingSeparator:groupingSeparator];
-    [formatter setGroupingSize:3];
-    [formatter setAlwaysShowsDecimalSeparator:NO];
-    [formatter setUsesGroupingSeparator:YES];
-    NSString *formattedString = [formatter stringFromNumber:salary];
-    
     // fill cell contents with employee details
-    self.salaryCell.detailTextLabel.text = formattedString;
+    self.salaryCell.detailTextLabel.text = self.currentEmployee.annualSalary;
     self.positionCell.detailTextLabel.text = self.currentEmployee.jobPosition;
     self.departmentCell.detailTextLabel.text = self.currentEmployee.department;
     

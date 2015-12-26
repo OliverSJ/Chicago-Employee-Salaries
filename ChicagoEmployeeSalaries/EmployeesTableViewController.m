@@ -29,33 +29,65 @@ alpha:1.0]
 @implementation EmployeesTableViewController
 
 /*************************************************
+ HELPERS
+ *************************************************/
+
+- (NSString*) convertCurrencyStringtoDecimalString:(NSString*)currencyString {
+    NSString *decimalString;
+    
+    // atempt to remove $ if it exists
+    @try {
+        decimalString = [currencyString stringByReplacingOccurrencesOfString:@"$"   withString:@""];
+    }
+    @catch (NSException *exception) {
+        // do nothing
+    }
+    
+    // atempt to remove comma if it exists
+    @try {
+        decimalString = [decimalString stringByReplacingOccurrencesOfString:@","   withString:@""];
+    }
+    @catch (NSException *exception) {
+        // do nothing
+    }
+    
+    return decimalString;
+}
+
+/*************************************************
  TEXT LABELS
  *************************************************/
 
 #pragma mark - Text Label Methods
 
 /**
- @brief Sets the detail text label of a table cell to the 
+ @brief Sets the detail text label of a table cell to the
  appropriate stirng value.
  
  @description This method is smart in the sense that it
- chooses which label to display depending on the 
+ chooses which label to display depending on the
  user's search query.
  
  @param index The index where the given employee exists.
  */
 - (NSString*) setDetailTextLabel:(int)index {
-    if (self.currentBT.nameSearch) {
+    
+    //    // display department in cell details
+    if (self.currentBT.searchType == searchByName) {
         return [self.employees[index] department];
     }
     
-    else if (self.currentBT.salarySearch) {
+    // display salary in cell details
+    else if (self.currentBT.searchType == searchBySalary
+             || self.currentBT.searchType == searchByPositionAndDepartment) {
         return [self.employees[index] annualSalary];
     }
     
+    // display job position in cell details
     else {
         return [self.employees[index] jobPosition];
     }
+    return nil;
 }
 
 /*************************************************
@@ -99,14 +131,16 @@ alpha:1.0]
         cell.selectedBackgroundView = [UIView new]; // create new view in cell
         cell.selectedBackgroundView.backgroundColor = UIColorFromRGB(0xB3DDF2); // color selection chicago blue
         
+        NSString *decimalString = [self convertCurrencyStringtoDecimalString:[self.employees[indexPath.row]annualSalary]];
+        
         // select image to give user information about the employees salary
-        if ([[self.employees[indexPath.row] annualSalary] integerValue] < 60000) {
+        if ([decimalString integerValue] < 60000) {
             cell.imageView.image = [UIImage imageNamed:@"dollar_circle_1.png"]; // add image to each cell
         }
-        else if ([[self.employees[indexPath.row] annualSalary] integerValue] < 90000) {
+        else if ([decimalString integerValue] < 90000) {
             cell.imageView.image = [UIImage imageNamed:@"dollar_circle_2.png"]; // add image to each cell
         }
-        else if ([[self.employees[indexPath.row] annualSalary] integerValue] < 150000) {
+        else if ([decimalString integerValue] < 150000) {
             cell.imageView.image = [UIImage imageNamed:@"dollar_circle_3.png"]; // add image to each cell
         }
         else {
@@ -128,7 +162,6 @@ alpha:1.0]
         cell.accessoryType = UITableViewCellAccessoryNone; // remove arrow
         cell.selectionStyle = UITableViewCellSelectionStyleNone; // make appearance unclickable
         cell.userInteractionEnabled = NO; // disable user interaction
-
     }
     
     return cell;
@@ -157,15 +190,7 @@ alpha:1.0]
     // asnyc call for getEmployees
     // shows ActivityIndicator while waiting for response
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        // get deep copy array of employees
-//        // search by salary
-//        if (self.currentBT.salarySearch)
-//            self.employees = [[self.currentBT getEmployeesBySalary:self.currentBT.minSalary maxSalary:self.currentBT.maxSalary] copy];
-//        
-        // search by name and/or department
-//        else {
-            self.employees = [[self.currentBT getEmployees] copy];
-//        }
+        self.employees = [self.currentBT getEmployees];
         if (self.employees.count <= 0) {
             self.noResultsFound = YES;
         }

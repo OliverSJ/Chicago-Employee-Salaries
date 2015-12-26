@@ -2,12 +2,12 @@
 //  DepartmentViewController.h
 //  ChicagoEmployeeSalaries
 //
-//  Created by Bradley Golden on 12/20/15.
+//  Created by Bradley Golden on 12/23/15.
 //  Copyright © 2015 Oliver San Juan. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "SingleTextFieldViewController.h"
 
-@interface DepartmentViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
+@interface DepartmentViewController : SingleTextFieldViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 
 @end

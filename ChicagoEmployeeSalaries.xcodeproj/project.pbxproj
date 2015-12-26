@@ -47,6 +47,12 @@
 		8F92C1EA1C2E5A260091BF99 /* PositionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F92C1E01C2E5A260091BF99 /* PositionViewController.m */; };
 		8F92C1EB1C2E5A260091BF99 /* PrevNextSearchToolbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F92C1E21C2E5A260091BF99 /* PrevNextSearchToolbarView.m */; };
 		8F92C1EC1C2E5A260091BF99 /* SingleTextFieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F92C1E41C2E5A260091BF99 /* SingleTextFieldViewController.m */; };
+		8F92C1F61C2F1A9B0091BF99 /* chicago_6.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F92C1ED1C2F1A9B0091BF99 /* chicago_6.png */; };
+		8F92C1F71C2F1A9B0091BF99 /* chicago_9.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F92C1EE1C2F1A9B0091BF99 /* chicago_9.png */; };
+		8F92C1F81C2F1A9B0091BF99 /* chicago_10.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F92C1EF1C2F1A9B0091BF99 /* chicago_10.png */; };
+		8F92C1F91C2F1A9B0091BF99 /* SalaryAndDepartmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F92C1F11C2F1A9B0091BF99 /* SalaryAndDepartmentViewController.m */; };
+		8F92C1FA1C2F1A9B0091BF99 /* SalaryAndPositionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F92C1F31C2F1A9B0091BF99 /* SalaryAndPositionViewController.m */; };
+		8F92C1FB1C2F1A9B0091BF99 /* TripleTextFieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F92C1F51C2F1A9B0091BF99 /* TripleTextFieldViewController.m */; };
 		9D1ABE031C276074009F0013 /* DepartmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1ABE021C276074009F0013 /* DepartmentViewController.m */; };
 		9D1ABE061C276B2A009F0013 /* UIView+FormScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1ABE051C276B2A009F0013 /* UIView+FormScroll.m */; };
 		9D1ABE091C27B215009F0013 /* NameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1ABE081C27B215009F0013 /* NameViewController.m */; };
@@ -135,6 +141,15 @@
 		8F92C1E21C2E5A260091BF99 /* PrevNextSearchToolbarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrevNextSearchToolbarView.m; sourceTree = "<group>"; };
 		8F92C1E31C2E5A260091BF99 /* SingleTextFieldViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleTextFieldViewController.h; sourceTree = "<group>"; };
 		8F92C1E41C2E5A260091BF99 /* SingleTextFieldViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleTextFieldViewController.m; sourceTree = "<group>"; };
+		8F92C1ED1C2F1A9B0091BF99 /* chicago_6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chicago_6.png; sourceTree = "<group>"; };
+		8F92C1EE1C2F1A9B0091BF99 /* chicago_9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chicago_9.png; sourceTree = "<group>"; };
+		8F92C1EF1C2F1A9B0091BF99 /* chicago_10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chicago_10.png; sourceTree = "<group>"; };
+		8F92C1F01C2F1A9B0091BF99 /* SalaryAndDepartmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SalaryAndDepartmentViewController.h; sourceTree = "<group>"; };
+		8F92C1F11C2F1A9B0091BF99 /* SalaryAndDepartmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SalaryAndDepartmentViewController.m; sourceTree = "<group>"; };
+		8F92C1F21C2F1A9B0091BF99 /* SalaryAndPositionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SalaryAndPositionViewController.h; sourceTree = "<group>"; };
+		8F92C1F31C2F1A9B0091BF99 /* SalaryAndPositionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SalaryAndPositionViewController.m; sourceTree = "<group>"; };
+		8F92C1F41C2F1A9B0091BF99 /* TripleTextFieldViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripleTextFieldViewController.h; sourceTree = "<group>"; };
+		8F92C1F51C2F1A9B0091BF99 /* TripleTextFieldViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripleTextFieldViewController.m; sourceTree = "<group>"; };
 		9D1ABE011C276074009F0013 /* DepartmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DepartmentViewController.h; sourceTree = "<group>"; };
 		9D1ABE021C276074009F0013 /* DepartmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DepartmentViewController.m; sourceTree = "<group>"; };
 		9D1ABE041C276B2A009F0013 /* UIView+FormScroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FormScroll.h"; sourceTree = "<group>"; };
@@ -209,6 +224,12 @@
 		8F4BCF821C21D503002674D1 /* ChicagoEmployeeSalaries */ = {
 			isa = PBXGroup;
 			children = (
+				8F92C1F01C2F1A9B0091BF99 /* SalaryAndDepartmentViewController.h */,
+				8F92C1F11C2F1A9B0091BF99 /* SalaryAndDepartmentViewController.m */,
+				8F92C1F21C2F1A9B0091BF99 /* SalaryAndPositionViewController.h */,
+				8F92C1F31C2F1A9B0091BF99 /* SalaryAndPositionViewController.m */,
+				8F92C1F41C2F1A9B0091BF99 /* TripleTextFieldViewController.h */,
+				8F92C1F51C2F1A9B0091BF99 /* TripleTextFieldViewController.m */,
 				8F4BCF861C21D503002674D1 /* AppDelegate.h */,
 				8F4BCF871C21D503002674D1 /* AppDelegate.m */,
 				9DC521BA1C2620E90006E507 /* BusinessTierRules.h */,
@@ -257,6 +278,9 @@
 		8F4BCF831C21D503002674D1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8F92C1ED1C2F1A9B0091BF99 /* chicago_6.png */,
+				8F92C1EE1C2F1A9B0091BF99 /* chicago_9.png */,
+				8F92C1EF1C2F1A9B0091BF99 /* chicago_10.png */,
 				8F92C1D81C2E5A260091BF99 /* chicago_7.png */,
 				8F92C1D91C2E5A260091BF99 /* chicago_8.png */,
 				8F92C1D61C2DE6080091BF99 /* chicago_employee_salaries_db.sql */,
@@ -440,6 +464,9 @@
 				9DC521B41C25FD350006E507 /* back_small.png in Resources */,
 				8F92C1591C29CAF20091BF99 /* flag.png in Resources */,
 				8F92C1E71C2E5A260091BF99 /* chicago_employees_salaries_db.sql in Resources */,
+				8F92C1F71C2F1A9B0091BF99 /* chicago_9.png in Resources */,
+				8F92C1F81C2F1A9B0091BF99 /* chicago_10.png in Resources */,
+				8F92C1F61C2F1A9B0091BF99 /* chicago_6.png in Resources */,
 				8F92C1CD1C2B3AA00091BF99 /* chicago_5.png in Resources */,
 				8F92C1CE1C2B3AA00091BF99 /* chicago_flag.png in Resources */,
 				8F92C1D31C2B3AA00091BF99 /* spotlight_image@3x.png in Resources */,
@@ -475,7 +502,9 @@
 				9D1ABE031C276074009F0013 /* DepartmentViewController.m in Sources */,
 				9D1ABE0F1C27C92F009F0013 /* SalaryViewController.m in Sources */,
 				8F92C1EC1C2E5A260091BF99 /* SingleTextFieldViewController.m in Sources */,
+				8F92C1FA1C2F1A9B0091BF99 /* SalaryAndPositionViewController.m in Sources */,
 				8F4BCF8B1C21D503002674D1 /* ViewController.m in Sources */,
+				8F92C1F91C2F1A9B0091BF99 /* SalaryAndDepartmentViewController.m in Sources */,
 				8F4BCFB81C21DF81002674D1 /* BusinessTier.m in Sources */,
 				8F4BCF881C21D503002674D1 /* AppDelegate.m in Sources */,
 				9D48C3D81C21E219002F9036 /* DataTier.m in Sources */,
@@ -486,6 +515,7 @@
 				9DC521B91C2620730006E507 /* EmployeeObject.m in Sources */,
 				9D1ABE0C1C27C098009F0013 /* NameAndDepartmentViewController.m in Sources */,
 				9DA07C421C2700AE0045B1ED /* EmployeeTableViewController.m in Sources */,
+				8F92C1FB1C2F1A9B0091BF99 /* TripleTextFieldViewController.m in Sources */,
 				8F92C1E91C2E5A260091BF99 /* PositionAndDepartmentResultsViewController.m in Sources */,
 				9D1ABE061C276B2A009F0013 /* UIView+FormScroll.m in Sources */,
 			);

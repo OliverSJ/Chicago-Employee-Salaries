@@ -14,7 +14,6 @@
 		8F4BCF901C21D503002674D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F4BCF8F1C21D503002674D1 /* Assets.xcassets */; };
 		8F4BCF931C21D503002674D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F4BCF911C21D503002674D1 /* LaunchScreen.storyboard */; };
 		8F4BCF9E1C21D503002674D1 /* ChicagoEmployeeSalariesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F4BCF9D1C21D503002674D1 /* ChicagoEmployeeSalariesTests.m */; };
-		8F4BCFA91C21D503002674D1 /* ChicagoEmployeeSalariesUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F4BCFA81C21D503002674D1 /* ChicagoEmployeeSalariesUITests.m */; };
 		8F4BCFB81C21DF81002674D1 /* BusinessTier.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F4BCFB71C21DF81002674D1 /* BusinessTier.m */; };
 		8F92C13F1C29CACC0091BF99 /* app_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F92C13B1C29CACC0091BF99 /* app_image.png */; };
 		8F92C1411C29CACC0091BF99 /* app_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F92C13D1C29CACC0091BF99 /* app_image@2x.png */; };
@@ -38,7 +37,6 @@
 		8F92C1D21C2B3AA00091BF99 /* spotlight_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F92C1C81C2B3AA00091BF99 /* spotlight_image@2x.png */; };
 		8F92C1D31C2B3AA00091BF99 /* spotlight_image@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F92C1C91C2B3AA00091BF99 /* spotlight_image@3x.png */; };
 		8F92C1D51C2B3AB20091BF99 /* app_image@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F92C1D41C2B3AB20091BF99 /* app_image@3x.png */; };
-		8F92C1D71C2DE6080091BF99 /* chicago_employee_salaries_db.sql in Resources */ = {isa = PBXBuildFile; fileRef = 8F92C1D61C2DE6080091BF99 /* chicago_employee_salaries_db.sql */; };
 		8F92C1E51C2E5A260091BF99 /* chicago_7.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F92C1D81C2E5A260091BF99 /* chicago_7.png */; };
 		8F92C1E61C2E5A260091BF99 /* chicago_8.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F92C1D91C2E5A260091BF99 /* chicago_8.png */; };
 		8F92C1E81C2E5A260091BF99 /* DoubleTextFieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F92C1DC1C2E5A260091BF99 /* DoubleTextFieldViewController.m */; };
@@ -52,6 +50,11 @@
 		8F92C1F91C2F1A9B0091BF99 /* SalaryAndDepartmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F92C1F11C2F1A9B0091BF99 /* SalaryAndDepartmentViewController.m */; };
 		8F92C1FA1C2F1A9B0091BF99 /* SalaryAndPositionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F92C1F31C2F1A9B0091BF99 /* SalaryAndPositionViewController.m */; };
 		8F92C1FB1C2F1A9B0091BF99 /* TripleTextFieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F92C1F51C2F1A9B0091BF99 /* TripleTextFieldViewController.m */; };
+		8F92C1FD1C2F24B00091BF99 /* chicago_employees_salaries_db.sql in Resources */ = {isa = PBXBuildFile; fileRef = 8F92C1FC1C2F24B00091BF99 /* chicago_employees_salaries_db.sql */; };
+		8F92C2081C2F25CA0091BF99 /* ChicagoEmployeeSalariesUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F92C2041C2F25CA0091BF99 /* ChicagoEmployeeSalariesUITests.m */; };
+		8F92C2091C2F25CA0091BF99 /* SearchByDepartmentUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F92C2051C2F25CA0091BF99 /* SearchByDepartmentUITests.m */; };
+		8F92C20A1C2F25CA0091BF99 /* SearchByNameUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F92C2061C2F25CA0091BF99 /* SearchByNameUITests.m */; };
+		8F92C20B1C2F25CA0091BF99 /* SearchBySalaryUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F92C2071C2F25CA0091BF99 /* SearchBySalaryUITests.m */; };
 		9D1ABE031C276074009F0013 /* DepartmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1ABE021C276074009F0013 /* DepartmentViewController.m */; };
 		9D1ABE061C276B2A009F0013 /* UIView+FormScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1ABE051C276B2A009F0013 /* UIView+FormScroll.m */; };
 		9D1ABE091C27B215009F0013 /* NameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1ABE081C27B215009F0013 /* NameViewController.m */; };
@@ -99,7 +102,6 @@
 		8F4BCF9D1C21D503002674D1 /* ChicagoEmployeeSalariesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChicagoEmployeeSalariesTests.m; sourceTree = "<group>"; };
 		8F4BCF9F1C21D503002674D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8F4BCFA41C21D503002674D1 /* ChicagoEmployeeSalariesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChicagoEmployeeSalariesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8F4BCFA81C21D503002674D1 /* ChicagoEmployeeSalariesUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChicagoEmployeeSalariesUITests.m; sourceTree = "<group>"; };
 		8F4BCFAA1C21D503002674D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8F4BCFB61C21DF81002674D1 /* BusinessTier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusinessTier.h; sourceTree = "<group>"; };
 		8F4BCFB71C21DF81002674D1 /* BusinessTier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusinessTier.m; sourceTree = "<group>"; };
@@ -126,7 +128,6 @@
 		8F92C1C81C2B3AA00091BF99 /* spotlight_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "spotlight_image@2x.png"; sourceTree = "<group>"; };
 		8F92C1C91C2B3AA00091BF99 /* spotlight_image@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "spotlight_image@3x.png"; sourceTree = "<group>"; };
 		8F92C1D41C2B3AB20091BF99 /* app_image@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_image@3x.png"; sourceTree = "<group>"; };
-		8F92C1D61C2DE6080091BF99 /* chicago_employee_salaries_db.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = chicago_employee_salaries_db.sql; sourceTree = "<group>"; };
 		8F92C1D81C2E5A260091BF99 /* chicago_7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chicago_7.png; sourceTree = "<group>"; };
 		8F92C1D91C2E5A260091BF99 /* chicago_8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chicago_8.png; sourceTree = "<group>"; };
 		8F92C1DB1C2E5A260091BF99 /* DoubleTextFieldViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoubleTextFieldViewController.h; sourceTree = "<group>"; };
@@ -148,6 +149,11 @@
 		8F92C1F31C2F1A9B0091BF99 /* SalaryAndPositionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SalaryAndPositionViewController.m; sourceTree = "<group>"; };
 		8F92C1F41C2F1A9B0091BF99 /* TripleTextFieldViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripleTextFieldViewController.h; sourceTree = "<group>"; };
 		8F92C1F51C2F1A9B0091BF99 /* TripleTextFieldViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripleTextFieldViewController.m; sourceTree = "<group>"; };
+		8F92C1FC1C2F24B00091BF99 /* chicago_employees_salaries_db.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = chicago_employees_salaries_db.sql; sourceTree = "<group>"; };
+		8F92C2041C2F25CA0091BF99 /* ChicagoEmployeeSalariesUITests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChicagoEmployeeSalariesUITests.m; sourceTree = "<group>"; };
+		8F92C2051C2F25CA0091BF99 /* SearchByDepartmentUITests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchByDepartmentUITests.m; sourceTree = "<group>"; };
+		8F92C2061C2F25CA0091BF99 /* SearchByNameUITests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchByNameUITests.m; sourceTree = "<group>"; };
+		8F92C2071C2F25CA0091BF99 /* SearchBySalaryUITests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchBySalaryUITests.m; sourceTree = "<group>"; };
 		9D1ABE011C276074009F0013 /* DepartmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DepartmentViewController.h; sourceTree = "<group>"; };
 		9D1ABE021C276074009F0013 /* DepartmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DepartmentViewController.m; sourceTree = "<group>"; };
 		9D1ABE041C276B2A009F0013 /* UIView+FormScroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FormScroll.h"; sourceTree = "<group>"; };
@@ -222,6 +228,7 @@
 		8F4BCF821C21D503002674D1 /* ChicagoEmployeeSalaries */ = {
 			isa = PBXGroup;
 			children = (
+				8F92C1FC1C2F24B00091BF99 /* chicago_employees_salaries_db.sql */,
 				8F4BCF861C21D503002674D1 /* AppDelegate.h */,
 				8F4BCF871C21D503002674D1 /* AppDelegate.m */,
 				9DC521BA1C2620E90006E507 /* BusinessTierRules.h */,
@@ -280,7 +287,6 @@
 				8F92C1EF1C2F1A9B0091BF99 /* chicago_10.png */,
 				8F92C1D81C2E5A260091BF99 /* chicago_7.png */,
 				8F92C1D91C2E5A260091BF99 /* chicago_8.png */,
-				8F92C1D61C2DE6080091BF99 /* chicago_employee_salaries_db.sql */,
 				8F92C1D41C2B3AB20091BF99 /* app_image@3x.png */,
 				8F92C1C01C2B3AA00091BF99 /* chicago_1.png */,
 				8F92C1C11C2B3AA00091BF99 /* chicago_3.png */,
@@ -323,7 +329,10 @@
 		8F4BCFA71C21D503002674D1 /* ChicagoEmployeeSalariesUITests */ = {
 			isa = PBXGroup;
 			children = (
-				8F4BCFA81C21D503002674D1 /* ChicagoEmployeeSalariesUITests.m */,
+				8F92C2041C2F25CA0091BF99 /* ChicagoEmployeeSalariesUITests.m */,
+				8F92C2051C2F25CA0091BF99 /* SearchByDepartmentUITests.m */,
+				8F92C2061C2F25CA0091BF99 /* SearchByNameUITests.m */,
+				8F92C2071C2F25CA0091BF99 /* SearchBySalaryUITests.m */,
 				8F4BCFAA1C21D503002674D1 /* Info.plist */,
 			);
 			path = ChicagoEmployeeSalariesUITests;
@@ -462,12 +471,12 @@
 				8F92C1591C29CAF20091BF99 /* flag.png in Resources */,
 				8F92C1F71C2F1A9B0091BF99 /* chicago_9.png in Resources */,
 				8F92C1F81C2F1A9B0091BF99 /* chicago_10.png in Resources */,
+				8F92C1FD1C2F24B00091BF99 /* chicago_employees_salaries_db.sql in Resources */,
 				8F92C1F61C2F1A9B0091BF99 /* chicago_6.png in Resources */,
 				8F92C1CD1C2B3AA00091BF99 /* chicago_5.png in Resources */,
 				8F92C1CE1C2B3AA00091BF99 /* chicago_flag.png in Resources */,
 				8F92C1D31C2B3AA00091BF99 /* spotlight_image@3x.png in Resources */,
 				8F92C1D51C2B3AB20091BF99 /* app_image@3x.png in Resources */,
-				8F92C1D71C2DE6080091BF99 /* chicago_employee_salaries_db.sql in Resources */,
 				8F92C1CC1C2B3AA00091BF99 /* chicago_4.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -529,7 +538,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F4BCFA91C21D503002674D1 /* ChicagoEmployeeSalariesUITests.m in Sources */,
+				8F92C20B1C2F25CA0091BF99 /* SearchBySalaryUITests.m in Sources */,
+				8F92C2091C2F25CA0091BF99 /* SearchByDepartmentUITests.m in Sources */,
+				8F92C2081C2F25CA0091BF99 /* ChicagoEmployeeSalariesUITests.m in Sources */,
+				8F92C20A1C2F25CA0091BF99 /* SearchByNameUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

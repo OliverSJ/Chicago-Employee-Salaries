@@ -84,6 +84,12 @@ alpha:1.0]
         case 5:
             [self performSegueWithIdentifier:@"SearchByPositionAndDepartment" sender:self];
             break;
+        case 6:
+            [self performSegueWithIdentifier:@"SearchBySalaryAndDepartment" sender:self];
+            break;
+        case 7:
+            [self performSegueWithIdentifier:@"SearchBySalaryAndPosition" sender:self];
+            break;
         default:
             break;
     }

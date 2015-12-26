@@ -79,6 +79,7 @@ alpha:1.0]
     
     // display salary in cell details
     else if (self.currentBT.searchType == searchBySalary
+             || self.currentBT.searchType == searchByPositionAndDepartment
              || self.currentBT.searchType == searchByPositionAndDepartment) {
         return [self.employees[index] annualSalary];
     }

@@ -93,6 +93,8 @@
                         <segue destination="4J9-aO-p2p" kind="show" identifier="SearchBySalary" id="b4z-TN-n85"/>
                         <segue destination="PU1-5f-Ukb" kind="show" identifier="SearchByPosition" id="1BI-Rf-Rkt"/>
                         <segue destination="FE1-rL-5We" kind="show" identifier="SearchByPositionAndDepartment" id="3ks-Nd-R0G"/>
+                        <segue destination="6Xd-V2-a5d" kind="show" identifier="SearchBySalaryAndDepartment" id="lRl-v7-coC"/>
+                        <segue destination="hMH-nL-afw" kind="show" identifier="SearchBySalaryAndPosition" id="GZM-ZY-JVV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -270,79 +272,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gKj-EI-3Rs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-662" y="-740"/>
-        </scene>
-        <!--Single Text Field View Controller-->
-        <scene sceneID="OLj-at-3B9">
-            <objects>
-                <viewController id="z5X-64-YFK" customClass="SingleTextFieldViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="2ub-s3-jjw"/>
-                        <viewControllerLayoutGuide type="bottom" id="OJu-11-RFs"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="oVW-82-XNh">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AzM-e9-ppn">
-                                <rect key="frame" x="198" y="234" width="203" height="133"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="lOJ-Vk-xI5">
-                                        <rect key="frame" x="20" y="16" width="163" height="102"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="hZ9-VT-Chd">
-                                                <rect key="frame" x="0.0" y="0.0" width="163" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="163" id="52r-Uh-1GB"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Text" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="7VC-LP-U8G">
-                                                <rect key="frame" x="0.0" y="36" width="163" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" returnKeyType="search"/>
-                                                <connections>
-                                                    <action selector="textFieldDidBeginEditing:" destination="z5X-64-YFK" eventType="editingDidBegin" id="hAr-6G-THW"/>
-                                                    <action selector="textFieldDidEndEditing:" destination="z5X-64-YFK" eventType="editingDidEnd" id="3Bh-qC-f9j"/>
-                                                    <action selector="textFieldValueDidChange:" destination="z5X-64-YFK" eventType="editingChanged" id="vLh-kq-coR"/>
-                                                </connections>
-                                            </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="czn-gC-kxg">
-                                                <rect key="frame" x="0.0" y="72" width="163" height="30"/>
-                                                <state key="normal" title="Search"/>
-                                                <connections>
-                                                    <action selector="buttonPressed:" destination="z5X-64-YFK" eventType="touchUpInside" id="3Q9-7h-WMP"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="lOJ-Vk-xI5" firstAttribute="leading" secondItem="AzM-e9-ppn" secondAttribute="leadingMargin" constant="12" id="5hv-63-B8s"/>
-                                    <constraint firstItem="lOJ-Vk-xI5" firstAttribute="top" secondItem="AzM-e9-ppn" secondAttribute="topMargin" constant="8" id="L3f-BL-xIO"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="lOJ-Vk-xI5" secondAttribute="trailing" constant="12" id="gQa-Bt-LWl"/>
-                                    <constraint firstAttribute="bottomMargin" secondItem="lOJ-Vk-xI5" secondAttribute="bottom" constant="7" id="hVd-aG-T7Z"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="AzM-e9-ppn" firstAttribute="centerX" secondItem="oVW-82-XNh" secondAttribute="centerX" id="4gL-Hx-EAf"/>
-                            <constraint firstItem="AzM-e9-ppn" firstAttribute="centerY" secondItem="oVW-82-XNh" secondAttribute="centerY" id="q6k-rg-aYP"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="2ON-kV-68B"/>
-                    <connections>
-                        <outlet property="centerView" destination="AzM-e9-ppn" id="mWn-SB-KCU"/>
-                        <outlet property="label" destination="hZ9-VT-Chd" id="n6A-2Z-BdR"/>
-                        <outlet property="textField" destination="7VC-LP-U8G" id="2B8-hu-UOX"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qcj-4x-ZGn" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-672" y="-1642"/>
         </scene>
         <!--Department View Controller-->
         <scene sceneID="qhh-DY-KkY">
@@ -674,95 +603,6 @@
             </objects>
             <point key="canvasLocation" x="736" y="-1746"/>
         </scene>
-        <!--Double Text Field View Controller-->
-        <scene sceneID="MPn-4N-aEE">
-            <objects>
-                <viewController id="XYZ-ZI-5vK" customClass="DoubleTextFieldViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="qQ7-tw-Kh5"/>
-                        <viewControllerLayoutGuide type="bottom" id="yEn-5s-BW5"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="af9-zf-iiJ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F20-vp-xAe">
-                                <rect key="frame" x="198" y="203" width="202.5" height="195"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="w0D-JJ-da6">
-                                        <rect key="frame" x="77" y="20" width="48.5" height="155"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="WQW-sd-hPN">
-                                                <rect key="frame" x="0.0" y="0.0" width="48.5" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Text" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="tT1-OT-kXK">
-                                                <rect key="frame" x="0.0" y="26" width="48.5" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
-                                                <connections>
-                                                    <action selector="textFieldDidBeginEditing:" destination="XYZ-ZI-5vK" eventType="editingDidBegin" id="V13-q5-ueO"/>
-                                                    <action selector="textFieldDidEndEditing:" destination="XYZ-ZI-5vK" eventType="editingDidEnd" id="b8v-2a-hWI"/>
-                                                    <action selector="textFieldValueDidChange:" destination="XYZ-ZI-5vK" eventType="editingChanged" id="80P-h0-8Yd"/>
-                                                </connections>
-                                            </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="MSY-CM-mkq">
-                                                <rect key="frame" x="0.0" y="62" width="48.5" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="1" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Text" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="5cc-ko-aWt">
-                                                <rect key="frame" x="0.0" y="89" width="48.5" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" returnKeyType="search"/>
-                                                <connections>
-                                                    <action selector="buttonPressed:" destination="XYZ-ZI-5vK" eventType="primaryActionTriggered" id="8cq-TU-tBB"/>
-                                                    <action selector="textFieldDidBeginEditing:" destination="XYZ-ZI-5vK" eventType="editingDidBegin" id="0FF-cX-lQP"/>
-                                                    <action selector="textFieldDidEndEditing:" destination="XYZ-ZI-5vK" eventType="editingDidEnd" id="UEF-Rv-fEl"/>
-                                                    <action selector="textFieldValueDidChange:" destination="XYZ-ZI-5vK" eventType="editingChanged" id="XOe-Hb-por"/>
-                                                </connections>
-                                            </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6XK-Um-hhn">
-                                                <rect key="frame" x="0.0" y="125" width="48.5" height="30"/>
-                                                <state key="normal" title="Search"/>
-                                                <connections>
-                                                    <action selector="buttonPressed:" destination="XYZ-ZI-5vK" eventType="touchUpInside" id="TcG-8i-D5O"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="w0D-JJ-da6" firstAttribute="top" secondItem="F20-vp-xAe" secondAttribute="top" constant="20" id="9ta-dK-iKc"/>
-                                    <constraint firstAttribute="trailing" secondItem="w0D-JJ-da6" secondAttribute="trailing" constant="77" id="I6D-Fw-p4k"/>
-                                    <constraint firstAttribute="bottom" secondItem="w0D-JJ-da6" secondAttribute="bottom" constant="20" id="Zo3-u1-doZ"/>
-                                    <constraint firstItem="w0D-JJ-da6" firstAttribute="leading" secondItem="F20-vp-xAe" secondAttribute="leading" constant="77" id="rtf-NS-KVq"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="F20-vp-xAe" firstAttribute="centerY" secondItem="af9-zf-iiJ" secondAttribute="centerY" id="REd-Ma-zFu"/>
-                            <constraint firstItem="F20-vp-xAe" firstAttribute="centerX" secondItem="af9-zf-iiJ" secondAttribute="centerX" id="XUE-81-ZUf"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="5sG-LV-pzi"/>
-                    <connections>
-                        <outlet property="centerView" destination="F20-vp-xAe" id="qDl-N7-gmH"/>
-                        <outlet property="label" destination="WQW-sd-hPN" id="wD0-jc-jXE"/>
-                        <outlet property="labelTwo" destination="MSY-CM-mkq" id="deh-DK-eN6"/>
-                        <outlet property="textField" destination="tT1-OT-kXK" id="n1C-SF-2zh"/>
-                        <outlet property="textFieldTwo" destination="5cc-ko-aWt" id="FTl-9j-hvh"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Lb7-4t-rto" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="10" y="-1642"/>
-        </scene>
         <!--Position View Controller-->
         <scene sceneID="y9a-eV-xM9">
             <objects>
@@ -928,11 +768,503 @@
             </objects>
             <point key="canvasLocation" x="736" y="-3174"/>
         </scene>
+        <!--Double Text Field View Controller-->
+        <scene sceneID="9Rb-pf-uip">
+            <objects>
+                <viewController id="nZ5-xT-Dez" customClass="DoubleTextFieldViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="e2X-Qu-mvZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="eNy-Ht-oIq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PQe-3P-K87">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fhg-rf-7qY">
+                                <rect key="frame" x="198" y="203" width="202.5" height="195"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="uwv-ti-8HQ">
+                                        <rect key="frame" x="77" y="20" width="48.5" height="155"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="W2p-Av-fZD">
+                                                <rect key="frame" x="0.0" y="0.0" width="48.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Text" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Rnm-1B-LOb">
+                                                <rect key="frame" x="0.0" y="26" width="48.5" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                                <connections>
+                                                    <action selector="textFieldDidBeginEditing:" destination="nZ5-xT-Dez" eventType="editingDidBegin" id="EW8-Ha-96b"/>
+                                                    <action selector="textFieldDidEndEditing:" destination="nZ5-xT-Dez" eventType="editingDidEnd" id="Iom-Z6-fpC"/>
+                                                    <action selector="textFieldValueDidChange:" destination="nZ5-xT-Dez" eventType="editingChanged" id="ddK-6h-ujW"/>
+                                                </connections>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="uRc-mB-F2l">
+                                                <rect key="frame" x="0.0" y="62" width="48.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="1" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Text" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="mQT-Vd-FDN">
+                                                <rect key="frame" x="0.0" y="89" width="48.5" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" returnKeyType="search"/>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="nZ5-xT-Dez" eventType="primaryActionTriggered" id="mJf-r4-jRT"/>
+                                                    <action selector="textFieldDidBeginEditing:" destination="nZ5-xT-Dez" eventType="editingDidBegin" id="aL7-rh-Rhy"/>
+                                                    <action selector="textFieldDidEndEditing:" destination="nZ5-xT-Dez" eventType="editingDidEnd" id="txu-sG-aAx"/>
+                                                    <action selector="textFieldValueDidChange:" destination="nZ5-xT-Dez" eventType="editingChanged" id="guj-rq-bgh"/>
+                                                </connections>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="av9-jr-YM7">
+                                                <rect key="frame" x="0.0" y="125" width="48.5" height="30"/>
+                                                <state key="normal" title="Search"/>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="nZ5-xT-Dez" eventType="touchUpInside" id="2Lz-46-w2K"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="uwv-ti-8HQ" firstAttribute="leading" secondItem="fhg-rf-7qY" secondAttribute="leading" constant="77" id="Gyc-wi-oie"/>
+                                    <constraint firstAttribute="bottom" secondItem="uwv-ti-8HQ" secondAttribute="bottom" constant="20" id="NAX-KO-TzL"/>
+                                    <constraint firstItem="uwv-ti-8HQ" firstAttribute="top" secondItem="fhg-rf-7qY" secondAttribute="top" constant="20" id="Y0C-4P-BAA"/>
+                                    <constraint firstAttribute="trailing" secondItem="uwv-ti-8HQ" secondAttribute="trailing" constant="77" id="iTE-LY-VAo"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fhg-rf-7qY" firstAttribute="centerY" secondItem="PQe-3P-K87" secondAttribute="centerY" id="Xb1-Bi-c1I"/>
+                            <constraint firstItem="fhg-rf-7qY" firstAttribute="centerX" secondItem="PQe-3P-K87" secondAttribute="centerX" id="qxS-FQ-nVp"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="v5g-xW-igm"/>
+                    <connections>
+                        <outlet property="centerView" destination="fhg-rf-7qY" id="yMx-bu-w56"/>
+                        <outlet property="label" destination="W2p-Av-fZD" id="2Vw-pQ-hH1"/>
+                        <outlet property="labelTwo" destination="uRc-mB-F2l" id="rV5-Yo-zaS"/>
+                        <outlet property="textField" destination="Rnm-1B-LOb" id="JeR-fC-OuU"/>
+                        <outlet property="textFieldTwo" destination="mQT-Vd-FDN" id="HwJ-Do-YEa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="doi-6w-jMg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="-1642"/>
+        </scene>
+        <!--Single Text Field View Controller-->
+        <scene sceneID="4ri-F8-GUa">
+            <objects>
+                <viewController id="y9B-a0-SqE" customClass="SingleTextFieldViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AE5-ce-kxb"/>
+                        <viewControllerLayoutGuide type="bottom" id="gmk-UR-uLs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zVZ-Ml-yDE">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xqK-eO-Eot">
+                                <rect key="frame" x="198" y="234" width="203" height="133"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="iVE-kz-M3v">
+                                        <rect key="frame" x="20" y="16" width="163" height="102"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l3Y-kG-2tW">
+                                                <rect key="frame" x="0.0" y="0.0" width="163" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="163" id="Qas-cV-nou"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Text" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Unz-h8-NNq">
+                                                <rect key="frame" x="0.0" y="36" width="163" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" returnKeyType="search"/>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="y9B-a0-SqE" eventType="primaryActionTriggered" id="QyX-qA-4um"/>
+                                                    <action selector="textFieldDidBeginEditing:" destination="y9B-a0-SqE" eventType="editingDidBegin" id="M7p-kv-fxc"/>
+                                                    <action selector="textFieldDidEndEditing:" destination="y9B-a0-SqE" eventType="editingDidEnd" id="te0-OU-ynh"/>
+                                                    <action selector="textFieldValueDidChange:" destination="y9B-a0-SqE" eventType="editingChanged" id="FZ7-8Y-YCJ"/>
+                                                </connections>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9DX-zh-VGL">
+                                                <rect key="frame" x="0.0" y="72" width="163" height="30"/>
+                                                <state key="normal" title="Search"/>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="y9B-a0-SqE" eventType="touchUpInside" id="Fnu-aU-PY9"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailingMargin" secondItem="iVE-kz-M3v" secondAttribute="trailing" constant="12" id="9ff-vI-cPk"/>
+                                    <constraint firstItem="iVE-kz-M3v" firstAttribute="top" secondItem="xqK-eO-Eot" secondAttribute="topMargin" constant="8" id="QVz-bY-qpT"/>
+                                    <constraint firstItem="iVE-kz-M3v" firstAttribute="leading" secondItem="xqK-eO-Eot" secondAttribute="leadingMargin" constant="12" id="X6q-sK-q9Z"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="iVE-kz-M3v" secondAttribute="bottom" constant="7" id="tMl-SN-Pgt"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xqK-eO-Eot" firstAttribute="centerY" secondItem="zVZ-Ml-yDE" secondAttribute="centerY" id="EFp-t4-awd"/>
+                            <constraint firstItem="xqK-eO-Eot" firstAttribute="centerX" secondItem="zVZ-Ml-yDE" secondAttribute="centerX" id="sNO-ZJ-685"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="F44-6y-cHb"/>
+                    <connections>
+                        <outlet property="centerView" destination="xqK-eO-Eot" id="5Lm-61-1P5"/>
+                        <outlet property="label" destination="l3Y-kG-2tW" id="VJh-he-qg3"/>
+                        <outlet property="textField" destination="Unz-h8-NNq" id="bd3-yI-aU5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ely-aX-4xt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-662" y="-1642"/>
+        </scene>
+        <!--Triple Text Field View Controller-->
+        <scene sceneID="7FC-cY-akl">
+            <objects>
+                <viewController id="j5V-BW-LHz" customClass="TripleTextFieldViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="etR-VU-qa8"/>
+                        <viewControllerLayoutGuide type="bottom" id="CoJ-bF-RXD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="d9Z-LR-jQU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qnb-MJ-Pth">
+                                <rect key="frame" x="255" y="171" width="89" height="258"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="i4a-6o-i2Q">
+                                        <rect key="frame" x="20" y="20" width="49" height="218"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="xLX-Dp-19r">
+                                                <rect key="frame" x="0.0" y="0.0" width="49" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Text" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Nzq-5n-PBm">
+                                                <rect key="frame" x="0.0" y="27" width="49" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                                <connections>
+                                                    <action selector="nextButtonPressed:" destination="j5V-BW-LHz" eventType="primaryActionTriggered" id="oh8-I2-iCw"/>
+                                                    <action selector="textFieldDidBeginEditing:" destination="j5V-BW-LHz" eventType="editingDidBegin" id="BXg-eh-sEw"/>
+                                                    <action selector="textFieldDidEndEditing:" destination="j5V-BW-LHz" eventType="editingDidEnd" id="WTq-qw-Zv1"/>
+                                                    <action selector="textFieldValueDidChange:" destination="j5V-BW-LHz" eventType="editingChanged" id="XNq-Zc-jVk"/>
+                                                </connections>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="yrD-Ak-Oq3">
+                                                <rect key="frame" x="0.0" y="63" width="49" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="1" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Text" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="9iB-Sg-HEI">
+                                                <rect key="frame" x="0.0" y="89" width="49" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                                <connections>
+                                                    <action selector="nextButtonPressed:" destination="j5V-BW-LHz" eventType="primaryActionTriggered" id="J9P-9V-ide"/>
+                                                    <action selector="textFieldDidBeginEditing:" destination="j5V-BW-LHz" eventType="editingDidBegin" id="5za-HF-zTk"/>
+                                                    <action selector="textFieldDidEndEditing:" destination="j5V-BW-LHz" eventType="editingDidEnd" id="Ym3-uI-iTr"/>
+                                                    <action selector="textFieldValueDidChange:" destination="j5V-BW-LHz" eventType="editingChanged" id="W7s-8k-19F"/>
+                                                </connections>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="c9f-Yh-bdJ">
+                                                <rect key="frame" x="0.0" y="125" width="49" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="1" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Text" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="1ng-6l-0nE">
+                                                <rect key="frame" x="0.0" y="152" width="49" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" returnKeyType="search"/>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="j5V-BW-LHz" eventType="primaryActionTriggered" id="NLM-dp-k38"/>
+                                                    <action selector="textFieldDidBeginEditing:" destination="j5V-BW-LHz" eventType="editingDidBegin" id="xrl-s1-ilD"/>
+                                                    <action selector="textFieldDidEndEditing:" destination="j5V-BW-LHz" eventType="editingDidEnd" id="waJ-YR-JLV"/>
+                                                    <action selector="textFieldValueDidChange:" destination="j5V-BW-LHz" eventType="editingChanged" id="jjl-at-Tgu"/>
+                                                </connections>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fr3-yt-hMU">
+                                                <rect key="frame" x="0.0" y="188" width="49" height="30"/>
+                                                <state key="normal" title="Search"/>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="j5V-BW-LHz" eventType="touchUpInside" id="cZc-9a-MKm"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="i4a-6o-i2Q" firstAttribute="top" secondItem="Qnb-MJ-Pth" secondAttribute="top" constant="20" id="0Ht-sl-aMs"/>
+                                    <constraint firstAttribute="bottom" secondItem="i4a-6o-i2Q" secondAttribute="bottom" constant="20" id="4Lb-ai-KiD"/>
+                                    <constraint firstAttribute="trailing" secondItem="i4a-6o-i2Q" secondAttribute="trailing" constant="20" id="7Tp-vT-neu"/>
+                                    <constraint firstItem="i4a-6o-i2Q" firstAttribute="leading" secondItem="Qnb-MJ-Pth" secondAttribute="leading" constant="20" id="WMU-tl-sdM"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Qnb-MJ-Pth" firstAttribute="centerX" secondItem="d9Z-LR-jQU" secondAttribute="centerX" id="C9b-1D-IJ9"/>
+                            <constraint firstItem="Qnb-MJ-Pth" firstAttribute="centerY" secondItem="d9Z-LR-jQU" secondAttribute="centerY" id="iEt-tL-Dcx"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="qaW-ZV-f6A"/>
+                    <connections>
+                        <outlet property="centerView" destination="Qnb-MJ-Pth" id="h2Y-3m-FpM"/>
+                        <outlet property="label" destination="xLX-Dp-19r" id="XJ5-ro-urz"/>
+                        <outlet property="labelThree" destination="c9f-Yh-bdJ" id="vUR-1b-8Xx"/>
+                        <outlet property="labelTwo" destination="yrD-Ak-Oq3" id="2Po-j4-Egy"/>
+                        <outlet property="textField" destination="Nzq-5n-PBm" id="RN9-j4-dpw"/>
+                        <outlet property="textFieldThree" destination="1ng-6l-0nE" id="koy-nF-FBQ"/>
+                        <outlet property="textFieldTwo" destination="9iB-Sg-HEI" id="PAj-Xy-Io4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kcb-TR-d0q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-332" y="-2350"/>
+        </scene>
+        <!--Salary And Department View Controller-->
+        <scene sceneID="HOK-Te-GP7">
+            <objects>
+                <viewController id="6Xd-V2-a5d" customClass="SalaryAndDepartmentViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="h6I-xg-4G2"/>
+                        <viewControllerLayoutGuide type="bottom" id="7KO-Vm-ZG3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="elF-L1-dp3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RSf-9O-Szc">
+                                <rect key="frame" x="255" y="171" width="89" height="258"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="c1b-wl-rxx">
+                                        <rect key="frame" x="20" y="20" width="49" height="218"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="2z0-op-MoM">
+                                                <rect key="frame" x="0.0" y="0.0" width="49" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Text" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="g4T-IL-Pdg">
+                                                <rect key="frame" x="0.0" y="27" width="49" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                                <connections>
+                                                    <action selector="nextButtonPressed:" destination="6Xd-V2-a5d" eventType="primaryActionTriggered" id="dGS-I2-vr7"/>
+                                                    <action selector="textFieldDidBeginEditing:" destination="6Xd-V2-a5d" eventType="editingDidBegin" id="7zL-TU-tr0"/>
+                                                    <action selector="textFieldDidEndEditing:" destination="6Xd-V2-a5d" eventType="editingDidEnd" id="BIC-C8-x1W"/>
+                                                    <action selector="textFieldValueDidChange:" destination="6Xd-V2-a5d" eventType="editingChanged" id="HhV-w5-MYZ"/>
+                                                </connections>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="ffA-dF-cZp">
+                                                <rect key="frame" x="0.0" y="63" width="49" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="1" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Text" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="mFe-fV-tRa">
+                                                <rect key="frame" x="0.0" y="89" width="49" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                                <connections>
+                                                    <action selector="nextButtonPressed:" destination="6Xd-V2-a5d" eventType="primaryActionTriggered" id="Mgm-0H-WR7"/>
+                                                    <action selector="textFieldDidBeginEditing:" destination="6Xd-V2-a5d" eventType="editingDidBegin" id="IrC-Wc-eAG"/>
+                                                    <action selector="textFieldDidEndEditing:" destination="6Xd-V2-a5d" eventType="editingDidEnd" id="S38-ju-tnb"/>
+                                                    <action selector="textFieldValueDidChange:" destination="6Xd-V2-a5d" eventType="editingChanged" id="PXI-WZ-Nl8"/>
+                                                </connections>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="UOH-ch-vbZ">
+                                                <rect key="frame" x="0.0" y="125" width="49" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="1" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Text" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="KrO-mf-3rd">
+                                                <rect key="frame" x="0.0" y="152" width="49" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" returnKeyType="search"/>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="6Xd-V2-a5d" eventType="primaryActionTriggered" id="TJi-eN-Qd8"/>
+                                                    <action selector="textFieldDidBeginEditing:" destination="6Xd-V2-a5d" eventType="editingDidBegin" id="geo-mo-3Kh"/>
+                                                    <action selector="textFieldDidEndEditing:" destination="6Xd-V2-a5d" eventType="editingDidEnd" id="ERt-YP-9PE"/>
+                                                    <action selector="textFieldValueDidChange:" destination="6Xd-V2-a5d" eventType="editingChanged" id="9Kt-9E-CHk"/>
+                                                </connections>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Phh-4Y-0we">
+                                                <rect key="frame" x="0.0" y="188" width="49" height="30"/>
+                                                <state key="normal" title="Search"/>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="6Xd-V2-a5d" eventType="touchUpInside" id="Fob-vb-X2U"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="c1b-wl-rxx" firstAttribute="leading" secondItem="RSf-9O-Szc" secondAttribute="leading" constant="20" id="W6D-pL-uFI"/>
+                                    <constraint firstItem="c1b-wl-rxx" firstAttribute="top" secondItem="RSf-9O-Szc" secondAttribute="top" constant="20" id="dfz-rZ-JgI"/>
+                                    <constraint firstAttribute="bottom" secondItem="c1b-wl-rxx" secondAttribute="bottom" constant="20" id="ruB-on-JfF"/>
+                                    <constraint firstAttribute="trailing" secondItem="c1b-wl-rxx" secondAttribute="trailing" constant="20" id="x7A-Tz-DHp"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RSf-9O-Szc" firstAttribute="centerY" secondItem="elF-L1-dp3" secondAttribute="centerY" id="3lZ-Fi-qtM"/>
+                            <constraint firstItem="RSf-9O-Szc" firstAttribute="centerX" secondItem="elF-L1-dp3" secondAttribute="centerX" id="lcg-uc-xkS"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="aVa-4G-a1H"/>
+                    <connections>
+                        <outlet property="centerView" destination="RSf-9O-Szc" id="alk-Sc-33s"/>
+                        <outlet property="label" destination="2z0-op-MoM" id="Xnh-t2-FEn"/>
+                        <outlet property="labelThree" destination="UOH-ch-vbZ" id="SZb-vL-m59"/>
+                        <outlet property="labelTwo" destination="ffA-dF-cZp" id="WUG-P1-NvK"/>
+                        <outlet property="textField" destination="g4T-IL-Pdg" id="hnU-2d-N43"/>
+                        <outlet property="textFieldThree" destination="KrO-mf-3rd" id="k6o-cf-PEi"/>
+                        <outlet property="textFieldTwo" destination="mFe-fV-tRa" id="MJn-kK-J69"/>
+                        <segue destination="k0N-L8-Gw9" kind="show" identifier="SalaryAndDepartmentResults" id="D7W-nb-0Fh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K9R-ow-em3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="724" y="1066"/>
+        </scene>
+        <!--Salary And Position View Controller-->
+        <scene sceneID="csE-UU-dCm">
+            <objects>
+                <viewController id="hMH-nL-afw" customClass="SalaryAndPositionViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gMC-zw-7No"/>
+                        <viewControllerLayoutGuide type="bottom" id="IeG-tE-gSi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ivv-uW-5Vl">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BlQ-9w-atB">
+                                <rect key="frame" x="255" y="171" width="89" height="258"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="5pp-BF-UHG">
+                                        <rect key="frame" x="20" y="20" width="49" height="218"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="V3w-NO-EQO">
+                                                <rect key="frame" x="0.0" y="0.0" width="49" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Text" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="fbd-pU-XiG">
+                                                <rect key="frame" x="0.0" y="27" width="49" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                                <connections>
+                                                    <action selector="nextButtonPressed:" destination="hMH-nL-afw" eventType="primaryActionTriggered" id="YiY-5G-dCS"/>
+                                                    <action selector="textFieldDidBeginEditing:" destination="hMH-nL-afw" eventType="editingDidBegin" id="PwR-Bc-QC0"/>
+                                                    <action selector="textFieldDidEndEditing:" destination="hMH-nL-afw" eventType="editingDidEnd" id="KdT-7h-Hnn"/>
+                                                    <action selector="textFieldValueDidChange:" destination="hMH-nL-afw" eventType="editingChanged" id="PBC-0q-N8V"/>
+                                                </connections>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="enm-Dc-oJX">
+                                                <rect key="frame" x="0.0" y="63" width="49" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="1" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Text" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="li9-lD-eny">
+                                                <rect key="frame" x="0.0" y="89" width="49" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                                <connections>
+                                                    <action selector="nextButtonPressed:" destination="hMH-nL-afw" eventType="primaryActionTriggered" id="00R-wH-iSa"/>
+                                                    <action selector="textFieldDidBeginEditing:" destination="hMH-nL-afw" eventType="editingDidBegin" id="pwA-Fg-gWQ"/>
+                                                    <action selector="textFieldDidEndEditing:" destination="hMH-nL-afw" eventType="editingDidEnd" id="adQ-Fz-OcL"/>
+                                                    <action selector="textFieldValueDidChange:" destination="hMH-nL-afw" eventType="editingChanged" id="fRQ-Tb-7VU"/>
+                                                </connections>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="y7y-We-vQt">
+                                                <rect key="frame" x="0.0" y="125" width="49" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="1" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Text" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="S2a-3k-JwT">
+                                                <rect key="frame" x="0.0" y="152" width="49" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" returnKeyType="search"/>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="hMH-nL-afw" eventType="primaryActionTriggered" id="m7W-ah-EmS"/>
+                                                    <action selector="textFieldDidBeginEditing:" destination="hMH-nL-afw" eventType="editingDidBegin" id="BjS-Ie-pr9"/>
+                                                    <action selector="textFieldDidEndEditing:" destination="hMH-nL-afw" eventType="editingDidEnd" id="eZu-q7-FtF"/>
+                                                    <action selector="textFieldValueDidChange:" destination="hMH-nL-afw" eventType="editingChanged" id="WdW-kb-CXA"/>
+                                                </connections>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kn1-zY-pqt">
+                                                <rect key="frame" x="0.0" y="188" width="49" height="30"/>
+                                                <state key="normal" title="Search"/>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="hMH-nL-afw" eventType="touchUpInside" id="znm-4v-2EQ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="5pp-BF-UHG" secondAttribute="trailing" constant="20" id="UfE-LW-bnB"/>
+                                    <constraint firstAttribute="bottom" secondItem="5pp-BF-UHG" secondAttribute="bottom" constant="20" id="dmZ-V8-FWp"/>
+                                    <constraint firstItem="5pp-BF-UHG" firstAttribute="leading" secondItem="BlQ-9w-atB" secondAttribute="leading" constant="20" id="s4v-28-e5d"/>
+                                    <constraint firstItem="5pp-BF-UHG" firstAttribute="top" secondItem="BlQ-9w-atB" secondAttribute="top" constant="20" id="wry-hN-VUc"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BlQ-9w-atB" firstAttribute="centerX" secondItem="ivv-uW-5Vl" secondAttribute="centerX" id="Xb4-rg-opc"/>
+                            <constraint firstItem="BlQ-9w-atB" firstAttribute="centerY" secondItem="ivv-uW-5Vl" secondAttribute="centerY" id="j2h-eF-2mh"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="5GI-d8-hHb"/>
+                    <connections>
+                        <outlet property="centerView" destination="BlQ-9w-atB" id="4G5-N1-j3w"/>
+                        <outlet property="label" destination="V3w-NO-EQO" id="r2w-tP-1rr"/>
+                        <outlet property="labelThree" destination="y7y-We-vQt" id="cYL-Yi-lHB"/>
+                        <outlet property="labelTwo" destination="enm-Dc-oJX" id="nd2-L3-9pQ"/>
+                        <outlet property="textField" destination="fbd-pU-XiG" id="uv7-Xe-GBv"/>
+                        <outlet property="textFieldThree" destination="S2a-3k-JwT" id="mAo-oR-YVz"/>
+                        <outlet property="textFieldTwo" destination="li9-lD-eny" id="cdP-LE-qlu"/>
+                        <segue destination="k0N-L8-Gw9" kind="show" identifier="SalaryAndPositionResults" id="ezD-v3-drs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y40-wU-1h2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="724" y="1774"/>
+        </scene>
     </scenes>
     <resources>
         <image name="chicago_5.png" width="996" height="1024"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1cO-NV-7rc"/>
+        <segue reference="ezD-v3-drs"/>
     </inferredMetricsTieBreakers>
 </document>

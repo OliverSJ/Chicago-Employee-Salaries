@@ -1,32 +1,33 @@
 //
-//  PositionAndDepartmentResultsViewController.m
+//  SalaryAndDepartmentViewController.m
 //  ChicagoEmployeeSalaries
 //
 //  Created by Bradley Golden on 12/23/15.
 //  Copyright © 2015 Oliver San Juan. All rights reserved.
 //
 
-#import "PositionAndDepartmentResultsViewController.h"
+#import "SalaryAndDepartmentViewController.h"
 #import "BusinessTier.h"
 #import "EmployeesTableViewController.h"
 #import "PrevNextSearchToolbarView.h"
 
-@interface PositionAndDepartmentResultsViewController ()
+@interface SalaryAndDepartmentViewController ()
 
 @property (strong, nonatomic) BusinessTier *bt;
 
 @end
 
-@implementation PositionAndDepartmentResultsViewController
+@implementation SalaryAndDepartmentViewController
 
 #pragma mark - Segue
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     EmployeesTableViewController *etvc = [segue destinationViewController];
-    self.bt.positionTitle = self.textField.text;
-    self.bt.department = self.textFieldTwo.text;
-    self.bt.searchType = searchByPositionAndDepartment;
+    self.bt.minSalary = self.textField.text;
+    self.bt.maxSalary = self.textFieldTwo.text;
+    self.bt.department = self.textFieldThree.text;
+    self.bt.searchType = searchBySalaryAndDepartment;
     etvc.currentBT = self.bt;
 }
 
@@ -39,15 +40,19 @@
     
     [self initDataTier];
     
-    self.segueID = @"PositionAndDepartmentResults";
-    self.label.text = @"Enter a Position";
-    self.labelTwo.text = @"Select a Department";
-    self.textField.placeholder = @"i.e. MAYOR";
-    self.textFieldTwo.placeholder = @"i.e. MAYOR'S OFFICE";
-    self.backgroundImageName = @"chicago_8.png";
+    self.segueID = @"SalaryAndDepartmentResults";
+    self.label.text = @"Enter a Minimum Salary";
+    self.labelTwo.text = @"Enter a Maximum Salary";
+    self.labelThree.text = @"Select a Depatment";
+    self.textField.placeholder = @"i.e. 100000";
+    self.textField.keyboardType = UIKeyboardTypeNumberPad;
+    self.textFieldTwo.placeholder = @"i.e. 120000";
+    self.textFieldTwo.keyboardType = UIKeyboardTypeNumberPad;
+    self.textFieldThree.placeholder = @"i.e. MAYOR'S OFFICE";
+    self.backgroundImageName = @"chicago_9.png";
     self.pickerViewContents = [self.bt getDepartments];
     
-    [super addPickerView:self.textFieldTwo]; // add picker view to the second text field
+    [super addPickerView:self.textFieldThree]; // add picker view to the third text field
     [super addToolbars]; // add toolbars to both text fields
     [super configureView];
 }

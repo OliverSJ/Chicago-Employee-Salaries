@@ -38,11 +38,6 @@
     self = [super init];
     if (self) {
         
-        //TESTING SEARCH TYPES:
-        //_searchType = searchBySalary;
-        //_searchType = searchByDepartment;         //WORKS
-        //_searchType = searchByNameAndDepartment;
-        
         // init dataTier with base url for sqlite database
         dt = [[DataTier alloc] initWithDatabaseFilename:@"chicago_employee_salaries_db.sql"];
         
@@ -78,9 +73,10 @@
         tempArray = nil;
         tempArray = [[NSMutableArray alloc]init];
         
-        /* @discussion: The Chicago database misspells some department names (see below for examples).  
-                        Directly using the names in the database for the front end would look bad, so
-                        I identified the misspelled names and replaced them in the NSDictionary.
+        /*    
+            The Chicago database misspells some department names (see below for examples).
+            Directly using the names in the database for the front end would look bad, so
+            I identified the misspelled names and replaced them in the NSDictionary.
          
          */
         for(NSString* tempString in departForBackEnd)
@@ -119,7 +115,6 @@
 }
 
 
-/** @brief This method returns the list of departments with correct spelling*/
 - (NSArray*)getDepartments{
     
     return departForFrontEnd;
@@ -215,18 +210,9 @@
 
 }
 
-
-/** @brief This method will query the database based on user input for employee name and department
-    @param name: Can be nil or blank
-    @param department: Can be nil or blank
- 
-    @return: Returns an NSArray of EmployeeObject
- 
- */
 - (NSArray*)getEmployees{
     
     
-    //if([_name length] > 0 && [_department length] > 0)
     if(_searchType == searchByNameAndDepartment){
         
         results = nil;
@@ -262,8 +248,6 @@
             query = [NSString stringWithFormat:@"SELECT * FROM Employees WHERE Department= '%@' AND (FirstName LIKE '%%%@%%' OR LastName LIKE '%%%@%%');",departmentQuery, firstName, firstName];
         }
         
-        //Grab the results from the database based on the query
-        //results = [[NSArray alloc] initWithArray:[dt loadDataFromDB:query]];
         
     }
     else if(_searchType == searchByName){
@@ -296,8 +280,6 @@
             query = [NSString stringWithFormat:@"SELECT* FROM Employees WHERE FirstName LIKE '%%%@%%' OR LastName LIKE '%%%@%%';",firstName, firstName];
         }
         
-        //Grab the results from the database based on the query
-        //results = [[NSArray alloc] initWithArray:[dt loadDataFromDB:query]];
         
     }
     //else if([_department length] > 0)
@@ -309,8 +291,6 @@
         
         query = [NSString stringWithFormat:@"SELECT * FROM Employees WHERE Department='%@';", departmentQuery];
         
-        //Grab the results from the database based on the query
-        //results = [[NSArray alloc] initWithArray:[dt loadDataFromDB:query]];
         
     }
     else if(_searchType == searchBySalary){
@@ -328,11 +308,6 @@
          */
         //Convert the salaries to one that will work with the query
         [self convertSalariesForQuery];
-        
-        //TESTING:
-//        _minSalary = @"200";
-//        _maxSalary = @"300";
-
         
         query = [NSString stringWithFormat:@"SELECT * FROM Employees WHERE CAST(substr(EmployeeAnnualSalary,2) as INTEGER)>='%@' AND CAST(substr(EmployeeAnnualSalary,2) as INTEGER)<='%@';", _minSalary,_maxSalary];
  

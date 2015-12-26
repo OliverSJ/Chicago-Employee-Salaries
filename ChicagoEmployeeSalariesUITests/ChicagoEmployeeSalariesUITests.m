@@ -279,6 +279,34 @@
 
 - (void) testSearchBySalaryAndDeparment {
     
+    XCUIApplication *app = [[XCUIApplication alloc] init];
+    [app.tables.staticTexts[@"Salary and Department"] tap];
+    
+    XCUIElement *iE100000TextField = app.textFields[@"i.e. 100000"];
+    [iE100000TextField tap];
+    [iE100000TextField typeText:@"1000"];
+    
+    XCUIElementQuery *toolbarsQuery = app.toolbars;
+    XCUIElement *nexticonButton = toolbarsQuery.buttons[@"NextIcon"];
+    [nexticonButton tap];
+    [app.textFields[@"i.e. 120000"] typeText:@"2000"];
+    [nexticonButton tap];
+    
+    XCUIApplication *app2 = app;
+    [app2.pickerWheels[@"(Leave Blank)"] tap];
+    
+    XCUIElement *adminHearingPickerWheel = app2.pickerWheels[@"ADMIN HEARING"];
+    [adminHearingPickerWheel tap];
+    [[app.otherElements containingType:XCUIElementTypeNavigationBar identifier:@"SalaryAndDepartmentView"].buttons[@"Search"] tap];
+    
+    XCUIElement *backButton = [[[app.navigationBars[@"EmployeesTableView"] childrenMatchingType:XCUIElementTypeButton] matchingIdentifier:@"Back"] elementBoundByIndex:0];
+    [backButton tap];
+    [app.textFields[@"i.e. MAYOR'S OFFICE"] tap];
+    [adminHearingPickerWheel tap];
+    [toolbarsQuery.buttons[@"Search"] tap];
+    [backButton tap];
+    [[[[app.navigationBars[@"SalaryAndDepartmentView"] childrenMatchingType:XCUIElementTypeButton] matchingIdentifier:@"Back"] elementBoundByIndex:0] tap];
+    
 }
 
 - (void) testSearchBySalaryAndPosition {

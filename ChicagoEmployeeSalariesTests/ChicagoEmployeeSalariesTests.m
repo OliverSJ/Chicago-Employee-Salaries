@@ -37,32 +37,4 @@
     XCTAssertEqual(departments.count-1, NUM_DEPARTMENTS); // subtract "(Leave Blank)" from count
 }
 
-- (void)testSalary {
-    
-    self.businessTier.maxSalary = @"250000";
-    self.businessTier.minSalary = @"200000";
-    NSString *name = @"EMANUEL,  RAHM";
-    self.businessTier.searchType = searchBySalary;
-    
-    NSArray *employees = [self.businessTier getEmployees];
-    
-    for (EmployeeObject *emp in employees) {
-        
-        if ([emp.name isEqualToString:name]) {
-            XCTAssertTrue(YES);
-            return;
-        }
-    }
-    
-    // no object found with correct name
-    XCTAssertTrue(NO, "No employee object found");
-}
-
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
-}
-
 @end

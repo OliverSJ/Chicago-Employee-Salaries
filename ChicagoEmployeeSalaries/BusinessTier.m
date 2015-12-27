@@ -29,6 +29,9 @@
     NSArray* departForBackEnd;
     NSArray* departForFrontEnd;
     
+    int minimumSalary;
+    int maximumSalary;
+    
     
 
 }
@@ -135,11 +138,11 @@
 
 -(void)convertSalariesForQuery{
     
-    int minimumSalary = ([_minSalary intValue] / 1000);
-    int maximumSalary = ([_maxSalary intValue] /1000);
+    minimumSalary = [_minSalary integerValue];
+    maximumSalary = [_maxSalary integerValue];
     
-    _minSalary = [NSString stringWithFormat:@"%i", minimumSalary];
-    _maxSalary = [NSString stringWithFormat:@"%i", maximumSalary];
+//    _minSalary = [NSString stringWithFormat:@"%i", minimumSalary];
+//    _maxSalary = [NSString stringWithFormat:@"%i", maximumSalary];
     
 }
 
@@ -307,9 +310,11 @@
          
          */
         //Convert the salaries to one that will work with the query
-        //[self convertSalariesForQuery];
+        [self convertSalariesForQuery];
         
-        query = [NSString stringWithFormat:@"SELECT * FROM Employees WHERE CAST(EmployeeAnnualSalary as INTEGER)>=%@ AND CAST(EmployeeAnnualSalary as INTEGER)<=%@;", _minSalary,_maxSalary];
+        //query = [NSString stringWithFormat:@"SELECT * FROM Employees WHERE CAST(EmployeeAnnualSalary as INTEGER)>=%@ AND CAST(EmployeeAnnualSalary as INTEGER)<=%@;", _minSalary,_maxSalary];
+        
+        query = [NSString stringWithFormat:@"SELECT * FROM Employees WHERE EmployeeAnnualSalary>=%i AND EmployeeAnnualSalary=%i;",minimumSalary, maximumSalary];
         
         
     }

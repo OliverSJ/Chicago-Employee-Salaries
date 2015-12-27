@@ -309,10 +309,8 @@
         //Convert the salaries to one that will work with the query
         //[self convertSalariesForQuery];
         
-        //query = [NSString stringWithFormat:@"SELECT * FROM Employees WHERE CAST(EmployeeAnnualSalary as INTEGER)>='%@' AND CAST(EmployeeAnnualSalary as INTEGER)<='%@';", _minSalary,_maxSalary];
+        query = [NSString stringWithFormat:@"SELECT * FROM Employees WHERE CAST(EmployeeAnnualSalary as INTEGER)>=%@ AND CAST(EmployeeAnnualSalary as INTEGER)<=%@;", _minSalary,_maxSalary];
         
-        query = [NSString stringWithFormat:@"SELECT * FROM Employees WHERE CAST(EmployeeAnnualSalary as INTEGER)>='%i' AND CAST(EmployeeAnnualSalary as INTEGER)<='%i';", 20000,100000];
- 
         
     }
     else if(_searchType == searchBySalaryAndDepartment){

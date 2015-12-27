@@ -29,6 +29,9 @@
     NSArray* departForBackEnd;
     NSArray* departForFrontEnd;
     
+    int minimumSalary;
+    int maximumSalary;
+    
     
 
 }
@@ -135,11 +138,11 @@
 
 -(void)convertSalariesForQuery{
     
-    int minimumSalary = ([_minSalary intValue] / 1000);
-    int maximumSalary = ([_maxSalary intValue] /1000);
+    minimumSalary = [_minSalary integerValue];
+    maximumSalary = [_maxSalary integerValue];
     
-    _minSalary = [NSString stringWithFormat:@"%i", minimumSalary];
-    _maxSalary = [NSString stringWithFormat:@"%i", maximumSalary];
+//    _minSalary = [NSString stringWithFormat:@"%i", minimumSalary];
+//    _maxSalary = [NSString stringWithFormat:@"%i", maximumSalary];
     
 }
 
@@ -309,22 +312,24 @@
         //Convert the salaries to one that will work with the query
         [self convertSalariesForQuery];
         
-        query = [NSString stringWithFormat:@"SELECT * FROM Employees WHERE CAST(substr(EmployeeAnnualSalary,2) as INTEGER)>='%@' AND CAST(substr(EmployeeAnnualSalary,2) as INTEGER)<='%@';", _minSalary,_maxSalary];
- 
+        //query = [NSString stringWithFormat:@"SELECT * FROM Employees WHERE CAST(EmployeeAnnualSalary as INTEGER)>=%@ AND CAST(EmployeeAnnualSalary as INTEGER)<=%@;", _minSalary,_maxSalary];
+        
+        query = [NSString stringWithFormat:@"SELECT * FROM Employees WHERE EmployeeAnnualSalary>=%i AND EmployeeAnnualSalary=%i;",minimumSalary, maximumSalary];
+        
         
     }
     else if(_searchType == searchBySalaryAndDepartment){
         
-        [self convertSalariesForQuery];
+        //[self convertSalariesForQuery];
         
-        query = [NSString stringWithFormat:@"SELECT * FROM Employees WHERE Department='%@' AND CAST(substr(EmployeeAnnualSalary,2) as INTEGER)>='%@' AND CAST(substr(EmployeeAnnualSalary,2) as INTEGER)<='%@';", _department,_minSalary,_maxSalary];
+        query = [NSString stringWithFormat:@"SELECT * FROM Employees WHERE Department='%@' AND CAST(EmployeeAnnualSalary as INTEGER)>='%@' AND CAST(EmployeeAnnualSalary as INTEGER)<='%@';", _department,_minSalary,_maxSalary];
         
     }
     else if(_searchType == searchBySalaryAndPosition){
         
-        [self convertSalariesForQuery];
+        //[self convertSalariesForQuery];
         
-        query = [NSString stringWithFormat:@"SELECT * FROM Employees WHERE PositionTitle='%@' AND CAST(substr(EmployeeAnnualSalary,2) as INTEGER)>='%@' AND CAST(substr(EmployeeAnnualSalary,2) as INTEGER)<='%@';", _positionTitle,_minSalary,_maxSalary];
+        query = [NSString stringWithFormat:@"SELECT * FROM Employees WHERE PositionTitle='%@' AND CAST(EmployeeAnnualSalary as INTEGER)>='%@' AND CAST(EmployeeAnnualSalary as INTEGER)<='%@';", _positionTitle,_minSalary,_maxSalary];
         
     }
     else if(_searchType == searchByPosition){

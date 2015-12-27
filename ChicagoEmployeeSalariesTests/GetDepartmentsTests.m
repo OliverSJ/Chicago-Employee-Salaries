@@ -1,23 +1,22 @@
 //
-//  ChicagoEmployeeSalariesTests.m
-//  ChicagoEmployeeSalariesTests
+//  GetDepartmentsTests.m
+//  ChicagoEmployeeSalaries
 //
-//  Created by Oliver San Juan on 12/16/15.
+//  Created by Bradley Golden on 12/27/15.
 //  Copyright © 2015 Oliver San Juan. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
 #import "BusinessTier.h"
-
 #define NUM_DEPARTMENTS 36 // received directly from query in terminal
-@interface ChicagoEmployeeSalariesTests : XCTestCase
+
+@interface GetDepartmentsTests : XCTestCase
 
 @property BusinessTier *businessTier;
 
-
 @end
 
-@implementation ChicagoEmployeeSalariesTests
+@implementation GetDepartmentsTests
 
 - (void)setUp {
     [super setUp];
@@ -32,7 +31,6 @@
 }
 
 - (void)testGetDepartments {
-    
     NSArray *departments = [self.businessTier getDepartments];
     XCTAssertEqual(departments.count-1, NUM_DEPARTMENTS); // subtract "(Leave Blank)" from count
 }

@@ -100,22 +100,13 @@
     
     BOOL doReturn = NO;
     
-    // 3 possible cases where user doesn't provide input
-    if (self.textField.text.length <= 0 &&
-        self.textFieldTwo.text.length > 0) {
+    // 2 possible cases where user doesn't provide input
+    if (self.textField.text.length <= 0) {
         self.textField.backgroundColor = [UIColor colorWithRed:1.0 green:0 blue:0 alpha:0.5];
         doReturn = YES;
     }
     
-    if (self.textFieldTwo.text.length <= 0 &&
-        self.textField.text.length > 0) {
-        self.textFieldTwo.backgroundColor = [UIColor colorWithRed:1.0 green:0 blue:0 alpha:0.5];
-        doReturn = YES;
-    }
-    
-    if (self.textFieldTwo.text.length <= 0 &&
-        self.textField.text.length <= 0) {
-        self.textField.backgroundColor = [UIColor colorWithRed:1.0 green:0 blue:0 alpha:0.5];
+    if (self.textFieldTwo.text.length <= 0) {
         self.textFieldTwo.backgroundColor = [UIColor colorWithRed:1.0 green:0 blue:0 alpha:0.5];
         doReturn = YES;
     }

@@ -26,7 +26,7 @@
     EmployeesTableViewController *etvc = [segue destinationViewController];
     self.bt.minSalary = self.textField.text;
     self.bt.maxSalary = self.textFieldTwo.text;
-    self.bt.department = self.textFieldThree.text;
+    self.bt.positionTitle = self.textFieldThree.text;
     self.bt.searchType = searchBySalaryAndPosition;
     etvc.currentBT = self.bt;
 }

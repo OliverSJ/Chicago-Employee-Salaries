@@ -120,6 +120,15 @@
 
 #pragma mark - View Methods
 
+-(NSString*)convetToCurrencyString:(NSString*)string {
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+    NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
+    f.numberStyle = NSNumberFormatterDecimalStyle;
+    NSNumber *number = [f numberFromString:string];
+    return [formatter stringFromNumber:number];
+}
+
 -(void)viewDidLoad {
     
     // add image to background
@@ -129,7 +138,7 @@
     [self.view sendSubviewToBack:backgroundView];
     
     // fill cell contents with employee details
-    self.salaryCell.detailTextLabel.text = self.currentEmployee.annualSalary;
+    self.salaryCell.detailTextLabel.text = [self convetToCurrencyString:self.currentEmployee.annualSalary];
     self.positionCell.detailTextLabel.text = self.currentEmployee.jobPosition;
     self.departmentCell.detailTextLabel.text = self.currentEmployee.department;
     

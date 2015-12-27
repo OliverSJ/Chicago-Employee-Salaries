@@ -31,6 +31,13 @@
     
     UITextField *tempTextField = (UITextField*)sender;
     
+    if (tempTextField == self.textField)
+        self.currTextField = 0;
+    else if (tempTextField == self.textFieldTwo)
+        self.currTextField = 1;
+    else
+        self.currTextField = 2;
+    
     [self.view scrollToView:tempTextField];
 }
 
@@ -135,8 +142,6 @@
 }
 
 - (IBAction)nextButtonPressed:(id)sender {
-    NSLog(@"Closing text field %i", self.currTextField);
-    UITextField *curr = self.textFieldArr[self.currTextField];
     UITextField *next = self.textFieldArr[++self.currTextField];
 
     [self.textField resignFirstResponder];

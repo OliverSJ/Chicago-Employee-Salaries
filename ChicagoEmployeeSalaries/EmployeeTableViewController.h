@@ -13,4 +13,6 @@
 
 @property (nonatomic) EmployeeObject *currentEmployee;
 
+-(NSString*)convetToCurrencyString:(NSString*)string;
+
 @end

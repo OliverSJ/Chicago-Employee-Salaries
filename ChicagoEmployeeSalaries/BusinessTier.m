@@ -314,7 +314,7 @@
         
         //query = [NSString stringWithFormat:@"SELECT * FROM Employees WHERE CAST(EmployeeAnnualSalary as INTEGER)>=%@ AND CAST(EmployeeAnnualSalary as INTEGER)<=%@;", _minSalary,_maxSalary];
         
-        query = [NSString stringWithFormat:@"SELECT * FROM Employees WHERE EmployeeAnnualSalary>=%i AND EmployeeAnnualSalary=%i;",minimumSalary, maximumSalary];
+        query = [NSString stringWithFormat:@"SELECT * FROM Employees WHERE EmployeeAnnualSalary>=%i AND EmployeeAnnualSalary<=%i;",minimumSalary, maximumSalary];
         
         
     }

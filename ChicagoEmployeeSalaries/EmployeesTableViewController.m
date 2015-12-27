@@ -54,6 +54,16 @@ alpha:1.0]
     return decimalString;
 }
 
+-(NSString*)convetToCurrencyString:(NSString*)string {
+    
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+    NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
+    f.numberStyle = NSNumberFormatterDecimalStyle;
+    NSNumber *number = [f numberFromString:string];
+    return [formatter stringFromNumber:number];
+}
+
 /*************************************************
  TEXT LABELS
  *************************************************/
@@ -81,7 +91,8 @@ alpha:1.0]
     else if (self.currentBT.searchType == searchBySalary
              || self.currentBT.searchType == searchByPositionAndDepartment
              || self.currentBT.searchType == searchByPositionAndDepartment) {
-        return [self.employees[index] annualSalary];
+        
+        return [self convetToCurrencyString:[self.employees[index] annualSalary]];
     }
     
     // display job position in cell details
@@ -133,6 +144,8 @@ alpha:1.0]
         cell.selectedBackgroundView.backgroundColor = UIColorFromRGB(0xB3DDF2); // color selection chicago blue
         
         NSString *decimalString = [self convertCurrencyStringtoDecimalString:[self.employees[indexPath.row]annualSalary]];
+        
+        
         
         // select image to give user information about the employees salary
         if ([decimalString integerValue] < 60000) {

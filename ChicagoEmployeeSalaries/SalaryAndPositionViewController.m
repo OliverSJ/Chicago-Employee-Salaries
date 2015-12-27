@@ -27,7 +27,7 @@
     self.bt.minSalary = self.textField.text;
     self.bt.maxSalary = self.textFieldTwo.text;
     self.bt.department = self.textFieldThree.text;
-    self.bt.searchType = searchBySalaryAndDepartment;
+    self.bt.searchType = searchBySalaryAndPosition;
     etvc.currentBT = self.bt;
 }
 
@@ -48,7 +48,7 @@
     self.textField.keyboardType = UIKeyboardTypeNumberPad;
     self.textFieldTwo.placeholder = @"i.e. 120000";
     self.textFieldTwo.keyboardType = UIKeyboardTypeNumberPad;
-    self.textFieldThree.placeholder = @"i.e. MAYOR'S OFFICE";
+    self.textFieldThree.placeholder = @"i.e. MAYOR";
     self.backgroundImageName = @"chicago_10.png";
     
     [super addToolbars]; // add toolbars to both text fields

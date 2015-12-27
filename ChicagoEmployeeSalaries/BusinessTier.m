@@ -29,8 +29,12 @@
     NSArray* departForBackEnd;
     NSArray* departForFrontEnd;
     
+    //Class variables that will be reused for different queries
     long minimumSalary;
     long maximumSalary;
+    NSString* firstNameForParsing;
+    NSString* lastNameForParsing;
+    NSString* middleNameForParsing;
 
 }
 
@@ -141,6 +145,42 @@
     
 }
 
+-(void)parseName{
+    
+    //Convert string to all uppercase
+    _name = [_name uppercaseString];
+    _name = [_name stringByReplacingOccurrencesOfString:@"'" withString:@"''"];
+    
+    //Split the name up by spaces
+    NSArray* nameArray = [_name componentsSeparatedByString:@" "];
+    
+    firstNameForParsing = nameArray[0];
+    
+    if([nameArray count] == 2){
+      
+        lastNameForParsing = nameArray[1];
+    }
+    else if([nameArray count] == 3){
+        
+        //Combine the first and middle names together
+        firstNameForParsing = [NSString stringWithFormat:@"%@ %@", firstNameForParsing, nameArray[1]];
+        
+        lastNameForParsing = nameArray[2];
+    }
+
+    
+}
+
+-(void) preparePositionTitleForQuery{
+    
+    //Convert any lower case characters to uppercase
+    _positionTitle = [_positionTitle uppercaseString];
+    
+    //Convert single apostrophes to double apostrophes for the sqlite query
+    _positionTitle = [_positionTitle stringByReplacingOccurrencesOfString:@"'" withString:@"''"];
+    
+}
+
 #pragma mark Getting and creating Employee Objects
 
 -(NSArray*)createEmployeeObjectsArray{
@@ -215,67 +255,43 @@
         
         results = nil;
         
-        NSString* firstName = [_name componentsSeparatedByString:@" "][0];
-        NSString* lastName;
-        
-        //Check to see if there is a last name provided
-        @try{
-            
-            lastName = [_name componentsSeparatedByString:@" "][1];
-            
-        }
-        @catch(NSException *exception){
-            
-            lastName = nil;
-            
-        }
-        
         //Get the appropriate department name
         //This method will change the class variable departmentQuery
         [self createDepartmentQuery:_department];
         
+        //Parse the names provided
+        [self parseName];
+        
         //Query the database based on user input
-        if([firstName length] > 0 && [lastName length] > 0)
+        if([firstNameForParsing length] > 0 && [lastNameForParsing length] > 0)
         {
-            query = [NSString stringWithFormat:@"SELECT * FROM Employees WHERE Department= '%@' AND FirstName LIKE '%%%@%%' AND LastName LIKE '%%%@%%';",departmentQuery, firstName, lastName];
+            query = [NSString stringWithFormat:@"SELECT * FROM Employees WHERE Department= '%@' AND FirstName LIKE '%%%@%%' AND LastName LIKE '%%%@%%';",departmentQuery, firstNameForParsing, lastNameForParsing];
         }
         //Query the database with the "first" name acting as both the first and last names in order to get
         // a more complete list
         else
         {
-            query = [NSString stringWithFormat:@"SELECT * FROM Employees WHERE Department= '%@' AND (FirstName LIKE '%%%@%%' OR LastName LIKE '%%%@%%');",departmentQuery, firstName, firstName];
+            query = [NSString stringWithFormat:@"SELECT * FROM Employees WHERE Department= '%@' AND (FirstName LIKE '%%%@%%' OR LastName LIKE '%%%@%%');",departmentQuery, firstNameForParsing, firstNameForParsing];
         }
         
         
     }
     else if(_searchType == searchByName){
         
-        NSString* firstName = [_name componentsSeparatedByString:@" "][0];
-        NSString* lastName;
-        
-        //Check to see if there is a last name provided
-        @try{
-            
-            lastName = [_name componentsSeparatedByString:@" "][1];
-            
-        }
-        @catch(NSException *exception){
-            
-            lastName = nil;
-            
-        }
+        //Parse the names provided
+        [self parseName];
         
         //Query the database based on user input
-        if([firstName length] > 0 && [lastName length] > 0)
+        if([firstNameForParsing length] > 0 && [lastNameForParsing length] > 0)
         {
-            query = [NSString stringWithFormat:@"SELECT* FROM Employees WHERE FirstName LIKE '%%%@%%' AND LastName='%@';",firstName, lastName];
+            query = [NSString stringWithFormat:@"SELECT* FROM Employees WHERE FirstName LIKE '%%%@%%' AND LastName='%@';",firstNameForParsing, lastNameForParsing];
 
         }
         //Query the database with the "first" name acting as both the first and last names in order to get
         // a more complete list
         else
         {
-            query = [NSString stringWithFormat:@"SELECT* FROM Employees WHERE FirstName LIKE '%%%@%%' OR LastName LIKE '%%%@%%';",firstName, firstName];
+            query = [NSString stringWithFormat:@"SELECT* FROM Employees WHERE FirstName LIKE '%%%@%%' OR LastName LIKE '%%%@%%';",firstNameForParsing, firstNameForParsing];
         }
         
         
@@ -314,10 +330,14 @@
         //Convert the salaries to an integer
         [self convertSalariesForQuery];
         
+        [self preparePositionTitleForQuery];
+        
         query = [NSString stringWithFormat:@"SELECT * FROM Employees WHERE PositionTitle='%@' AND EmployeeAnnualSalary>='%li' AND EmployeeAnnualSalary<='%li';", _positionTitle,minimumSalary,maximumSalary];
         
     }
     else if(_searchType == searchByPosition){
+        
+        [self preparePositionTitleForQuery];
         
         query = [NSString stringWithFormat:@"SELECT * FROM Employees WHERE PositionTitle='%@';", _positionTitle];
     }
@@ -325,6 +345,8 @@
         
         //Create the appropriate department query
         [self createDepartmentQuery:_department];
+        
+        [self preparePositionTitleForQuery];
         
         query = [NSString stringWithFormat:@"SELECT * FROM Employees WHERE PositionTitle='%@' AND Department='%@';", _positionTitle, departmentQuery];
     }

@@ -54,21 +54,17 @@
     
     self.businessTier.maxSalary = @"200000";
     self.businessTier.minSalary = @"250000";
-    NSString *name = @"EMANUEL,  RAHM";
     self.businessTier.searchType = searchBySalary;
     
     NSArray *employees = [self.businessTier getEmployees];
     
-    for (EmployeeObject *emp in employees) {
-        
-        if ([emp.name isEqualToString:name]) {
-            XCTAssertTrue(YES);
-            return;
-        }
+    if (employees.count > 0) {
+        XCTAssertTrue(NO, "Array size is expected to be zero.");
     }
     
-    // no object found with correct name
-    XCTAssertTrue(NO, "No employee object found");
+    else {
+        XCTAssertTrue(YES);
+    }
 }
 
 @end

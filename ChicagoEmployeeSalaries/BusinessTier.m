@@ -24,7 +24,7 @@
     NSMutableArray *tempArray;
     NSArray *results;
     
-    //Variables to create the dictionary that will communicate between the front end and the back end
+    //Variables to create the dictionary that will communicate  between the front end and the back end
     NSDictionary* departmentsWithCorrectSpelling;
     NSArray* departForBackEnd;
     NSArray* departForFrontEnd;
@@ -34,7 +34,6 @@
     long maximumSalary;
     NSString* firstNameForParsing;
     NSString* lastNameForParsing;
-    NSString* middleNameForParsing;
 
 }
 
@@ -332,14 +331,14 @@
         
         [self preparePositionTitleForQuery];
         
-        query = [NSString stringWithFormat:@"SELECT * FROM Employees WHERE PositionTitle='%@' AND EmployeeAnnualSalary>='%li' AND EmployeeAnnualSalary<='%li';", _positionTitle,minimumSalary,maximumSalary];
+        query = [NSString stringWithFormat:@"SELECT * FROM Employees WHERE PositionTitle LIKE'%%%@%%' AND EmployeeAnnualSalary>='%li' AND EmployeeAnnualSalary<='%li';", _positionTitle,minimumSalary,maximumSalary];
         
     }
     else if(_searchType == searchByPosition){
         
         [self preparePositionTitleForQuery];
         
-        query = [NSString stringWithFormat:@"SELECT * FROM Employees WHERE PositionTitle='%@';", _positionTitle];
+        query = [NSString stringWithFormat:@"SELECT * FROM Employees WHERE PositionTitle LIKE'%%%@%%';", _positionTitle];
     }
     else if(_searchType == searchByPositionAndDepartment){
         
@@ -348,7 +347,7 @@
         
         [self preparePositionTitleForQuery];
         
-        query = [NSString stringWithFormat:@"SELECT * FROM Employees WHERE PositionTitle='%@' AND Department='%@';", _positionTitle, departmentQuery];
+        query = [NSString stringWithFormat:@"SELECT * FROM Employees WHERE PositionTitle LIKE'%%%@%%' AND Department='%@';", _positionTitle, departmentQuery];
     }
     
     else{

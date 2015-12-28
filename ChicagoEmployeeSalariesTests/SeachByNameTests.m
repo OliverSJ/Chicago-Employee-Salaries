@@ -176,7 +176,7 @@
 
 - (void)testNameWithApostrophe {
     
-    NSString *name = @"COBB, D'VONNA C";
+    NSString *name = @"COBB,  D'VONNA C";
     self.businessTier.name = @"D'VONNA C COBB";
     self.businessTier.searchType = searchByName;
     

@@ -43,7 +43,7 @@
     self.segueID = @"SalaryAndDepartmentResults";
     self.label.text = @"Enter a Minimum Salary";
     self.labelTwo.text = @"Enter a Maximum Salary";
-    self.labelThree.text = @"Select a Depatment";
+    self.labelThree.text = @"Select a Department";
     self.textField.placeholder = @"i.e. 100000";
     self.textField.keyboardType = UIKeyboardTypeNumberPad;
     self.textFieldTwo.placeholder = @"i.e. 120000";

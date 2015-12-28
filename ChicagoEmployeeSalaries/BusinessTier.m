@@ -43,7 +43,7 @@
     if (self) {
         
         // init dataTier with base url for sqlite database
-        dt = [[DataTier alloc] initWithDatabaseFilename:@"chicago_employee_salaries_db.sql"];
+        dt = [[DataTier alloc] initWithDatabaseFilename:@"chicago_employee_salaries_2015_db.sql"];
         
         //Set public variables that are reused to nil
         _name = nil;

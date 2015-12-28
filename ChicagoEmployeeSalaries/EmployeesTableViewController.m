@@ -8,6 +8,7 @@
 
 #import "EmployeesTableViewController.h"
 #import "EmployeeTableViewController.h"
+#import "GoogleAnalytics.h"
 
 // allow for hex input color
 #define UIColorFromRGB(rgbValue) \
@@ -186,6 +187,13 @@ alpha:1.0]
  *************************************************/
 
 #pragma mark - View Methods
+
+-(void)viewWillAppear:(BOOL)animated {
+    
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Employees"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+}
 
 -(void)viewDidLoad {
     

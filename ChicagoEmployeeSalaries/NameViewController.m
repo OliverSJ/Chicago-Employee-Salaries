@@ -10,6 +10,7 @@
 #import "BusinessTier.h"
 #import "EmployeesTableViewController.h"
 #import "PrevNextSearchToolbarView.h"
+#import "GoogleAnalytics.h"
 
 @interface NameViewController ()
 
@@ -54,6 +55,11 @@
 - (void)viewWillAppear:(BOOL)animated {
     
     [self initDataTier];
+    
+    [self initDataTier];
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Name"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
 }
 
 - (void)viewDidLoad {

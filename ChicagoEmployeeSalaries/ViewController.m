@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "EmployeesTableViewController.h"
 #import "BusinessTier.h"
+#import "GoogleAnalytics.h"
 
 // allow for hex input color
 #define UIColorFromRGB(rgbValue) \
@@ -121,6 +122,13 @@ alpha:1.0]
     
     // helps hide separators in certain cells, see cellForRowAtIndexPath in tableView for more
     self.tableView.separatorColor = [UIColor clearColor];
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Home"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
 }
 
 -(void)viewDidAppear:(BOOL)animated {

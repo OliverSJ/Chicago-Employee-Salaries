@@ -10,6 +10,7 @@
 #import "BusinessTier.h"
 #import "EmployeesTableViewController.h"
 #import "PrevNextSearchToolbarView.h"
+#import "GoogleAnalytics.h"
 
 @interface SalaryAndDepartmentViewController ()
 
@@ -60,6 +61,10 @@
 - (void)viewWillAppear:(BOOL)animated {
     
     [self initDataTier];
+    
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"SalaryAndDepartment"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
 }
 
 - (void)viewDidLoad {

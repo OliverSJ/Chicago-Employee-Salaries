@@ -7,6 +7,7 @@
 //
 
 #import "EmployeeTableViewController.h"
+#import "GoogleAnalytics.h"
 
 @interface EmployeeTableViewController()
 
@@ -127,6 +128,13 @@
     f.numberStyle = NSNumberFormatterDecimalStyle;
     NSNumber *number = [f numberFromString:string];
     return [formatter stringFromNumber:number];
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"Employee"];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
 }
 
 -(void)viewDidLoad {

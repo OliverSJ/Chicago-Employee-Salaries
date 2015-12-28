@@ -58,6 +58,7 @@
 		8FA0719E1C3070A70013EAA1 /* SearchByDepartmentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA071991C3070A70013EAA1 /* SearchByDepartmentTests.m */; };
 		8FA0719F1C3070A70013EAA1 /* SearchByPositionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA0719A1C3070A70013EAA1 /* SearchByPositionTests.m */; };
 		8FA071A01C3070A70013EAA1 /* SearchBySalaryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA0719B1C3070A70013EAA1 /* SearchBySalaryTests.m */; };
+		9469EBA7B1955FB1D83DABC0 /* libPods-ChicagoEmployeeSalaries.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 499D52E3478E544B198904E8 /* libPods-ChicagoEmployeeSalaries.a */; };
 		9D1ABE031C276074009F0013 /* DepartmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1ABE021C276074009F0013 /* DepartmentViewController.m */; };
 		9D1ABE061C276B2A009F0013 /* UIView+FormScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1ABE051C276B2A009F0013 /* UIView+FormScroll.m */; };
 		9D1ABE091C27B215009F0013 /* NameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1ABE081C27B215009F0013 /* NameViewController.m */; };
@@ -72,6 +73,7 @@
 		9DC521B51C25FD350006E507 /* next_large.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DC521B11C25FD350006E507 /* next_large.png */; };
 		9DC521B61C25FD350006E507 /* next_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DC521B21C25FD350006E507 /* next_small.png */; };
 		9DC521B91C2620730006E507 /* EmployeeObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DC521B81C2620730006E507 /* EmployeeObject.m */; };
+		9DE8434B1C31093F001FC6DD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9DE8434A1C31093F001FC6DD /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +94,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1386F43DB425DCCB6748C4D6 /* Pods-ChicagoEmployeeSalaries.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChicagoEmployeeSalaries.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChicagoEmployeeSalaries/Pods-ChicagoEmployeeSalaries.release.xcconfig"; sourceTree = "<group>"; };
+		499D52E3478E544B198904E8 /* libPods-ChicagoEmployeeSalaries.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ChicagoEmployeeSalaries.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F4BCF801C21D503002674D1 /* ChicagoEmployeeSalaries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChicagoEmployeeSalaries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F4BCF841C21D503002674D1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8F4BCF861C21D503002674D1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -172,6 +176,7 @@
 		9D1ABE0D1C27C92F009F0013 /* SalaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SalaryViewController.h; sourceTree = "<group>"; };
 		9D1ABE0E1C27C92F009F0013 /* SalaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SalaryViewController.m; sourceTree = "<group>"; };
 		9D48C3D71C21E219002F9036 /* DataTier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataTier.m; sourceTree = "<group>"; };
+		9D6452E11C3113F500040DC9 /* GoogleAnalytics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoogleAnalytics.h; sourceTree = "<group>"; };
 		9DA07C401C2700AE0045B1ED /* EmployeeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmployeeTableViewController.h; sourceTree = "<group>"; };
 		9DA07C411C2700AE0045B1ED /* EmployeeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmployeeTableViewController.m; sourceTree = "<group>"; };
 		9DA7392D1C30FA81009B73BB /* chicago_employee_salaries_2015_db.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = chicago_employee_salaries_2015_db.sql; sourceTree = "<group>"; };
@@ -184,6 +189,11 @@
 		9DC521B71C2620730006E507 /* EmployeeObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmployeeObject.h; sourceTree = "<group>"; };
 		9DC521B81C2620730006E507 /* EmployeeObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmployeeObject.m; sourceTree = "<group>"; };
 		9DC521BA1C2620E90006E507 /* BusinessTierRules.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusinessTierRules.h; sourceTree = "<group>"; };
+		9DE843421C310371001FC6DD /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		9DE843441C310393001FC6DD /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		9DE843461C3103AE001FC6DD /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		9DE8434A1C31093F001FC6DD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		E766C22F12EBAB2F1C01F3EB /* Pods-ChicagoEmployeeSalaries.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChicagoEmployeeSalaries.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChicagoEmployeeSalaries/Pods-ChicagoEmployeeSalaries.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F92C1611C2B37BF0091BF99 /* libsqlite3.tbd in Frameworks */,
+				9469EBA7B1955FB1D83DABC0 /* libPods-ChicagoEmployeeSalaries.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,6 +223,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		46701FC91DFE20EBE5E4FCAA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E766C22F12EBAB2F1C01F3EB /* Pods-ChicagoEmployeeSalaries.debug.xcconfig */,
+				1386F43DB425DCCB6748C4D6 /* Pods-ChicagoEmployeeSalaries.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		8F4BCF771C21D503002674D1 = {
 			isa = PBXGroup;
 			children = (
@@ -220,6 +240,8 @@
 				8F4BCF9C1C21D503002674D1 /* ChicagoEmployeeSalariesTests */,
 				8F4BCFA71C21D503002674D1 /* ChicagoEmployeeSalariesUITests */,
 				8F4BCF811C21D503002674D1 /* Products */,
+				46701FC91DFE20EBE5E4FCAA /* Pods */,
+				D975E14BAD651ACE7045DB8D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -236,6 +258,8 @@
 		8F4BCF821C21D503002674D1 /* ChicagoEmployeeSalaries */ = {
 			isa = PBXGroup;
 			children = (
+				9D6452E11C3113F500040DC9 /* GoogleAnalytics.h */,
+				9DE8434A1C31093F001FC6DD /* GoogleService-Info.plist */,
 				8F4BCF861C21D503002674D1 /* AppDelegate.h */,
 				8F4BCF871C21D503002674D1 /* AppDelegate.m */,
 				9DC521BA1C2620E90006E507 /* BusinessTierRules.h */,
@@ -350,6 +374,17 @@
 			path = ChicagoEmployeeSalariesUITests;
 			sourceTree = "<group>";
 		};
+		D975E14BAD651ACE7045DB8D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9DE843461C3103AE001FC6DD /* libz.tbd */,
+				9DE843441C310393001FC6DD /* SystemConfiguration.framework */,
+				9DE843421C310371001FC6DD /* CoreData.framework */,
+				499D52E3478E544B198904E8 /* libPods-ChicagoEmployeeSalaries.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -357,9 +392,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8F4BCFAD1C21D503002674D1 /* Build configuration list for PBXNativeTarget "ChicagoEmployeeSalaries" */;
 			buildPhases = (
+				273D59BDF674F480EA86417E /* Check Pods Manifest.lock */,
 				8F4BCF7C1C21D503002674D1 /* Sources */,
 				8F4BCF7D1C21D503002674D1 /* Frameworks */,
 				8F4BCF7E1C21D503002674D1 /* Resources */,
+				9D9EBD991F800751C8ABF5FB /* Embed Pods Frameworks */,
+				AA3C88C40DD59C0899A02752 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -483,6 +521,7 @@
 				9DC521B41C25FD350006E507 /* back_small.png in Resources */,
 				8F92C1591C29CAF20091BF99 /* flag.png in Resources */,
 				8F92C1F71C2F1A9B0091BF99 /* chicago_9.png in Resources */,
+				9DE8434B1C31093F001FC6DD /* GoogleService-Info.plist in Resources */,
 				8F92C1F81C2F1A9B0091BF99 /* chicago_10.png in Resources */,
 				8F92C1F61C2F1A9B0091BF99 /* chicago_6.png in Resources */,
 				8F92C1CD1C2B3AA00091BF99 /* chicago_5.png in Resources */,
@@ -508,6 +547,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		273D59BDF674F480EA86417E /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9D9EBD991F800751C8ABF5FB /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChicagoEmployeeSalaries/Pods-ChicagoEmployeeSalaries-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA3C88C40DD59C0899A02752 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChicagoEmployeeSalaries/Pods-ChicagoEmployeeSalaries-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8F4BCF7C1C21D503002674D1 /* Sources */ = {
@@ -678,6 +765,7 @@
 		};
 		8F4BCFAE1C21D503002674D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E766C22F12EBAB2F1C01F3EB /* Pods-ChicagoEmployeeSalaries.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -692,6 +780,7 @@
 		};
 		8F4BCFAF1C21D503002674D1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1386F43DB425DCCB6748C4D6 /* Pods-ChicagoEmployeeSalaries.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

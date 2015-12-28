@@ -37,6 +37,17 @@ alpha:1.0]
 
 #pragma mark - Table View Methods
 
+-(void)searchButtonPressed:(NSString*)buttonText {
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    
+    [tracker set:kGAIScreenName value:@"Home"];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UX"
+                                                          action:@"build_search"
+                                                           label:buttonText
+                                                           value:nil] build]];
+    [tracker set:kGAIScreenName value:nil];
+}
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
     return self.tableViewCells.count;
@@ -65,6 +76,9 @@ alpha:1.0]
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    // Send button pressed to Google Analytics
+    [self searchButtonPressed:self.tableViewCells[indexPath.row]];
     
     switch (indexPath.row) {
         case 0:

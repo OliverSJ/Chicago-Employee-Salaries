@@ -9,6 +9,7 @@
 #import "DoubleTextFieldViewController.h"
 #import "UIView+FormScroll.h"
 #import "PrevNextSearchToolbarView.h"
+#import "GoogleAnalytics.h"
 
 @interface DoubleTextFieldViewController()
 
@@ -114,6 +115,16 @@
     if (doReturn) {
         return;
     }
+    
+    // send google analytics info about which type of search being performed
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    
+    [tracker set:kGAIScreenName value:@"Search"];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UX"
+                                                          action:@"view_employees"
+                                                           label:self.segueID
+                                                           value:nil] build]];
+    [tracker set:kGAIScreenName value:nil];
     
     // close keyboard
     [self.view.window endEditing:YES];

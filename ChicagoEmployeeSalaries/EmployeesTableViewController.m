@@ -121,6 +121,22 @@ alpha:1.0]
 
 #pragma mark - Table View Methods
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    NSString *name = cell.textLabel.text;
+    
+    // send google analytics info about which type of search being performed
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    
+    [tracker set:kGAIScreenName value:@"Employees"];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UX"
+                                                          action:@"employee_details"
+                                                           label:name
+                                                           value:nil] build]];
+    [tracker set:kGAIScreenName value:nil];
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     // no results returned by user's search query

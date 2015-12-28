@@ -25,10 +25,16 @@
     [[GAI sharedInstance].logger setLogLevel:kGAILogLevelVerbose];
     
     // 3
-    [GAI sharedInstance].dispatchInterval = 120;
+    [GAI sharedInstance].dispatchInterval = 20;
     
     // 4
     id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-71798858-1"];
+    
+    // Start a new session with a screenView hit.
+    GAIDictionaryBuilder *builder = [GAIDictionaryBuilder createScreenView];
+    [builder set:@"start" forKey:kGAISessionControl];
+    [tracker set:kGAIScreenName value:@"Home"];
+    [tracker send:[builder build]];
     
     return YES;
 }

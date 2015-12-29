@@ -18,9 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chicago_5.png" translatesAutoresizingMaskIntoConstraints="NO" id="aF8-vq-mYk">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nJ3-tg-rFo" userLabel="Center View">
                                 <rect key="frame" x="20" y="84" width="560" height="508"/>
                                 <subviews>
@@ -76,11 +73,6 @@
                             <constraint firstAttribute="trailingMargin" secondItem="nJ3-tg-rFo" secondAttribute="trailing" id="oaL-7K-lEL"/>
                             <constraint firstAttribute="leadingMargin" secondItem="nJ3-tg-rFo" secondAttribute="leading" id="rZp-79-XHK"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="aF8-vq-mYk"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="VoF-wB-eim"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -1269,10 +1261,7 @@
             <point key="canvasLocation" x="724" y="1774"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="chicago_5.png" width="996" height="1024"/>
-    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="h5g-6G-f0r"/>
+        <segue reference="89A-Cn-4ym"/>
     </inferredMetricsTieBreakers>
 </document>

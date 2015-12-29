@@ -42,7 +42,7 @@
     self.segueID = @"DepartmentResults";
     self.label.text = @"Search by Department";
     self.textField.placeholder = @"i.e. MAYOR'S OFFICE";
-    self.backgroundImageName = @"chicago_3.png";
+//    self.backgroundImageName = @"chicago_3.png";
     self.pickerViewContents = [self.bt getDepartments];
     
     // configure toolbar for picker view
@@ -58,9 +58,7 @@
     
     [self initDataTier];
     
-    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-    [tracker set:kGAIScreenName value:@"Department"];
-    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+    [self.view addGoogleAnalytics:@"Department"];
     
 }
 

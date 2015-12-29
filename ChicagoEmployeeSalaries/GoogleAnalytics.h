@@ -15,3 +15,10 @@
 #import "GAIDictionaryBuilder.h"
 
 #endif /* Google_Analytics_h */
+
+@interface UIView(GoogleAnalytics)
+
+-(void) addGoogleAnalytics:(NSString*)screenName;
+-(void) addGoogleAnalyticsEvent:(NSString *)screenName createEventWithCategory:(NSString*)category action:(NSString*)action label:(NSString*)label;
+
+@end

@@ -45,7 +45,7 @@
     self.labelTwo.text = @"Select a Department";
     self.textField.placeholder = @"i.e. RAHM EMANUEL";
     self.textFieldTwo.placeholder = @"i.e. MAYOR'S OFFICE";
-    self.backgroundImageName = @"chicago_1.png";
+//    self.backgroundImageName = @"chicago_1.png";
     self.pickerViewContents = [self.bt getDepartments];
     
     [super addPickerView:self.textFieldTwo]; // add picker view to the second text field
@@ -57,9 +57,7 @@
     
     [self initDataTier];
     
-    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-    [tracker set:kGAIScreenName value:@"NameAndDepartment"];
-    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+    [self.view addGoogleAnalytics:@"NameAndDepartment"];
 }
 
 - (void)viewDidLoad {

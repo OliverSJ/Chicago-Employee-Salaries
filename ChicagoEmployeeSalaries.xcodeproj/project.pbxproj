@@ -65,6 +65,7 @@
 		9D1ABE0C1C27C098009F0013 /* NameAndDepartmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1ABE0B1C27C098009F0013 /* NameAndDepartmentViewController.m */; };
 		9D1ABE0F1C27C92F009F0013 /* SalaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1ABE0E1C27C92F009F0013 /* SalaryViewController.m */; };
 		9D48C3D81C21E219002F9036 /* DataTier.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D48C3D71C21E219002F9036 /* DataTier.m */; };
+		9D6452E31C32342E00040DC9 /* GoogleAnalytics.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D6452E21C32342E00040DC9 /* GoogleAnalytics.m */; };
 		9DA07C421C2700AE0045B1ED /* EmployeeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA07C411C2700AE0045B1ED /* EmployeeTableViewController.m */; };
 		9DA7392E1C30FA81009B73BB /* chicago_employee_salaries_2015_db.sql in Resources */ = {isa = PBXBuildFile; fileRef = 9DA7392D1C30FA81009B73BB /* chicago_employee_salaries_2015_db.sql */; };
 		9DC521AB1C250BFC0006E507 /* EmployeesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DC521AA1C250BFC0006E507 /* EmployeesTableViewController.m */; };
@@ -177,6 +178,7 @@
 		9D1ABE0E1C27C92F009F0013 /* SalaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SalaryViewController.m; sourceTree = "<group>"; };
 		9D48C3D71C21E219002F9036 /* DataTier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataTier.m; sourceTree = "<group>"; };
 		9D6452E11C3113F500040DC9 /* GoogleAnalytics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoogleAnalytics.h; sourceTree = "<group>"; };
+		9D6452E21C32342E00040DC9 /* GoogleAnalytics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleAnalytics.m; sourceTree = "<group>"; };
 		9DA07C401C2700AE0045B1ED /* EmployeeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmployeeTableViewController.h; sourceTree = "<group>"; };
 		9DA07C411C2700AE0045B1ED /* EmployeeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmployeeTableViewController.m; sourceTree = "<group>"; };
 		9DA7392D1C30FA81009B73BB /* chicago_employee_salaries_2015_db.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = chicago_employee_salaries_2015_db.sql; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				9D6452E11C3113F500040DC9 /* GoogleAnalytics.h */,
+				9D6452E21C32342E00040DC9 /* GoogleAnalytics.m */,
 				9DE8434A1C31093F001FC6DD /* GoogleService-Info.plist */,
 				8F4BCF861C21D503002674D1 /* AppDelegate.h */,
 				8F4BCF871C21D503002674D1 /* AppDelegate.m */,
@@ -451,7 +454,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0720;
-				ORGANIZATIONNAME = "Oliver San Juan";
+				ORGANIZATIONNAME = ChiSalary;
 				TargetAttributes = {
 					8F4BCF7F1C21D503002674D1 = {
 						CreatedOnToolsVersion = 7.2;
@@ -608,6 +611,7 @@
 				8F92C1EC1C2E5A260091BF99 /* SingleTextFieldViewController.m in Sources */,
 				8F92C1FA1C2F1A9B0091BF99 /* SalaryAndPositionViewController.m in Sources */,
 				8F4BCF8B1C21D503002674D1 /* ViewController.m in Sources */,
+				9D6452E31C32342E00040DC9 /* GoogleAnalytics.m in Sources */,
 				8F92C1F91C2F1A9B0091BF99 /* SalaryAndDepartmentViewController.m in Sources */,
 				8F4BCFB81C21DF81002674D1 /* BusinessTier.m in Sources */,
 				8F4BCF881C21D503002674D1 /* AppDelegate.m in Sources */,
@@ -772,7 +776,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ChicagoEmployeeSalaries/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.OliverSanJuan.ChicagoEmployeeSalaries.Bradley;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ChiSalary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -783,11 +787,11 @@
 			baseConfigurationReference = 1386F43DB425DCCB6748C4D6 /* Pods-ChicagoEmployeeSalaries.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				INFOPLIST_FILE = ChicagoEmployeeSalaries/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.OliverSanJuan.ChicagoEmployeeSalaries.Bradley;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ChiSalary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

@@ -42,7 +42,7 @@
     self.segueID = @"NameResults";
     self.label.text = @"Search by Name";
     self.textField.placeholder = @"i.e. RAHM EMANUEL";
-    self.backgroundImageName = @"chicago_4.png";
+    //self.backgroundImageName = @"chicago_4.png";
     
     // configure toolbar
     PrevNextSearchToolbarView *toolBar = [[PrevNextSearchToolbarView alloc]initWithSelectors:nil nextSelector:nil searchSelector:@selector(buttonPressed:)];
@@ -56,10 +56,7 @@
     
     [self initDataTier];
     
-    [self initDataTier];
-    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-    [tracker set:kGAIScreenName value:@"Name"];
-    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+    [self.view addGoogleAnalytics:@"Name"];
 }
 
 - (void)viewDidLoad {

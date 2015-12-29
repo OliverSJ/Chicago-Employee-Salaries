@@ -127,9 +127,9 @@ alpha:1.0]
     self.centerView.layer.opacity = 0.9f;
     
     // add image to background
-    UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"chicago_5.png"]];
-    [self.view addSubview:backgroundView];
-    [self.view sendSubviewToBack:backgroundView];
+//    UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"chicago_5.png"]];
+//    [self.view addSubview:backgroundView];
+//    [self.view sendSubviewToBack:backgroundView];
     
     // Do any additional setup after loading the view, typically from a nib.
     self.tableViewCells = @[@"Name", @"Department", @"Salary", @"Postition", @"Name and Department", @"Position and Department", @"Salary and Department", @"Salary and Position"];
@@ -138,11 +138,42 @@ alpha:1.0]
     self.tableView.separatorColor = [UIColor clearColor];
 }
 
+-(void)showOptInAlert {
+    UIAlertController *alert =   [UIAlertController
+                                  alertControllerWithTitle:@"Google Analytics"
+                                  message:@"With your permission, usage information will be collected to improve the application."
+                                  preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *ok = [UIAlertAction
+                         actionWithTitle:@"OK"
+                         style:UIAlertActionStyleDefault
+                         handler:^(UIAlertAction * action)
+                         {
+                             // do nothing
+                             [alert dismissViewControllerAnimated:YES completion:nil];
+                             
+                         }];
+    
+    UIAlertAction *noThanks = [UIAlertAction
+                             actionWithTitle:@"No Thanks"
+                             style:UIAlertActionStyleDefault
+                             handler:^(UIAlertAction * action)
+                             {
+                                 // opt out of tracking
+                                 [[GAI sharedInstance] setOptOut:YES];
+                                 [alert dismissViewControllerAnimated:YES completion:nil];
+                                 
+                             }];
+    
+    [alert addAction:ok];
+    [alert addAction:noThanks];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
 -(void)viewWillAppear:(BOOL)animated {
     
-    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-    [tracker set:kGAIScreenName value:@"Home"];
-    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+    [self.view addGoogleAnalytics:@"Home"];
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -151,6 +182,13 @@ alpha:1.0]
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    if (! [defaults boolForKey:@"alertShown"]) {
+        // display alert...
+        [self showOptInAlert];
+        [defaults setBool:YES forKey:@"alertShown"];
+    }
     
     [self configureView];
 }

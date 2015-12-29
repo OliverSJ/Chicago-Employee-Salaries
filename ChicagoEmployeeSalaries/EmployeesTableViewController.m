@@ -206,9 +206,7 @@ alpha:1.0]
 
 -(void)viewWillAppear:(BOOL)animated {
     
-    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-    [tracker set:kGAIScreenName value:@"Employees"];
-    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+    [self.view addGoogleAnalytics:@"Employees"];
 }
 
 -(void)viewDidLoad {

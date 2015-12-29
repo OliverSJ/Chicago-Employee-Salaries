@@ -71,14 +71,10 @@
                         </subviews>
                         <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="aF8-vq-mYk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="FZh-Nr-5me"/>
                             <constraint firstItem="nJ3-tg-rFo" firstAttribute="top" secondItem="Ch9-3c-ZJd" secondAttribute="bottom" constant="20" id="RWk-UT-p8h"/>
                             <constraint firstItem="8sb-Hc-8CH" firstAttribute="top" secondItem="nJ3-tg-rFo" secondAttribute="bottom" constant="8" id="TIR-Jo-0fz"/>
-                            <constraint firstItem="aF8-vq-mYk" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="b36-vI-Ogd"/>
-                            <constraint firstItem="aF8-vq-mYk" firstAttribute="centerX" secondItem="nJ3-tg-rFo" secondAttribute="centerX" id="jlV-yt-mmu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="nJ3-tg-rFo" secondAttribute="trailing" id="oaL-7K-lEL"/>
                             <constraint firstAttribute="leadingMargin" secondItem="nJ3-tg-rFo" secondAttribute="leading" id="rZp-79-XHK"/>
-                            <constraint firstItem="aF8-vq-mYk" firstAttribute="bottom" secondItem="8sb-Hc-8CH" secondAttribute="top" id="rjA-PT-s9f"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">

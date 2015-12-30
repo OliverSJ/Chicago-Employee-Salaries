@@ -129,8 +129,33 @@
     sqlite3_close(sqlite3Database);
 }
 
--(void)copyDatabaseIntoDocumentsDirectory{
+-(void)deleteOldDatabases{
+    
     // First, test for existence.
+    BOOL success;
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSError *error;
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    for (NSString *databaseFilename in self.oldDatabaseFilenames) {
+        NSString *writableDBPath = [documentsDirectory stringByAppendingPathComponent:databaseFilename];
+        success = [fileManager fileExistsAtPath:writableDBPath];
+        if (!success){
+            // Database doesn't exist
+            return;
+        }
+        
+        // The writable database exists in the documents directory so delete the database
+        success = [fileManager removeItemAtPath:writableDBPath error:&error];
+        if (!success) {
+            NSAssert1(0, @"Failed to remove database file with message '%@'.", [error localizedDescription]);
+        }
+    }
+}
+
+-(void)copyDatabaseIntoDocumentsDirectory{
+    
+    // First, test for existence
     BOOL success;
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSError *error;
@@ -140,6 +165,7 @@
     success = [fileManager fileExistsAtPath:writableDBPath];
     if (success)
         return;
+    
     // The writable database does not exist, so copy the default to the appropriate location.
     NSString *defaultDBPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:self.databaseFilename];
     success = [fileManager copyItemAtPath:defaultDBPath toPath:writableDBPath error:&error];
@@ -151,8 +177,10 @@
 #pragma mark - Init Methods
 
 -(instancetype)initWithDatabaseFilename:(NSString *)dbFilename{
+    
     self = [super init];
     if (self) {
+        
         // Set the documents directory path to the documentsDirectory property.
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         self.documentsDirectory = [paths objectAtIndex:0];
@@ -160,9 +188,16 @@
         // Keep the database filename.
         self.databaseFilename = dbFilename;
         
+        // Set old database filenames for deletion
+        self.oldDatabaseFilenames = nil;
+        
+        // Delete old databases if they exists
+        [self deleteOldDatabases];
+        
         // Copy the database file into the documents directory if necessary.
         [self copyDatabaseIntoDocumentsDirectory];
     }
+    
     return self;
 }
 

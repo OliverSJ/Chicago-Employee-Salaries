@@ -15,6 +15,8 @@
 @property (nonatomic, strong) NSString *documentsDirectory;
 /** Database filename (i.e. thisIsADB.sql) */
 @property (nonatomic, strong) NSString *databaseFilename;
+/** Old database filenames */
+@property (nonatomic, strong) NSArray *oldDatabaseFilenames;
 /** Contains results of given query */
 @property (nonatomic, strong) NSMutableArray *arrResults;
 /** Column names */

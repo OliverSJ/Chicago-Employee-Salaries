@@ -50,7 +50,7 @@
     self.textFieldTwo.placeholder = @"i.e. 120000";
     self.textFieldTwo.keyboardType = UIKeyboardTypeNumberPad;
     self.textFieldThree.placeholder = @"i.e. MAYOR'S OFFICE";
-    self.backgroundImageName = @"chicago_9.png";
+//    self.backgroundImageName = @"chicago_9.png";
     self.pickerViewContents = [self.bt getDepartments];
     
     [super addPickerView:self.textFieldThree]; // add picker view to the third text field
@@ -62,9 +62,7 @@
     
     [self initDataTier];
     
-    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-    [tracker set:kGAIScreenName value:@"SalaryAndDepartment"];
-    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+    [self.view addGoogleAnalytics:@"SalaryAndDepartment"];
 }
 
 - (void)viewDidLoad {

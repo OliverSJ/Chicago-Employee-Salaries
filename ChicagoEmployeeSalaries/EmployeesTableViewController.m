@@ -135,6 +135,9 @@ alpha:1.0]
                                                            label:name
                                                            value:nil] build]];
     [tracker set:kGAIScreenName value:nil];
+    
+    //Change the selected background view of the cell.
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -206,9 +209,7 @@ alpha:1.0]
 
 -(void)viewWillAppear:(BOOL)animated {
     
-    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-    [tracker set:kGAIScreenName value:@"Employees"];
-    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+    [self.view addGoogleAnalytics:@"Employees"];
 }
 
 -(void)viewDidLoad {

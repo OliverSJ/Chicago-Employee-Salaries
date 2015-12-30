@@ -42,7 +42,7 @@
     self.segueID = @"PositionResults";
     self.label.text = @"Search by Position";
     self.textField.placeholder = @"i.e. MAYOR";
-    self.backgroundImageName = @"chicago_7.png";
+//    self.backgroundImageName = @"chicago_7.png";
     
     // configure toolbar
     PrevNextSearchToolbarView *toolBar = [[PrevNextSearchToolbarView alloc]initWithSelectors:nil nextSelector:nil searchSelector:@selector(buttonPressed:)];
@@ -56,9 +56,7 @@
     
     [self initDataTier];
     
-    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-    [tracker set:kGAIScreenName value:@"Position"];
-    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+    [self.view addGoogleAnalytics:@"Position"];
 }
 
 - (void)viewDidLoad {

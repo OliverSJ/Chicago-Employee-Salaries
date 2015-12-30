@@ -10,31 +10,20 @@
 
 @interface AppDelegate ()
 
+@property id<GAITracker> tracker;
+
 @end
 
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
     
-    // 1
+    // Google analytics
     [GAI sharedInstance].trackUncaughtExceptions = YES;
-    
-    // 2
     [[GAI sharedInstance].logger setLogLevel:kGAILogLevelVerbose];
-    
-    // 3
-    [GAI sharedInstance].dispatchInterval = 20;
-    
-    // 4
-    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-71798858-1"];
-    
-    // Start a new session with a screenView hit.
-    GAIDictionaryBuilder *builder = [GAIDictionaryBuilder createScreenView];
-    [builder set:@"start" forKey:kGAISessionControl];
-    [tracker set:kGAIScreenName value:@"Home"];
-    [tracker send:[builder build]];
+    [GAI sharedInstance].dispatchInterval = 10;
+    _tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-71798858-1"];
     
     return YES;
 }
@@ -59,6 +48,10 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    
+    // end Google Analytics session
+    [_tracker set:kGAISessionControl
+           value:@"end"];
 }
 
 @end

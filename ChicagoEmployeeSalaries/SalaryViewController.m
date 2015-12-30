@@ -47,7 +47,7 @@
     self.textField.keyboardType = UIKeyboardTypeNumberPad;
     self.textFieldTwo.placeholder = @"i.e. 120000";
     self.textFieldTwo.keyboardType = UIKeyboardTypeNumberPad;
-    self.backgroundImageName = @"chicago_2.png";
+//    self.backgroundImageName = @"chicago_2.png";
     
     [super addToolbars]; // add toolbars to both text fields
     [super configureView];
@@ -57,9 +57,7 @@
     
     [self initDataTier];
     
-    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
-    [tracker set:kGAIScreenName value:@"Salary"];
-    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+    [self.view addGoogleAnalytics:@"Salary"];
 }
 
 - (void)viewDidLoad {

@@ -38,11 +38,6 @@
 - (NSArray*)getDepartments;
 
 
-@property BOOL nameSearch;
-@property BOOL departmentSearch;
-@property BOOL nameAndDepartmentSearch;
-@property BOOL salarySearch;
-
 /** @brief Variable set by the front end to tell the back end what query should be made*/
 @property searchType searchType;
 

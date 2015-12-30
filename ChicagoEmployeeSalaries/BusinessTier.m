@@ -52,15 +52,8 @@
         _maxSalary = nil;
         _positionTitle = nil;
         
-        
         departmentQuery = nil;
-        
-        //Set BOOL values to NO as default
-        _nameSearch = NO;
-        _departmentSearch = NO;
-        _nameAndDepartmentSearch = NO;
-        _salarySearch = NO;
-        
+                
         //Query the database for the list of departments
         results = [[NSArray alloc] initWithArray:[dt loadDataFromDB:@"SELECT DISTINCT(Department) FROM Employees ORDER BY Department ASC;"]];
         
@@ -220,12 +213,12 @@
             else if([key caseInsensitiveCompare:@"LastName"] == NSOrderedSame) {
                 lastName = [dictionary objectForKey:key];
                 
-                //Concatenate the names:
-                nameForObject = [NSString stringWithFormat:@"%@,  %@", lastName, firstName];
-                
             }
             
         }//end of inner for loop
+        
+        //Concatenate the names:
+        nameForObject = [NSString stringWithFormat:@"%@,  %@", lastName, firstName];
         
         //Make the object
         employee = [[EmployeeObject alloc] initWithValues:nameForObject aPosition:jobPosition aDepartment:departmentForObject aSalary:annualSalary];

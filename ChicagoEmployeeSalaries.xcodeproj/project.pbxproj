@@ -58,7 +58,14 @@
 		8FA0719E1C3070A70013EAA1 /* SearchByDepartmentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA071991C3070A70013EAA1 /* SearchByDepartmentTests.m */; };
 		8FA0719F1C3070A70013EAA1 /* SearchByPositionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA0719A1C3070A70013EAA1 /* SearchByPositionTests.m */; };
 		8FA071A01C3070A70013EAA1 /* SearchBySalaryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA0719B1C3070A70013EAA1 /* SearchBySalaryTests.m */; };
-		9469EBA7B1955FB1D83DABC0 /* libPods-ChicagoEmployeeSalaries.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 499D52E3478E544B198904E8 /* libPods-ChicagoEmployeeSalaries.a */; };
+		8FA071F61C32144E0013EAA1 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA071EE1C32144E0013EAA1 /* libGoogleAnalytics.a */; };
+		8FA071F71C32144E0013EAA1 /* Pods-ChicagoEmployeeSalaries.debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 8FA071F41C32144E0013EAA1 /* Pods-ChicagoEmployeeSalaries.debug.xcconfig */; };
+		8FA071F81C32144E0013EAA1 /* Pods-ChicagoEmployeeSalaries.release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 8FA071F51C32144E0013EAA1 /* Pods-ChicagoEmployeeSalaries.release.xcconfig */; };
+		8FA071FD1C3214A80013EAA1 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 8FA071FC1C3214A80013EAA1 /* Podfile */; };
+		8FA071FF1C3215AE0013EAA1 /* libPods-ChicagoEmployeeSalaries.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA071FB1C32144E0013EAA1 /* libPods-ChicagoEmployeeSalaries.a */; };
+		8FA072011C3216190013EAA1 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DE843421C310371001FC6DD /* CoreData.framework */; };
+		8FA072031C3216250013EAA1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DE843441C310393001FC6DD /* SystemConfiguration.framework */; };
+		8FA072041C3216B80013EAA1 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DE843461C3103AE001FC6DD /* libz.tbd */; };
 		9D1ABE031C276074009F0013 /* DepartmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1ABE021C276074009F0013 /* DepartmentViewController.m */; };
 		9D1ABE061C276B2A009F0013 /* UIView+FormScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1ABE051C276B2A009F0013 /* UIView+FormScroll.m */; };
 		9D1ABE091C27B215009F0013 /* NameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1ABE081C27B215009F0013 /* NameViewController.m */; };
@@ -74,6 +81,7 @@
 		9DC521B61C25FD350006E507 /* next_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DC521B21C25FD350006E507 /* next_small.png */; };
 		9DC521B91C2620730006E507 /* EmployeeObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DC521B81C2620730006E507 /* EmployeeObject.m */; };
 		9DE8434B1C31093F001FC6DD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9DE8434A1C31093F001FC6DD /* GoogleService-Info.plist */; };
+		D6A4A89B62C722F7F8BEC723 /* libPods-ChicagoEmployeeSalaries.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 499D52E3478E544B198904E8 /* libPods-ChicagoEmployeeSalaries.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +98,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 8F4BCF7F1C21D503002674D1;
 			remoteInfo = ChicagoEmployeeSalaries;
+		};
+		8FA071FA1C32144E0013EAA1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8FA071EF1C32144E0013EAA1 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E9973D6BAF7E5C1946580612D6E86CF9;
+			remoteInfo = "Pods-ChicagoEmployeeSalaries";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -165,6 +180,21 @@
 		8FA071991C3070A70013EAA1 /* SearchByDepartmentTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchByDepartmentTests.m; sourceTree = "<group>"; };
 		8FA0719A1C3070A70013EAA1 /* SearchByPositionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchByPositionTests.m; sourceTree = "<group>"; };
 		8FA0719B1C3070A70013EAA1 /* SearchBySalaryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchBySalaryTests.m; sourceTree = "<group>"; };
+		8FA071E31C32144E0013EAA1 /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
+		8FA071E41C32144E0013EAA1 /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
+		8FA071E51C32144E0013EAA1 /* GAIEcommerceFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceFields.h; sourceTree = "<group>"; };
+		8FA071E61C32144E0013EAA1 /* GAIEcommerceProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceProduct.h; sourceTree = "<group>"; };
+		8FA071E71C32144E0013EAA1 /* GAIEcommerceProductAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceProductAction.h; sourceTree = "<group>"; };
+		8FA071E81C32144E0013EAA1 /* GAIEcommercePromotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommercePromotion.h; sourceTree = "<group>"; };
+		8FA071E91C32144E0013EAA1 /* GAIFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
+		8FA071EA1C32144E0013EAA1 /* GAILogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAILogger.h; sourceTree = "<group>"; };
+		8FA071EB1C32144E0013EAA1 /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
+		8FA071EC1C32144E0013EAA1 /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
+		8FA071EE1C32144E0013EAA1 /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics.a; sourceTree = "<group>"; };
+		8FA071EF1C32144E0013EAA1 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
+		8FA071F41C32144E0013EAA1 /* Pods-ChicagoEmployeeSalaries.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Pods-ChicagoEmployeeSalaries.debug.xcconfig"; sourceTree = "<group>"; };
+		8FA071F51C32144E0013EAA1 /* Pods-ChicagoEmployeeSalaries.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Pods-ChicagoEmployeeSalaries.release.xcconfig"; sourceTree = "<group>"; };
+		8FA071FC1C3214A80013EAA1 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		9D1ABE011C276074009F0013 /* DepartmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DepartmentViewController.h; sourceTree = "<group>"; };
 		9D1ABE021C276074009F0013 /* DepartmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DepartmentViewController.m; sourceTree = "<group>"; };
 		9D1ABE041C276B2A009F0013 /* UIView+FormScroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FormScroll.h"; sourceTree = "<group>"; };
@@ -201,8 +231,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FA072041C3216B80013EAA1 /* libz.tbd in Frameworks */,
+				8FA072031C3216250013EAA1 /* SystemConfiguration.framework in Frameworks */,
+				8FA072011C3216190013EAA1 /* CoreData.framework in Frameworks */,
+				8FA071FF1C3215AE0013EAA1 /* libPods-ChicagoEmployeeSalaries.a in Frameworks */,
 				8F92C1611C2B37BF0091BF99 /* libsqlite3.tbd in Frameworks */,
-				9469EBA7B1955FB1D83DABC0 /* libPods-ChicagoEmployeeSalaries.a in Frameworks */,
+				8FA071F61C32144E0013EAA1 /* libGoogleAnalytics.a in Frameworks */,
+				D6A4A89B62C722F7F8BEC723 /* libPods-ChicagoEmployeeSalaries.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,6 +261,10 @@
 		46701FC91DFE20EBE5E4FCAA /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				8FA071FC1C3214A80013EAA1 /* Podfile */,
+				8FA071E01C32144E0013EAA1 /* GoogleAnalytics */,
+				8FA071EF1C32144E0013EAA1 /* Pods.xcodeproj */,
+				8FA071F21C32144E0013EAA1 /* Target Support Files */,
 				E766C22F12EBAB2F1C01F3EB /* Pods-ChicagoEmployeeSalaries.debug.xcconfig */,
 				1386F43DB425DCCB6748C4D6 /* Pods-ChicagoEmployeeSalaries.release.xcconfig */,
 			);
@@ -374,6 +413,75 @@
 			path = ChicagoEmployeeSalariesUITests;
 			sourceTree = "<group>";
 		};
+		8FA071E01C32144E0013EAA1 /* GoogleAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				8FA071E11C32144E0013EAA1 /* Headers */,
+				8FA071ED1C32144E0013EAA1 /* Libraries */,
+			);
+			name = GoogleAnalytics;
+			path = Pods/GoogleAnalytics;
+			sourceTree = "<group>";
+		};
+		8FA071E11C32144E0013EAA1 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				8FA071E21C32144E0013EAA1 /* Public */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
+		8FA071E21C32144E0013EAA1 /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				8FA071E31C32144E0013EAA1 /* GAI.h */,
+				8FA071E41C32144E0013EAA1 /* GAIDictionaryBuilder.h */,
+				8FA071E51C32144E0013EAA1 /* GAIEcommerceFields.h */,
+				8FA071E61C32144E0013EAA1 /* GAIEcommerceProduct.h */,
+				8FA071E71C32144E0013EAA1 /* GAIEcommerceProductAction.h */,
+				8FA071E81C32144E0013EAA1 /* GAIEcommercePromotion.h */,
+				8FA071E91C32144E0013EAA1 /* GAIFields.h */,
+				8FA071EA1C32144E0013EAA1 /* GAILogger.h */,
+				8FA071EB1C32144E0013EAA1 /* GAITrackedViewController.h */,
+				8FA071EC1C32144E0013EAA1 /* GAITracker.h */,
+			);
+			path = Public;
+			sourceTree = "<group>";
+		};
+		8FA071ED1C32144E0013EAA1 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				8FA071EE1C32144E0013EAA1 /* libGoogleAnalytics.a */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		8FA071F01C32144E0013EAA1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8FA071FB1C32144E0013EAA1 /* libPods-ChicagoEmployeeSalaries.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8FA071F21C32144E0013EAA1 /* Target Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				8FA071F31C32144E0013EAA1 /* Pods-ChicagoEmployeeSalaries */,
+			);
+			name = "Target Support Files";
+			path = "Pods/Target Support Files";
+			sourceTree = "<group>";
+		};
+		8FA071F31C32144E0013EAA1 /* Pods-ChicagoEmployeeSalaries */ = {
+			isa = PBXGroup;
+			children = (
+				8FA071F41C32144E0013EAA1 /* Pods-ChicagoEmployeeSalaries.debug.xcconfig */,
+				8FA071F51C32144E0013EAA1 /* Pods-ChicagoEmployeeSalaries.release.xcconfig */,
+			);
+			path = "Pods-ChicagoEmployeeSalaries";
+			sourceTree = "<group>";
+		};
 		D975E14BAD651ACE7045DB8D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -480,6 +588,12 @@
 			mainGroup = 8F4BCF771C21D503002674D1;
 			productRefGroup = 8F4BCF811C21D503002674D1 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 8FA071F01C32144E0013EAA1 /* Products */;
+					ProjectRef = 8FA071EF1C32144E0013EAA1 /* Pods.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				8F4BCF7F1C21D503002674D1 /* ChicagoEmployeeSalaries */,
@@ -489,11 +603,22 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		8FA071FB1C32144E0013EAA1 /* libPods-ChicagoEmployeeSalaries.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libPods-ChicagoEmployeeSalaries.a";
+			remoteRef = 8FA071FA1C32144E0013EAA1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		8F4BCF7E1C21D503002674D1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FA071F71C32144E0013EAA1 /* Pods-ChicagoEmployeeSalaries.debug.xcconfig in Resources */,
 				9DC521B51C25FD350006E507 /* next_large.png in Resources */,
 				9DA7392E1C30FA81009B73BB /* chicago_employee_salaries_2015_db.sql in Resources */,
 				8F92C1481C29CAD90091BF99 /* chicago_2.png in Resources */,
@@ -521,12 +646,14 @@
 				9DC521B41C25FD350006E507 /* back_small.png in Resources */,
 				8F92C1591C29CAF20091BF99 /* flag.png in Resources */,
 				8F92C1F71C2F1A9B0091BF99 /* chicago_9.png in Resources */,
+				8FA071FD1C3214A80013EAA1 /* Podfile in Resources */,
 				9DE8434B1C31093F001FC6DD /* GoogleService-Info.plist in Resources */,
 				8F92C1F81C2F1A9B0091BF99 /* chicago_10.png in Resources */,
 				8F92C1F61C2F1A9B0091BF99 /* chicago_6.png in Resources */,
 				8F92C1CD1C2B3AA00091BF99 /* chicago_5.png in Resources */,
 				8F92C1CE1C2B3AA00091BF99 /* chicago_flag.png in Resources */,
 				8F92C1D31C2B3AA00091BF99 /* spotlight_image@3x.png in Resources */,
+				8FA071F81C32144E0013EAA1 /* Pods-ChicagoEmployeeSalaries.release.xcconfig in Resources */,
 				8F92C1D51C2B3AB20091BF99 /* app_image@3x.png in Resources */,
 				8F92C1CC1C2B3AA00091BF99 /* chicago_4.png in Resources */,
 			);
@@ -772,6 +899,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ChicagoEmployeeSalaries/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/GoogleAnalytics/Libraries",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.OliverSanJuan.ChicagoEmployeeSalaries.Bradley;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -787,6 +918,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ChicagoEmployeeSalaries/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/GoogleAnalytics/Libraries",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.OliverSanJuan.ChicagoEmployeeSalaries.Bradley;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

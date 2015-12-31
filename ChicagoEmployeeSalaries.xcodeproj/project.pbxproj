@@ -16,36 +16,18 @@
 		8F4BCFB81C21DF81002674D1 /* BusinessTier.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F4BCFB71C21DF81002674D1 /* BusinessTier.m */; };
 		8F92C13F1C29CACC0091BF99 /* app_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F92C13B1C29CACC0091BF99 /* app_image.png */; };
 		8F92C1411C29CACC0091BF99 /* app_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F92C13D1C29CACC0091BF99 /* app_image@2x.png */; };
-		8F92C1481C29CAD90091BF99 /* chicago_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F92C1431C29CAD90091BF99 /* chicago_2.png */; };
-		8F92C14B1C29CAD90091BF99 /* chicago_flag_signs.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F92C1461C29CAD90091BF99 /* chicago_flag_signs.png */; };
 		8F92C1511C29CAE40091BF99 /* dollar_circle_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F92C14C1C29CAE40091BF99 /* dollar_circle_1.png */; };
 		8F92C1521C29CAE40091BF99 /* dollar_circle_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F92C14D1C29CAE40091BF99 /* dollar_circle_2.png */; };
 		8F92C1531C29CAE40091BF99 /* dollar_circle_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F92C14E1C29CAE40091BF99 /* dollar_circle_3.png */; };
 		8F92C1541C29CAE40091BF99 /* dollar_circle_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F92C14F1C29CAE40091BF99 /* dollar_circle_4.png */; };
-		8F92C1551C29CAE40091BF99 /* dollar_sign_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F92C1501C29CAE40091BF99 /* dollar_sign_red.png */; };
-		8F92C1591C29CAF20091BF99 /* flag.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F92C1561C29CAF20091BF99 /* flag.png */; };
 		8F92C15B1C29CAF20091BF99 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F92C1581C29CAF20091BF99 /* star.png */; };
 		8F92C1611C2B37BF0091BF99 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F92C1601C2B37BF0091BF99 /* libsqlite3.tbd */; };
-		8F92C1CA1C2B3AA00091BF99 /* chicago_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F92C1C01C2B3AA00091BF99 /* chicago_1.png */; };
-		8F92C1CB1C2B3AA00091BF99 /* chicago_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F92C1C11C2B3AA00091BF99 /* chicago_3.png */; };
-		8F92C1CC1C2B3AA00091BF99 /* chicago_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F92C1C21C2B3AA00091BF99 /* chicago_4.png */; };
-		8F92C1CD1C2B3AA00091BF99 /* chicago_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F92C1C31C2B3AA00091BF99 /* chicago_5.png */; };
-		8F92C1CE1C2B3AA00091BF99 /* chicago_flag.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F92C1C41C2B3AA00091BF99 /* chicago_flag.png */; };
-		8F92C1D01C2B3AA00091BF99 /* spotlight_icon_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F92C1C61C2B3AA00091BF99 /* spotlight_icon_2@2x.png */; };
-		8F92C1D11C2B3AA00091BF99 /* spotlight_icon_2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F92C1C71C2B3AA00091BF99 /* spotlight_icon_2@3x.png */; };
-		8F92C1D21C2B3AA00091BF99 /* spotlight_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F92C1C81C2B3AA00091BF99 /* spotlight_image@2x.png */; };
-		8F92C1D31C2B3AA00091BF99 /* spotlight_image@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F92C1C91C2B3AA00091BF99 /* spotlight_image@3x.png */; };
 		8F92C1D51C2B3AB20091BF99 /* app_image@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F92C1D41C2B3AB20091BF99 /* app_image@3x.png */; };
-		8F92C1E51C2E5A260091BF99 /* chicago_7.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F92C1D81C2E5A260091BF99 /* chicago_7.png */; };
-		8F92C1E61C2E5A260091BF99 /* chicago_8.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F92C1D91C2E5A260091BF99 /* chicago_8.png */; };
 		8F92C1E81C2E5A260091BF99 /* DoubleTextFieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F92C1DC1C2E5A260091BF99 /* DoubleTextFieldViewController.m */; };
 		8F92C1E91C2E5A260091BF99 /* PositionAndDepartmentResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F92C1DE1C2E5A260091BF99 /* PositionAndDepartmentResultsViewController.m */; };
 		8F92C1EA1C2E5A260091BF99 /* PositionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F92C1E01C2E5A260091BF99 /* PositionViewController.m */; };
 		8F92C1EB1C2E5A260091BF99 /* PrevNextSearchToolbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F92C1E21C2E5A260091BF99 /* PrevNextSearchToolbarView.m */; };
 		8F92C1EC1C2E5A260091BF99 /* SingleTextFieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F92C1E41C2E5A260091BF99 /* SingleTextFieldViewController.m */; };
-		8F92C1F61C2F1A9B0091BF99 /* chicago_6.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F92C1ED1C2F1A9B0091BF99 /* chicago_6.png */; };
-		8F92C1F71C2F1A9B0091BF99 /* chicago_9.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F92C1EE1C2F1A9B0091BF99 /* chicago_9.png */; };
-		8F92C1F81C2F1A9B0091BF99 /* chicago_10.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F92C1EF1C2F1A9B0091BF99 /* chicago_10.png */; };
 		8F92C1F91C2F1A9B0091BF99 /* SalaryAndDepartmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F92C1F11C2F1A9B0091BF99 /* SalaryAndDepartmentViewController.m */; };
 		8F92C1FA1C2F1A9B0091BF99 /* SalaryAndPositionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F92C1F31C2F1A9B0091BF99 /* SalaryAndPositionViewController.m */; };
 		8F92C1FB1C2F1A9B0091BF99 /* TripleTextFieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F92C1F51C2F1A9B0091BF99 /* TripleTextFieldViewController.m */; };
@@ -66,6 +48,12 @@
 		8FA072011C3216190013EAA1 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DE843421C310371001FC6DD /* CoreData.framework */; };
 		8FA072031C3216250013EAA1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DE843441C310393001FC6DD /* SystemConfiguration.framework */; };
 		8FA072041C3216B80013EAA1 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DE843461C3103AE001FC6DD /* libz.tbd */; };
+		8FA0720D1C3393A20013EAA1 /* app_image_settings@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FA0720A1C3393A20013EAA1 /* app_image_settings@3x.png */; };
+		8FA0720E1C3393A20013EAA1 /* app_image_spotlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FA0720B1C3393A20013EAA1 /* app_image_spotlight@2x.png */; };
+		8FA0720F1C3393A20013EAA1 /* app_image_spotlight@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FA0720C1C3393A20013EAA1 /* app_image_spotlight@3x.png */; };
+		8FA072121C33944E0013EAA1 /* app_image_old@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FA072101C33944E0013EAA1 /* app_image_old@2x.png */; };
+		8FA072131C33944E0013EAA1 /* app_image_settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FA072111C33944E0013EAA1 /* app_image_settings@2x.png */; };
+		8FA072151C33945B0013EAA1 /* GoogleAnalytics.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA072141C33945B0013EAA1 /* GoogleAnalytics.m */; };
 		9D1ABE031C276074009F0013 /* DepartmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1ABE021C276074009F0013 /* DepartmentViewController.m */; };
 		9D1ABE061C276B2A009F0013 /* UIView+FormScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1ABE051C276B2A009F0013 /* UIView+FormScroll.m */; };
 		9D1ABE091C27B215009F0013 /* NameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1ABE081C27B215009F0013 /* NameViewController.m */; };
@@ -129,29 +117,14 @@
 		8F4BCFB71C21DF81002674D1 /* BusinessTier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusinessTier.m; sourceTree = "<group>"; };
 		8F92C13B1C29CACC0091BF99 /* app_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_image.png; sourceTree = "<group>"; };
 		8F92C13D1C29CACC0091BF99 /* app_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_image@2x.png"; sourceTree = "<group>"; };
-		8F92C1431C29CAD90091BF99 /* chicago_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chicago_2.png; sourceTree = "<group>"; };
-		8F92C1461C29CAD90091BF99 /* chicago_flag_signs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chicago_flag_signs.png; sourceTree = "<group>"; };
 		8F92C14C1C29CAE40091BF99 /* dollar_circle_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dollar_circle_1.png; sourceTree = "<group>"; };
 		8F92C14D1C29CAE40091BF99 /* dollar_circle_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dollar_circle_2.png; sourceTree = "<group>"; };
 		8F92C14E1C29CAE40091BF99 /* dollar_circle_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dollar_circle_3.png; sourceTree = "<group>"; };
 		8F92C14F1C29CAE40091BF99 /* dollar_circle_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dollar_circle_4.png; sourceTree = "<group>"; };
-		8F92C1501C29CAE40091BF99 /* dollar_sign_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dollar_sign_red.png; sourceTree = "<group>"; };
-		8F92C1561C29CAF20091BF99 /* flag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flag.png; sourceTree = "<group>"; };
 		8F92C1581C29CAF20091BF99 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 		8F92C1601C2B37BF0091BF99 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		8F92C1BF1C2B399F0091BF99 /* DataTier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataTier.h; sourceTree = "<group>"; };
-		8F92C1C01C2B3AA00091BF99 /* chicago_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chicago_1.png; sourceTree = "<group>"; };
-		8F92C1C11C2B3AA00091BF99 /* chicago_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chicago_3.png; sourceTree = "<group>"; };
-		8F92C1C21C2B3AA00091BF99 /* chicago_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chicago_4.png; sourceTree = "<group>"; };
-		8F92C1C31C2B3AA00091BF99 /* chicago_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chicago_5.png; sourceTree = "<group>"; };
-		8F92C1C41C2B3AA00091BF99 /* chicago_flag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chicago_flag.png; sourceTree = "<group>"; };
-		8F92C1C61C2B3AA00091BF99 /* spotlight_icon_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "spotlight_icon_2@2x.png"; sourceTree = "<group>"; };
-		8F92C1C71C2B3AA00091BF99 /* spotlight_icon_2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "spotlight_icon_2@3x.png"; sourceTree = "<group>"; };
-		8F92C1C81C2B3AA00091BF99 /* spotlight_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "spotlight_image@2x.png"; sourceTree = "<group>"; };
-		8F92C1C91C2B3AA00091BF99 /* spotlight_image@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "spotlight_image@3x.png"; sourceTree = "<group>"; };
 		8F92C1D41C2B3AB20091BF99 /* app_image@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_image@3x.png"; sourceTree = "<group>"; };
-		8F92C1D81C2E5A260091BF99 /* chicago_7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chicago_7.png; sourceTree = "<group>"; };
-		8F92C1D91C2E5A260091BF99 /* chicago_8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chicago_8.png; sourceTree = "<group>"; };
 		8F92C1DB1C2E5A260091BF99 /* DoubleTextFieldViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoubleTextFieldViewController.h; sourceTree = "<group>"; };
 		8F92C1DC1C2E5A260091BF99 /* DoubleTextFieldViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoubleTextFieldViewController.m; sourceTree = "<group>"; };
 		8F92C1DD1C2E5A260091BF99 /* PositionAndDepartmentResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PositionAndDepartmentResultsViewController.h; sourceTree = "<group>"; };
@@ -162,9 +135,6 @@
 		8F92C1E21C2E5A260091BF99 /* PrevNextSearchToolbarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrevNextSearchToolbarView.m; sourceTree = "<group>"; };
 		8F92C1E31C2E5A260091BF99 /* SingleTextFieldViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleTextFieldViewController.h; sourceTree = "<group>"; };
 		8F92C1E41C2E5A260091BF99 /* SingleTextFieldViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleTextFieldViewController.m; sourceTree = "<group>"; };
-		8F92C1ED1C2F1A9B0091BF99 /* chicago_6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chicago_6.png; sourceTree = "<group>"; };
-		8F92C1EE1C2F1A9B0091BF99 /* chicago_9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chicago_9.png; sourceTree = "<group>"; };
-		8F92C1EF1C2F1A9B0091BF99 /* chicago_10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chicago_10.png; sourceTree = "<group>"; };
 		8F92C1F01C2F1A9B0091BF99 /* SalaryAndDepartmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SalaryAndDepartmentViewController.h; sourceTree = "<group>"; };
 		8F92C1F11C2F1A9B0091BF99 /* SalaryAndDepartmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SalaryAndDepartmentViewController.m; sourceTree = "<group>"; };
 		8F92C1F21C2F1A9B0091BF99 /* SalaryAndPositionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SalaryAndPositionViewController.h; sourceTree = "<group>"; };
@@ -195,6 +165,12 @@
 		8FA071F41C32144E0013EAA1 /* Pods-ChicagoEmployeeSalaries.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Pods-ChicagoEmployeeSalaries.debug.xcconfig"; sourceTree = "<group>"; };
 		8FA071F51C32144E0013EAA1 /* Pods-ChicagoEmployeeSalaries.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Pods-ChicagoEmployeeSalaries.release.xcconfig"; sourceTree = "<group>"; };
 		8FA071FC1C3214A80013EAA1 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		8FA0720A1C3393A20013EAA1 /* app_image_settings@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_image_settings@3x.png"; sourceTree = "<group>"; };
+		8FA0720B1C3393A20013EAA1 /* app_image_spotlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_image_spotlight@2x.png"; sourceTree = "<group>"; };
+		8FA0720C1C3393A20013EAA1 /* app_image_spotlight@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_image_spotlight@3x.png"; sourceTree = "<group>"; };
+		8FA072101C33944E0013EAA1 /* app_image_old@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_image_old@2x.png"; sourceTree = "<group>"; };
+		8FA072111C33944E0013EAA1 /* app_image_settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_image_settings@2x.png"; sourceTree = "<group>"; };
+		8FA072141C33945B0013EAA1 /* GoogleAnalytics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleAnalytics.m; sourceTree = "<group>"; };
 		9D1ABE011C276074009F0013 /* DepartmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DepartmentViewController.h; sourceTree = "<group>"; };
 		9D1ABE021C276074009F0013 /* DepartmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DepartmentViewController.m; sourceTree = "<group>"; };
 		9D1ABE041C276B2A009F0013 /* UIView+FormScroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FormScroll.h"; sourceTree = "<group>"; };
@@ -297,6 +273,7 @@
 		8F4BCF821C21D503002674D1 /* ChicagoEmployeeSalaries */ = {
 			isa = PBXGroup;
 			children = (
+				8FA072141C33945B0013EAA1 /* GoogleAnalytics.m */,
 				9D6452E11C3113F500040DC9 /* GoogleAnalytics.h */,
 				9DE8434A1C31093F001FC6DD /* GoogleService-Info.plist */,
 				8F4BCF861C21D503002674D1 /* AppDelegate.h */,
@@ -352,31 +329,18 @@
 		8F4BCF831C21D503002674D1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8FA072101C33944E0013EAA1 /* app_image_old@2x.png */,
+				8FA072111C33944E0013EAA1 /* app_image_settings@2x.png */,
+				8FA0720A1C3393A20013EAA1 /* app_image_settings@3x.png */,
+				8FA0720B1C3393A20013EAA1 /* app_image_spotlight@2x.png */,
+				8FA0720C1C3393A20013EAA1 /* app_image_spotlight@3x.png */,
 				9DA7392D1C30FA81009B73BB /* chicago_employee_salaries_2015_db.sql */,
-				8F92C1ED1C2F1A9B0091BF99 /* chicago_6.png */,
-				8F92C1EE1C2F1A9B0091BF99 /* chicago_9.png */,
-				8F92C1EF1C2F1A9B0091BF99 /* chicago_10.png */,
-				8F92C1D81C2E5A260091BF99 /* chicago_7.png */,
-				8F92C1D91C2E5A260091BF99 /* chicago_8.png */,
 				8F92C1D41C2B3AB20091BF99 /* app_image@3x.png */,
-				8F92C1C01C2B3AA00091BF99 /* chicago_1.png */,
-				8F92C1C11C2B3AA00091BF99 /* chicago_3.png */,
-				8F92C1C21C2B3AA00091BF99 /* chicago_4.png */,
-				8F92C1C31C2B3AA00091BF99 /* chicago_5.png */,
-				8F92C1C41C2B3AA00091BF99 /* chicago_flag.png */,
-				8F92C1C61C2B3AA00091BF99 /* spotlight_icon_2@2x.png */,
-				8F92C1C71C2B3AA00091BF99 /* spotlight_icon_2@3x.png */,
-				8F92C1C81C2B3AA00091BF99 /* spotlight_image@2x.png */,
-				8F92C1C91C2B3AA00091BF99 /* spotlight_image@3x.png */,
-				8F92C1561C29CAF20091BF99 /* flag.png */,
 				8F92C1581C29CAF20091BF99 /* star.png */,
 				8F92C14C1C29CAE40091BF99 /* dollar_circle_1.png */,
 				8F92C14D1C29CAE40091BF99 /* dollar_circle_2.png */,
 				8F92C14E1C29CAE40091BF99 /* dollar_circle_3.png */,
 				8F92C14F1C29CAE40091BF99 /* dollar_circle_4.png */,
-				8F92C1501C29CAE40091BF99 /* dollar_sign_red.png */,
-				8F92C1431C29CAD90091BF99 /* chicago_2.png */,
-				8F92C1461C29CAD90091BF99 /* chicago_flag_signs.png */,
 				8F92C13B1C29CACC0091BF99 /* app_image.png */,
 				8F92C13D1C29CACC0091BF99 /* app_image@2x.png */,
 				9DC521AF1C25FD350006E507 /* back_large.png */,
@@ -620,42 +584,29 @@
 			files = (
 				8FA071F71C32144E0013EAA1 /* Pods-ChicagoEmployeeSalaries.debug.xcconfig in Resources */,
 				9DC521B51C25FD350006E507 /* next_large.png in Resources */,
+				8FA072121C33944E0013EAA1 /* app_image_old@2x.png in Resources */,
+				8FA0720F1C3393A20013EAA1 /* app_image_spotlight@3x.png in Resources */,
 				9DA7392E1C30FA81009B73BB /* chicago_employee_salaries_2015_db.sql in Resources */,
-				8F92C1481C29CAD90091BF99 /* chicago_2.png in Resources */,
-				8F92C14B1C29CAD90091BF99 /* chicago_flag_signs.png in Resources */,
-				8F92C1CA1C2B3AA00091BF99 /* chicago_1.png in Resources */,
-				8F92C1E51C2E5A260091BF99 /* chicago_7.png in Resources */,
 				8F92C1541C29CAE40091BF99 /* dollar_circle_4.png in Resources */,
 				8F92C15B1C29CAF20091BF99 /* star.png in Resources */,
 				9DC521B31C25FD350006E507 /* back_large.png in Resources */,
-				8F92C1D01C2B3AA00091BF99 /* spotlight_icon_2@2x.png in Resources */,
-				8F92C1CB1C2B3AA00091BF99 /* chicago_3.png in Resources */,
-				8F92C1D11C2B3AA00091BF99 /* spotlight_icon_2@3x.png in Resources */,
 				8F92C1521C29CAE40091BF99 /* dollar_circle_2.png in Resources */,
 				8F4BCF931C21D503002674D1 /* LaunchScreen.storyboard in Resources */,
-				8F92C1E61C2E5A260091BF99 /* chicago_8.png in Resources */,
 				9DC521B61C25FD350006E507 /* next_small.png in Resources */,
 				8F92C1511C29CAE40091BF99 /* dollar_circle_1.png in Resources */,
+				8FA0720D1C3393A20013EAA1 /* app_image_settings@3x.png in Resources */,
 				8F4BCF901C21D503002674D1 /* Assets.xcassets in Resources */,
 				8F92C13F1C29CACC0091BF99 /* app_image.png in Resources */,
-				8F92C1551C29CAE40091BF99 /* dollar_sign_red.png in Resources */,
 				8F92C1531C29CAE40091BF99 /* dollar_circle_3.png in Resources */,
 				8F4BCF8E1C21D503002674D1 /* Main.storyboard in Resources */,
-				8F92C1D21C2B3AA00091BF99 /* spotlight_image@2x.png in Resources */,
 				8F92C1411C29CACC0091BF99 /* app_image@2x.png in Resources */,
+				8FA072131C33944E0013EAA1 /* app_image_settings@2x.png in Resources */,
 				9DC521B41C25FD350006E507 /* back_small.png in Resources */,
-				8F92C1591C29CAF20091BF99 /* flag.png in Resources */,
-				8F92C1F71C2F1A9B0091BF99 /* chicago_9.png in Resources */,
+				8FA0720E1C3393A20013EAA1 /* app_image_spotlight@2x.png in Resources */,
 				8FA071FD1C3214A80013EAA1 /* Podfile in Resources */,
 				9DE8434B1C31093F001FC6DD /* GoogleService-Info.plist in Resources */,
-				8F92C1F81C2F1A9B0091BF99 /* chicago_10.png in Resources */,
-				8F92C1F61C2F1A9B0091BF99 /* chicago_6.png in Resources */,
-				8F92C1CD1C2B3AA00091BF99 /* chicago_5.png in Resources */,
-				8F92C1CE1C2B3AA00091BF99 /* chicago_flag.png in Resources */,
-				8F92C1D31C2B3AA00091BF99 /* spotlight_image@3x.png in Resources */,
 				8FA071F81C32144E0013EAA1 /* Pods-ChicagoEmployeeSalaries.release.xcconfig in Resources */,
 				8F92C1D51C2B3AB20091BF99 /* app_image@3x.png in Resources */,
-				8F92C1CC1C2B3AA00091BF99 /* chicago_4.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -735,6 +686,7 @@
 				8F92C1EC1C2E5A260091BF99 /* SingleTextFieldViewController.m in Sources */,
 				8F92C1FA1C2F1A9B0091BF99 /* SalaryAndPositionViewController.m in Sources */,
 				8F4BCF8B1C21D503002674D1 /* ViewController.m in Sources */,
+				8FA072151C33945B0013EAA1 /* GoogleAnalytics.m in Sources */,
 				8F92C1F91C2F1A9B0091BF99 /* SalaryAndDepartmentViewController.m in Sources */,
 				8F4BCFB81C21DF81002674D1 /* BusinessTier.m in Sources */,
 				8F4BCF881C21D503002674D1 /* AppDelegate.m in Sources */,

@@ -163,7 +163,7 @@ alpha:1.0]
     }
     
     else if (self.employees.count > 1 && indexPath.row == 0) {
-        cell.textLabel.text = [NSString stringWithFormat:@"%lu results found", self.employees.count]; // array index of current values
+        cell.textLabel.text = [NSString stringWithFormat:@"%i results found", self.employees.count]; // array index of current values
         cell.detailTextLabel.text = @""; // array index of details
         cell.accessoryType = UITableViewCellAccessoryNone; // remove arrow
         cell.selectionStyle = UITableViewCellSelectionStyleNone; // make appearance unclickable

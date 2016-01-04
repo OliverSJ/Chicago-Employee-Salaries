@@ -132,7 +132,7 @@ alpha:1.0]
 //    [self.view sendSubviewToBack:backgroundView];
     
     // Do any additional setup after loading the view, typically from a nib.
-    self.tableViewCells = @[@"Name", @"Department", @"Salary", @"Postition", @"Name and Department", @"Position and Department", @"Salary and Department", @"Salary and Position"];
+    self.tableViewCells = @[@"Name", @"Department", @"Salary", @"Position", @"Name and Department", @"Position and Department", @"Salary and Department", @"Salary and Position"];
     
     // helps hide separators in certain cells, see cellForRowAtIndexPath in tableView for more
     self.tableView.separatorColor = [UIColor clearColor];

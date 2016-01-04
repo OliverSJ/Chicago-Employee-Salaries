@@ -8,7 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "BusinessTier.h"
-#define NUM_DEPARTMENTS 36 // received directly from query in terminal
+#define NUM_DEPARTMENTS 35 // received directly from query in terminal
 
 @interface GetDepartmentsTests : XCTestCase
 

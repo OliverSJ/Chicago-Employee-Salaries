@@ -228,4 +228,58 @@
     XCTAssertTrue(NO, "Expected object with name match");
 }
 
+- (void)testFullFirstNameAndPartialLastName {
+    
+    NSString *name = @"EMANUEL,  RAHM";
+    self.businessTier.name = @"RAHM E";
+    self.businessTier.searchType = searchByName;
+    
+    NSArray *employees = [self.businessTier getEmployees];
+    
+    for (EmployeeObject *emp in employees) {
+        if ([emp.name isEqualToString:name]) {
+            XCTAssertTrue(YES, "Object found with name match");
+            return;
+        }
+    }
+    
+    XCTAssertTrue(NO, "Expected object with name match");
+}
+
+- (void)testPartialFirstNameAndFullLastName {
+    
+    NSString *name = @"EMANUEL,  RAHM";
+    self.businessTier.name = @"R EMANUEL";
+    self.businessTier.searchType = searchByName;
+    
+    NSArray *employees = [self.businessTier getEmployees];
+    
+    for (EmployeeObject *emp in employees) {
+        if ([emp.name isEqualToString:name]) {
+            XCTAssertTrue(YES, "Object found with name match");
+            return;
+        }
+    }
+    
+    XCTAssertTrue(NO, "Expected object with name match");
+}
+
+- (void)testPartialFirstNameAndPartialLastName {
+    
+    NSString *name = @"EMANUEL,  RAHM";
+    self.businessTier.name = @"R E";
+    self.businessTier.searchType = searchByName;
+    
+    NSArray *employees = [self.businessTier getEmployees];
+    
+    for (EmployeeObject *emp in employees) {
+        if ([emp.name isEqualToString:name]) {
+            XCTAssertTrue(YES, "Object found with name match");
+            return;
+        }
+    }
+    
+    XCTAssertTrue(NO, "Expected object with name match");
+}
+
 @end

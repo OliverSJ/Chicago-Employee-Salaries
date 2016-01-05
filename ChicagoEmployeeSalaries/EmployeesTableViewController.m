@@ -154,7 +154,24 @@ alpha:1.0]
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     
-    if (self.employees.count > 0) {
+    if (self.noResultsFound){
+        cell.textLabel.text = @"No Results Found"; // array index of current values
+        cell.detailTextLabel.text = @""; // array index of details
+        cell.accessoryType = UITableViewCellAccessoryNone; // remove arrow
+        cell.selectionStyle = UITableViewCellSelectionStyleNone; // make appearance unclickable
+        cell.userInteractionEnabled = NO; // disable user interaction
+    }
+    
+    else if (self.employees.count > 1 && indexPath.row == 0) {
+        cell.textLabel.text = [NSString stringWithFormat:@"%tu results found", self.employees.count -1 ]; // array index of current values
+        cell.detailTextLabel.text = @""; // array index of details
+        cell.accessoryType = UITableViewCellAccessoryNone; // remove arrow
+        cell.selectionStyle = UITableViewCellSelectionStyleNone; // make appearance unclickable
+        cell.userInteractionEnabled = NO; // disable user interaction
+        cell.imageView.image = nil;
+    }
+    
+    else if (self.employees.count > 0) {
         cell.textLabel.text = [self.employees[indexPath.row] name]; // array index of current values
         cell.detailTextLabel.text = [self setDetailTextLabel:(int)indexPath.row]; // array index of details
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator; // add arrow
@@ -183,13 +200,7 @@ alpha:1.0]
         
         
     }
-    else if (self.noResultsFound){
-        cell.textLabel.text = @"No Results Found"; // array index of current values
-        cell.detailTextLabel.text = @""; // array index of details
-        cell.accessoryType = UITableViewCellAccessoryNone; // remove arrow
-        cell.selectionStyle = UITableViewCellSelectionStyleNone; // make appearance unclickable
-        cell.userInteractionEnabled = NO; // disable user interaction
-    }
+    
     else {
         cell.textLabel.text = @""; // array index of current values
         cell.detailTextLabel.text = @""; // array index of details

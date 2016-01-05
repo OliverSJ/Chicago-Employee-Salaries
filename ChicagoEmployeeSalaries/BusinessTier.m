@@ -276,7 +276,7 @@
         //Query the database based on user input
         if([firstNameForParsing length] > 0 && [lastNameForParsing length] > 0)
         {
-            query = [NSString stringWithFormat:@"SELECT* FROM Employees WHERE FirstName LIKE '%%%@%%' AND LastName='%@';",firstNameForParsing, lastNameForParsing];
+            query = [NSString stringWithFormat:@"SELECT* FROM Employees WHERE FirstName LIKE '%%%@%%' AND LastName LIKE'%%%@%%';",firstNameForParsing, lastNameForParsing];
 
         }
         //Query the database with the "first" name acting as both the first and last names in order to get

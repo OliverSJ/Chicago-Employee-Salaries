@@ -58,8 +58,8 @@
 		9D9009EF1C343060005C9806 /* app_image_settings@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D9009EA1C343060005C9806 /* app_image_settings@3x.png */; };
 		9D9009F01C343060005C9806 /* app_image_spotlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D9009EB1C343060005C9806 /* app_image_spotlight@2x.png */; };
 		9D9009F51C3431B8005C9806 /* GoogleAnalytics.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9009F41C3431B8005C9806 /* GoogleAnalytics.m */; };
+		9D9009F71C35AD3F005C9806 /* chicago_employee_salaries_2015_db.sql in Resources */ = {isa = PBXBuildFile; fileRef = 9D9009F61C35AD3F005C9806 /* chicago_employee_salaries_2015_db.sql */; };
 		9DA07C421C2700AE0045B1ED /* EmployeeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA07C411C2700AE0045B1ED /* EmployeeTableViewController.m */; };
-		9DA7392E1C30FA81009B73BB /* chicago_employee_salaries_2015_db.sql in Resources */ = {isa = PBXBuildFile; fileRef = 9DA7392D1C30FA81009B73BB /* chicago_employee_salaries_2015_db.sql */; };
 		9DC521AB1C250BFC0006E507 /* EmployeesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DC521AA1C250BFC0006E507 /* EmployeesTableViewController.m */; };
 		9DC521B31C25FD350006E507 /* back_large.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DC521AF1C25FD350006E507 /* back_large.png */; };
 		9DC521B41C25FD350006E507 /* back_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DC521B01C25FD350006E507 /* back_small.png */; };
@@ -181,9 +181,9 @@
 		9D9009EA1C343060005C9806 /* app_image_settings@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_image_settings@3x.png"; sourceTree = "<group>"; };
 		9D9009EB1C343060005C9806 /* app_image_spotlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_image_spotlight@2x.png"; sourceTree = "<group>"; };
 		9D9009F41C3431B8005C9806 /* GoogleAnalytics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleAnalytics.m; sourceTree = "<group>"; };
+		9D9009F61C35AD3F005C9806 /* chicago_employee_salaries_2015_db.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = chicago_employee_salaries_2015_db.sql; sourceTree = "<group>"; };
 		9DA07C401C2700AE0045B1ED /* EmployeeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmployeeTableViewController.h; sourceTree = "<group>"; };
 		9DA07C411C2700AE0045B1ED /* EmployeeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmployeeTableViewController.m; sourceTree = "<group>"; };
-		9DA7392D1C30FA81009B73BB /* chicago_employee_salaries_2015_db.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = chicago_employee_salaries_2015_db.sql; sourceTree = "<group>"; };
 		9DC521A91C250BFC0006E507 /* EmployeesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmployeesTableViewController.h; sourceTree = "<group>"; };
 		9DC521AA1C250BFC0006E507 /* EmployeesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmployeesTableViewController.m; sourceTree = "<group>"; };
 		9DC521AF1C25FD350006E507 /* back_large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_large.png; sourceTree = "<group>"; };
@@ -328,12 +328,12 @@
 		8F4BCF831C21D503002674D1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				8FA0721E1C35AE230013EAA1 /* app_image_old@2x.png */,
-				8FA0721F1C35AE230013EAA1 /* app_image_spotlight@3x.png */,
+				9D9009F61C35AD3F005C9806 /* chicago_employee_salaries_2015_db.sql */,
+				9D9009E81C343060005C9806 /* app_image_old@2x.png */,
 				9D9009E91C343060005C9806 /* app_image_settings@2x.png */,
 				9D9009EA1C343060005C9806 /* app_image_settings@3x.png */,
 				9D9009EB1C343060005C9806 /* app_image_spotlight@2x.png */,
-				9DA7392D1C30FA81009B73BB /* chicago_employee_salaries_2015_db.sql */,
+				9D9009EC1C343060005C9806 /* app_image_spotlight@3x.png */,
 				8F92C1D41C2B3AB20091BF99 /* app_image@3x.png */,
 				8F92C1581C29CAF20091BF99 /* star.png */,
 				8F92C14C1C29CAE40091BF99 /* dollar_circle_1.png */,
@@ -522,7 +522,7 @@
 				TargetAttributes = {
 					8F4BCF7F1C21D503002674D1 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 8BKCJS4473;
+						DevelopmentTeam = 888G4L3PSY;
 					};
 					8F4BCF981C21D503002674D1 = {
 						CreatedOnToolsVersion = 7.2;
@@ -578,10 +578,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DC521B51C25FD350006E507 /* next_large.png in Resources */,
-				8FA072121C33944E0013EAA1 /* app_image_old@2x.png in Resources */,
-				8FA072201C35AE230013EAA1 /* app_image_old@2x.png in Resources */,
-				8FA0720F1C3393A20013EAA1 /* app_image_spotlight@3x.png in Resources */,
-				9DA7392E1C30FA81009B73BB /* chicago_employee_salaries_2015_db.sql in Resources */,
+				9D9009F11C343060005C9806 /* app_image_spotlight@3x.png in Resources */,
 				8F92C1541C29CAE40091BF99 /* dollar_circle_4.png in Resources */,
 				8F92C15B1C29CAF20091BF99 /* star.png in Resources */,
 				8FA0721C1C35AD8D0013EAA1 /* chicago_employee_salaries_2015_db.sql in Resources */,
@@ -591,6 +588,7 @@
 				8F4BCF931C21D503002674D1 /* LaunchScreen.storyboard in Resources */,
 				9DC521B61C25FD350006E507 /* next_small.png in Resources */,
 				8F92C1511C29CAE40091BF99 /* dollar_circle_1.png in Resources */,
+				9D9009F71C35AD3F005C9806 /* chicago_employee_salaries_2015_db.sql in Resources */,
 				9D9009EF1C343060005C9806 /* app_image_settings@3x.png in Resources */,
 				8F4BCF901C21D503002674D1 /* Assets.xcassets in Resources */,
 				8F92C13F1C29CACC0091BF99 /* app_image.png in Resources */,
@@ -815,7 +813,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -843,6 +842,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ChicagoEmployeeSalaries/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -862,12 +862,13 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ChicagoEmployeeSalaries/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/GoogleAnalytics/Libraries",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.OliverSanJuan.ChicagoEmployeeSalaries;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chisalaryapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

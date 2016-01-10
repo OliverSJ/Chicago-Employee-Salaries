@@ -16,6 +16,12 @@ Contributing To Our Project
 
 [Additional Forking information](http://help.github.com/forking/)
 
+Contributors
+------------
+Bradley Golden  golden.bradley@gmail.com
+Oliver San Juan osanju2@gmail.com
+
+
 
 
 

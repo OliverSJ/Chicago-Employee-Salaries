@@ -18,8 +18,9 @@ Contributing To Our Project
 
 Contributors
 ------------
-Bradley Golden  golden.bradley@gmail.com
-Oliver San Juan osanju2@gmail.com
+Bradley Golden (golden.bradley@gmail.com)
+
+Oliver San Juan (osanju2@gmail.com)
 
 
 

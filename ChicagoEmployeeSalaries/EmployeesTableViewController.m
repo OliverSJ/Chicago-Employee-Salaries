@@ -20,7 +20,7 @@ alpha:1.0]
 @interface EmployeesTableViewController()
 
 /** Contains EmployeeObjects */
-@property (nonatomic) NSArray *employees;
+@property (nonatomic) NSMutableArray *employees;
 /** Indicate to user that content is loading */
 @property (nonatomic) IBOutlet UIActivityIndicatorView *activityView;
 @property (nonatomic) BOOL noResultsFound;
@@ -154,16 +154,8 @@ alpha:1.0]
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     
-    if (self.noResultsFound){
-        cell.textLabel.text = @"No Results Found"; // array index of current values
-        cell.detailTextLabel.text = @""; // array index of details
-        cell.accessoryType = UITableViewCellAccessoryNone; // remove arrow
-        cell.selectionStyle = UITableViewCellSelectionStyleNone; // make appearance unclickable
-        cell.userInteractionEnabled = NO; // disable user interaction
-    }
-    
-    else if (self.employees.count > 1 && indexPath.row == 0) {
-        cell.textLabel.text = [NSString stringWithFormat:@"%tu results found", self.employees.count -1 ]; // array index of current values
+    if (self.employees.count > 0 && indexPath.row == 0) {
+        cell.textLabel.text = [self.employees objectAtIndex:0];
         cell.detailTextLabel.text = @""; // array index of details
         cell.accessoryType = UITableViewCellAccessoryNone; // remove arrow
         cell.selectionStyle = UITableViewCellSelectionStyleNone; // make appearance unclickable
@@ -171,7 +163,7 @@ alpha:1.0]
         cell.imageView.image = nil;
     }
     
-    else if (self.employees.count > 0) {
+    else if (indexPath.row > 0) {
         cell.textLabel.text = [self.employees[indexPath.row] name]; // array index of current values
         cell.detailTextLabel.text = [self setDetailTextLabel:(int)indexPath.row]; // array index of details
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator; // add arrow
@@ -227,8 +219,8 @@ alpha:1.0]
     
     [super viewDidLoad];
     
-    self.employees = [[NSArray alloc]init];
     self.noResultsFound = NO;
+    self.employees = [[NSMutableArray alloc] init];
     
     // create UIActivityIndicator
     self.activityView = [[UIActivityIndicatorView alloc]
@@ -240,10 +232,18 @@ alpha:1.0]
     // asnyc call for getEmployees
     // shows ActivityIndicator while waiting for response
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        self.employees = [self.currentBT getEmployees];
-        if (self.employees.count <= 0) {
-            self.noResultsFound = YES;
+        self.employees = [[NSMutableArray alloc] initWithArray:[self.currentBT getEmployees]];
+        
+        if (self.employees.count == 0) {
+            [self.employees insertObject:@"No results found" atIndex:0];
         }
+        else if (self.employees.count == 1) {
+            [self.employees insertObject:@"1 result found" atIndex:0];
+        }
+        else {
+            [self.employees insertObject:[NSString stringWithFormat:@"%tu results found", self.employees.count ] atIndex:0];
+        }
+        
         dispatch_sync(dispatch_get_main_queue(), ^{
             // getEmployees has finished
             [self.activityView stopAnimating];
